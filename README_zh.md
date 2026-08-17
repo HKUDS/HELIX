@@ -1,4 +1,8 @@
 <p align="center">
+  <a href="https://arxiv.org/abs/2608.13951"><img src="https://img.shields.io/badge/arXiv-2608.13951-b31b1b" alt="arXiv paper"></a>
+</p>
+
+<p align="center">
   <img src="assests/helix-logo.png" alt="Helix Logo" width="560">
 </p>
 

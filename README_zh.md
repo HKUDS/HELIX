@@ -1,8 +1,4 @@
 <p align="center">
-  <a href="https://arxiv.org/abs/2608.13951"><img src="https://img.shields.io/badge/arXiv-2608.13951-b31b1b" alt="arXiv paper"></a>
-</p>
-
-<p align="center">
   <img src="assests/helix-logo.png" alt="Helix Logo" width="560">
 </p>
 
@@ -14,10 +10,7 @@
 
 Helix 的使命：为模型优化 harness，并自动把 harness 产出的 rollout 转成可回训的智能体数据。
 
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)
-![Node](https://img.shields.io/badge/Node-20%2B-339933)
-![Benchmarks](https://img.shields.io/badge/Benchmarks-LiveCodeBench%20%7C%20SWE--bench-orange)
-![Status](https://img.shields.io/badge/Status-research%20prototype-purple)
+<a href="https://arxiv.org/abs/2608.13951"><img src="https://img.shields.io/badge/arXiv-2608.13951-b31b1b" alt="arXiv paper"></a> ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue) ![Node](https://img.shields.io/badge/Node-20%2B-339933) ![Benchmarks](https://img.shields.io/badge/Benchmarks-LiveCodeBench%20%7C%20SWE--bench-orange) ![Status](https://img.shields.io/badge/Status-research%20prototype-purple)
 
 </div>
 

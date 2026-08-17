@@ -1,8 +1,4 @@
 <p align="center">
-  <a href="https://arxiv.org/abs/2608.13951"><img src="https://img.shields.io/badge/arXiv-2608.13951-b31b1b" alt="arXiv paper"></a>
-</p>
-
-<p align="center">
   <img src="assests/helix-logo.png" alt="Helix logo" width="560">
 </p>
 
@@ -14,10 +10,7 @@ English | [中文](README_zh.md)
 
 Helix's mission: optimize harnesses for models, then automatically turn harness-generated rollouts into trainable agent data.
 
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)
-![Node](https://img.shields.io/badge/Node-20%2B-339933)
-![Benchmarks](https://img.shields.io/badge/Benchmarks-LiveCodeBench%20%7C%20SWE--bench-orange)
-![Status](https://img.shields.io/badge/Status-research%20prototype-purple)
+<a href="https://arxiv.org/abs/2608.13951"><img src="https://img.shields.io/badge/arXiv-2608.13951-b31b1b" alt="arXiv paper"></a> ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue) ![Node](https://img.shields.io/badge/Node-20%2B-339933) ![Benchmarks](https://img.shields.io/badge/Benchmarks-LiveCodeBench%20%7C%20SWE--bench-orange) ![Status](https://img.shields.io/badge/Status-research%20prototype-purple)
 
 </div>
 

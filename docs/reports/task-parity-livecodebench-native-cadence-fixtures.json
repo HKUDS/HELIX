@@ -1,0 +1,1826 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-01T11:43:08.625Z",
+  "sourceArtifact": {
+    "generatedAt": "2026-06-01T11:42:57.237Z",
+    "suite": "smoke",
+    "provider": "live"
+  },
+  "fixtures": [
+    {
+      "fixtureVersion": 1,
+      "product": "opencode",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "cadenceSignature": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 9,
+            "eventCount": 16,
+            "source": "native-cli",
+            "visibility": "aggregated",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:glob",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:glob",
+              "tool:read"
+            ],
+            "toolCallCount": 9
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "glob",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "glob",
+            "status": "completed",
+            "inputShape": "pattern",
+            "result": "text"
+          },
+          {
+            "index": 5,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 6,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 7,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "newText,oldText,path",
+            "result": "text"
+          },
+          {
+            "index": 8,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command,description",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "glob"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "glob"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [],
+        "traceEvents": [
+          "step.start",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "tool.use",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "text",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "text"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 9,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "aggregate",
+          "lossiness": "aggregated",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "text-only",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "final-message",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "none",
+          "lossiness": "unobservable",
+          "evidence": "unavailable"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "nativeEvents": [
+        "step.start",
+        "tool.use",
+        "step.finish",
+        "step.start",
+        "tool.use",
+        "tool.use",
+        "step.finish",
+        "step.start",
+        "text",
+        "tool.use",
+        "step.finish",
+        "step.start",
+        "tool.use",
+        "step.finish",
+        "step.start",
+        "text"
+      ],
+      "nativeChunks": [
+        {
+          "index": 0,
+          "type": "step.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 1,
+          "type": "tool.use",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 2,
+          "type": "step.finish",
+          "semanticClass": "control"
+        },
+        {
+          "index": 3,
+          "type": "step.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 4,
+          "type": "tool.use",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 5,
+          "type": "tool.use",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 6,
+          "type": "step.finish",
+          "semanticClass": "control"
+        },
+        {
+          "index": 7,
+          "type": "step.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 8,
+          "type": "text",
+          "semanticClass": "message"
+        },
+        {
+          "index": 9,
+          "type": "tool.use",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 10,
+          "type": "step.finish",
+          "semanticClass": "control"
+        },
+        {
+          "index": 11,
+          "type": "step.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 12,
+          "type": "tool.use",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 13,
+          "type": "step.finish",
+          "semanticClass": "control"
+        },
+        {
+          "index": 14,
+          "type": "step.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 15,
+          "type": "text",
+          "semanticClass": "message"
+        }
+      ],
+      "messageParts": [
+        "text",
+        "tool-result:bash",
+        "tool-result:edit",
+        "tool-result:glob",
+        "tool-result:read",
+        "tool:bash",
+        "tool:edit",
+        "tool:glob",
+        "tool:read"
+      ],
+      "projectionLosses": [
+        {
+          "field": "providerBoundary",
+          "lossiness": "aggregated",
+          "reason": "providerBoundary is recorded with aggregate visibility from cli-event evidence."
+        },
+        {
+          "field": "streamDelta",
+          "lossiness": "semantic",
+          "reason": "streamDelta is recorded with text-only visibility from stream-event evidence."
+        },
+        {
+          "field": "toolLifecycle",
+          "lossiness": "semantic",
+          "reason": "toolLifecycle is recorded with call-result visibility from cli-event evidence."
+        },
+        {
+          "field": "messageWrite",
+          "lossiness": "semantic",
+          "reason": "messageWrite is recorded with final-message visibility from message-store evidence."
+        },
+        {
+          "field": "acceptance",
+          "lossiness": "unobservable",
+          "reason": "acceptance is recorded with none visibility from unavailable evidence."
+        },
+        {
+          "field": "workspace",
+          "lossiness": "semantic",
+          "reason": "workspace is recorded with diff-only visibility from workspace-diff evidence."
+        }
+      ],
+      "redactionSummary": {
+        "credentials": "redacted",
+        "hostPaths": "normalized",
+        "tokenUsage": "omitted"
+      }
+    },
+    {
+      "fixtureVersion": 1,
+      "product": "pi-mono",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 7
+      },
+      "cadenceSignature": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 100,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 100,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 2,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 100,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 3,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 100,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 4,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 100,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 5,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 100,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 6,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 10,
+            "eventCount": 100,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:read"
+            ],
+            "toolCallCount": 10
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 5,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 6,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "edits,path",
+            "result": "text"
+          },
+          {
+            "index": 7,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 8,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 9,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end"
+        ],
+        "traceEvents": [
+          "session",
+          "agent.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.start",
+          "tool.end",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.update",
+          "tool.update",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 7,
+          "toolCalls": 10,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "nativeEvents": [
+        "session",
+        "agent.start",
+        "turn.start",
+        "message.start",
+        "message.end",
+        "message.start",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.end",
+        "tool.start",
+        "tool.start",
+        "tool.end",
+        "tool.end",
+        "message.start",
+        "message.end",
+        "message.start",
+        "message.end",
+        "turn.end",
+        "turn.start",
+        "message.start",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.end",
+        "tool.start",
+        "tool.end",
+        "message.start",
+        "message.end",
+        "turn.end",
+        "turn.start",
+        "message.start",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.delta",
+        "message.end",
+        "tool.start",
+        "tool.update",
+        "tool.update",
+        "tool.end",
+        "message.start",
+        "message.end",
+        "turn.end",
+        "turn.start",
+        "acceptance.accepted-early"
+      ],
+      "nativeChunks": [
+        {
+          "index": 0,
+          "type": "session",
+          "semanticClass": "session"
+        },
+        {
+          "index": 1,
+          "type": "agent.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 2,
+          "type": "turn.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 3,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 4,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 5,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 6,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 7,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 8,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 9,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 10,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 11,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 12,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 13,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 14,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 15,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 16,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 17,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 18,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 19,
+          "type": "tool.start",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 20,
+          "type": "tool.start",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 21,
+          "type": "tool.end",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 22,
+          "type": "tool.end",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 23,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 24,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 25,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 26,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 27,
+          "type": "turn.end",
+          "semanticClass": "control"
+        },
+        {
+          "index": 28,
+          "type": "turn.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 29,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 30,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 31,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 32,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 33,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 34,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 35,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 36,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 37,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 38,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 39,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 40,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 41,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 42,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 43,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 44,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 45,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 46,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 47,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 48,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 49,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 50,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 51,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 52,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 53,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 54,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 55,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 56,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 57,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 58,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 59,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 60,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 61,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 62,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 63,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 64,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 65,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 66,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 67,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 68,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 69,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 70,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 71,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 72,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 73,
+          "type": "tool.start",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 74,
+          "type": "tool.end",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 75,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 76,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 77,
+          "type": "turn.end",
+          "semanticClass": "control"
+        },
+        {
+          "index": 78,
+          "type": "turn.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 79,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 80,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 81,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 82,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 83,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 84,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 85,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 86,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 87,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 88,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 89,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 90,
+          "type": "message.delta",
+          "semanticClass": "message"
+        },
+        {
+          "index": 91,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 92,
+          "type": "tool.start",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 93,
+          "type": "tool.update",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 94,
+          "type": "tool.update",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 95,
+          "type": "tool.end",
+          "semanticClass": "tool"
+        },
+        {
+          "index": 96,
+          "type": "message.start",
+          "semanticClass": "message"
+        },
+        {
+          "index": 97,
+          "type": "message.end",
+          "semanticClass": "message"
+        },
+        {
+          "index": 98,
+          "type": "turn.end",
+          "semanticClass": "control"
+        },
+        {
+          "index": 99,
+          "type": "turn.start",
+          "semanticClass": "control"
+        },
+        {
+          "index": 100,
+          "type": "acceptance.accepted-early",
+          "semanticClass": "acceptance"
+        }
+      ],
+      "messageParts": [
+        "text",
+        "tool-result:bash",
+        "tool-result:edit",
+        "tool-result:read",
+        "tool:bash",
+        "tool:edit",
+        "tool:read"
+      ],
+      "projectionLosses": [
+        {
+          "field": "providerBoundary",
+          "lossiness": "semantic",
+          "reason": "providerBoundary is recorded with per-request visibility from cli-event evidence."
+        },
+        {
+          "field": "streamDelta",
+          "lossiness": "semantic",
+          "reason": "streamDelta is recorded with semantic visibility from stream-event evidence."
+        },
+        {
+          "field": "toolLifecycle",
+          "lossiness": "semantic",
+          "reason": "toolLifecycle is recorded with call-result visibility from cli-event evidence."
+        },
+        {
+          "field": "messageWrite",
+          "lossiness": "semantic",
+          "reason": "messageWrite is recorded with storage-event visibility from message-store evidence."
+        },
+        {
+          "field": "acceptance",
+          "lossiness": "semantic",
+          "reason": "acceptance is recorded with explicit-event visibility from runtime-policy evidence."
+        },
+        {
+          "field": "workspace",
+          "lossiness": "semantic",
+          "reason": "workspace is recorded with diff-only visibility from workspace-diff evidence."
+        }
+      ],
+      "redactionSummary": {
+        "credentials": "redacted",
+        "hostPaths": "normalized",
+        "tokenUsage": "omitted"
+      }
+    },
+    {
+      "fixtureVersion": 1,
+      "product": "nanobot",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "cadenceSignature": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 5,
+            "eventCount": 0,
+            "source": "native-cli",
+            "visibility": "aggregated",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:list_dir",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:list_dir",
+              "tool:read"
+            ],
+            "toolCallCount": 5
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "list_dir",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "newText,oldText,path",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "list_dir"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [],
+        "traceEvents": [
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 5,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "aggregate",
+          "lossiness": "aggregated",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "text-only",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "final-message",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "nativeEvents": [
+        "acceptance.accepted-early"
+      ],
+      "nativeChunks": [
+        {
+          "index": 0,
+          "type": "acceptance.accepted-early",
+          "semanticClass": "acceptance"
+        }
+      ],
+      "messageParts": [
+        "text",
+        "tool-result:bash",
+        "tool-result:edit",
+        "tool-result:list_dir",
+        "tool-result:read",
+        "tool:bash",
+        "tool:edit",
+        "tool:list_dir",
+        "tool:read"
+      ],
+      "projectionLosses": [
+        {
+          "field": "providerBoundary",
+          "lossiness": "aggregated",
+          "reason": "providerBoundary is recorded with aggregate visibility from cli-event evidence."
+        },
+        {
+          "field": "streamDelta",
+          "lossiness": "semantic",
+          "reason": "streamDelta is recorded with text-only visibility from stream-event evidence."
+        },
+        {
+          "field": "toolLifecycle",
+          "lossiness": "semantic",
+          "reason": "toolLifecycle is recorded with call-result visibility from cli-event evidence."
+        },
+        {
+          "field": "messageWrite",
+          "lossiness": "semantic",
+          "reason": "messageWrite is recorded with final-message visibility from message-store evidence."
+        },
+        {
+          "field": "acceptance",
+          "lossiness": "semantic",
+          "reason": "acceptance is recorded with explicit-event visibility from runtime-policy evidence."
+        },
+        {
+          "field": "workspace",
+          "lossiness": "semantic",
+          "reason": "workspace is recorded with diff-only visibility from workspace-diff evidence."
+        }
+      ],
+      "redactionSummary": {
+        "credentials": "redacted",
+        "hostPaths": "normalized",
+        "tokenUsage": "omitted"
+      }
+    },
+    {
+      "fixtureVersion": 1,
+      "product": "hermes-agent",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "cadenceSignature": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 5,
+            "eventCount": 0,
+            "source": "native-cli",
+            "visibility": "aggregated",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool:bash"
+            ],
+            "toolCallCount": 5
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [],
+        "traceEvents": [
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 5,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "aggregate",
+          "lossiness": "aggregated",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "text-only",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "final-message",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "nativeEvents": [
+        "acceptance.accepted-early"
+      ],
+      "nativeChunks": [
+        {
+          "index": 0,
+          "type": "acceptance.accepted-early",
+          "semanticClass": "acceptance"
+        }
+      ],
+      "messageParts": [
+        "text",
+        "tool-result:bash",
+        "tool:bash"
+      ],
+      "projectionLosses": [
+        {
+          "field": "providerBoundary",
+          "lossiness": "aggregated",
+          "reason": "providerBoundary is recorded with aggregate visibility from cli-event evidence."
+        },
+        {
+          "field": "streamDelta",
+          "lossiness": "semantic",
+          "reason": "streamDelta is recorded with text-only visibility from stream-event evidence."
+        },
+        {
+          "field": "toolLifecycle",
+          "lossiness": "semantic",
+          "reason": "toolLifecycle is recorded with call-result visibility from cli-event evidence."
+        },
+        {
+          "field": "messageWrite",
+          "lossiness": "semantic",
+          "reason": "messageWrite is recorded with final-message visibility from message-store evidence."
+        },
+        {
+          "field": "acceptance",
+          "lossiness": "semantic",
+          "reason": "acceptance is recorded with explicit-event visibility from runtime-policy evidence."
+        },
+        {
+          "field": "workspace",
+          "lossiness": "semantic",
+          "reason": "workspace is recorded with diff-only visibility from workspace-diff evidence."
+        }
+      ],
+      "redactionSummary": {
+        "credentials": "redacted",
+        "hostPaths": "normalized",
+        "tokenUsage": "omitted"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@helix/conformance",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@helix/contracts": "file:../contracts",
+    "@helix/adapters-opencode": "file:../adapters-opencode",
+    "@helix/lego-agent-loop": "file:../lego-agent-loop",
+    "@helix/lego-config": "file:../lego-config",
+    "@helix/lego-hooks": "file:../lego-hooks",
+    "@helix/lego-prompt": "file:../lego-prompt",
+    "@helix/lego-runtime": "file:../lego-runtime",
+    "@helix/lego-session": "file:../lego-session",
+    "@helix/lego-ui": "file:../lego-ui",
+    "@helix/docs-site": "file:../docs-site",
+    "@helix/recipes": "file:../recipes",
+    "@earendil-works/pi-coding-agent": "file:../pi-coding-agent",
+    "@opencode-ai/plugin": "file:../opencode-plugin"
+  }
+}

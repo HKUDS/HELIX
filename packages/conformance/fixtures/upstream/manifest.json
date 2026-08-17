@@ -1,0 +1,24 @@
+{
+  "fixtures": [
+    {
+      "product": "pi-mono",
+      "sourceRepository": "https://github.com/earendil-works/pi",
+      "sourceCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "sourcePath": "packages/coding-agent/test/fixtures/large-session.jsonl",
+      "exportedPath": "packages/conformance/fixtures/upstream/pi-large-session.upstream.jsonl",
+      "sourceRecords": 1019,
+      "expectedTranscriptMessages": 914,
+      "notes": "Exact upstream JSONL test fixture from the pinned Pi reference commit."
+    },
+    {
+      "product": "opencode",
+      "sourceRepository": "https://github.com/anomalyco/opencode",
+      "sourceCommit": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "sourcePath": "packages/app/e2e/smoke/session-timeline.fixture.ts",
+      "exportedPath": "packages/conformance/fixtures/upstream/opencode-session-timeline.upstream.projection.jsonl",
+      "sourceRecords": 525,
+      "expectedTranscriptMessages": 168,
+      "notes": "Projection replay exported from the upstream session timeline fixture generator at the pinned OpenCode reference commit."
+    }
+  ]
+}

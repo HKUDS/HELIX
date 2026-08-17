@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-28T17:11:51.278Z",
+  "suite": "smoke",
+  "provider": "live",
+  "reports": [
+    {
+      "taskID": "read-only-answer",
+      "product": "opencode",
+      "mode": "original",
+      "runner": {
+        "id": "task.runner.native-cli",
+        "evidence": "native-cli",
+        "nativeAvailable": true,
+        "packageSpec": "opencode-ai@1.15.11",
+        "exitCode": 0,
+        "stderrTail": "Performing one time database migration, may take a few minutes...\nsqlite-migration:done\nDatabase migration complete."
+      },
+      "productEvidence": {
+        "recipeID": "opencode",
+        "upstream": "https://github.com/anomalyco/opencode",
+        "upstreamCommit": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+        "nativeAdapter": "native-cli"
+      },
+      "status": "acceptable-drift",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "The architecture split used is:\n\n- **Common Lego Atoms** (session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection)\n- **Product-Specific Personality Atoms** (preserve upstream behavior for OpenCode, Pi, and Nanobot)",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "traceEvidence": {
+        "events": 8,
+        "eventTypes": [
+          "step_finish",
+          "step_start",
+          "text",
+          "tool_use"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "glob",
+            "input": {}
+          },
+          {
+            "toolName": "read",
+            "input": {}
+          }
+        ],
+        "results": []
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 300000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 1,
+        "durationMs": 10805,
+        "toolCalls": 2,
+        "providerRequests": 1
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "pi-mono",
+      "mode": "original",
+      "runner": {
+        "id": "task.runner.native-cli",
+        "evidence": "native-cli",
+        "nativeAvailable": true,
+        "packageSpec": "@earendil-works/pi-coding-agent@0.75.5",
+        "exitCode": 0,
+        "stderrTail": "Warning: Model \"MiniMax-M2.7-highspeed\" not found for provider \"anthropic\". Using custom model id."
+      },
+      "productEvidence": {
+        "recipeID": "pi-mono",
+        "upstream": "https://github.com/earendil-works/pi",
+        "upstreamCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+        "nativeAdapter": "native-cli"
+      },
+      "status": "acceptable-drift",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Read README.md and answer with the exact architecture split used by this fixture.\nRead README.md and answer with the exact architecture split used by this fixture.\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\n\nBased on the README.md, the fixture uses the following architecture split:\n\n**Common Atoms (L\nBased on the README.md, the fixture uses the following architecture split:\n\n**Common Atoms (L\nBased on the README.md, the fixture uses the following architecture split:\n\n**Common Atoms (Lego Atoms)** provide:\n- Session storage\n- Hook dispatch\n- Provider event normalization\n- Default tools\n- Runtime lifecycle\n- Prompt assembly\n- UI projection\n\n**Product Atoms (Personality Atoms)** preserve upstream behavior for:\n- Open\nBased on the README.md, the fixture uses the following architecture split:\n\n**Common Atoms (Lego Atoms)** provide:\n- Session storage\n- Hook dispatch\n- Provider event normalization\n- Default tools\n- Runtime lifecycle\n- Prompt assembly\n- UI projection\n\n**Product Atoms (Personality Atoms)** preserve upstream behavior for:\n- OpenCode\n- Pi\n- Nanobot\nBased on the README.md, the fixture uses the following architecture split:\n\n**Common Atoms (Lego Atoms)** provide:\n- Session storage\n- Hook dispatch\n- Provider event normalization\n- Default tools\n- Runtime lifecycle\n- Prompt assembly\n- UI projection\n\n**Product Atoms (Personality Atoms)** preserve upstream behavior for:\n- OpenCode\n- Pi\n- Nanobot\nBased on the README.md, the fixture uses the following architecture split:\n\n**Common Atoms (Lego Atoms)** provide:\n- Session storage\n- Hook dispatch\n- Provider event normalization\n- Default tools\n- Runtime lifecycle\n- Prompt assembly\n- UI projection\n\n**Product Atoms (Personality Atoms)** preserve upstream behavior for:\n- OpenCode\n- Pi\n- Nanobot\nBased on the README.md, the fixture uses the following architecture split:\n\n**Common Atoms (Lego Atoms)** provide:\n- Session storage\n- Hook dispatch\n- Provider event normalization\n- Default tools\n- Runtime lifecycle\n- Prompt assembly\n- UI projection\n\n**Product Atoms (Personality Atoms)** preserve upstream behavior for:\n- OpenCode\n- Pi\n- Nanobot",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 4
+      },
+      "traceEvidence": {
+        "events": 37,
+        "eventTypes": [
+          "agent_end",
+          "agent_start",
+          "message_end",
+          "message_start",
+          "message_update",
+          "session",
+          "tool_execution_end",
+          "tool_execution_start",
+          "turn_end",
+          "turn_start"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "read",
+            "input": {}
+          },
+          {
+            "toolName": "read",
+            "input": {
+              "path": "README.md"
+            }
+          }
+        ],
+        "results": [
+          {
+            "toolName": "read",
+            "text": ""
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 300000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 4,
+        "durationMs": 8201,
+        "toolCalls": 2,
+        "providerRequests": 4
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "nanobot",
+      "mode": "original",
+      "runner": {
+        "id": "task.runner.native-cli",
+        "evidence": "native-cli",
+        "nativeAvailable": true,
+        "packageSpec": "nanobot-ai==0.2.0",
+        "exitCode": 0,
+        "stderrTail": "Installed 114 packages in 128ms\n2026-05-29 01:11:37 | INFO  | - | Git store initialized at /tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace"
+      },
+      "productEvidence": {
+        "recipeID": "nanobot",
+        "upstream": "https://github.com/HKUDS/nanobot",
+        "upstreamCommit": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+        "upstreamTag": "v0.2.0",
+        "package": "nanobot-ai@0.2.0",
+        "nativeAdapter": "native-cli"
+      },
+      "status": "acceptable-drift",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Using config: \n/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/session/native-na\nnobot-config/config.json\n  Created SOUL.md\n  Created HEARTBEAT.md\n  Created AGENTS.md\n  Created USER.md\n  Created TOOLS.md\n  Created memory/MEMORY.md\n  Created memory/history.jsonl\n\nnanobot\nBased on the README.md and the source code, the exact architecture split used by\nthis fixture is:\n\n**common atoms plus product personality atoms**\n\nThis is derived from:\n- README: \"common lego atoms and product-specific personality atoms\"\n- src/index.ts: `atomStrategy()` returns `\"common atoms plus product personality\natoms\"`\nBased on the README.md and the source code, the exact architecture split used by this fixture is:\n\n**common atoms plus product personality atoms**\n\nThis is derived from:\n- README: \"common lego atoms and product-specific personality atoms\"\n- src/index.ts: `atomStrategy()` returns `\"common atoms plus product personality atoms\"`",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "traceEvidence": {
+        "events": 0,
+        "eventTypes": []
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "read",
+            "input": {
+              "path": "/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace/README.md"
+            }
+          },
+          {
+            "toolName": "grep",
+            "input": {
+              "pattern": "fixture|architecture|split",
+              "path": "/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace",
+              "case_insensitive": true
+            }
+          },
+          {
+            "toolName": "list_dir",
+            "input": {
+              "path": "/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace",
+              "recursive": true
+            }
+          },
+          {
+            "toolName": "read",
+            "input": {
+              "path": "/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace/src/index.ts"
+            }
+          },
+          {
+            "toolName": "read",
+            "input": {
+              "path": "/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace/sessions/helix-read-only-answer.jsonl"
+            }
+          }
+        ],
+        "results": [
+          {
+            "toolName": "read",
+            "text": "1| # Fixture Project\n2| \n3| Helix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n4| \n5| The common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n6| \n7| Product atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\n(End of file — 7 lines total)"
+          },
+          {
+            "toolName": "grep",
+            "text": "sessions/helix-read-only-answer.jsonl\nREADME.md"
+          },
+          {
+            "toolName": "list_dir",
+            "text": ".gitignore\nAGENTS.md\nHEARTBEAT.md\nREADME.md\nSOUL.md\nTOOLS.md\nUSER.md\nmemory/\nmemory/MEMORY.md\nmemory/history.jsonl\nsessions/\nsessions/helix-read-only-answer.jsonl\nskills/\nsrc/\nsrc/index.ts"
+          },
+          {
+            "toolName": "read",
+            "text": "1| export const project = \"helix\"\n2| \n3| export function atomStrategy(): string {\n4|   return \"common atoms plus product personality atoms\"\n5| }\n\n(End of file — 5 lines total)"
+          },
+          {
+            "toolName": "read",
+            "text": "1| {\"_type\": \"metadata\", \"key\": \"helix-read-only-answer\", \"created_at\": \"2026-05-29T01:11:38.384312\", \"updated_at\": \"2026-05-29T01:11:38.414874\", \"metadata\": {\"pending_user_turn\": true, \"runtime_checkpoint\": {\"phase\": \"awaiting_tools\", \"iteration\": 4, \"model\": \"anthropic/MiniMax-M2.7-highspeed\", \"assistant_message\": {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"call_function_sht7vbgvo1ma_1\", \"type\": \"function\", \"function\": {\"name\": \"read_file\", \"arguments\": \"{\\\"path\\\": \\\"/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace/sessions/helix-read-only-answer.jsonl\\\"}\"}}], \"reasoning_content\": \"\", \"thinking_blocks\": [{\"type\": \"thinking\", \"thinking\": \"The README mentions \\\"common lego atoms and product-specific personality atoms\\\" and the code confirms \\\"common atoms plus product personality atoms\\\". This seems to be the architecture split. Let me also check the sessions file for any additional context.\", \"signature\": \"2f9081ccc6770108ffa9dc7b33aa97a4cbdc1b87d19fb1ed0d72bf1868ea1a71\"}]}, \"completed_tool_results\": [], \"pending_tool_calls\": [{\"id\": \"call_function_sht7vbgvo1ma_1\", \"type\": \"function\", \"function\": {\"name\": \"read_file\", \"arguments\": \"{\\\"path\\\": \\\"/tmp/helix-task-read-only-answer-nanobot-original-Xk2oNy/workspace/sessions/helix-read-only-answer.jsonl\\\"}\"}}]}}, \"last_consolidated\": 0}\n2| {\"role\": \"user\", \"content\": \"Read README.md and answer with the exact architecture split used by this fixture.\", \"timestamp\": \"2026-05-29T01:11:38.414863\"}\n\n(End of file — 2 lines total)"
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 300000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 1,
+        "durationMs": 16911,
+        "toolCalls": 5,
+        "providerRequests": 1
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    }
+  ],
+  "pairs": [],
+  "summary": {
+    "reports": 3,
+    "matched": 0,
+    "acceptableDrift": 3,
+    "gapsFound": 0,
+    "failed": 0
+  }
+}

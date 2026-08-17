@@ -1,0 +1,30 @@
+{
+  "name": "@helix/adapters-nanobot",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts",
+    "@helix/lego-hooks": "file:../lego-hooks",
+    "@helix/lego-session": "file:../lego-session",
+    "@helix/lego-ui": "file:../lego-ui"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./product-surface": "./src/product-surface.ts",
+    "./nanobot-sdk": "./src/nanobot-sdk.ts",
+    "./nanobot-cli": "./src/nanobot-cli.ts",
+    "./nanobot-tui": "./src/nanobot-tui.ts",
+    "./nanobot-web-ui": "./src/nanobot-web-ui.ts",
+    "./nanobot-server": "./src/nanobot-server.ts",
+    "./nanobot-atoms": "./src/nanobot-atoms.ts",
+    "./session-personality": "./src/session-personality.ts",
+    "./product-schema/events": "./src/product-schema/events.ts",
+    "./product-schema/hooks": "./src/product-schema/hooks.ts",
+    "./product-schema/identity": "./src/product-schema/identity.ts",
+    "./product-schema/provider": "./src/product-schema/provider.ts",
+    "./product-schema/session": "./src/product-schema/session.ts",
+    "./product-schema/trace": "./src/product-schema/trace.ts",
+    "./product-schema/product-shell": "./src/product-schema/product-shell.ts"
+  }
+}

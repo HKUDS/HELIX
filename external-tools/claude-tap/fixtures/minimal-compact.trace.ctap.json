@@ -1,0 +1,62 @@
+{
+  "__claude_tap_compact_trace__": {
+    "version": 1,
+    "encoding": "json-blob-ref",
+    "record_count": 1,
+    "blob_count": 0
+  },
+  "records": [
+    {
+      "timestamp": "2026-06-14T00:00:00.000Z",
+      "request_id": "req_compact_fixture_1",
+      "turn": 1,
+      "duration_ms": 7,
+      "request": {
+        "method": "POST",
+        "path": "/v1/messages",
+        "headers": {
+          "authorization": "***"
+        },
+        "body": {
+          "model": "claude-test",
+          "system": "You are OpenCode.",
+          "messages": [
+            {
+              "role": "user",
+              "content": "Reply OK"
+            }
+          ],
+          "tools": [
+            {
+              "name": "read",
+              "input_schema": {
+                "type": "object"
+              }
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": {
+          "type": "message",
+          "model": "claude-test",
+          "content": [
+            {
+              "type": "text",
+              "text": "OK"
+            }
+          ],
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 2
+          }
+        }
+      }
+    }
+  ],
+  "blobs": {}
+}

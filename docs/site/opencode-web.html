@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenCode Web Cockpit</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f3f4ef;
+      --ink: #171915;
+      --muted: #666b60;
+      --line: #171915;
+      --panel: #fffdf7;
+      --mint: #8bd7c8;
+      --gold: #efc349;
+      --red: #d95f43;
+      --blue: #3867c8;
+      --soft: #dde3d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgb(23 25 21 / 0.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgb(23 25 21 / 0.06) 1px, transparent 1px),
+        var(--paper);
+      background-size: 22px 22px;
+      font-family: "Avenir Next", "Gill Sans", ui-sans-serif, system-ui, sans-serif;
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 24px 0 38px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: end;
+      border-bottom: 4px solid var(--line);
+      padding-bottom: 16px;
+    }
+
+    h1, h2, p { margin: 0; }
+
+    h1 {
+      font-size: 2.35rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 0.92rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      border: 2px solid var(--line);
+      background: var(--gold);
+      padding: 9px 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .fact {
+      border: 2px solid var(--line);
+      background: var(--panel);
+      padding: 12px;
+      box-shadow: 5px 5px 0 var(--soft);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(310px, 0.8fr);
+      gap: 18px;
+      margin-top: 22px;
+      align-items: start;
+    }
+
+    section {
+      border-top: 3px solid var(--line);
+      padding-top: 12px;
+      min-width: 0;
+    }
+
+    section + section {
+      margin-top: 20px;
+    }
+
+    ul {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      border: 2px solid var(--line);
+      background: var(--panel);
+      padding: 8px 10px;
+    }
+
+    li:nth-child(3n + 1) { border-left: 10px solid var(--mint); }
+    li:nth-child(3n + 2) { border-left: 10px solid var(--red); }
+    li:nth-child(3n) { border-left: 10px solid var(--blue); }
+
+    li span {
+      overflow-wrap: anywhere;
+      font-weight: 850;
+    }
+
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    code {
+      border: 1px solid var(--line);
+      background: #eef7d4;
+      padding: 3px 6px;
+      font-size: 0.76rem;
+      white-space: nowrap;
+    }
+
+    pre {
+      overflow: auto;
+      border: 2px solid var(--line);
+      background: #151915;
+      color: #ecf4dc;
+      padding: 12px;
+      margin: 0;
+      min-height: 170px;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 840px) {
+      header,
+      .facts,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main data-opencode-web="ready">
+    <header>
+      <div>
+        <h1>OpenCode Web Cockpit</h1>
+        <p>Local workspace</p>
+      </div>
+      <div class="badge">READY</div>
+    </header>
+
+    <div class="facts">
+      <div class="fact"><strong>293</strong><span>recipe modules</span></div>
+      <div class="fact"><strong>12</strong><span>tools</span></div>
+      <div class="fact"><strong>8</strong><span>providers</span></div>
+      <div class="fact"><strong>64</strong><span>services</span></div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <section aria-labelledby="modules-title">
+          <h2 id="modules-title">Recipe Graph</h2>
+          <ul><li><span>block.manifest.schema</span><code>base</code></li><li><span>block.manifest.normalizer</span><code>base</code></li><li><span>capability.ref.normalizer</span><code>base</code></li><li><span>resource.grant.validator</span><code>base</code></li><li><span>recipe.binding.lockfile</span><code>base</code></li><li><span>conformance.ref.fixture-registry</span><code>base</code></li><li><span>identity.id-generator.deterministic</span><code>base</code></li><li><span>identity.id-generator.random</span><code>base</code></li><li><span>identity.clock.system</span><code>base</code></li><li><span>identity.clock.deterministic</span><code>base</code></li><li><span>identity.workspace-resolver.cwd</span><code>base</code></li><li><span>identity.workspace-resolver.configured</span><code>base</code></li><li><span>event.envelope.common</span><code>base</code></li><li><span>event.log.memory</span><code>base</code></li><li><span>event.log.jsonl</span><code>base</code></li><li><span>event.log.projection</span><code>base</code></li><li><span>trace.recorder.memory</span><code>base</code></li><li><span>trace.recorder.jsonl</span><code>base</code></li><li><span>runtime.module-catalog.memory</span><code>base</code></li><li><span>runtime.capability-resolver.default</span><code>base</code></li><li><span>runtime.binding-planner.lockfile</span><code>base</code></li><li><span>runtime.lifecycle-runner.scoped</span><code>base</code></li><li><span>runtime.assembly-graph.lockfile</span><code>base</code></li><li><span>common.runtime.acceptance-controller.default</span><code>base</code></li><li><span>common.runtime.acceptance-evidence.default</span><code>base</code></li><li><span>session.id-generator.deterministic</span><code>base</code></li><li><span>session.store.memory</span><code>base</code></li><li><span>session.store.jsonl-tree</span><code>base</code></li><li><span>session.store.sqlite-projection</span><code>base</code></li><li><span>session.event-log.memory</span><code>base</code></li><li><span>session.event-log.jsonl</span><code>base</code></li><li><span>session.event-log.projection</span><code>base</code></li><li><span>session.reader.memory</span><code>base</code></li><li><span>session.reader.service</span><code>base</code></li><li><span>session.writer.memory</span><code>base</code></li><li><span>session.writer.service</span><code>base</code></li><li><span>session.message-store.memory</span><code>base</code></li><li><span>session.message-store.service</span><code>base</code></li><li><span>session.branching.memory</span><code>base</code></li><li><span>session.branching.service</span><code>base</code></li><li><span>session.branch-graph.memory</span><code>base</code></li><li><span>session.branch-graph.service</span><code>base</code></li><li><span>session.projector.common-transcript</span><code>base</code></li><li><span>common.session.message-part-projector</span><code>base</code></li><li><span>session.pagination.memory</span><code>base</code></li><li><span>session.pagination.service</span><code>base</code></li><li><span>session.context-selector.memory</span><code>base</code></li><li><span>session.context-selector.service</span><code>base</code></li><li><span>session.compaction-records.memory</span><code>base</code></li><li><span>session.compaction-records.service</span><code>base</code></li><li><span>hook.bus.source-ordered</span><code>base</code></li><li><span>hook.observer-chain.source-ordered</span><code>base</code></li><li><span>hook.handler-chain.source-ordered</span><code>base</code></li><li><span>hook.scheduler.serial</span><code>base</code></li><li><span>hook.scheduler.parallel</span><code>base</code></li><li><span>hook.scheduler.source-ordered</span><code>base</code></li><li><span>hook.cleanup-scope.registry</span><code>base</code></li><li><span>hook.error-policy.fail-fast</span><code>base</code></li><li><span>hook.error-policy.collect-and-continue</span><code>base</code></li><li><span>registry.tool.common</span><code>base</code></li><li><span>registry.command.common</span><code>base</code></li><li><span>registry.provider.common</span><code>base</code></li><li><span>registry.ui.common</span><code>base</code></li><li><span>turn.input-normalizer.text</span><code>base</code></li><li><span>turn.context-builder.transcript</span><code>base</code></li><li><span>turn.prompt-assembler.common</span><code>base</code></li><li><span>turn.provider-request-builder.common</span><code>base</code></li><li><span>turn.provider-stream-runner.common</span><code>base</code></li><li><span>turn.stream-reducer.common</span><code>base</code></li><li><span>turn.tool-call-planner.parallel-batch</span><code>base</code></li><li><span>turn.tool-call-planner.sequential</span><code>base</code></li><li><span>turn.tool-executor.common</span><code>base</code></li><li><span>turn.result-recorder.common</span><code>base</code></li><li><span>turn.retry-policy.none</span><code>base</code></li><li><span>turn.retry-policy.fixed</span><code>base</code></li><li><span>turn.retry-policy.exponential</span><code>base</code></li><li><span>turn.continuation-policy.none</span><code>base</code></li><li><span>turn.continuation-policy.synthetic-continue</span><code>base</code></li><li><span>turn.compaction-policy.none</span><code>base</code></li><li><span>turn.compaction-policy.token-threshold</span><code>base</code></li><li><span>turn.compaction-policy.manual</span><code>base</code></li><li><span>turn.stop-condition.no-tool-calls</span><code>base</code></li><li><span>turn.stop-condition.max-steps</span><code>base</code></li><li><span>common.agent-loop.request-boundary.default</span><code>base</code></li><li><span>common.agent-loop.final-summary.default</span><code>base</code></li><li><span>tool-pack.echo</span><code>base</code></li><li><span>tool-pack.filesystem</span><code>base</code></li><li><span>tool-pack.shell</span><code>base</code></li><li><span>tool-pack.meta</span><code>base</code></li><li><span>tool.definition.echo</span><code>base</code></li><li><span>tool.definition.filesystem</span><code>base</code></li><li><span>tool.definition.shell</span><code>base</code></li><li><span>tool.definition.meta</span><code>base</code></li><li><span>tool.schema.json-schema</span><code>base</code></li><li><span>tool.schema.typebox</span><code>base</code></li><li><span>tool.schema.zod-compatible</span><code>base</code></li><li><span>tool.schema.effect-compatible</span><code>base</code></li><li><span>tool.schema.typescript-validator</span><code>base</code></li><li><span>common.tools.schema.default</span><code>base</code></li><li><span>common.tools.batch-scheduler.default</span><code>base</code></li><li><span>tool.permission.always-allow</span><code>base</code></li><li><span>tool.permission.always-deny</span><code>base</code></li><li><span>tool.permission.ask-hook</span><code>base</code></li><li><span>tool.permission.workspace-scoped</span><code>base</code></li><li><span>tool.permission.product-personality</span><code>base</code></li><li><span>tool.executor.default</span><code>base</code></li><li><span>tool.executor.echo-only</span><code>base</code></li><li><span>tool.result.text</span><code>base</code></li><li><span>tool.result.json</span><code>base</code></li><li><span>tool.result.error</span><code>base</code></li><li><span>tool.result.truncated</span><code>base</code></li><li><span>common.tools.result-projector.default</span><code>base</code></li><li><span>tool.audit.memory</span><code>base</code></li><li><span>tool.audit.jsonl</span><code>base</code></li><li><span>filesystem.local</span><code>base</code></li><li><span>filesystem.memory</span><code>base</code></li><li><span>filesystem.readonly</span><code>base</code></li><li><span>filesystem.workspace-scoped</span><code>base</code></li><li><span>process-runner.disabled</span><code>base</code></li><li><span>process-runner.local</span><code>base</code></li><li><span>process-runner.dry-run</span><code>base</code></li><li><span>process-runner.sandbox</span><code>base</code></li><li><span>provider.transport.fetch</span><code>base</code></li><li><span>provider.transport.mock-sse</span><code>base</code></li><li><span>provider.transport.cassette</span><code>base</code></li><li><span>provider.auth.api-key</span><code>base</code></li><li><span>provider.auth.bearer</span><code>base</code></li><li><span>provider.auth.query-key</span><code>base</code></li><li><span>provider.model-registry.static</span><code>base</code></li><li><span>provider.model-registry.env</span><code>base</code></li><li><span>provider.model-registry.remote-cache</span><code>base</code></li><li><span>provider.request-shape.openai-compatible</span><code>base</code></li><li><span>provider.request-shape.anthropic</span><code>base</code></li><li><span>provider.request-shape.google</span><code>base</code></li><li><span>provider.stream-parser.sse</span><code>base</code></li><li><span>provider.stream-parser.json</span><code>base</code></li><li><span>provider.stream-parser.cassette</span><code>base</code></li><li><span>common.provider.streaming-delta-recorder</span><code>base</code></li><li><span>provider.event-normalizer.common</span><code>base</code></li><li><span>provider.event-normalizer.openai-compatible</span><code>base</code></li><li><span>provider.event-normalizer.anthropic</span><code>base</code></li><li><span>provider.event-normalizer.google</span><code>base</code></li><li><span>provider.usage-normalizer.common</span><code>base</code></li><li><span>provider.usage-normalizer.pricing-table</span><code>base</code></li><li><span>provider.cassette.jsonl</span><code>base</code></li><li><span>provider.cassette.memory</span><code>base</code></li><li><span>provider.stream.openai-compatible</span><code>base</code></li><li><span>provider.stream.openrouter</span><code>base</code></li><li><span>provider.stream.anthropic</span><code>base</code></li><li><span>provider.stream.google</span><code>base</code></li><li><span>common.provider.stream-projector</span><code>base</code></li><li><span>config.source.env</span><code>base</code></li><li><span>config.source.file</span><code>base</code></li><li><span>config.source.cli-override</span><code>base</code></li><li><span>config.merge.deep</span><code>base</code></li><li><span>config.merge.replace</span><code>base</code></li><li><span>config.merge.priority</span><code>base</code></li><li><span>config.validator.schema</span><code>base</code></li><li><span>config.validator.typescript</span><code>base</code></li><li><span>resource.discovery.filesystem</span><code>base</code></li><li><span>resource.discovery.memory</span><code>base</code></li><li><span>prompt.resource-loader.text</span><code>base</code></li><li><span>prompt.resource-loader.markdown</span><code>base</code></li><li><span>prompt.system-builder.common</span><code>base</code></li><li><span>prompt.tool-renderer.common</span><code>base</code></li><li><span>prompt.model-capability-adapter.common</span><code>base</code></li><li><span>prompt.compaction-adapter.common</span><code>base</code></li><li><span>ui.event-loop.shared-tui</span><code>base</code></li><li><span>ui.renderer.noop</span><code>base</code></li><li><span>ui.renderer.text</span><code>base</code></li><li><span>ui.renderer.html</span><code>base</code></li><li><span>ui.command-router.common</span><code>base</code></li><li><span>ui.theme-registry.common</span><code>base</code></li><li><span>ui.input-normalizer.common</span><code>base</code></li><li><span>ui.snapshot.common</span><code>base</code></li><li><span>opencode.block.compatibility-metadata</span><code>base</code></li><li><span>opencode.capability.aliases</span><code>base</code></li><li><span>opencode.resource.grant-defaults</span><code>base</code></li><li><span>opencode.recipe.binding-aliases</span><code>base</code></li><li><span>opencode.conformance.product-gate</span><code>base</code></li><li><span>opencode.identity.id-generator</span><code>base</code></li><li><span>opencode.identity.clock-format</span><code>base</code></li><li><span>opencode.identity.workspace-resolver</span><code>base</code></li><li><span>opencode.event.envelope-bridge</span><code>base</code></li><li><span>opencode.event.syncevent-bridge</span><code>base</code></li><li><span>opencode.trace.debug-surface</span><code>base</code></li><li><span>opencode.runtime.module-catalog</span><code>base</code></li><li><span>opencode.runtime.module-aliases</span><code>base</code></li><li><span>opencode.runtime.capability-resolver</span><code>base</code></li><li><span>opencode.runtime.capability-aliases</span><code>base</code></li><li><span>opencode.runtime.binding-planner</span><code>base</code></li><li><span>opencode.runtime.binding-defaults</span><code>base</code></li><li><span>opencode.runtime.lifecycle-runner</span><code>base</code></li><li><span>opencode.runtime.lifecycle-defaults</span><code>base</code></li><li><span>opencode.runtime.assembly-graph</span><code>base</code></li><li><span>opencode.runtime.graph-labels</span><code>base</code></li><li><span>opencode.runtime.acceptance-controller.native-like</span><code>base</code></li><li><span>opencode.runtime.acceptance-evidence.native-like</span><code>base</code></li><li><span>opencode.session.id-generator</span><code>base</code></li><li><span>opencode.session.store.sqlite-projection</span><code>base</code></li><li><span>opencode.session.event-log.syncevent</span><code>base</code></li><li><span>opencode.session.reader.sqlite-service</span><code>base</code></li><li><span>opencode.session.writer.sqlite-service</span><code>base</code></li><li><span>opencode.session.message-store.sqlite-service</span><code>base</code></li><li><span>opencode.session.branching.sqlite-service</span><code>base</code></li><li><span>opencode.session.branch-graph.fork-before-message</span><code>base</code></li><li><span>opencode.session.projector.syncevent</span><code>base</code></li><li><span>opencode.session.projector.message-v2</span><code>base</code></li><li><span>opencode.session.message-part-projector.native-like</span><code>base</code></li><li><span>opencode.session.pagination.update-time-cursor</span><code>base</code></li><li><span>opencode.session.context-selector.message-v2</span><code>base</code></li><li><span>opencode.session.compaction-event</span><code>base</code></li><li><span>opencode.session.diff.sqlite-service</span><code>base</code></li><li><span>opencode.hook.plugin-bridge</span><code>base</code></li><li><span>opencode.plugin.loader</span><code>base</code></li><li><span>opencode.hook.observer-adapter</span><code>base</code></li><li><span>opencode.hook.handler-adapter</span><code>base</code></li><li><span>opencode.plugin.event-mapper</span><code>base</code></li><li><span>opencode.hook.scheduler-defaults</span><code>base</code></li><li><span>opencode.plugin.hot-reload-cleanup</span><code>base</code></li><li><span>opencode.hook.error-defaults</span><code>base</code></li><li><span>opencode.registry.tool-definition</span><code>base</code></li><li><span>opencode.plugin.registry-bridge</span><code>base</code></li><li><span>opencode.registry.command</span><code>base</code></li><li><span>opencode.registry.provider-plugin</span><code>base</code></li><li><span>opencode.plugin.provider-registry-bridge</span><code>base</code></li><li><span>opencode.registry.ui-provider</span><code>base</code></li><li><span>opencode.plugin.ui-registry-bridge</span><code>base</code></li><li><span>opencode.turn.input-normalizer</span><code>base</code></li><li><span>opencode.turn.context-builder</span><code>base</code></li><li><span>opencode.turn.prompt-assembler</span><code>base</code></li><li><span>opencode.turn.provider-request-builder</span><code>base</code></li><li><span>opencode.turn.provider-stream-runner</span><code>base</code></li><li><span>opencode.turn.stream-reducer</span><code>base</code></li><li><span>opencode.turn.tool-call-planner</span><code>base</code></li><li><span>opencode.turn.tool-executor</span><code>base</code></li><li><span>opencode.turn.result-recorder</span><code>base</code></li><li><span>opencode.turn.retry-policy</span><code>base</code></li><li><span>opencode.turn.continuation-policy</span><code>base</code></li><li><span>opencode.turn.compaction-policy</span><code>base</code></li><li><span>opencode.turn.stop-condition</span><code>base</code></li><li><span>opencode.agent-loop.request-boundary.native-like</span><code>base</code></li><li><span>opencode.agent-loop.final-summary.native-like</span><code>base</code></li><li><span>opencode.tool-pack.native</span><code>base</code></li><li><span>opencode.tool-pack.compatibility</span><code>base</code></li><li><span>opencode.tool.definition-plugin-bridge</span><code>base</code></li><li><span>opencode.tool.schema-bridge</span><code>base</code></li><li><span>opencode.tools.schema.native-like</span><code>base</code></li><li><span>opencode.tools.batch-scheduler.native-like</span><code>base</code></li><li><span>opencode.permission.ask-bridge</span><code>base</code></li><li><span>opencode.plugin.permission-bridge</span><code>base</code></li><li><span>opencode.tool.permission-render-bridge</span><code>base</code></li><li><span>opencode.tool.result-render-bridge</span><code>base</code></li><li><span>opencode.tools.result-projector.native-like</span><code>base</code></li><li><span>opencode.tool.status-bridge</span><code>base</code></li><li><span>opencode.workspace-filesystem-bridge</span><code>base</code></li><li><span>opencode.shell.env-bridge</span><code>base</code></li><li><span>opencode.provider.transport-instrumentation</span><code>base</code></li><li><span>opencode.provider.auth-descriptor</span><code>base</code></li><li><span>opencode.provider.model-plugin</span><code>base</code></li><li><span>opencode.provider.request-options</span><code>base</code></li><li><span>opencode.provider.parser-observer</span><code>base</code></li><li><span>opencode.provider.streaming-delta-recorder.native-like</span><code>base</code></li><li><span>opencode.provider.event-observer</span><code>base</code></li><li><span>opencode.provider.usage-renderer</span><code>base</code></li><li><span>opencode.provider.cassette-artifact</span><code>base</code></li><li><span>opencode.provider.plugin-descriptor</span><code>base</code></li><li><span>opencode.provider.stream-projector.native-like</span><code>base</code></li><li><span>opencode.config.source</span><code>base</code></li><li><span>opencode.config.precedence</span><code>base</code></li><li><span>opencode.config.validator</span><code>base</code></li><li><span>opencode.resource.discovery.instruction</span><code>base</code></li><li><span>opencode.prompt.resource-loader.instruction</span><code>base</code></li><li><span>opencode.prompt.mode-builder</span><code>base</code></li><li><span>opencode.prompt.tool-renderer.provider-tools</span><code>base</code></li><li><span>opencode.prompt.model-capability-adapter.provider-prompt</span><code>base</code></li><li><span>opencode.prompt.compaction-adapter.build-prompt</span><code>base</code></li><li><span>opencode.ui.event-loop</span><code>base</code></li><li><span>opencode.tui.shell</span><code>base</code></li><li><span>opencode.ui.renderer</span><code>base</code></li><li><span>opencode.ui.command-router</span><code>base</code></li><li><span>opencode.ui.theme-registry</span><code>base</code></li><li><span>opencode.ui.input-normalizer</span><code>base</code></li><li><span>opencode.ui.snapshot</span><code>base</code></li><li><span>opencode.product-shell.sdk</span><code>base</code></li><li><span>opencode.product-shell.harness</span><code>base</code></li><li><span>opencode.product-shell.workspace</span><code>base</code></li><li><span>opencode.product-shell.control-plane</span><code>base</code></li><li><span>opencode.product-shell.server</span><code>base</code></li><li><span>opencode.product-shell.tui</span><code>base</code></li><li><span>opencode.product-shell.web</span><code>base</code></li><li><span>opencode.product-shell.desktop</span><code>base</code></li><li><span>opencode.product-shell.slack</span><code>base</code></li></ul>
+        </section>
+      </div>
+      <aside>
+        <section aria-labelledby="tui-title">
+          <h2 id="tui-title">TUI Surface</h2>
+          <pre>OpenCode :: ready
+run / sessions / graph / providers / tools</pre>
+        </section>
+        <section aria-labelledby="tools-title">
+          <h2 id="tools-title">Tools</h2>
+          <ul><li><span>bash</span><code>tool</code></li><li><span>edit</span><code>tool</code></li><li><span>glob</span><code>tool</code></li><li><span>grep</span><code>tool</code></li><li><span>invalid</span><code>tool</code></li><li><span>question</span><code>tool</code></li><li><span>read</span><code>tool</code></li><li><span>skill</span><code>tool</code></li><li><span>task</span><code>tool</code></li><li><span>todowrite</span><code>tool</code></li><li><span>webfetch</span><code>tool</code></li><li><span>write</span><code>tool</code></li></ul>
+        </section>
+        <section aria-labelledby="providers-title">
+          <h2 id="providers-title">Providers</h2>
+          <ul><li><span>opencode-builtin-azure</span><code>provider</code></li><li><span>opencode-builtin-cloudflare</span><code>provider</code></li><li><span>opencode-builtin-codex</span><code>provider</code></li><li><span>opencode-builtin-digitalocean</span><code>provider</code></li><li><span>opencode-builtin-github-copilot</span><code>provider</code></li><li><span>opencode-builtin-gitlab</span><code>provider</code></li><li><span>opencode-builtin-poe</span><code>provider</code></li><li><span>opencode-builtin-xai</span><code>provider</code></li></ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

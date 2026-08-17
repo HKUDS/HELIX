@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "native-cadence-fixture-replay",
+  "generatedAt": "2026-06-14T08:08:28.549Z",
+  "sourceFixturePath": "docs/reports/pi-livecodebench-native-cadence-fixtures.json",
+  "sourceGeneratedAt": "2026-06-14T08:08:23.458Z",
+  "verification": {
+    "ok": true,
+    "checks": [
+      {
+        "id": "native-cadence-fixture.schema",
+        "ok": true,
+        "message": "Native cadence fixture set uses schema version 1."
+      },
+      {
+        "id": "native-cadence-fixture.fixtures",
+        "ok": true,
+        "message": "Fixture set includes at least one native cadence fixture."
+      },
+      {
+        "id": "native-cadence-fixture.no-secrets",
+        "ok": true,
+        "message": "Fixture set does not contain credential-shaped fields."
+      },
+      {
+        "id": "native-cadence-fixture.no-host-paths",
+        "ok": true,
+        "message": "Fixture set omits host-specific temporary workspace paths."
+      },
+      {
+        "id": "native-cadence-fixture.provider-shape",
+        "ok": true,
+        "message": "Every fixture has a provider shape."
+      },
+      {
+        "id": "native-cadence-fixture.observation-shape",
+        "ok": true,
+        "message": "Every fixture declares native observation visibility and lossiness."
+      },
+      {
+        "id": "native-cadence-fixture.projector-replay-metadata",
+        "ok": true,
+        "message": "Every fixture includes native events, chunk classes, message parts, and projection loss metadata."
+      },
+      {
+        "id": "native-cadence-fixture.replay",
+        "ok": true,
+        "message": "Every fixture replays into the same cadence signature."
+      }
+    ],
+    "issues": []
+  },
+  "replays": [
+    {
+      "product": "pi-mono",
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceSignature": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 2,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 3,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 4,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 5,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 6,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 7,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 8,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 12,
+            "eventCount": 116,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:read"
+            ],
+            "toolCallCount": 12
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 5,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 6,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 7,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 8,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 9,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "edits,path",
+            "result": "text"
+          },
+          {
+            "index": 10,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 11,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end"
+        ],
+        "traceEvents": [
+          "session",
+          "agent.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.update",
+          "tool.update",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.start",
+          "tool.end",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.update",
+          "tool.update",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 9,
+          "toolCalls": 12,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "projectionLosses": [
+        {
+          "field": "providerBoundary",
+          "lossiness": "semantic",
+          "reason": "providerBoundary is recorded with per-request visibility from cli-event evidence."
+        },
+        {
+          "field": "streamDelta",
+          "lossiness": "semantic",
+          "reason": "streamDelta is recorded with semantic visibility from stream-event evidence."
+        },
+        {
+          "field": "toolLifecycle",
+          "lossiness": "semantic",
+          "reason": "toolLifecycle is recorded with call-result visibility from cli-event evidence."
+        },
+        {
+          "field": "messageWrite",
+          "lossiness": "semantic",
+          "reason": "messageWrite is recorded with storage-event visibility from message-store evidence."
+        },
+        {
+          "field": "acceptance",
+          "lossiness": "semantic",
+          "reason": "acceptance is recorded with explicit-event visibility from runtime-policy evidence."
+        },
+        {
+          "field": "workspace",
+          "lossiness": "semantic",
+          "reason": "workspace is recorded with diff-only visibility from workspace-diff evidence."
+        },
+        {
+          "field": "providerRawFrame",
+          "lossiness": "semantic",
+          "reason": "providerRawFrame keeps provider raw-frame evidence as ordered semantic chunks, not exact upstream wire frames."
+        },
+        {
+          "field": "providerRawPayload",
+          "lossiness": "semantic",
+          "reason": "providerRawPayload keeps raw payload round-trip evidence as redacted shape summaries, not transport-private fields."
+        },
+        {
+          "field": "providerTiming",
+          "lossiness": "inferred",
+          "reason": "providerTiming keeps retry, delay, cancel, and abort timing evidence as sequence-level inference, not wall-clock exactness."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "fixtures": 1,
+    "products": [
+      "pi-mono"
+    ],
+    "tasks": [
+      "livecodebench-1883-b-palindrome-removal"
+    ],
+    "providerRequests": 9,
+    "projectionLosses": 9,
+    "fingerprint": "ca936f61b7af73c6"
+  }
+}

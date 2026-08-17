@@ -1,0 +1,1367 @@
+{
+  "id": "nanobot",
+  "strategies": [
+    {
+      "id": "turn.context-builder",
+      "config": {
+        "variant": "nanobot-session-history"
+      }
+    },
+    {
+      "id": "tool.permission",
+      "config": {
+        "source": "nanobot-tool-policy"
+      }
+    }
+  ],
+  "policies": [
+    {
+      "id": "shell.execution",
+      "config": {
+        "envHook": "runtime.events",
+        "helper": "python-subprocess"
+      }
+    },
+    {
+      "id": "extension.loading",
+      "config": {
+        "source": "nanobot-plugin-loader"
+      }
+    }
+  ],
+  "personalities": [
+    "nanobot-session-personality",
+    "nanobot-plugin-personality"
+  ],
+  "entrypoints": {
+    "cli": "@helix/cli run nanobot",
+    "sdk": "hooks.services['nanobot.sdk']",
+    "tui": "hooks.services['nanobot.tui']",
+    "webUI": "hooks.services['nanobot.web-ui']",
+    "server": "hooks.services['nanobot.server.factory']"
+  },
+  "conformance": {
+    "suite": [
+      "session",
+      "hooks",
+      "agent-loop",
+      "tools",
+      "port-contract-fixtures",
+      "product-shell-surfaces",
+      "fixture-replay",
+      "product-workflow-parity",
+      "upstream-e2e-parity",
+      "live-provider-parity",
+      "task-parity",
+      "reverse-assembly",
+      "block-ledger"
+    ]
+  },
+  "metadata": {
+    "upstream": "https://github.com/HKUDS/nanobot",
+    "upstreamCommit": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+    "upstreamTag": "v0.2.0",
+    "package": "nanobot-ai@0.2.0",
+    "graphLevel": "atom"
+  },
+  "version": "0.1.0",
+  "modules": [],
+  "atoms": [
+    {
+      "id": "block.manifest.schema"
+    },
+    {
+      "id": "block.manifest.normalizer"
+    },
+    {
+      "id": "capability.ref.normalizer"
+    },
+    {
+      "id": "resource.grant.validator"
+    },
+    {
+      "id": "recipe.binding.lockfile"
+    },
+    {
+      "id": "conformance.ref.fixture-registry"
+    },
+    {
+      "id": "identity.id-generator.deterministic"
+    },
+    {
+      "id": "identity.id-generator.random"
+    },
+    {
+      "id": "identity.clock.system"
+    },
+    {
+      "id": "identity.clock.deterministic"
+    },
+    {
+      "id": "identity.workspace-resolver.cwd"
+    },
+    {
+      "id": "identity.workspace-resolver.configured"
+    },
+    {
+      "id": "event.envelope.common"
+    },
+    {
+      "id": "event.log.memory"
+    },
+    {
+      "id": "event.log.jsonl"
+    },
+    {
+      "id": "event.log.projection"
+    },
+    {
+      "id": "trace.recorder.memory"
+    },
+    {
+      "id": "trace.recorder.jsonl"
+    },
+    {
+      "id": "runtime.module-catalog.memory"
+    },
+    {
+      "id": "runtime.capability-resolver.default"
+    },
+    {
+      "id": "runtime.binding-planner.lockfile"
+    },
+    {
+      "id": "runtime.lifecycle-runner.scoped"
+    },
+    {
+      "id": "runtime.assembly-graph.lockfile"
+    },
+    {
+      "id": "common.runtime.acceptance-controller.default"
+    },
+    {
+      "id": "common.runtime.acceptance-evidence.default"
+    },
+    {
+      "id": "session.id-generator.deterministic"
+    },
+    {
+      "id": "session.store.memory"
+    },
+    {
+      "id": "session.store.jsonl-tree"
+    },
+    {
+      "id": "session.store.sqlite-projection"
+    },
+    {
+      "id": "session.event-log.memory"
+    },
+    {
+      "id": "session.event-log.jsonl"
+    },
+    {
+      "id": "session.event-log.projection"
+    },
+    {
+      "id": "session.reader.memory"
+    },
+    {
+      "id": "session.reader.service"
+    },
+    {
+      "id": "session.writer.memory"
+    },
+    {
+      "id": "session.writer.service"
+    },
+    {
+      "id": "session.message-store.memory"
+    },
+    {
+      "id": "session.message-store.service"
+    },
+    {
+      "id": "session.branching.memory"
+    },
+    {
+      "id": "session.branching.service"
+    },
+    {
+      "id": "session.branch-graph.memory"
+    },
+    {
+      "id": "session.branch-graph.service"
+    },
+    {
+      "id": "session.projector.common-transcript"
+    },
+    {
+      "id": "common.session.message-part-projector"
+    },
+    {
+      "id": "session.pagination.memory"
+    },
+    {
+      "id": "session.pagination.service"
+    },
+    {
+      "id": "session.context-selector.memory"
+    },
+    {
+      "id": "session.context-selector.service"
+    },
+    {
+      "id": "session.compaction-records.memory"
+    },
+    {
+      "id": "session.compaction-records.service"
+    },
+    {
+      "id": "hook.bus.source-ordered"
+    },
+    {
+      "id": "hook.observer-chain.source-ordered"
+    },
+    {
+      "id": "hook.handler-chain.source-ordered"
+    },
+    {
+      "id": "hook.scheduler.serial"
+    },
+    {
+      "id": "hook.scheduler.parallel"
+    },
+    {
+      "id": "hook.scheduler.source-ordered"
+    },
+    {
+      "id": "hook.cleanup-scope.registry"
+    },
+    {
+      "id": "hook.error-policy.fail-fast"
+    },
+    {
+      "id": "hook.error-policy.collect-and-continue"
+    },
+    {
+      "id": "registry.tool.common"
+    },
+    {
+      "id": "registry.command.common"
+    },
+    {
+      "id": "registry.provider.common"
+    },
+    {
+      "id": "registry.ui.common"
+    },
+    {
+      "id": "turn.input-normalizer.text"
+    },
+    {
+      "id": "turn.context-builder.transcript"
+    },
+    {
+      "id": "turn.prompt-assembler.common"
+    },
+    {
+      "id": "turn.provider-request-builder.common"
+    },
+    {
+      "id": "turn.provider-stream-runner.common"
+    },
+    {
+      "id": "turn.stream-reducer.common"
+    },
+    {
+      "id": "turn.tool-call-planner.parallel-batch"
+    },
+    {
+      "id": "turn.tool-call-planner.sequential"
+    },
+    {
+      "id": "turn.tool-executor.common"
+    },
+    {
+      "id": "turn.result-recorder.common"
+    },
+    {
+      "id": "turn.retry-policy.none"
+    },
+    {
+      "id": "turn.retry-policy.fixed"
+    },
+    {
+      "id": "turn.retry-policy.exponential"
+    },
+    {
+      "id": "turn.continuation-policy.none"
+    },
+    {
+      "id": "turn.continuation-policy.synthetic-continue"
+    },
+    {
+      "id": "turn.compaction-policy.none"
+    },
+    {
+      "id": "turn.compaction-policy.token-threshold"
+    },
+    {
+      "id": "turn.compaction-policy.manual"
+    },
+    {
+      "id": "turn.stop-condition.no-tool-calls"
+    },
+    {
+      "id": "turn.stop-condition.max-steps"
+    },
+    {
+      "id": "common.agent-loop.request-boundary.default"
+    },
+    {
+      "id": "common.agent-loop.final-summary.default"
+    },
+    {
+      "id": "tool-pack.echo"
+    },
+    {
+      "id": "tool-pack.filesystem"
+    },
+    {
+      "id": "tool-pack.shell"
+    },
+    {
+      "id": "tool-pack.meta"
+    },
+    {
+      "id": "tool.definition.echo"
+    },
+    {
+      "id": "tool.definition.filesystem"
+    },
+    {
+      "id": "tool.definition.shell"
+    },
+    {
+      "id": "tool.definition.meta"
+    },
+    {
+      "id": "tool.schema.json-schema"
+    },
+    {
+      "id": "tool.schema.typebox"
+    },
+    {
+      "id": "tool.schema.zod-compatible"
+    },
+    {
+      "id": "tool.schema.effect-compatible"
+    },
+    {
+      "id": "tool.schema.typescript-validator"
+    },
+    {
+      "id": "common.tools.schema.default"
+    },
+    {
+      "id": "common.tools.batch-scheduler.default"
+    },
+    {
+      "id": "tool.permission.always-allow"
+    },
+    {
+      "id": "tool.permission.always-deny"
+    },
+    {
+      "id": "tool.permission.ask-hook"
+    },
+    {
+      "id": "tool.permission.workspace-scoped"
+    },
+    {
+      "id": "tool.permission.product-personality"
+    },
+    {
+      "id": "tool.executor.default"
+    },
+    {
+      "id": "tool.executor.echo-only"
+    },
+    {
+      "id": "tool.result.text"
+    },
+    {
+      "id": "tool.result.json"
+    },
+    {
+      "id": "tool.result.error"
+    },
+    {
+      "id": "tool.result.truncated"
+    },
+    {
+      "id": "common.tools.result-projector.default"
+    },
+    {
+      "id": "tool.audit.memory"
+    },
+    {
+      "id": "tool.audit.jsonl"
+    },
+    {
+      "id": "filesystem.local"
+    },
+    {
+      "id": "filesystem.memory"
+    },
+    {
+      "id": "filesystem.readonly"
+    },
+    {
+      "id": "filesystem.workspace-scoped"
+    },
+    {
+      "id": "process-runner.disabled"
+    },
+    {
+      "id": "process-runner.local"
+    },
+    {
+      "id": "process-runner.dry-run"
+    },
+    {
+      "id": "process-runner.sandbox"
+    },
+    {
+      "id": "provider.transport.fetch"
+    },
+    {
+      "id": "provider.transport.mock-sse"
+    },
+    {
+      "id": "provider.transport.cassette"
+    },
+    {
+      "id": "provider.auth.api-key"
+    },
+    {
+      "id": "provider.auth.bearer"
+    },
+    {
+      "id": "provider.auth.query-key"
+    },
+    {
+      "id": "provider.model-registry.static"
+    },
+    {
+      "id": "provider.model-registry.env"
+    },
+    {
+      "id": "provider.model-registry.remote-cache"
+    },
+    {
+      "id": "provider.request-shape.openai-compatible"
+    },
+    {
+      "id": "provider.request-shape.anthropic"
+    },
+    {
+      "id": "provider.request-shape.google"
+    },
+    {
+      "id": "provider.stream-parser.sse"
+    },
+    {
+      "id": "provider.stream-parser.json"
+    },
+    {
+      "id": "provider.stream-parser.cassette"
+    },
+    {
+      "id": "common.provider.streaming-delta-recorder"
+    },
+    {
+      "id": "provider.event-normalizer.common"
+    },
+    {
+      "id": "provider.event-normalizer.openai-compatible"
+    },
+    {
+      "id": "provider.event-normalizer.anthropic"
+    },
+    {
+      "id": "provider.event-normalizer.google"
+    },
+    {
+      "id": "provider.usage-normalizer.common"
+    },
+    {
+      "id": "provider.usage-normalizer.pricing-table"
+    },
+    {
+      "id": "provider.cassette.jsonl"
+    },
+    {
+      "id": "provider.cassette.memory"
+    },
+    {
+      "id": "provider.stream.openai-compatible"
+    },
+    {
+      "id": "provider.stream.openrouter"
+    },
+    {
+      "id": "provider.stream.anthropic"
+    },
+    {
+      "id": "provider.stream.google"
+    },
+    {
+      "id": "common.provider.stream-projector"
+    },
+    {
+      "id": "config.source.env"
+    },
+    {
+      "id": "config.source.file"
+    },
+    {
+      "id": "config.source.cli-override"
+    },
+    {
+      "id": "config.merge.deep"
+    },
+    {
+      "id": "config.merge.replace"
+    },
+    {
+      "id": "config.merge.priority"
+    },
+    {
+      "id": "config.validator.schema"
+    },
+    {
+      "id": "config.validator.typescript"
+    },
+    {
+      "id": "resource.discovery.filesystem"
+    },
+    {
+      "id": "resource.discovery.memory"
+    },
+    {
+      "id": "prompt.resource-loader.text"
+    },
+    {
+      "id": "prompt.resource-loader.markdown"
+    },
+    {
+      "id": "prompt.system-builder.common"
+    },
+    {
+      "id": "prompt.tool-renderer.common"
+    },
+    {
+      "id": "prompt.model-capability-adapter.common"
+    },
+    {
+      "id": "prompt.compaction-adapter.common"
+    },
+    {
+      "id": "ui.event-loop.shared-tui"
+    },
+    {
+      "id": "ui.renderer.noop"
+    },
+    {
+      "id": "ui.renderer.text"
+    },
+    {
+      "id": "ui.renderer.html"
+    },
+    {
+      "id": "ui.command-router.common"
+    },
+    {
+      "id": "ui.theme-registry.common"
+    },
+    {
+      "id": "ui.input-normalizer.common"
+    },
+    {
+      "id": "ui.snapshot.common"
+    },
+    {
+      "id": "nanobot.block.compatibility-metadata"
+    },
+    {
+      "id": "nanobot.capability.aliases"
+    },
+    {
+      "id": "nanobot.resource.grant-defaults"
+    },
+    {
+      "id": "nanobot.recipe.binding-aliases"
+    },
+    {
+      "id": "nanobot.conformance.product-gate"
+    },
+    {
+      "id": "nanobot.identity.id-generator"
+    },
+    {
+      "id": "nanobot.identity.clock-format"
+    },
+    {
+      "id": "nanobot.identity.workspace-resolver"
+    },
+    {
+      "id": "nanobot.event.envelope-bridge"
+    },
+    {
+      "id": "nanobot.event.bus-bridge"
+    },
+    {
+      "id": "nanobot.trace.debug-surface"
+    },
+    {
+      "id": "nanobot.runtime.module-aliases"
+    },
+    {
+      "id": "nanobot.runtime.capability-aliases"
+    },
+    {
+      "id": "nanobot.runtime.binding-defaults"
+    },
+    {
+      "id": "nanobot.runtime.lifecycle-defaults"
+    },
+    {
+      "id": "nanobot.runtime.graph-labels"
+    },
+    {
+      "id": "nanobot.runtime.acceptance-controller.native-like"
+    },
+    {
+      "id": "nanobot.runtime.acceptance-evidence.native-like"
+    },
+    {
+      "id": "nanobot.session.id-generator"
+    },
+    {
+      "id": "nanobot.session.store.jsonl"
+    },
+    {
+      "id": "nanobot.session.branch-graph.channel-key"
+    },
+    {
+      "id": "nanobot.session.projector.jsonl"
+    },
+    {
+      "id": "nanobot.session.message-part-projector.native-like"
+    },
+    {
+      "id": "nanobot.session.pagination.updated-at"
+    },
+    {
+      "id": "nanobot.session.context-selector.max-messages"
+    },
+    {
+      "id": "nanobot.session.goal-state"
+    },
+    {
+      "id": "nanobot.hook.plugin-bridge"
+    },
+    {
+      "id": "nanobot.plugin.loader"
+    },
+    {
+      "id": "nanobot.hook.observer-adapter"
+    },
+    {
+      "id": "nanobot.hook.handler-adapter"
+    },
+    {
+      "id": "nanobot.plugin.event-mapper"
+    },
+    {
+      "id": "nanobot.hook.scheduler-defaults"
+    },
+    {
+      "id": "nanobot.plugin.cleanup"
+    },
+    {
+      "id": "nanobot.hook.error-defaults"
+    },
+    {
+      "id": "nanobot.registry.tool-definition"
+    },
+    {
+      "id": "nanobot.tool.registry-bridge"
+    },
+    {
+      "id": "nanobot.registry.command"
+    },
+    {
+      "id": "nanobot.registry.provider-plugin"
+    },
+    {
+      "id": "nanobot.plugin.provider-registry-bridge"
+    },
+    {
+      "id": "nanobot.registry.ui-provider"
+    },
+    {
+      "id": "nanobot.plugin.ui-registry-bridge"
+    },
+    {
+      "id": "nanobot.turn.input-normalizer"
+    },
+    {
+      "id": "nanobot.turn.context-builder"
+    },
+    {
+      "id": "nanobot.turn.prompt-assembler"
+    },
+    {
+      "id": "nanobot.turn.provider-request-builder"
+    },
+    {
+      "id": "nanobot.turn.provider-stream-runner"
+    },
+    {
+      "id": "nanobot.turn.stream-reducer"
+    },
+    {
+      "id": "nanobot.turn.tool-call-planner"
+    },
+    {
+      "id": "nanobot.turn.tool-executor"
+    },
+    {
+      "id": "nanobot.turn.result-recorder"
+    },
+    {
+      "id": "nanobot.turn.retry-policy"
+    },
+    {
+      "id": "nanobot.turn.continuation-policy"
+    },
+    {
+      "id": "nanobot.turn.compaction-policy"
+    },
+    {
+      "id": "nanobot.turn.stop-condition"
+    },
+    {
+      "id": "nanobot.agent-loop.request-boundary.native-like"
+    },
+    {
+      "id": "nanobot.agent-loop.final-summary.native-like"
+    },
+    {
+      "id": "nanobot.tool-pack.compatibility"
+    },
+    {
+      "id": "nanobot.tool.definition-plugin-bridge"
+    },
+    {
+      "id": "nanobot.tool.schema-bridge"
+    },
+    {
+      "id": "nanobot.tools.schema.native-like"
+    },
+    {
+      "id": "nanobot.tools.batch-scheduler.native-like"
+    },
+    {
+      "id": "nanobot.permission.policy-bridge"
+    },
+    {
+      "id": "nanobot.tool.event-render-bridge"
+    },
+    {
+      "id": "nanobot.tool.result-event-bridge"
+    },
+    {
+      "id": "nanobot.tools.result-projector.native-like"
+    },
+    {
+      "id": "nanobot.tool.progress-event-bridge"
+    },
+    {
+      "id": "nanobot.workspace-filesystem-bridge"
+    },
+    {
+      "id": "nanobot.process-runner-bridge"
+    },
+    {
+      "id": "nanobot.provider.transport-instrumentation"
+    },
+    {
+      "id": "nanobot.provider.auth-descriptor"
+    },
+    {
+      "id": "nanobot.provider.model-registry"
+    },
+    {
+      "id": "nanobot.provider.request-options"
+    },
+    {
+      "id": "nanobot.provider.parser-observer"
+    },
+    {
+      "id": "nanobot.provider.streaming-delta-recorder.native-like"
+    },
+    {
+      "id": "nanobot.provider.event-observer"
+    },
+    {
+      "id": "nanobot.provider.usage-renderer"
+    },
+    {
+      "id": "nanobot.provider.cassette-artifact"
+    },
+    {
+      "id": "nanobot.provider.plugin-descriptor"
+    },
+    {
+      "id": "nanobot.provider.stream-projector.native-like"
+    },
+    {
+      "id": "nanobot.config.source"
+    },
+    {
+      "id": "nanobot.config.precedence"
+    },
+    {
+      "id": "nanobot.config.validator"
+    },
+    {
+      "id": "nanobot.prompt.agent-builder"
+    },
+    {
+      "id": "nanobot.tui.shell"
+    },
+    {
+      "id": "nanobot.ui.renderer"
+    },
+    {
+      "id": "nanobot.ui.command-router"
+    },
+    {
+      "id": "nanobot.ui.theme-registry"
+    },
+    {
+      "id": "nanobot.ui.input-normalizer"
+    },
+    {
+      "id": "nanobot.ui.snapshot"
+    }
+  ],
+  "productShells": [
+    {
+      "id": "nanobot.product-shell.sdk"
+    },
+    {
+      "id": "nanobot.product-shell.harness"
+    },
+    {
+      "id": "nanobot.product-shell.cli"
+    },
+    {
+      "id": "nanobot.product-shell.tui"
+    },
+    {
+      "id": "nanobot.product-shell.web-ui"
+    },
+    {
+      "id": "nanobot.product-shell.server"
+    }
+  ],
+  "bindings": [
+    {
+      "port": "block.manifest",
+      "module": "nanobot.block.compatibility-metadata"
+    },
+    {
+      "port": "capability.ref",
+      "module": "nanobot.capability.aliases"
+    },
+    {
+      "port": "resource.grant",
+      "module": "nanobot.resource.grant-defaults"
+    },
+    {
+      "port": "recipe.binding",
+      "module": "nanobot.recipe.binding-aliases"
+    },
+    {
+      "port": "conformance.ref",
+      "module": "nanobot.conformance.product-gate"
+    },
+    {
+      "port": "identity.id-generator",
+      "module": "nanobot.identity.id-generator"
+    },
+    {
+      "port": "identity.clock",
+      "module": "nanobot.identity.clock-format"
+    },
+    {
+      "port": "identity.workspace-resolver",
+      "module": "nanobot.identity.workspace-resolver"
+    },
+    {
+      "port": "event.envelope",
+      "module": "nanobot.event.envelope-bridge"
+    },
+    {
+      "port": "event.log",
+      "module": "nanobot.event.bus-bridge"
+    },
+    {
+      "port": "trace.recorder",
+      "module": "nanobot.trace.debug-surface"
+    },
+    {
+      "port": "product.shell",
+      "module": "nanobot.product-shell.sdk"
+    },
+    {
+      "port": "runtime.module-catalog",
+      "module": "runtime.module-catalog.memory"
+    },
+    {
+      "port": "runtime.capability-resolver",
+      "module": "runtime.capability-resolver.default"
+    },
+    {
+      "port": "runtime.binding-planner",
+      "module": "runtime.binding-planner.lockfile"
+    },
+    {
+      "port": "runtime.lifecycle-runner",
+      "module": "runtime.lifecycle-runner.scoped"
+    },
+    {
+      "port": "runtime.assembly-graph",
+      "module": "runtime.assembly-graph.lockfile"
+    },
+    {
+      "port": "runtime.acceptance-controller",
+      "module": "common.runtime.acceptance-controller.default"
+    },
+    {
+      "port": "runtime.acceptance-evidence",
+      "module": "common.runtime.acceptance-evidence.default"
+    },
+    {
+      "port": "session.id-generator",
+      "module": "nanobot.session.id-generator"
+    },
+    {
+      "port": "session.store",
+      "module": "nanobot.session.store.jsonl"
+    },
+    {
+      "port": "session.event-log",
+      "module": "session.event-log.memory"
+    },
+    {
+      "port": "session.reader",
+      "module": "session.reader.memory"
+    },
+    {
+      "port": "session.writer",
+      "module": "session.writer.memory"
+    },
+    {
+      "port": "session.message-store",
+      "module": "session.message-store.memory"
+    },
+    {
+      "port": "session.branching",
+      "module": "session.branching.memory"
+    },
+    {
+      "port": "session.branch-graph",
+      "module": "nanobot.session.branch-graph.channel-key"
+    },
+    {
+      "port": "session.projector",
+      "module": "nanobot.session.projector.jsonl"
+    },
+    {
+      "port": "session.message-part-projector",
+      "module": "nanobot.session.message-part-projector.native-like"
+    },
+    {
+      "port": "session.pagination",
+      "module": "nanobot.session.pagination.updated-at"
+    },
+    {
+      "port": "session.context-selector",
+      "module": "nanobot.session.context-selector.max-messages"
+    },
+    {
+      "port": "session.compaction-records",
+      "module": "nanobot.session.goal-state"
+    },
+    {
+      "port": "session.diff",
+      "module": "session.branching.memory"
+    },
+    {
+      "port": "hook.bus",
+      "module": "nanobot.plugin.loader"
+    },
+    {
+      "port": "hook.observer-chain",
+      "module": "nanobot.hook.observer-adapter"
+    },
+    {
+      "port": "hook.handler-chain",
+      "module": "nanobot.plugin.event-mapper"
+    },
+    {
+      "port": "hook.scheduler",
+      "module": "nanobot.hook.scheduler-defaults"
+    },
+    {
+      "port": "hook.cleanup-scope",
+      "module": "nanobot.plugin.cleanup"
+    },
+    {
+      "port": "hook.error-policy",
+      "module": "nanobot.hook.error-defaults"
+    },
+    {
+      "port": "tool.registry",
+      "module": "nanobot.tool.registry-bridge"
+    },
+    {
+      "port": "registry.command",
+      "module": "nanobot.registry.command"
+    },
+    {
+      "port": "registry.provider",
+      "module": "nanobot.plugin.provider-registry-bridge"
+    },
+    {
+      "port": "registry.ui",
+      "module": "nanobot.plugin.ui-registry-bridge"
+    },
+    {
+      "port": "turn.input-normalizer",
+      "module": "nanobot.turn.input-normalizer"
+    },
+    {
+      "port": "turn.context-builder",
+      "module": "nanobot.turn.context-builder"
+    },
+    {
+      "port": "turn.prompt-assembler",
+      "module": "nanobot.turn.prompt-assembler"
+    },
+    {
+      "port": "turn.provider-request-builder",
+      "module": "nanobot.turn.provider-request-builder"
+    },
+    {
+      "port": "turn.provider-stream-runner",
+      "module": "nanobot.turn.provider-stream-runner"
+    },
+    {
+      "port": "turn.stream-reducer",
+      "module": "nanobot.turn.stream-reducer"
+    },
+    {
+      "port": "turn.tool-call-planner",
+      "module": "nanobot.turn.tool-call-planner"
+    },
+    {
+      "port": "turn.tool-executor",
+      "module": "nanobot.turn.tool-executor"
+    },
+    {
+      "port": "turn.result-recorder",
+      "module": "nanobot.turn.result-recorder"
+    },
+    {
+      "port": "turn.retry-policy",
+      "module": "nanobot.turn.retry-policy"
+    },
+    {
+      "port": "turn.continuation-policy",
+      "module": "nanobot.turn.continuation-policy"
+    },
+    {
+      "port": "turn.compaction-policy",
+      "module": "nanobot.turn.compaction-policy"
+    },
+    {
+      "port": "turn.stop-condition",
+      "module": "nanobot.turn.stop-condition"
+    },
+    {
+      "port": "agent-loop.request-boundary",
+      "module": "common.agent-loop.request-boundary.default"
+    },
+    {
+      "port": "agent-loop.final-summary",
+      "module": "common.agent-loop.final-summary.default"
+    },
+    {
+      "port": "tools",
+      "module": "tool-pack.shell"
+    },
+    {
+      "port": "tool.definition",
+      "module": "nanobot.tool.definition-plugin-bridge"
+    },
+    {
+      "port": "tool.schema-adapter",
+      "module": "nanobot.tool.schema-bridge"
+    },
+    {
+      "port": "tools.schema",
+      "module": "common.tools.schema.default"
+    },
+    {
+      "port": "tools.batch-scheduler",
+      "module": "common.tools.batch-scheduler.default"
+    },
+    {
+      "port": "tool.permission-policy",
+      "module": "nanobot.permission.policy-bridge"
+    },
+    {
+      "port": "tool.executor",
+      "module": "tool.executor.default"
+    },
+    {
+      "port": "tool.result-normalizer",
+      "module": "nanobot.tool.result-event-bridge"
+    },
+    {
+      "port": "tools.result-projector",
+      "module": "common.tools.result-projector.default"
+    },
+    {
+      "port": "tool.audit-log",
+      "module": "nanobot.tool.progress-event-bridge"
+    },
+    {
+      "port": "filesystem.port",
+      "module": "filesystem.workspace-scoped"
+    },
+    {
+      "port": "process-runner.port",
+      "module": "process-runner.local"
+    },
+    {
+      "port": "provider.transport",
+      "module": "provider.transport.fetch"
+    },
+    {
+      "port": "provider.auth",
+      "module": "nanobot.provider.auth-descriptor"
+    },
+    {
+      "port": "provider.model-registry",
+      "module": "provider.model-registry.static"
+    },
+    {
+      "port": "provider.request-shape",
+      "module": "provider.request-shape.openai-compatible"
+    },
+    {
+      "port": "provider.stream-parser",
+      "module": "nanobot.provider.parser-observer"
+    },
+    {
+      "port": "provider.streaming-delta-recorder",
+      "module": "common.provider.streaming-delta-recorder"
+    },
+    {
+      "port": "provider.event-normalizer",
+      "module": "provider.event-normalizer.openai-compatible"
+    },
+    {
+      "port": "provider.usage-normalizer",
+      "module": "nanobot.provider.usage-renderer"
+    },
+    {
+      "port": "provider.cassette",
+      "module": "nanobot.provider.cassette-artifact"
+    },
+    {
+      "port": "provider.stream",
+      "module": "provider.stream.openai-compatible"
+    },
+    {
+      "port": "provider.stream-projector",
+      "module": "common.provider.stream-projector"
+    },
+    {
+      "port": "config.source",
+      "module": "nanobot.config.source"
+    },
+    {
+      "port": "config.merge-strategy",
+      "module": "nanobot.config.precedence"
+    },
+    {
+      "port": "config.validator",
+      "module": "nanobot.config.validator"
+    },
+    {
+      "port": "resource.discovery",
+      "module": "resource.discovery.filesystem"
+    },
+    {
+      "port": "prompt.resource-loader",
+      "module": "prompt.resource-loader.text"
+    },
+    {
+      "port": "prompt.system-builder",
+      "module": "nanobot.prompt.agent-builder"
+    },
+    {
+      "port": "prompt.tool-renderer",
+      "module": "prompt.tool-renderer.common"
+    },
+    {
+      "port": "prompt.model-capability-adapter",
+      "module": "prompt.model-capability-adapter.common"
+    },
+    {
+      "port": "prompt.compaction-adapter",
+      "module": "prompt.compaction-adapter.common"
+    },
+    {
+      "port": "ui.event-loop",
+      "module": "ui.event-loop.shared-tui"
+    },
+    {
+      "port": "ui.renderer",
+      "module": "nanobot.ui.renderer"
+    },
+    {
+      "port": "ui.command-router",
+      "module": "nanobot.ui.command-router"
+    },
+    {
+      "port": "ui.theme-registry",
+      "module": "nanobot.ui.theme-registry"
+    },
+    {
+      "port": "ui.input-normalizer",
+      "module": "nanobot.ui.input-normalizer"
+    },
+    {
+      "port": "ui.snapshot",
+      "module": "nanobot.ui.snapshot"
+    }
+  ],
+  "requiredCapabilities": [
+    "block.manifest",
+    "capability.ref",
+    "resource.grant",
+    "recipe.binding",
+    "conformance.ref",
+    "identity.id-generator",
+    "identity.clock",
+    "identity.workspace-resolver",
+    "event.envelope",
+    "event.log",
+    "trace.recorder",
+    "product.shell",
+    "runtime.module-catalog",
+    "runtime.capability-resolver",
+    "runtime.binding-planner",
+    "runtime.lifecycle-runner",
+    "runtime.assembly-graph",
+    "runtime.acceptance-controller",
+    "runtime.acceptance-evidence",
+    "session.id-generator",
+    "session.store",
+    "session.event-log",
+    "session.reader",
+    "session.writer",
+    "session.message-store",
+    "session.branching",
+    "session.branch-graph",
+    "session.projector",
+    "session.message-part-projector",
+    "session.pagination",
+    "session.context-selector",
+    "session.compaction-records",
+    "session.diff",
+    "hook.bus",
+    "hook.observer-chain",
+    "hook.handler-chain",
+    "hook.scheduler",
+    "hook.cleanup-scope",
+    "hook.error-policy",
+    "tool.registry",
+    "registry.command",
+    "registry.provider",
+    "registry.ui",
+    "turn.input-normalizer",
+    "turn.context-builder",
+    "turn.prompt-assembler",
+    "turn.provider-request-builder",
+    "turn.provider-stream-runner",
+    "turn.stream-reducer",
+    "turn.tool-call-planner",
+    "turn.tool-executor",
+    "turn.result-recorder",
+    "turn.retry-policy",
+    "turn.continuation-policy",
+    "turn.compaction-policy",
+    "turn.stop-condition",
+    "agent-loop.request-boundary",
+    "agent-loop.final-summary",
+    "tools",
+    "tool.definition",
+    "tool.schema-adapter",
+    "tools.schema",
+    "tools.batch-scheduler",
+    "tool.permission-policy",
+    "tool.executor",
+    "tool.result-normalizer",
+    "tools.result-projector",
+    "tool.audit-log",
+    "filesystem.port",
+    "process-runner.port",
+    "provider.transport",
+    "provider.auth",
+    "provider.model-registry",
+    "provider.request-shape",
+    "provider.stream-parser",
+    "provider.streaming-delta-recorder",
+    "provider.event-normalizer",
+    "provider.usage-normalizer",
+    "provider.cassette",
+    "provider.stream",
+    "provider.stream-projector",
+    "config.source",
+    "config.merge-strategy",
+    "config.validator",
+    "resource.discovery",
+    "prompt.resource-loader",
+    "prompt.system-builder",
+    "prompt.tool-renderer",
+    "prompt.model-capability-adapter",
+    "prompt.compaction-adapter",
+    "ui.event-loop",
+    "ui.renderer",
+    "ui.command-router",
+    "ui.theme-registry",
+    "ui.input-normalizer",
+    "ui.snapshot"
+  ]
+}

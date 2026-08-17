@@ -1,0 +1,1 @@
+Extension plugin tool fixture.

@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "pi-livecodebench-acceptance",
+  "generatedAt": "2026-06-14T08:12:29Z",
+  "todo": "TODO-030-PI-LIVECODEBENCH-ACCEPTANCE",
+  "scope": "stage-1-single-task",
+  "product": "pi-mono",
+  "comparison": {
+    "assembledLabel": "Helix assembled pi-agent",
+    "originalLabel": "native piagent reference"
+  },
+  "conclusion": {
+    "status": "conditional-pass",
+    "formalAcceptanceComplete": false,
+    "reason": "The single LiveCodeBench task passed functional, artifact, policy, session, and replay checks with acceptable cadence drift, but TODO-030 small-batch and formal batches have not been run. Full npm test passes after the native-merge conformance expectations were rebaselined."
+  },
+  "prerequisites": {
+    "headMatchesOriginMain": true,
+    "workingTreeClean": false,
+    "piInventory": {
+      "native": 87,
+      "compatibleBridge": 0,
+      "nativeLike": 0,
+      "previewShell": 7,
+      "metadataOnly": 11
+    },
+    "previewAndMetadataAreNonBlockingLabels": true
+  },
+  "taskRun": {
+    "taskID": "livecodebench-1883-b-palindrome-removal",
+    "provider": "live",
+    "modelID": "MiniMax-M2.7-highspeed",
+    "artifact": "docs/reports/pi-livecodebench-task-parity.json",
+    "generatedAt": "2026-06-14T08:08:03.603Z",
+    "summary": {
+      "reports": 2,
+      "matched": 1,
+      "acceptableDrift": 1,
+      "gapsFound": 0,
+      "failed": 0
+    },
+    "pair": {
+      "artifactParity": true,
+      "policyParity": true,
+      "cadenceParity": false,
+      "cadenceScore": 76,
+      "cadenceTarget": 70,
+      "cadenceLevel": "semantic-cadence",
+      "gapCount": 0
+    },
+    "reports": [
+      {
+        "mode": "assembled",
+        "status": "matched",
+        "modifiedFiles": [
+          "solution.py"
+        ],
+        "providerRequests": 4,
+        "toolCalls": 4,
+        "sessionPersisted": true,
+        "transcriptMessages": 2,
+        "traceEvents": 91
+      },
+      {
+        "mode": "original",
+        "status": "acceptable-drift",
+        "modifiedFiles": [
+          "solution.py"
+        ],
+        "providerRequests": 9,
+        "toolCalls": 12,
+        "sessionPersisted": true,
+        "transcriptMessages": 2,
+        "traceEvents": 116
+      }
+    ]
+  },
+  "drifts": [
+    {
+      "id": "cadence.provider-request-count",
+      "owningPlane": "native-projector",
+      "owningAtomID": "pi.native.projector",
+      "blockingLevel": "informational",
+      "assembled": "4",
+      "original": "9"
+    },
+    {
+      "id": "cadence.tool-call-count",
+      "owningPlane": "nondeterminism",
+      "owningAtomID": "pi.provider.nondeterminism",
+      "blockingLevel": "informational",
+      "assembled": "4",
+      "original": "12"
+    },
+    {
+      "id": "cadence.tool-sequence",
+      "owningPlane": "nondeterminism",
+      "owningAtomID": "pi.provider.nondeterminism",
+      "blockingLevel": "informational",
+      "assembled": "read>read>edit>bash",
+      "original": "bash>bash>bash>read>read>read>read>edit>edit>edit>bash>bash"
+    },
+    {
+      "id": "cadence.tool-batch",
+      "owningPlane": "nondeterminism",
+      "owningAtomID": "pi.provider.nondeterminism",
+      "blockingLevel": "informational",
+      "assembled": "[[\"read\"],[\"read\"],[\"edit\"],[\"bash\"]]",
+      "original": "[[\"bash\"],[\"bash\"],[\"bash\"],[\"read\"],[\"read\"],[\"read\"],[\"read\"],[\"edit\"],[\"edit\"],[\"edit\"],[\"bash\"],[\"bash\"]]"
+    },
+    {
+      "id": "cadence.final-summary",
+      "owningPlane": "nondeterminism",
+      "owningAtomID": "pi.provider.nondeterminism",
+      "blockingLevel": "informational",
+      "assembled": "normalized final summary differs",
+      "original": "normalized final summary differs"
+    },
+    {
+      "id": "cadence.streaming-delta",
+      "owningPlane": "native-projector",
+      "owningAtomID": "pi.provider.stream-projector.native-like",
+      "blockingLevel": "informational",
+      "assembled": "turn.pipeline.trace based stream",
+      "original": "session/message.delta/tool event stream"
+    },
+    {
+      "id": "cadence.early-accept",
+      "owningPlane": "agent-loop",
+      "owningAtomID": "pi.runtime.acceptance-controller.native-like",
+      "blockingLevel": "informational",
+      "assembled": "false",
+      "original": "true"
+    }
+  ],
+  "acceptanceTimingDrifts": [
+    {
+      "id": "acceptance.full-native-timing-unverified:pi-mono:livecodebench-1883-b-palindrome-removal",
+      "owningPlane": "runtime",
+      "owningAtomID": "pi.runtime.acceptance-controller.native-like",
+      "blockingLevel": "informational",
+      "assembled": {
+        "satisfiedAt": "tool-result-after",
+        "policySatisfiedAt": "tool-result-after",
+        "acceptanceVisibility": "inferred"
+      },
+      "original": {
+        "satisfiedAt": "tool-result-after",
+        "policySatisfiedAt": "tool-result-after",
+        "acceptanceVisibility": "explicit-event"
+      },
+      "requiresNativeFixture": true
+    }
+  ],
+  "nativeCadenceReplay": {
+    "fixtureArtifact": "docs/reports/pi-livecodebench-native-cadence-fixtures.json",
+    "replayArtifact": "docs/reports/pi-livecodebench-native-cadence-replay.json",
+    "verificationOK": true,
+    "summary": {
+      "fixtures": 1,
+      "providerRequests": 9,
+      "toolCalls": 12,
+      "projectionLosses": 9,
+      "fingerprint": "ca936f61b7af73c6"
+    }
+  },
+  "commands": [
+    {
+      "command": "npm run helix -- task-parity --task livecodebench-1883-b-palindrome-removal --product pi-mono --mode assembled,original --provider live --native-original --require-credentials --timeout-ms 300000 --out docs/reports/pi-livecodebench-task-parity.json --json",
+      "status": "passed"
+    },
+    {
+      "command": "npm run helix -- verify-task-parity --artifact docs/reports/pi-livecodebench-task-parity.json --product pi-mono --mode assembled,original --task livecodebench-1883-b-palindrome-removal --json",
+      "status": "passed"
+    },
+    {
+      "command": "npm run helix -- task-parity cadence-diagnose --artifact docs/reports/pi-livecodebench-task-parity.json --out docs/reports/pi-livecodebench-cadence-diagnosis.md --json",
+      "status": "passed"
+    },
+    {
+      "command": "npm run helix -- task-parity native-cadence-fixtures --artifact docs/reports/pi-livecodebench-task-parity.json --out docs/reports/pi-livecodebench-native-cadence-fixtures.json --json",
+      "status": "passed"
+    },
+    {
+      "command": "npm run helix -- task-parity replay-native-cadence --fixture docs/reports/pi-livecodebench-native-cadence-fixtures.json --out docs/reports/pi-livecodebench-native-cadence-replay.json --json",
+      "status": "passed"
+    },
+    {
+      "command": "npm run typecheck",
+      "status": "passed"
+    },
+    {
+      "command": "npm run assembly:contract:verify",
+      "status": "passed"
+    },
+    {
+      "command": "npm test",
+      "status": "passed",
+      "summary": {
+        "testFilesFailed": 0,
+        "testFilesPassed": 87,
+        "testsFailed": 0,
+        "testsPassed": 703,
+        "testsTotal": 703
+      }
+    }
+  ],
+  "visibleTestFailures": [],
+  "limitations": [
+    "This run is Pi-only and does not replace the four-product npm script artifact listed in TODO-030.",
+    "The 10-task small batch and 50-task formal batch have not been run.",
+    "The working tree was dirty before the run.",
+    "Full native stop/continue/accept timing remains semantic rather than exact."
+  ],
+  "nextActions": [
+    "Run a 10-task Pi LiveCodeBench batch from clean workspaces.",
+    "Record repeated live Pi runs to separate provider nondeterminism from structural cadence drift.",
+    "Capture exact Pi native stop/continue/accept timestamp fixtures.",
+    "Keep future conformance rebaselines tied to generated inventory and current-module audit reports."
+  ]
+}

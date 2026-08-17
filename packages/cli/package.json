@@ -1,0 +1,16 @@
+{
+  "name": "@helix/cli",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@helix/contracts": "file:../contracts",
+    "@helix/external-tools": "file:../external-tools",
+    "@helix/lego-provider": "file:../lego-provider",
+    "@helix/recipes": "file:../recipes"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

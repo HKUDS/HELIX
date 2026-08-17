@@ -1,0 +1,14 @@
+{
+  "name": "@helix/lego-ui",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./ui-atoms": "./src/ui-atoms.ts",
+    "./product-schema/opencode": "./src/product-schema/opencode.ts",
+    "./product-schema/pi": "./src/product-schema/pi.ts",
+    "./product-schema/nanobot": "./src/product-schema/nanobot.ts",
+    "./port-fixtures": "./src/port-fixtures.ts"
+  }
+}

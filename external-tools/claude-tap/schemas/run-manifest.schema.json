@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Helix external tool run manifest",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "artifactKind",
+    "runID",
+    "toolID",
+    "toolVersion",
+    "invocation",
+    "captureMode",
+    "startedAt",
+    "finishedAt",
+    "exitCode",
+    "artifacts"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactKind": { "const": "external-tool-run-manifest" },
+    "runID": { "type": "string", "minLength": 1 },
+    "toolID": { "const": "claude-tap" },
+    "toolVersion": { "type": "string", "minLength": 1 },
+    "invocation": {
+      "type": "object",
+      "required": ["strategy", "command", "resolvedCommand", "args", "cwd", "envAllowlist"],
+      "properties": {
+        "strategy": { "enum": ["binary", "uvx", "explicitPath"] },
+        "command": { "type": "string", "minLength": 1 },
+        "resolvedCommand": { "type": "string", "minLength": 1 },
+        "args": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "cwd": { "type": "string", "minLength": 1 },
+        "envAllowlist": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z_][A-Z0-9_]*$" }
+        }
+      }
+    },
+    "product": { "enum": ["opencode", "pi-mono", "hermes-agent", "codex"] },
+    "taskID": { "type": "string", "minLength": 1 },
+    "captureMode": { "enum": ["real-capture", "capture-only", "import-only", "dry-run"] },
+    "startedAt": { "type": "string" },
+    "finishedAt": { "type": "string" },
+    "exitCode": { "type": "integer", "minimum": 0 },
+    "artifacts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/artifact" }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["path", "hash", "bytes", "format", "role"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "hash": { "$ref": "#/$defs/sha256" },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "format": { "enum": ["jsonl", "json", "compact", "html", "log", "unknown"] },
+        "role": { "enum": ["raw-trace", "viewer", "log", "other"] }
+      }
+    }
+  }
+}

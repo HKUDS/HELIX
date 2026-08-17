@@ -1,0 +1,112 @@
+{
+  "taskID": "ui-or-cli-command",
+  "product": "opencode",
+  "mode": "assembled",
+  "transcriptSummary": {
+    "visibleText": "Handle the command-like request by setting one completed todo item named command-routed.\nRouting command state through the todo command atom.\n[tool:todo]\n- [completed] cmd-1: command-routed\nCommand route completed; command-routed is completed.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "todo",
+        "input": {
+          "action": "set",
+          "items": [
+            {
+              "id": "cmd-1",
+              "text": "command-routed",
+              "status": "completed"
+            }
+          ]
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "todo",
+        "text": "- [completed] cmd-1: command-routed"
+      }
+    ]
+  },
+  "workspaceDiff": [],
+  "checks": [
+    {
+      "id": "output.includes.command-route-completed",
+      "ok": true,
+      "message": "Visible output includes Command route completed."
+    },
+    {
+      "id": "output.includes.command-routed",
+      "ok": true,
+      "message": "Visible output includes command-routed."
+    },
+    {
+      "id": "tool.called.todo",
+      "ok": true,
+      "message": "Tool todo was called."
+    },
+    {
+      "id": "tool.result.includes.command-routed",
+      "ok": true,
+      "message": "A tool result includes command-routed."
+    },
+    {
+      "id": "workspace.diff.count",
+      "ok": true,
+      "message": "Workspace diff contains 0 entries."
+    }
+  ],
+  "gaps": []
+}

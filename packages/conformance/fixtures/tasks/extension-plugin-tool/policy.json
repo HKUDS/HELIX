@@ -1,0 +1,32 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 3,
+  "allowedTools": ["echo"],
+  "writePaths": [],
+  "extensionTools": ["echo"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Calling the extension-style echo tool.",
+        "toolCalls": [
+          {
+            "toolName": "echo",
+            "input": {
+              "text": "plugin-payload-ok"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Extension plugin tool returned plugin-payload-ok."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["plugin-payload-ok"],
+    "toolNames": ["echo"],
+    "toolResultIncludes": ["plugin-payload-ok"],
+    "workspaceDiffCount": 0
+  }
+}

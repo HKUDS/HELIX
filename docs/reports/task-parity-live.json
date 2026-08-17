@@ -1,0 +1,2984 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-30T06:35:58.466Z",
+  "suite": "smoke",
+  "provider": "live",
+  "reports": [
+    {
+      "taskID": "read-only-answer",
+      "product": "opencode",
+      "mode": "assembled",
+      "runner": {
+        "id": "task.runner.assembled",
+        "evidence": "assembled-harness",
+        "nativeAvailable": true
+      },
+      "productEvidence": {
+        "recipeID": "opencode",
+        "upstream": "https://github.com/anomalyco/opencode",
+        "upstreamCommit": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+        "nativeAdapter": "assembled-harness"
+      },
+      "status": "matched",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Read README.md and answer with the exact architecture split used by this fixture.\nThe user wants me to read a README.md file and answer with the exact architecture split used by the fixture. Let me start by reading the README.md file in the working directory.\n[tool:read]\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\nThe user asked me to read README.md and answer with the exact architecture split used by this fixture. Let me look at the README.md content again.\n\nThe README.md states:\n\n\"Helix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\"\n\nThis describes the architecture split:\n1. **Common lego atoms** - These provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n2. **Product-specific personality atoms** - These preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\nSo the exact architecture split is: Common lego atoms + Product-specific personality atoms\nBased on the README.md, the exact architecture split used by this fixture is:\n\n**Common lego atoms** + **Product-specific personality atoms**\n\n- **Common lego atoms** provide: session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n- **Product-specific personality atoms** preserve upstream behavior for OpenCode, Pi, and Nanobot.",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "sessionID": "ses_18867c141ffer5BgWqq1m56hw7",
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 2
+      },
+      "traceEvidence": {
+        "events": 48,
+        "eventTypes": [
+          "agent.end",
+          "agent.start",
+          "before_agent_start",
+          "context",
+          "input",
+          "message.end",
+          "message.start",
+          "provider.request.before",
+          "provider.response.after",
+          "session.idle",
+          "session.start",
+          "tool.call",
+          "tool.execution_end",
+          "tool.execution_start",
+          "tool.result",
+          "turn.end",
+          "turn.pipeline.trace",
+          "turn.start"
+        ],
+        "eventSequence": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before_agent_start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.execution_start",
+          "tool.result",
+          "tool.execution_end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "read",
+            "input": {
+              "file_path": "/tmp/helix-task-read-only-answer-opencode-assembled-M3n6q7/workspace/README.md"
+            },
+            "status": "completed"
+          }
+        ],
+        "results": [
+          {
+            "toolName": "read",
+            "text": "# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n"
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 30000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 2,
+        "durationMs": 5284,
+        "toolCalls": 1,
+        "providerRequests": 2,
+        "retries": 0,
+        "syntheticContinues": 0,
+        "contextCompacted": false
+      },
+      "cadenceEvidence": {
+        "level": "semantic-cadence",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 48,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 1,
+            "eventCount": 48,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:read",
+              "tool:read"
+            ],
+            "toolCallCount": 1
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "read"
+          ]
+        ],
+        "sessionWrites": [
+          "session.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "session.idle"
+        ],
+        "traceEvents": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before.agent.start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ],
+        "costShape": {
+          "providerRequests": 2,
+          "toolCalls": 1,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "lossless",
+          "evidence": "provider-hook"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "lossless",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "lossless",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "inferred",
+          "lossiness": "inferred",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "inferred",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "turn-end",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "assembled-loop",
+        "verified": true,
+        "issues": []
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "opencode",
+      "mode": "original",
+      "runner": {
+        "id": "task.runner.native-cli",
+        "evidence": "native-cli",
+        "nativeAvailable": true,
+        "packageSpec": "opencode-ai@1.15.11",
+        "stderrTail": "Performing one time database migration, may take a few minutes...\nsqlite-migration:done\nDatabase migration complete."
+      },
+      "productEvidence": {
+        "recipeID": "opencode",
+        "upstream": "https://github.com/anomalyco/opencode",
+        "upstreamCommit": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+        "nativeAdapter": "native-cli"
+      },
+      "status": "acceptable-drift",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Common lego atoms and product-specific personality atoms.",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "traceEvidence": {
+        "events": 8,
+        "eventTypes": [
+          "native.accepted-early",
+          "step_finish",
+          "step_start",
+          "text",
+          "tool_use"
+        ],
+        "eventSequence": [
+          "step_start",
+          "tool_use",
+          "step_finish",
+          "step_start",
+          "tool_use",
+          "step_finish",
+          "step_start",
+          "text",
+          "native.accepted-early"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "glob",
+            "input": {}
+          },
+          {
+            "toolName": "read",
+            "input": {}
+          },
+          {
+            "toolName": "glob",
+            "input": {
+              "pattern": "**/README.md"
+            }
+          },
+          {
+            "toolName": "read",
+            "input": {
+              "filePath": "/tmp/helix-task-read-only-answer-opencode-original-pQ4nl8/workspace/README.md"
+            }
+          }
+        ],
+        "results": [
+          {
+            "toolName": "glob",
+            "text": "/tmp/helix-task-read-only-answer-opencode-original-pQ4nl8/workspace/README.md"
+          },
+          {
+            "toolName": "read",
+            "text": "<path>/tmp/helix-task-read-only-answer-opencode-original-pQ4nl8/workspace/README.md</path>\n<type>file</type>\n<content>\n1: # Fixture Project\n2: \n3: Helix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n4: \n5: The common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n6: \n7: Product atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\n(End of file - total 7 lines)\n</content>"
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 300000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 1,
+        "durationMs": 7396,
+        "toolCalls": 4,
+        "providerRequests": 1
+      },
+      "cadenceEvidence": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 4,
+            "eventCount": 8,
+            "source": "native-cli",
+            "visibility": "aggregated",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:glob",
+              "tool-result:read",
+              "tool:glob",
+              "tool:read"
+            ],
+            "toolCallCount": 4
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "glob",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "glob",
+            "status": "completed",
+            "inputShape": "pattern",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "glob"
+          ],
+          [
+            "read"
+          ],
+          [
+            "glob"
+          ],
+          [
+            "read"
+          ]
+        ],
+        "sessionWrites": [],
+        "traceEvents": [
+          "step.start",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "text",
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 4,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "aggregate",
+          "lossiness": "aggregated",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "text-only",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "final-message",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "inferred",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "turn-end",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "native-cadence-fixture",
+        "verified": true,
+        "issues": []
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "pi-mono",
+      "mode": "assembled",
+      "runner": {
+        "id": "task.runner.assembled",
+        "evidence": "assembled-harness",
+        "nativeAvailable": true
+      },
+      "productEvidence": {
+        "recipeID": "pi-mono",
+        "upstream": "https://github.com/earendil-works/pi",
+        "upstreamCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+        "nativeAdapter": "assembled-harness"
+      },
+      "status": "matched",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Read README.md and answer with the exact architecture split used by this fixture.\nThe user wants me to read a README.md file and answer with the exact architecture split used by a fixture. Let me first read the README.md file from the working directory.\n[tool:read]\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "sessionID": "ses_b61e1fc5-2ea5-45e1-ad1d-c11d8cbe493f",
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "traceEvidence": {
+        "events": 37,
+        "eventTypes": [
+          "agent.end",
+          "agent.start",
+          "before_agent_start",
+          "context",
+          "input",
+          "message.end",
+          "message.start",
+          "provider.request.before",
+          "provider.response.after",
+          "runtime.accepted-early",
+          "session.idle",
+          "session.start",
+          "tool.call",
+          "tool.execution_end",
+          "tool.execution_start",
+          "tool.result",
+          "turn.end",
+          "turn.pipeline.trace",
+          "turn.start"
+        ],
+        "eventSequence": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before_agent_start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.execution_start",
+          "tool.result",
+          "tool.execution_end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "runtime.accepted-early",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "read",
+            "input": {
+              "file_path": "/tmp/helix-task-read-only-answer-pi-mono-assembled-em5AV6/workspace/README.md"
+            },
+            "status": "completed"
+          }
+        ],
+        "results": [
+          {
+            "toolName": "read",
+            "text": "# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n"
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 30000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 1,
+        "durationMs": 2001,
+        "toolCalls": 1,
+        "providerRequests": 1,
+        "retries": 0,
+        "syntheticContinues": 0,
+        "contextCompacted": false
+      },
+      "cadenceEvidence": {
+        "level": "semantic-cadence",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 1,
+            "eventCount": 37,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:read",
+              "tool:read"
+            ],
+            "toolCallCount": 1
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "read"
+          ]
+        ],
+        "sessionWrites": [
+          "session.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "session.idle"
+        ],
+        "traceEvents": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before.agent.start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "acceptance.accepted-early",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 1,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "lossless",
+          "evidence": "provider-hook"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "lossless",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "lossless",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "inferred",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "turn-end",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "assembled-loop",
+        "verified": true,
+        "issues": []
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "pi-mono",
+      "mode": "original",
+      "runner": {
+        "id": "task.runner.native-cli",
+        "evidence": "native-cli",
+        "nativeAvailable": true,
+        "packageSpec": "@earendil-works/pi-coding-agent@0.75.5",
+        "exitCode": 143,
+        "stderrTail": "Warning: Model \"MiniMax-M2.7-highspeed\" not found for provider \"anthropic\". Using custom model id."
+      },
+      "productEvidence": {
+        "recipeID": "pi-mono",
+        "upstream": "https://github.com/earendil-works/pi",
+        "upstreamCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+        "nativeAdapter": "native-cli"
+      },
+      "status": "acceptable-drift",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Read README.md and answer with the exact architecture split used by this fixture.\nRead README.md and answer with the exact architecture split used by this fixture.\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 3
+      },
+      "traceEvidence": {
+        "events": 21,
+        "eventTypes": [
+          "agent_start",
+          "message_end",
+          "message_start",
+          "message_update",
+          "native.accepted-early",
+          "session",
+          "tool_execution_end",
+          "tool_execution_start",
+          "turn_end",
+          "turn_start"
+        ],
+        "eventSequence": [
+          "session",
+          "agent_start",
+          "turn_start",
+          "message_start",
+          "message_end",
+          "message_start",
+          "message_update",
+          "message_update",
+          "message_update",
+          "message_update",
+          "message_update",
+          "message_update",
+          "message_update",
+          "message_update",
+          "message_end",
+          "tool_execution_start",
+          "tool_execution_end",
+          "message_start",
+          "message_end",
+          "turn_end",
+          "turn_start",
+          "native.accepted-early"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "read",
+            "input": {}
+          },
+          {
+            "toolName": "read",
+            "input": {
+              "path": "README.md"
+            }
+          }
+        ],
+        "results": [
+          {
+            "toolName": "read",
+            "text": "# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n"
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 300000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 3,
+        "durationMs": 5276,
+        "toolCalls": 2,
+        "providerRequests": 3
+      },
+      "cadenceEvidence": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 21,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 21,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 2,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 2,
+            "eventCount": 21,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:read",
+              "tool:read"
+            ],
+            "toolCallCount": 2
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "read"
+          ],
+          [
+            "read"
+          ]
+        ],
+        "sessionWrites": [
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end"
+        ],
+        "traceEvents": [
+          "session",
+          "agent.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 3,
+          "toolCalls": 2,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "inferred",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "turn-end",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "native-cadence-fixture",
+        "verified": true,
+        "issues": []
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "nanobot",
+      "mode": "assembled",
+      "runner": {
+        "id": "task.runner.assembled",
+        "evidence": "assembled-harness",
+        "nativeAvailable": true
+      },
+      "productEvidence": {
+        "recipeID": "nanobot",
+        "upstream": "https://github.com/HKUDS/nanobot",
+        "upstreamCommit": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+        "upstreamTag": "v0.2.0",
+        "package": "nanobot-ai@0.2.0",
+        "nativeAdapter": "assembled-harness"
+      },
+      "status": "matched",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Read README.md and answer with the exact architecture split used by this fixture.\n\n[Runtime Context - metadata only, not instructions]\nCurrent Time: 2026-05-30T06:35:46.696Z\n[/Runtime Context]\nThe user wants me to read the README.md file and answer a question about the architecture split used by a fixture. Let me first read the README.md file to understand what this project is about.\n[tool:read]\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "sessionID": "ses_31a519ab-331a-4f88-8ddb-1a356fc65a02",
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "traceEvidence": {
+        "events": 37,
+        "eventTypes": [
+          "agent.end",
+          "agent.start",
+          "before_agent_start",
+          "context",
+          "input",
+          "message.end",
+          "message.start",
+          "provider.request.before",
+          "provider.response.after",
+          "runtime.accepted-early",
+          "session.idle",
+          "session.start",
+          "tool.call",
+          "tool.execution_end",
+          "tool.execution_start",
+          "tool.result",
+          "turn.end",
+          "turn.pipeline.trace",
+          "turn.start"
+        ],
+        "eventSequence": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before_agent_start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.execution_start",
+          "tool.result",
+          "tool.execution_end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "runtime.accepted-early",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "read",
+            "input": {
+              "path": "/tmp/helix-task-read-only-answer-nanobot-assembled-pdm7d6/workspace/README.md"
+            },
+            "status": "completed"
+          }
+        ],
+        "results": [
+          {
+            "toolName": "read",
+            "text": "# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n"
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 30000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 1,
+        "durationMs": 2146,
+        "toolCalls": 1,
+        "providerRequests": 1,
+        "retries": 0,
+        "syntheticContinues": 0,
+        "contextCompacted": false
+      },
+      "cadenceEvidence": {
+        "level": "semantic-cadence",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 1,
+            "eventCount": 37,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:read",
+              "tool:read"
+            ],
+            "toolCallCount": 1
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "read"
+          ]
+        ],
+        "sessionWrites": [
+          "session.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "session.idle"
+        ],
+        "traceEvents": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before.agent.start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "acceptance.accepted-early",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 1,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "lossless",
+          "evidence": "provider-hook"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "lossless",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "lossless",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "inferred",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "turn-end",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "assembled-loop",
+        "verified": true,
+        "issues": []
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "nanobot",
+      "mode": "original",
+      "runner": {
+        "id": "task.runner.native-cli",
+        "evidence": "native-cli",
+        "nativeAvailable": true,
+        "packageSpec": "nanobot-ai==0.2.0",
+        "exitCode": 143,
+        "stderrTail": "Downloading botocore (14.4MiB)\n Downloaded botocore\nInstalled 114 packages in 410ms\n2026-05-30 14:35:52 | INFO  | - | Git store initialized at /tmp/helix-task-read-only-answer-nanobot-original-LcoqI6/workspace"
+      },
+      "productEvidence": {
+        "recipeID": "nanobot",
+        "upstream": "https://github.com/HKUDS/nanobot",
+        "upstreamCommit": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+        "upstreamTag": "v0.2.0",
+        "package": "nanobot-ai@0.2.0",
+        "nativeAdapter": "native-cli"
+      },
+      "status": "acceptable-drift",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Using config: \n/tmp/helix-task-read-only-answer-nanobot-original-LcoqI6/session/native-na\nnobot-config/config.json\n  Created SOUL.md\n  Created HEARTBEAT.md\n  Created AGENTS.md\n  Created USER.md\n  Created TOOLS.md\n  Created memory/MEMORY.md\n  Created memory/history.jsonl\n\nnanobot\nThe architecture split is **common lego atoms** vs **product-specific \npersonality atoms**.\nThe architecture split is **common lego atoms** vs **product-specific personality atoms**.",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "traceEvidence": {
+        "events": 0,
+        "eventTypes": [
+          "native.accepted-early"
+        ],
+        "eventSequence": [
+          "native.accepted-early"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "read",
+            "input": {
+              "path": "/tmp/helix-task-read-only-answer-nanobot-original-LcoqI6/workspace/README.md"
+            }
+          }
+        ],
+        "results": [
+          {
+            "toolName": "read",
+            "text": "1| # Fixture Project\n2| \n3| Helix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n4| \n5| The common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n6| \n7| Product atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\n(End of file — 7 lines total)"
+          }
+        ]
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 300000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 1,
+        "durationMs": 9644,
+        "toolCalls": 1,
+        "providerRequests": 1
+      },
+      "cadenceEvidence": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 1,
+            "eventCount": 0,
+            "source": "native-cli",
+            "visibility": "aggregated",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:read",
+              "tool:read"
+            ],
+            "toolCallCount": 1
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "read"
+          ]
+        ],
+        "sessionWrites": [],
+        "traceEvents": [
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 1,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "aggregate",
+          "lossiness": "aggregated",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "text-only",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "final-message",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "inferred",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "turn-end",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "native-cadence-fixture",
+        "verified": true,
+        "issues": []
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    }
+  ],
+  "pairs": [
+    {
+      "taskID": "read-only-answer",
+      "product": "opencode",
+      "status": "acceptable-drift",
+      "outputParity": false,
+      "artifactParity": true,
+      "traceParity": false,
+      "policyParity": false,
+      "costLatencyParity": false,
+      "cadenceParity": false,
+      "cadenceScore": 73,
+      "cadenceScoreBreakdown": {
+        "modelVersion": 2,
+        "rawDriftCount": 8,
+        "weightedPenalty": 27,
+        "targetScore": 70,
+        "items": [
+          {
+            "id": "cadence.provider-request-count",
+            "category": "cadence.provider-request-count",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "native-projector",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.tool-call-count",
+            "category": "cadence.tool-call-count",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.tool-sequence",
+            "category": "cadence.tool-sequence",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.tool-batch",
+            "category": "cadence.tool-batch",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.message-part-type",
+            "category": "cadence.message-part-type",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "native-projector",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.final-summary",
+            "category": "cadence.final-summary",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.streaming-delta",
+            "category": "cadence.streaming-delta",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "native-projector",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.early-accept",
+            "category": "cadence.early-accept",
+            "weight": 6,
+            "appliedPenalty": 6,
+            "owningPlane": "agent-loop",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "semantic-live"
+          }
+        ]
+      },
+      "cadenceLevel": "semantic-cadence",
+      "cadenceDrifts": [
+        {
+          "id": "cadence.provider-request-count",
+          "category": "cadence.provider-request-count",
+          "message": "Provider request boundaries differ.",
+          "assembled": "2",
+          "original": "1",
+          "owner": "native-projector",
+          "nextAction": "upstream-version-drift",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "opencode.native.projector",
+            "candidateFixes": [
+              "refresh opencode native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "providerBoundary:aggregated:aggregate"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-call-count",
+          "category": "cadence.tool-call-count",
+          "message": "Tool call counts differ.",
+          "assembled": "1",
+          "original": "4",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-sequence",
+          "category": "cadence.tool-sequence",
+          "message": "Tool call order differs.",
+          "assembled": "read",
+          "original": "glob>read>glob>read",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-batch",
+          "category": "cadence.tool-batch",
+          "message": "Tool batch grouping differs.",
+          "assembled": "[[\"read\"]]",
+          "original": "[[\"glob\"],[\"read\"],[\"glob\"],[\"read\"]]",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.message-part-type",
+          "category": "cadence.message-part-type",
+          "message": "Assistant/tool part type projection differs.",
+          "assembled": "text>tool-result:read>tool:read",
+          "original": "text>tool-result:glob>tool-result:read>tool:glob>tool:read",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "opencode.session.message-part-projector.native-like",
+            "candidateFixes": [
+              "refresh opencode native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:final-message",
+                "streamDelta:semantic:text-only"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.final-summary",
+          "category": "cadence.final-summary",
+          "message": "Final visible transcript differs after normalization.",
+          "assembled": "Read README.md and answer with the exact architecture split used by this fixture. The user wants me to read a README.md file and answer with the exact archit...",
+          "original": "Common lego atoms and product-specific personality atoms.",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 3,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:final-message"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.streaming-delta",
+          "category": "cadence.streaming-delta",
+          "message": "Trace or streaming event sequence differs.",
+          "assembled": "input>turn.pipeline.trace>session.start>turn.start>message.start>message.end>before.agent.start>turn.pipeline.trace>context>turn.pipeline.trace>agent.start>provider.request.before>turn.pipeline.trace>tool.call>turn.pipeline.trace>tool.st...",
+          "original": "step.start>tool.use>step.finish>step.start>tool.use>step.finish>step.start>text>acceptance.accepted-early",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "opencode.provider.stream-projector.native-like",
+            "candidateFixes": [
+              "refresh opencode native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "streamDelta:semantic:text-only"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.early-accept",
+          "category": "cadence.early-accept",
+          "message": "Early accept behavior differs.",
+          "assembled": "false",
+          "original": "true",
+          "owner": "product-cadence-atom",
+          "nextAction": "add-existing-plane-common-submodule",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "agent-loop",
+            "owningAtomID": "opencode.runtime.acceptance-controller.native-like",
+            "candidateFixes": [
+              "bind opencode.runtime.acceptance-controller.native-like",
+              "compare task-policy acceptance decisions"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 2,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "glob",
+                "read",
+                "glob",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:glob",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "semantic-live",
+              "lossinessRefs": [
+                "acceptance:semantic:explicit-event"
+              ]
+            }
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "pi-mono",
+      "status": "acceptable-drift",
+      "outputParity": false,
+      "artifactParity": true,
+      "traceParity": false,
+      "policyParity": false,
+      "costLatencyParity": false,
+      "cadenceParity": false,
+      "cadenceScore": 82,
+      "cadenceScoreBreakdown": {
+        "modelVersion": 2,
+        "rawDriftCount": 6,
+        "weightedPenalty": 18,
+        "targetScore": 70,
+        "items": [
+          {
+            "id": "cadence.provider-request-count",
+            "category": "cadence.provider-request-count",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "native-projector",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "semantic",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.tool-call-count",
+            "category": "cadence.tool-call-count",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.tool-sequence",
+            "category": "cadence.tool-sequence",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.tool-batch",
+            "category": "cadence.tool-batch",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.final-summary",
+            "category": "cadence.final-summary",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.streaming-delta",
+            "category": "cadence.streaming-delta",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "native-projector",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "semantic",
+            "scoringMode": "informational"
+          }
+        ]
+      },
+      "cadenceLevel": "semantic-cadence",
+      "cadenceDrifts": [
+        {
+          "id": "cadence.provider-request-count",
+          "category": "cadence.provider-request-count",
+          "message": "Provider request boundaries differ.",
+          "assembled": "1",
+          "original": "3",
+          "owner": "native-projector",
+          "nextAction": "upstream-version-drift",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "pi.native.projector",
+            "candidateFixes": [
+              "refresh pi native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 3,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "semantic",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "providerBoundary:semantic:per-request"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-call-count",
+          "category": "cadence.tool-call-count",
+          "message": "Tool call counts differ.",
+          "assembled": "1",
+          "original": "2",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 3,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-sequence",
+          "category": "cadence.tool-sequence",
+          "message": "Tool call order differs.",
+          "assembled": "read",
+          "original": "read>read",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 3,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-batch",
+          "category": "cadence.tool-batch",
+          "message": "Tool batch grouping differs.",
+          "assembled": "[[\"read\"]]",
+          "original": "[[\"read\"],[\"read\"]]",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 3,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.final-summary",
+          "category": "cadence.final-summary",
+          "message": "Final visible transcript differs after normalization.",
+          "assembled": "Read README.md and answer with the exact architecture split used by this fixture. The user wants me to read a README.md file and answer with the exact archit...",
+          "original": "Read README.md and answer with the exact architecture split used by this fixture. Read README.md and answer with the exact architecture split used by this fi...",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 3,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 3,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:storage-event"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.streaming-delta",
+          "category": "cadence.streaming-delta",
+          "message": "Trace or streaming event sequence differs.",
+          "assembled": "input>turn.pipeline.trace>session.start>turn.start>message.start>message.end>before.agent.start>turn.pipeline.trace>context>turn.pipeline.trace>agent.start>provider.request.before>turn.pipeline.trace>tool.call>turn.pipeline.trace>tool.st...",
+          "original": "session>agent.start>turn.start>message.start>message.end>message.start>message.delta>message.end>tool.start>tool.end>message.start>message.end>turn.end>turn.start>acceptance.accepted-early",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "pi.provider.stream-projector.native-like",
+            "candidateFixes": [
+              "refresh pi native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 3,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read",
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "semantic",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "streamDelta:semantic:semantic"
+              ]
+            }
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "taskID": "read-only-answer",
+      "product": "nanobot",
+      "status": "acceptable-drift",
+      "outputParity": false,
+      "artifactParity": true,
+      "traceParity": false,
+      "policyParity": false,
+      "costLatencyParity": true,
+      "cadenceParity": false,
+      "cadenceScore": 94,
+      "cadenceScoreBreakdown": {
+        "modelVersion": 2,
+        "rawDriftCount": 2,
+        "weightedPenalty": 6,
+        "targetScore": 70,
+        "items": [
+          {
+            "id": "cadence.final-summary",
+            "category": "cadence.final-summary",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "nondeterminism",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          },
+          {
+            "id": "cadence.streaming-delta",
+            "category": "cadence.streaming-delta",
+            "weight": 3,
+            "appliedPenalty": 3,
+            "owningPlane": "native-projector",
+            "blockingLevel": "informational",
+            "comparisonConfidence": "inferred",
+            "scoringMode": "informational"
+          }
+        ]
+      },
+      "cadenceLevel": "semantic-cadence",
+      "cadenceDrifts": [
+        {
+          "id": "cadence.final-summary",
+          "category": "cadence.final-summary",
+          "message": "Final visible transcript differs after normalization.",
+          "assembled": "Read README.md and answer with the exact architecture split used by this fixture. [Runtime Context - metadata only, not instructions] Current Time: <timestam...",
+          "original": "Using config: /tmp/helix-task-read-only-answer-nanobot-original-LcoqI6/session/native-na nobot-config/config.json Created SOUL.md Created HEARTBEAT.md ...",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "nanobot.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 3,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:final-message"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.streaming-delta",
+          "category": "cadence.streaming-delta",
+          "message": "Trace or streaming event sequence differs.",
+          "assembled": "input>turn.pipeline.trace>session.start>turn.start>message.start>message.end>before.agent.start>turn.pipeline.trace>context>turn.pipeline.trace>agent.start>provider.request.before>turn.pipeline.trace>tool.call>turn.pipeline.trace>tool.st...",
+          "original": "acceptance.accepted-early",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "nanobot.provider.stream-projector.native-like",
+            "candidateFixes": [
+              "refresh nanobot native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 1,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "read"
+              ],
+              "originalToolSequence": [
+                "read"
+              ],
+              "assembledBatchSignature": [
+                "read"
+              ],
+              "originalBatchSignature": [
+                "read"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:read",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "streamDelta:semantic:text-only"
+              ]
+            }
+          }
+        }
+      ],
+      "gaps": []
+    }
+  ],
+  "summary": {
+    "reports": 6,
+    "matched": 3,
+    "acceptableDrift": 3,
+    "gapsFound": 0,
+    "failed": 0
+  }
+}

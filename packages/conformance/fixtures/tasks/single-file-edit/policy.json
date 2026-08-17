@@ -1,0 +1,46 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 3,
+  "allowedTools": ["edit"],
+  "writePaths": ["src/greeting.ts"],
+  "envAllowlist": ["PATH", "LANG", "LC_ALL", "TZ", "SSL_CERT_FILE", "NODE_EXTRA_CA_CERTS", "HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY", "ANTHROPIC_API_KEY", "HELIX_LIVE_MODEL", "ANTHROPIC_MODEL", "HELIX_LIVE_BASE_URL"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Editing src/greeting.ts.",
+        "toolCalls": [
+          {
+            "toolName": "edit",
+            "input": {
+              "path": "src/greeting.ts",
+              "oldText": "Hello from fixture",
+              "newText": "Hello from lego"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Updated src/greeting.ts so greeting() returns \"Hello from lego\"."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": [
+      "Updated src/greeting.ts",
+      "Hello from lego"
+    ],
+    "files": {
+      "src/greeting.ts": {
+        "includes": ["Hello from lego"]
+      }
+    },
+    "toolNames": ["edit"],
+    "workspaceDiff": [
+      {
+        "path": "src/greeting.ts",
+        "status": "modified"
+      }
+    ]
+  }
+}

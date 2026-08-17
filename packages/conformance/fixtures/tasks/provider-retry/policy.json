@@ -1,0 +1,22 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 2,
+  "maxRetries": 1,
+  "retryDelayMs": 0,
+  "allowedTools": [],
+  "writePaths": [],
+  "provider": {
+    "failFirstRequest": "simulated stream interruption",
+    "steps": [
+      {
+        "assistantText": "Provider retry recovered after simulated stream interruption."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["Provider retry recovered"],
+    "retriesAtLeast": 1,
+    "workspaceDiffCount": 0
+  }
+}

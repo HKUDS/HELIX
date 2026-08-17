@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "harness-combo-source-purity-audit",
+  "generatedAt": "2026-06-27T11:18:23.849Z",
+  "sourceDimensions": [
+    "session",
+    "hooks",
+    "config",
+    "prompt",
+    "tools",
+    "turn",
+    "acceptance"
+  ],
+  "products": [
+    "opencode",
+    "pi-mono",
+    "nanobot",
+    "hermes-agent"
+  ],
+  "recipeDirs": [
+    {
+      "dir": "docs/reports/harness-combo-recipes",
+      "recipes": 1031,
+      "sourceCleanRecipes": 1031,
+      "sourceIssueRecipes": 0,
+      "wrapperCleanRecipes": 0,
+      "wrapperIssueRecipes": 1031,
+      "sourceIssueCounts": {},
+      "nonSourceWrapperFieldCounts": {
+        "atom:contracts": 1031,
+        "metadata.product:opencode-pi-hybrid runtime wrapper": 1031,
+        "personality:opencode-pi-hybrid-personality": 1031,
+        "productShells:not-derived-from-surfaces": 1030,
+        "policy:shell.execution mode=enabled source=harness-combo-generator": 1024,
+        "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator": 1024
+      },
+      "examples": [
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "hermes-agent",
+            "acceptance": "hermes-agent",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "nanobot",
+            "acceptance": "nanobot",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-opencode",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-opencode.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "opencode.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "opencode",
+            "acceptance": "opencode",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "opencode"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-pi-mono",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-pi-mono.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "pi.product-shell.cli"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "pi-mono",
+            "acceptance": "pi-mono",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "pi-mono"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-hermes-agent",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-hermes-agent.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "nanobot",
+            "turn": "hermes-agent",
+            "acceptance": "hermes-agent",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-nanobot",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-nanobot.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "nanobot",
+            "turn": "nanobot",
+            "acceptance": "nanobot",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-opencode",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-opencode.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness",
+              "opencode.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "nanobot",
+            "turn": "opencode",
+            "acceptance": "opencode",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot",
+              "opencode"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-pi-mono",
+          "path": "docs/reports/harness-combo-recipes/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-nanobot-turn-pi-mono.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness",
+              "pi.product-shell.cli"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "nanobot",
+            "turn": "pi-mono",
+            "acceptance": "pi-mono",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot",
+              "pi-mono"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "dir": "docs/reports/harness-combo-recipes-decoupled-acceptance",
+      "recipes": 4096,
+      "sourceCleanRecipes": 4096,
+      "sourceIssueRecipes": 0,
+      "wrapperCleanRecipes": 0,
+      "wrapperIssueRecipes": 4096,
+      "sourceIssueCounts": {},
+      "nonSourceWrapperFieldCounts": {
+        "atom:contracts": 4096,
+        "metadata.product:opencode-pi-hybrid runtime wrapper": 4096,
+        "personality:opencode-pi-hybrid-personality": 4096,
+        "policy:shell.execution mode=enabled source=harness-combo-generator": 4096,
+        "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator": 4096,
+        "productShells:not-derived-from-surfaces": 4095
+      },
+      "examples": [
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent-acc-nanobot",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent-acc-nanobot.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "hermes-agent",
+            "acceptance": "nanobot",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent-acc-opencode",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent-acc-opencode.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "opencode.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "hermes-agent",
+            "acceptance": "opencode",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "opencode"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent-acc-pi-mono",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent-acc-pi-mono.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "pi.product-shell.cli"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "hermes-agent",
+            "acceptance": "pi-mono",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "pi-mono"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-hermes-agent.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "hermes-agent",
+            "acceptance": "hermes-agent",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot-acc-hermes-agent",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot-acc-hermes-agent.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "nanobot",
+            "acceptance": "hermes-agent",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot-acc-opencode",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot-acc-opencode.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness",
+              "opencode.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "nanobot",
+            "acceptance": "opencode",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot",
+              "opencode"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot-acc-pi-mono",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot-acc-pi-mono.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness",
+              "pi.product-shell.cli"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "nanobot",
+            "acceptance": "pi-mono",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot",
+              "pi-mono"
+            ]
+          }
+        },
+        {
+          "id": "combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot",
+          "path": "docs/reports/harness-combo-recipes-decoupled-acceptance/combo-sh-hermes-agent-cfg-hermes-agent-prompt-hermes-agent-tools-hermes-agent-turn-nanobot.json",
+          "sourceIssues": [],
+          "nonSourceWrapperFields": [
+            "atom:contracts",
+            "productShells:not-derived-from-surfaces",
+            "strategy:tool.permission mode=workspace-scoped source=harness-combo-generator",
+            "policy:shell.execution mode=enabled source=harness-combo-generator",
+            "personality:opencode-pi-hybrid-personality",
+            "metadata.product:opencode-pi-hybrid runtime wrapper"
+          ],
+          "productShellAudit": {
+            "expected": [
+              "hermes.product-shell.harness",
+              "nanobot.product-shell.harness"
+            ],
+            "actual": [
+              "opencode.product-shell.harness"
+            ]
+          },
+          "harnessCombo": {
+            "session": "hermes-agent",
+            "hooks": "hermes-agent",
+            "config": "hermes-agent",
+            "prompt": "hermes-agent",
+            "tools": "hermes-agent",
+            "turn": "nanobot",
+            "acceptance": "nanobot",
+            "providerPlugins": "none",
+            "surfaces": [
+              "hermes-agent",
+              "nanobot"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "scriptFindings": [
+    {
+      "file": "scripts/screen-harness-combo-smoke.ts",
+      "pattern": "product: \"opencode-pi-hybrid\"",
+      "message": "Combo screening still routes through the hybrid assembler wrapper.",
+      "matches": [
+        {
+          "line": 105,
+          "text": "product: \"opencode-pi-hybrid\","
+        }
+      ]
+    }
+  ]
+}

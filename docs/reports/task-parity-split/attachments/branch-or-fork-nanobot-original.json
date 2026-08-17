@@ -1,0 +1,71 @@
+{
+  "taskID": "branch-or-fork",
+  "product": "nanobot",
+  "mode": "original",
+  "transcriptSummary": {
+    "visibleText": "Record a short answer so the runner can fork this session and verify the forked transcript.\n\n[Runtime Context — metadata only, not instructions]\nCurrent Time: 2026-06-10T13:19:54.563Z\n[/Runtime Context]\nSession fork smoke completed.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [],
+    "results": []
+  },
+  "workspaceDiff": [],
+  "checks": [
+    {
+      "id": "output.includes.session-fork-smoke-completed",
+      "ok": true,
+      "message": "Visible output includes Session fork smoke completed."
+    },
+    {
+      "id": "workspace.diff.count",
+      "ok": true,
+      "message": "Workspace diff contains 0 entries."
+    },
+    {
+      "id": "session.forked",
+      "ok": true,
+      "message": "Session forked is true."
+    },
+    {
+      "id": "session.fork-message-count",
+      "ok": true,
+      "message": "Forked session has at least 2 message(s)."
+    }
+  ],
+  "gaps": []
+}

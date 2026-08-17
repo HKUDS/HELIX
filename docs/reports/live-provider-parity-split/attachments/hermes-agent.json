@@ -1,0 +1,30 @@
+{
+  "product": "hermes-agent",
+  "status": "passed",
+  "ok": true,
+  "checks": [
+    {
+      "id": "hermes-agent:live-provider-turn",
+      "ok": true,
+      "message": "hermes-agent runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_14fe892fdffeEUVZnGXgdfwXyj",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "The user wants me to reply with a short sentence containing \"helix-live-ok\". They explicitly said \"Do not call tools.\" So I should just provide a simple response without using any tools.\nThe har",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "hermes-agent:live-provider-sdk-readback",
+      "ok": true,
+      "message": "hermes-agent product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    }
+  ],
+  "sessionID": "ses_14fe892fdffeEUVZnGXgdfwXyj",
+  "steps": 1,
+  "finish": "end_turn"
+}

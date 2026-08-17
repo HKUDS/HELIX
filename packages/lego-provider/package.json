@@ -1,0 +1,19 @@
+{
+  "name": "@helix/lego-provider",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./normalizer": "./src/normalizer.ts",
+    "./ports": "./src/ports.ts",
+    "./streaming-delta-recorder": "./src/streaming-delta-recorder.ts",
+    "./openai-compatible": "./src/openai-compatible.ts",
+    "./anthropic": "./src/anthropic.ts",
+    "./openrouter": "./src/openrouter.ts",
+    "./google": "./src/google.ts"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-27T09:24:43.285Z",
+  "report": {
+    "status": "passed",
+    "ok": true,
+    "provider": "anthropic",
+    "modelID": "MiniMax-M2.7-highspeed",
+    "products": [
+      {
+        "product": "opencode",
+        "status": "passed",
+        "ok": true,
+        "checks": [
+          {
+            "id": "opencode:live-provider-turn",
+            "ok": true,
+            "message": "opencode runs a live external provider turn through the assembled harness.",
+            "details": {
+              "sessionID": "ses_1973fe326ffeivs1066ULIpRXA",
+              "steps": 1,
+              "finish": "end_turn",
+              "assistantText": "The user is asking me to reply with exactly the text \"assembled-opencode-live-ok\". This is a simple request that doesn't require any tools.\nassembled-opencode-live-ok",
+              "blockedTools": []
+            }
+          },
+          {
+            "id": "opencode:live-provider-sdk-readback",
+            "ok": true,
+            "message": "opencode product SDK can read back the live provider session transcript.",
+            "details": {
+              "transcript": 2
+            }
+          }
+        ],
+        "sessionID": "ses_1973fe326ffeivs1066ULIpRXA",
+        "steps": 1,
+        "finish": "end_turn"
+      }
+    ],
+    "checks": [
+      {
+        "id": "live-provider:configured",
+        "ok": true,
+        "message": "Live external provider parity has provider, model, and credential inputs.",
+        "details": {
+          "provider": "anthropic",
+          "modelID": "MiniMax-M2.7-highspeed"
+        }
+      },
+      {
+        "id": "opencode:live-provider-turn",
+        "ok": true,
+        "message": "opencode runs a live external provider turn through the assembled harness.",
+        "details": {
+          "sessionID": "ses_1973fe326ffeivs1066ULIpRXA",
+          "steps": 1,
+          "finish": "end_turn",
+          "assistantText": "The user is asking me to reply with exactly the text \"assembled-opencode-live-ok\". This is a simple request that doesn't require any tools.\nassembled-opencode-live-ok",
+          "blockedTools": []
+        }
+      },
+      {
+        "id": "opencode:live-provider-sdk-readback",
+        "ok": true,
+        "message": "opencode product SDK can read back the live provider session transcript.",
+        "details": {
+          "transcript": 2
+        }
+      }
+    ],
+    "issues": [],
+    "missing": []
+  }
+}

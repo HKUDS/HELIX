@@ -1,0 +1,20 @@
+{
+  "name": "@helix/lego-tools",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./default-tools": "./src/default-tools.ts",
+    "./ports": "./src/ports.ts",
+    "./tool-atoms": "./src/tool-atoms.ts",
+    "./cadence-atoms": "./src/cadence-atoms.ts",
+    "./product-schema/hermes": "./src/product-schema/hermes.ts",
+    "./product-schema/nanobot": "./src/product-schema/nanobot.ts",
+    "./product-schema/opencode": "./src/product-schema/opencode.ts",
+    "./product-schema/pi": "./src/product-schema/pi.ts"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 3,
+  "maxInputTokens": 10,
+  "compactionKeepMessages": 1,
+  "autoCompact": true,
+  "syntheticContinue": true,
+  "syntheticContinueText": "Continue after compaction.",
+  "maxSyntheticContinues": 2,
+  "allowedTools": [],
+  "writePaths": [],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Partial compacted context.",
+        "finish": "length"
+      },
+      {
+        "assistantText": "Context compaction completed with synthetic continuation."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["Context compaction completed"],
+    "contextCompacted": true,
+    "syntheticContinuesAtLeast": 1,
+    "workspaceDiffCount": 0
+  }
+}

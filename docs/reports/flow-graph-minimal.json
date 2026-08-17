@@ -1,0 +1,2727 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-16T04:19:33.207Z",
+  "product": "minimal",
+  "source": "assembled",
+  "mode": "blueprint",
+  "recipeID": "coding-agent.minimal",
+  "contractFingerprint": "729116f74821152c",
+  "nodes": [
+    {
+      "id": "surface.input",
+      "label": "Surface Input",
+      "lane": "surface",
+      "order": 0,
+      "plane": "surface",
+      "inputSummary": "CLI, TUI, Web, SDK, RPC, ACP, gateway, or product shell request",
+      "outputSummary": "product-scoped user input envelope",
+      "assembledPortIDs": [
+        "product.shell",
+        "ui.command-router",
+        "ui.event-loop",
+        "ui.input-normalizer",
+        "ui.renderer",
+        "ui.snapshot",
+        "ui.theme-registry"
+      ],
+      "assembledAtomIDs": [
+        "product.shell.minimal-cli"
+      ],
+      "bindingIDs": [
+        "product.shell"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "product.shell.minimal-cli",
+            "portIDs": [
+              "product.shell"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "product.shell.minimal-cli is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared",
+        "count": 2
+      },
+      "status": "matched"
+    },
+    {
+      "id": "input.normalize",
+      "label": "Input Normalize",
+      "lane": "runtime",
+      "order": 1,
+      "plane": "agent-loop",
+      "inputSummary": "raw product/user input and shell metadata",
+      "outputSummary": "normalized prompt, source metadata, or handled result",
+      "assembledPortIDs": [
+        "turn.input-normalizer",
+        "ui.command-router",
+        "ui.input-normalizer"
+      ],
+      "assembledAtomIDs": [],
+      "bindingIDs": [],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {},
+      "status": "matched"
+    },
+    {
+      "id": "session.open",
+      "label": "Session Open",
+      "lane": "session",
+      "order": 2,
+      "plane": "session",
+      "inputSummary": "workspace, session id, branch, resume, or fork metadata",
+      "outputSummary": "active session context",
+      "assembledPortIDs": [
+        "event.envelope",
+        "event.log",
+        "identity.clock",
+        "identity.id-generator",
+        "identity.workspace-resolver",
+        "session.branch-graph",
+        "session.branching",
+        "session.compaction-records",
+        "session.context-selector",
+        "session.diff",
+        "session.event-log",
+        "session.id-generator",
+        "session.message-part-projector",
+        "session.message-store",
+        "session.pagination",
+        "session.projector",
+        "session.reader",
+        "session.store",
+        "session.writer"
+      ],
+      "assembledAtomIDs": [
+        "common.session.message-part-projector",
+        "event.envelope.common",
+        "event.log.memory",
+        "identity.clock.system",
+        "identity.id-generator.deterministic",
+        "identity.workspace-resolver.cwd",
+        "session.context-selector.memory",
+        "session.event-log.memory",
+        "session.id-generator.deterministic",
+        "session.message-store.memory",
+        "session.projector.common-transcript"
+      ],
+      "bindingIDs": [
+        "event.envelope",
+        "event.log",
+        "identity.clock",
+        "identity.id-generator",
+        "identity.workspace-resolver",
+        "session.context-selector",
+        "session.event-log",
+        "session.id-generator",
+        "session.message-part-projector",
+        "session.message-store",
+        "session.projector"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.session.message-part-projector",
+            "portIDs": [
+              "session.message-part-projector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "native-fixture:none",
+              "replay:common.session.message-part-projector"
+            ],
+            "fixtureIDs": [
+              "none",
+              "replay:common.session.message-part-projector"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.session.message-part-projector is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "event.envelope.common",
+            "portIDs": [
+              "event.envelope"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "event.envelope.common is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "event.log.memory",
+            "portIDs": [
+              "event.log"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "event.log.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "identity.clock.system",
+            "portIDs": [
+              "identity.clock"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "identity.clock.system is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "identity.id-generator.deterministic",
+            "portIDs": [
+              "identity.id-generator"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "identity.id-generator.deterministic is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "identity.workspace-resolver.cwd",
+            "portIDs": [
+              "identity.workspace-resolver"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "identity.workspace-resolver.cwd is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "session.context-selector.memory",
+            "portIDs": [
+              "session.context-selector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.context-selector.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "session.event-log.memory",
+            "portIDs": [
+              "session.event-log"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.event-log.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "session.id-generator.deterministic",
+            "portIDs": [
+              "session.id-generator"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.id-generator.deterministic is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "session.message-store.memory",
+            "portIDs": [
+              "session.message-store"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.message-store.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "session.projector.common-transcript",
+            "portIDs": [
+              "session.projector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.projector.common-transcript is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "nativeEvidenceRefs": [
+          "native-fixture:none",
+          "replay:common.session.message-part-projector"
+        ],
+        "fixtureIDs": [
+          "none",
+          "replay:common.session.message-part-projector"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "session.user-write",
+      "label": "User Write",
+      "lane": "session",
+      "order": 3,
+      "plane": "session",
+      "inputSummary": "normalized user prompt",
+      "outputSummary": "persisted user message",
+      "assembledPortIDs": [
+        "session.event-log",
+        "session.message-store",
+        "session.writer"
+      ],
+      "assembledAtomIDs": [
+        "session.event-log.memory",
+        "session.message-store.memory"
+      ],
+      "bindingIDs": [
+        "session.event-log",
+        "session.message-store"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "session.event-log.memory",
+            "portIDs": [
+              "session.event-log"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.event-log.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "session.message-store.memory",
+            "portIDs": [
+              "session.message-store"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.message-store.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "context.build",
+      "label": "Context Build",
+      "lane": "session",
+      "order": 4,
+      "plane": "agent-loop",
+      "inputSummary": "transcript, token budget, context selector, compaction state",
+      "outputSummary": "provider-ready context messages and compaction decision",
+      "assembledPortIDs": [
+        "session.compaction-records",
+        "session.context-selector",
+        "session.reader",
+        "turn.context-builder"
+      ],
+      "assembledAtomIDs": [
+        "session.context-selector.memory"
+      ],
+      "bindingIDs": [
+        "session.context-selector"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "session.context-selector.memory",
+            "portIDs": [
+              "session.context-selector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.context-selector.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "prompt.assemble",
+      "label": "Prompt Assemble",
+      "lane": "prompt",
+      "order": 5,
+      "plane": "prompt",
+      "inputSummary": "prompt resources, rules, tools, model capabilities, hooks",
+      "outputSummary": "system/developer/tool prompt artifact",
+      "assembledPortIDs": [
+        "prompt.compaction-adapter",
+        "prompt.model-capability-adapter",
+        "prompt.resource-loader",
+        "prompt.system-builder",
+        "prompt.tool-renderer",
+        "resource.discovery",
+        "turn.prompt-assembler"
+      ],
+      "assembledAtomIDs": [],
+      "bindingIDs": [],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "count": 7,
+        "sectionCount": 7,
+        "resourceCount": 1,
+        "tokenEstimate": 632,
+        "promptFingerprint": "136d0d3728899f63",
+        "identityStatus": "missing-evidence",
+        "nativeEvidenceRefs": [],
+        "fixtureIDs": [],
+        "parityCoverage": "none",
+        "knownLossiness": []
+      },
+      "status": "matched"
+    },
+    {
+      "id": "provider.request",
+      "label": "Provider Request",
+      "lane": "provider",
+      "order": 6,
+      "plane": "provider",
+      "inputSummary": "context, prompt artifact, model, tools, options",
+      "outputSummary": "provider request boundary",
+      "assembledPortIDs": [
+        "provider.auth",
+        "provider.model-registry",
+        "provider.request-shape",
+        "turn.provider-request-builder"
+      ],
+      "assembledAtomIDs": [],
+      "bindingIDs": [],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "requestCount": 0
+      },
+      "status": "matched"
+    },
+    {
+      "id": "provider.stream",
+      "label": "Provider Stream",
+      "lane": "provider",
+      "order": 7,
+      "plane": "provider",
+      "inputSummary": "provider request and retry policy",
+      "outputSummary": "provider stream events",
+      "assembledPortIDs": [
+        "provider.event-normalizer",
+        "provider.stream",
+        "provider.stream-parser",
+        "provider.streaming-delta-recorder",
+        "provider.transport",
+        "provider.usage-normalizer",
+        "turn.provider-stream-runner"
+      ],
+      "assembledAtomIDs": [
+        "common.provider.streaming-delta-recorder"
+      ],
+      "bindingIDs": [
+        "provider.streaming-delta-recorder"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.provider.streaming-delta-recorder",
+            "portIDs": [
+              "provider.streaming-delta-recorder"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "native-fixture:none",
+              "replay:common.provider.streaming-delta-recorder"
+            ],
+            "fixtureIDs": [
+              "none",
+              "replay:common.provider.streaming-delta-recorder"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.provider.streaming-delta-recorder is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "nativeEvidenceRefs": [
+          "native-fixture:none",
+          "replay:common.provider.streaming-delta-recorder"
+        ],
+        "fixtureIDs": [
+          "none",
+          "replay:common.provider.streaming-delta-recorder"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "stream.project",
+      "label": "Stream Project",
+      "lane": "provider",
+      "order": 8,
+      "plane": "provider",
+      "inputSummary": "raw or normalized provider stream events",
+      "outputSummary": "assistant parts and tool-call candidates",
+      "assembledPortIDs": [
+        "provider.stream-projector",
+        "session.message-part-projector",
+        "turn.stream-reducer"
+      ],
+      "assembledAtomIDs": [
+        "common.provider.stream-projector",
+        "common.session.message-part-projector"
+      ],
+      "bindingIDs": [
+        "provider.stream-projector",
+        "session.message-part-projector"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.provider.stream-projector",
+            "portIDs": [
+              "provider.stream-projector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "native-fixture:none",
+              "replay:common.provider.stream-projector"
+            ],
+            "fixtureIDs": [
+              "none",
+              "replay:common.provider.stream-projector"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.provider.stream-projector is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "common.session.message-part-projector",
+            "portIDs": [
+              "session.message-part-projector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "native-fixture:none",
+              "replay:common.session.message-part-projector"
+            ],
+            "fixtureIDs": [
+              "none",
+              "replay:common.session.message-part-projector"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.session.message-part-projector is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "nativeEvidenceRefs": [
+          "native-fixture:none",
+          "replay:common.provider.stream-projector",
+          "replay:common.session.message-part-projector"
+        ],
+        "fixtureIDs": [
+          "none",
+          "replay:common.provider.stream-projector",
+          "replay:common.session.message-part-projector"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "tool.plan",
+      "label": "Tool Plan",
+      "lane": "tool",
+      "order": 9,
+      "plane": "tool",
+      "inputSummary": "tool-call parts and tool registry",
+      "outputSummary": "ordered tool execution candidates",
+      "assembledPortIDs": [
+        "tool.definition",
+        "tool.registry",
+        "tool.schema-adapter",
+        "tools",
+        "tools.schema",
+        "turn.tool-call-planner"
+      ],
+      "assembledAtomIDs": [
+        "common.tools.schema.default"
+      ],
+      "bindingIDs": [
+        "tools.schema"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.tools.schema.default",
+            "portIDs": [
+              "tools.schema"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "native-fixture:none",
+              "replay:common.tools.schema.default"
+            ],
+            "fixtureIDs": [
+              "none",
+              "replay:common.tools.schema.default"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.tools.schema.default is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "nativeEvidenceRefs": [
+          "native-fixture:none",
+          "replay:common.tools.schema.default"
+        ],
+        "fixtureIDs": [
+          "none",
+          "replay:common.tools.schema.default"
+        ],
+        "parityCoverage": "common-shared",
+        "toolCount": 1
+      },
+      "status": "matched"
+    },
+    {
+      "id": "tool.permission",
+      "label": "Tool Permission",
+      "lane": "tool",
+      "order": 10,
+      "plane": "tool",
+      "inputSummary": "tool action, subject, policy, hook bridge",
+      "outputSummary": "allow, deny, ask, or blocked result",
+      "assembledPortIDs": [
+        "resource.grant",
+        "tool.permission-policy"
+      ],
+      "assembledAtomIDs": [
+        "resource.grant.validator"
+      ],
+      "bindingIDs": [
+        "resource.grant"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "resource.grant.validator",
+            "portIDs": [
+              "resource.grant"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "resource.grant.validator is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "tool.batch",
+      "label": "Tool Batch",
+      "lane": "tool",
+      "order": 11,
+      "plane": "tool",
+      "inputSummary": "prepared tool calls and execution modes",
+      "outputSummary": "parallel or sequential batches",
+      "assembledPortIDs": [
+        "tools.batch-scheduler"
+      ],
+      "assembledAtomIDs": [
+        "common.tools.batch-scheduler.default"
+      ],
+      "bindingIDs": [
+        "tools.batch-scheduler"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.tools.batch-scheduler.default",
+            "portIDs": [
+              "tools.batch-scheduler"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.tools.batch-scheduler.default is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "tool.execute",
+      "label": "Tool Execute",
+      "lane": "tool",
+      "order": 12,
+      "plane": "tool",
+      "inputSummary": "prepared tool calls and resource grants",
+      "outputSummary": "tool execution lifecycle events",
+      "assembledPortIDs": [
+        "filesystem.port",
+        "process-runner.port",
+        "tool.audit-log",
+        "tool.executor",
+        "turn.tool-executor"
+      ],
+      "assembledAtomIDs": [],
+      "bindingIDs": [],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {},
+      "status": "matched"
+    },
+    {
+      "id": "tool.result",
+      "label": "Tool Result",
+      "lane": "tool",
+      "order": 13,
+      "plane": "tool",
+      "inputSummary": "tool result content, details, and error state",
+      "outputSummary": "normalized/truncated tool result part",
+      "assembledPortIDs": [
+        "tool.result-normalizer",
+        "tools.result-projector"
+      ],
+      "assembledAtomIDs": [
+        "common.tools.result-projector.default"
+      ],
+      "bindingIDs": [
+        "tools.result-projector"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.tools.result-projector.default",
+            "portIDs": [
+              "tools.result-projector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "native-fixture:none",
+              "replay:common.tools.result-projector.default"
+            ],
+            "fixtureIDs": [
+              "none",
+              "replay:common.tools.result-projector.default"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.tools.result-projector.default is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "nativeEvidenceRefs": [
+          "native-fixture:none",
+          "replay:common.tools.result-projector.default"
+        ],
+        "fixtureIDs": [
+          "none",
+          "replay:common.tools.result-projector.default"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "acceptance.check",
+      "label": "Acceptance Check",
+      "lane": "runtime",
+      "order": 14,
+      "plane": "runtime",
+      "inputSummary": "task policy evidence, workspace/tool/message state",
+      "outputSummary": "acceptance decision or unavailable evidence",
+      "assembledPortIDs": [
+        "runtime.acceptance-controller",
+        "runtime.acceptance-evidence"
+      ],
+      "assembledAtomIDs": [
+        "common.runtime.acceptance-controller.default",
+        "common.runtime.acceptance-evidence.default"
+      ],
+      "bindingIDs": [
+        "runtime.acceptance-controller",
+        "runtime.acceptance-evidence"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.runtime.acceptance-controller.default",
+            "portIDs": [
+              "runtime.acceptance-controller"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "replay:common.runtime.acceptance-controller.default"
+            ],
+            "fixtureIDs": [
+              "replay:common.runtime.acceptance-controller.default"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.runtime.acceptance-controller.default is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "common.runtime.acceptance-evidence.default",
+            "portIDs": [
+              "runtime.acceptance-evidence"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [
+              "replay:common.runtime.acceptance-evidence.default"
+            ],
+            "fixtureIDs": [
+              "replay:common.runtime.acceptance-evidence.default"
+            ],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.runtime.acceptance-evidence.default is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "nativeEvidenceRefs": [
+          "replay:common.runtime.acceptance-controller.default",
+          "replay:common.runtime.acceptance-evidence.default"
+        ],
+        "fixtureIDs": [
+          "replay:common.runtime.acceptance-controller.default",
+          "replay:common.runtime.acceptance-evidence.default"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "loop.boundary",
+      "label": "Loop Boundary",
+      "lane": "runtime",
+      "order": 15,
+      "plane": "agent-loop",
+      "inputSummary": "step result, finish reason, acceptance state",
+      "outputSummary": "continue, stop, retry, or synthetic continuation decision",
+      "assembledPortIDs": [
+        "agent-loop.request-boundary",
+        "turn.compaction-policy",
+        "turn.continuation-policy",
+        "turn.retry-policy",
+        "turn.stop-condition"
+      ],
+      "assembledAtomIDs": [
+        "common.agent-loop.request-boundary.default"
+      ],
+      "bindingIDs": [
+        "agent-loop.request-boundary"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.agent-loop.request-boundary.default",
+            "portIDs": [
+              "agent-loop.request-boundary"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.agent-loop.request-boundary.default is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "final.summary",
+      "label": "Final Summary",
+      "lane": "runtime",
+      "order": 16,
+      "plane": "agent-loop",
+      "inputSummary": "accepted/tool/final text state",
+      "outputSummary": "native-like final summary decision",
+      "assembledPortIDs": [
+        "agent-loop.final-summary"
+      ],
+      "assembledAtomIDs": [
+        "common.agent-loop.final-summary.default"
+      ],
+      "bindingIDs": [
+        "agent-loop.final-summary"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "common.agent-loop.final-summary.default",
+            "portIDs": [
+              "agent-loop.final-summary"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "common.agent-loop.final-summary.default is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "session.assistant-write",
+      "label": "Assistant Write",
+      "lane": "session",
+      "order": 17,
+      "plane": "session",
+      "inputSummary": "assistant parts and metadata",
+      "outputSummary": "persisted assistant message or native storage projection",
+      "assembledPortIDs": [
+        "session.message-store",
+        "session.projector",
+        "session.store",
+        "session.writer",
+        "turn.result-recorder"
+      ],
+      "assembledAtomIDs": [
+        "session.message-store.memory",
+        "session.projector.common-transcript"
+      ],
+      "bindingIDs": [
+        "session.message-store",
+        "session.projector"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "session.message-store.memory",
+            "portIDs": [
+              "session.message-store"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.message-store.memory is common-shared from common; no upstream parity target is attached to this flow graph."
+          },
+          {
+            "atomID": "session.projector.common-transcript",
+            "portIDs": [
+              "session.projector"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "session.projector.common-transcript is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared"
+      },
+      "status": "matched"
+    },
+    {
+      "id": "surface.output",
+      "label": "Surface Output",
+      "lane": "surface",
+      "order": 18,
+      "plane": "surface",
+      "inputSummary": "session result, message projection, renderer state",
+      "outputSummary": "CLI JSON, TUI/Web render, SDK/server response, or gateway dispatch",
+      "assembledPortIDs": [
+        "product.shell",
+        "ui.command-router",
+        "ui.event-loop",
+        "ui.input-normalizer",
+        "ui.renderer",
+        "ui.snapshot",
+        "ui.theme-registry"
+      ],
+      "assembledAtomIDs": [
+        "product.shell.minimal-cli"
+      ],
+      "bindingIDs": [
+        "product.shell"
+      ],
+      "originalEventTypes": [],
+      "originalStorageRefs": [],
+      "originalEvidenceRefs": [],
+      "observability": {
+        "visibility": "semantic",
+        "lossiness": "lossless",
+        "confidence": "exact",
+        "evidence": "assembly-contract"
+      },
+      "metrics": {
+        "implementationLevels": [
+          "common-shared"
+        ],
+        "moduleClaims": [
+          {
+            "atomID": "product.shell.minimal-cli",
+            "portIDs": [
+              "product.shell"
+            ],
+            "sourceProduct": "common",
+            "sourceScope": "common",
+            "implementationLevel": "common-shared",
+            "parityCompatible": "not-targeted",
+            "parityTargetSatisfied": false,
+            "evidenceRefs": [],
+            "fixtureIDs": [],
+            "knownLossiness": [],
+            "blockers": [
+              "module-claim-common-shared",
+              "no-parity-target"
+            ],
+            "summary": "product.shell.minimal-cli is common-shared from common; no upstream parity target is attached to this flow graph."
+          }
+        ],
+        "parityTargetSatisfied": false,
+        "parityTargetBlockers": [
+          "module-claim-common-shared",
+          "no-parity-target"
+        ],
+        "parityCoverage": "common-shared",
+        "count": 2
+      },
+      "status": "matched"
+    }
+  ],
+  "edges": [
+    {
+      "id": "surface.input->input.normalize",
+      "from": "surface.input",
+      "to": "input.normalize",
+      "label": "Surface Input -> Input Normalize",
+      "dataKind": "control",
+      "hookPoints": [
+        {
+          "event": "input",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "transform"
+          ],
+          "canTransform": true,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "6107ee15be077515",
+      "diffStatus": "same"
+    },
+    {
+      "id": "input.normalize->session.open",
+      "from": "input.normalize",
+      "to": "session.open",
+      "label": "Input Normalize -> Session Open",
+      "dataKind": "message",
+      "hookPoints": [],
+      "payloadFingerprint": "8ec193d9365ab7d5",
+      "diffStatus": "same"
+    },
+    {
+      "id": "session.open->session.user-write",
+      "from": "session.open",
+      "to": "session.user-write",
+      "label": "Session Open -> User Write",
+      "dataKind": "message",
+      "hookPoints": [],
+      "payloadFingerprint": "405e4716564be199",
+      "diffStatus": "same"
+    },
+    {
+      "id": "session.user-write->context.build",
+      "from": "session.user-write",
+      "to": "context.build",
+      "label": "User Write -> Context Build",
+      "dataKind": "control",
+      "hookPoints": [
+        {
+          "event": "context",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "transform"
+          ],
+          "canTransform": true,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        },
+        {
+          "event": "session.before_compact",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "handle"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": true,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        },
+        {
+          "event": "session.compact",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "handle"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": true,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "a267b9abe4e05f9c",
+      "diffStatus": "same"
+    },
+    {
+      "id": "context.build->prompt.assemble",
+      "from": "context.build",
+      "to": "prompt.assemble",
+      "label": "Context Build -> Prompt Assemble",
+      "dataKind": "prompt-artifact",
+      "hookPoints": [
+        {
+          "event": "before_agent_start",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "transform"
+          ],
+          "canTransform": true,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        },
+        {
+          "event": "resources.discover",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "0aac1180d54c444c",
+      "diffStatus": "same"
+    },
+    {
+      "id": "prompt.assemble->provider.request",
+      "from": "prompt.assemble",
+      "to": "provider.request",
+      "label": "Prompt Assemble -> Provider Request",
+      "dataKind": "provider-request",
+      "hookPoints": [
+        {
+          "event": "provider.request.before",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "transform"
+          ],
+          "canTransform": true,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "15d345ac8c70ee3d",
+      "diffStatus": "same"
+    },
+    {
+      "id": "provider.request->provider.stream",
+      "from": "provider.request",
+      "to": "provider.stream",
+      "label": "Provider Request -> Provider Stream",
+      "dataKind": "provider-request",
+      "hookPoints": [],
+      "payloadFingerprint": "74577b4424d9549e",
+      "diffStatus": "same"
+    },
+    {
+      "id": "provider.stream->stream.project",
+      "from": "provider.stream",
+      "to": "stream.project",
+      "label": "Provider Stream -> Stream Project",
+      "dataKind": "control",
+      "hookPoints": [],
+      "payloadFingerprint": "adb2a6cd6d32b7f2",
+      "diffStatus": "same"
+    },
+    {
+      "id": "stream.project->tool.plan",
+      "from": "stream.project",
+      "to": "tool.plan",
+      "label": "Stream Project -> Tool Plan",
+      "dataKind": "tool-call",
+      "hookPoints": [
+        {
+          "event": "tool.call",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "block"
+          ],
+          "canTransform": false,
+          "canBlock": true,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "bcffcf7836093873",
+      "diffStatus": "same"
+    },
+    {
+      "id": "tool.plan->tool.permission",
+      "from": "tool.plan",
+      "to": "tool.permission",
+      "label": "Tool Plan -> Tool Permission",
+      "dataKind": "tool-call",
+      "hookPoints": [
+        {
+          "event": "permission.ask",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "permission",
+            "block"
+          ],
+          "canTransform": false,
+          "canBlock": true,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "3cc26122cebdd82f",
+      "diffStatus": "same"
+    },
+    {
+      "id": "tool.permission->tool.batch",
+      "from": "tool.permission",
+      "to": "tool.batch",
+      "label": "Tool Permission -> Tool Batch",
+      "dataKind": "tool-call",
+      "hookPoints": [],
+      "payloadFingerprint": "12665cfead4ca8ca",
+      "diffStatus": "same"
+    },
+    {
+      "id": "tool.batch->tool.execute",
+      "from": "tool.batch",
+      "to": "tool.execute",
+      "label": "Tool Batch -> Tool Execute",
+      "dataKind": "tool-call",
+      "hookPoints": [],
+      "payloadFingerprint": "38e3ffe12f27a9ca",
+      "diffStatus": "same"
+    },
+    {
+      "id": "tool.execute->tool.result",
+      "from": "tool.execute",
+      "to": "tool.result",
+      "label": "Tool Execute -> Tool Result",
+      "dataKind": "tool-call",
+      "hookPoints": [
+        {
+          "event": "tool.result",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "transform"
+          ],
+          "canTransform": true,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "f7e5c7137ae5757a",
+      "diffStatus": "same"
+    },
+    {
+      "id": "tool.result->acceptance.check",
+      "from": "tool.result",
+      "to": "acceptance.check",
+      "label": "Tool Result -> Acceptance Check",
+      "dataKind": "control",
+      "hookPoints": [],
+      "payloadFingerprint": "e7e9aa766af15e79",
+      "diffStatus": "same"
+    },
+    {
+      "id": "acceptance.check->loop.boundary",
+      "from": "acceptance.check",
+      "to": "loop.boundary",
+      "label": "Acceptance Check -> Loop Boundary",
+      "dataKind": "control",
+      "hookPoints": [],
+      "payloadFingerprint": "425e061839cbdc76",
+      "diffStatus": "same"
+    },
+    {
+      "id": "loop.boundary->final.summary",
+      "from": "loop.boundary",
+      "to": "final.summary",
+      "label": "Loop Boundary -> Final Summary",
+      "dataKind": "control",
+      "hookPoints": [],
+      "payloadFingerprint": "0f1227dd977c311d",
+      "diffStatus": "same"
+    },
+    {
+      "id": "final.summary->session.assistant-write",
+      "from": "final.summary",
+      "to": "session.assistant-write",
+      "label": "Final Summary -> Assistant Write",
+      "dataKind": "message",
+      "hookPoints": [
+        {
+          "event": "message.start",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        },
+        {
+          "event": "message.end",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "c366cbf46885eb46",
+      "diffStatus": "same"
+    },
+    {
+      "id": "session.assistant-write->surface.output",
+      "from": "session.assistant-write",
+      "to": "surface.output",
+      "label": "Assistant Write -> Surface Output",
+      "dataKind": "product-output",
+      "hookPoints": [
+        {
+          "event": "agent.end",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        },
+        {
+          "event": "turn.end",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": false,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        },
+        {
+          "event": "session.idle",
+          "observerCount": 0,
+          "handlerCount": 0,
+          "sourceCount": 0,
+          "sources": [],
+          "capabilities": [
+            "observe",
+            "handle"
+          ],
+          "canTransform": false,
+          "canBlock": false,
+          "canHandle": true,
+          "observability": {
+            "visibility": "none",
+            "lossiness": "inferred",
+            "confidence": "inferred",
+            "evidence": "hook-boundary"
+          }
+        }
+      ],
+      "payloadFingerprint": "6cd9f3955da02ca3",
+      "diffStatus": "same"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "binding.agent-loop.final-summary",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "agent-loop.final-summary -> common.agent-loop.final-summary.default",
+      "refs": [
+        "agent-loop.final-summary",
+        "common.agent-loop.final-summary.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.agent-loop.request-boundary",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "agent-loop.request-boundary -> common.agent-loop.request-boundary.default",
+      "refs": [
+        "agent-loop.request-boundary",
+        "common.agent-loop.request-boundary.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.block.manifest",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "block.manifest -> block.manifest.schema",
+      "refs": [
+        "block.manifest",
+        "block.manifest.schema"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.capability.ref",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "capability.ref -> capability.ref.normalizer",
+      "refs": [
+        "capability.ref",
+        "capability.ref.normalizer"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.conformance.ref",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "conformance.ref -> conformance.ref.fixture-registry",
+      "refs": [
+        "conformance.ref",
+        "conformance.ref.fixture-registry"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.event.envelope",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "event.envelope -> event.envelope.common",
+      "refs": [
+        "event.envelope",
+        "event.envelope.common"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.event.log",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "event.log -> event.log.memory",
+      "refs": [
+        "event.log",
+        "event.log.memory"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.identity.clock",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "identity.clock -> identity.clock.system",
+      "refs": [
+        "identity.clock",
+        "identity.clock.system"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.identity.id-generator",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "identity.id-generator -> identity.id-generator.deterministic",
+      "refs": [
+        "identity.id-generator",
+        "identity.id-generator.deterministic"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.identity.workspace-resolver",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "identity.workspace-resolver -> identity.workspace-resolver.cwd",
+      "refs": [
+        "identity.workspace-resolver",
+        "identity.workspace-resolver.cwd"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.product.shell",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "product.shell -> product.shell.minimal-cli",
+      "refs": [
+        "product.shell",
+        "product.shell.minimal-cli"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.provider.stream-projector",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "provider.stream-projector -> common.provider.stream-projector",
+      "refs": [
+        "provider.stream-projector",
+        "common.provider.stream-projector"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.provider.streaming-delta-recorder",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "provider.streaming-delta-recorder -> common.provider.streaming-delta-recorder",
+      "refs": [
+        "provider.streaming-delta-recorder",
+        "common.provider.streaming-delta-recorder"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.recipe.binding",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "recipe.binding -> recipe.binding.lockfile",
+      "refs": [
+        "recipe.binding",
+        "recipe.binding.lockfile"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.resource.grant",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "resource.grant -> resource.grant.validator",
+      "refs": [
+        "resource.grant",
+        "resource.grant.validator"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.runtime.acceptance-controller",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "runtime.acceptance-controller -> common.runtime.acceptance-controller.default",
+      "refs": [
+        "runtime.acceptance-controller",
+        "common.runtime.acceptance-controller.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.runtime.acceptance-evidence",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "runtime.acceptance-evidence -> common.runtime.acceptance-evidence.default",
+      "refs": [
+        "runtime.acceptance-evidence",
+        "common.runtime.acceptance-evidence.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.runtime.assembly-graph",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "runtime.assembly-graph -> runtime.assembly-graph.lockfile",
+      "refs": [
+        "runtime.assembly-graph",
+        "runtime.assembly-graph.lockfile"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.runtime.binding-planner",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "runtime.binding-planner -> runtime.binding-planner.lockfile",
+      "refs": [
+        "runtime.binding-planner",
+        "runtime.binding-planner.lockfile"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.runtime.capability-resolver",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "runtime.capability-resolver -> runtime.capability-resolver.default",
+      "refs": [
+        "runtime.capability-resolver",
+        "runtime.capability-resolver.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.runtime.lifecycle-runner",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "runtime.lifecycle-runner -> runtime.lifecycle-runner.scoped",
+      "refs": [
+        "runtime.lifecycle-runner",
+        "runtime.lifecycle-runner.scoped"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.runtime.module-catalog",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "runtime.module-catalog -> runtime.module-catalog.memory",
+      "refs": [
+        "runtime.module-catalog",
+        "runtime.module-catalog.memory"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.session.context-selector",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "session.context-selector -> session.context-selector.memory",
+      "refs": [
+        "session.context-selector",
+        "session.context-selector.memory"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.session.event-log",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "session.event-log -> session.event-log.memory",
+      "refs": [
+        "session.event-log",
+        "session.event-log.memory"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.session.id-generator",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "session.id-generator -> session.id-generator.deterministic",
+      "refs": [
+        "session.id-generator",
+        "session.id-generator.deterministic"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.session.message-part-projector",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "session.message-part-projector -> common.session.message-part-projector",
+      "refs": [
+        "session.message-part-projector",
+        "common.session.message-part-projector"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.session.message-store",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "session.message-store -> session.message-store.memory",
+      "refs": [
+        "session.message-store",
+        "session.message-store.memory"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.session.projector",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "session.projector -> session.projector.common-transcript",
+      "refs": [
+        "session.projector",
+        "session.projector.common-transcript"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.tools.batch-scheduler",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "tools.batch-scheduler -> common.tools.batch-scheduler.default",
+      "refs": [
+        "tools.batch-scheduler",
+        "common.tools.batch-scheduler.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.tools.result-projector",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "tools.result-projector -> common.tools.result-projector.default",
+      "refs": [
+        "tools.result-projector",
+        "common.tools.result-projector.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.tools.schema",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "tools.schema -> common.tools.schema.default",
+      "refs": [
+        "tools.schema",
+        "common.tools.schema.default"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": true,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "binding.trace.recorder",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "trace.recorder -> trace.recorder.memory",
+      "refs": [
+        "trace.recorder",
+        "trace.recorder.memory"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "consumerAtomID": "recipe",
+        "source": "recipe-explicit",
+        "edgeKind": "provides-executable",
+        "executableRequired": false,
+        "implementationLevel": "common-shared"
+      }
+    },
+    {
+      "id": "contract.minimal.729116f74821152c",
+      "source": "assembled",
+      "kind": "contract",
+      "label": "minimal assembly contract",
+      "refs": [
+        "coding-agent.minimal",
+        "729116f74821152c"
+      ],
+      "lossiness": "lossless",
+      "metadata": {
+        "atoms": 176,
+        "ports": 96,
+        "bindings": 32,
+        "surfaces": 2
+      }
+    },
+    {
+      "id": "metadata-overlay.process-runner.port",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "process-runner.port metadata overlay",
+      "refs": [
+        "process-runner.port",
+        "process-runner.disabled"
+      ],
+      "lossiness": "semantic",
+      "metadata": {
+        "edgeKind": "annotates",
+        "overlayAtomIDs": [
+          "process-runner.disabled"
+        ],
+        "executableRequired": true,
+        "implementationLevel": "metadata-only",
+        "artifactKind": "metadata-overlay",
+        "artifactHash": "1096b28d36f31b7e"
+      }
+    },
+    {
+      "id": "metadata-overlay.provider.cassette",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "provider.cassette metadata overlay",
+      "refs": [
+        "provider.cassette",
+        "provider.cassette.jsonl",
+        "provider.cassette.memory"
+      ],
+      "lossiness": "semantic",
+      "metadata": {
+        "edgeKind": "annotates",
+        "overlayAtomIDs": [
+          "provider.cassette.jsonl",
+          "provider.cassette.memory"
+        ],
+        "executableRequired": false,
+        "implementationLevel": "metadata-only",
+        "artifactKind": "metadata-overlay",
+        "artifactHash": "689c7be713b32886"
+      }
+    },
+    {
+      "id": "metadata-overlay.provider.transport",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "provider.transport metadata overlay",
+      "refs": [
+        "provider.transport",
+        "provider.transport.mock-sse"
+      ],
+      "lossiness": "semantic",
+      "metadata": {
+        "edgeKind": "annotates",
+        "overlayAtomIDs": [
+          "provider.transport.mock-sse"
+        ],
+        "executableRequired": true,
+        "implementationLevel": "metadata-only",
+        "artifactKind": "metadata-overlay",
+        "artifactHash": "5f7b91628c7dbe73"
+      }
+    },
+    {
+      "id": "metadata-overlay.ui.renderer",
+      "source": "assembled",
+      "kind": "binding",
+      "label": "ui.renderer metadata overlay",
+      "refs": [
+        "ui.renderer",
+        "ui.renderer.noop"
+      ],
+      "lossiness": "semantic",
+      "metadata": {
+        "edgeKind": "annotates",
+        "overlayAtomIDs": [
+          "ui.renderer.noop"
+        ],
+        "executableRequired": true,
+        "implementationLevel": "metadata-only",
+        "artifactKind": "metadata-overlay",
+        "artifactHash": "276d4306968e1a05"
+      }
+    },
+    {
+      "id": "prompt.blueprint.136d0d3728899f63",
+      "source": "assembled",
+      "kind": "prompt",
+      "label": "prompt assembly blueprint artifact",
+      "refs": [
+        "136d0d3728899f63",
+        "base identity",
+        "compaction",
+        "context",
+        "model capability adjustments",
+        "resources",
+        "rules",
+        "tools"
+      ],
+      "lossiness": "semantic",
+      "metadata": {
+        "stageID": "prompt.assemble",
+        "artifactKind": "blueprint",
+        "promptFingerprint": "136d0d3728899f63",
+        "sections": [
+          "base identity",
+          "rules",
+          "tools",
+          "resources",
+          "context",
+          "compaction",
+          "model capability adjustments"
+        ],
+        "sectionSources": {
+          "base identity": "product-profile",
+          "rules": "assembly-contract",
+          "tools": "tool-registry",
+          "resources": "prompt-resource-loader+resource-discovery",
+          "context": "session-context",
+          "compaction": "compaction-adapter",
+          "model capability adjustments": "model-capability-adapter"
+        },
+        "resourceCount": 1,
+        "tokenEstimate": 632,
+        "identityStatus": "missing-evidence",
+        "sanitizedPreview": "redacted blueprint prompt artifact 136d0d3728899f63",
+        "sourceAtomIDs": [],
+        "sourcePortIDs": [
+          "prompt.compaction-adapter",
+          "prompt.model-capability-adapter",
+          "prompt.resource-loader",
+          "prompt.system-builder",
+          "prompt.tool-renderer",
+          "resource.discovery",
+          "turn.prompt-assembler"
+        ],
+        "artifactPath": "inline:assembly-contract",
+        "generatedAt": "2026-06-16T04:19:34.055Z",
+        "captureMode": "blueprint",
+        "nativeEvidenceRefs": [],
+        "fixtureIDs": [],
+        "parityCoverage": "none",
+        "knownLossiness": [],
+        "artifactHash": "38e0b78f5bbd2d9c"
+      }
+    }
+  ],
+  "summary": {
+    "stages": 19,
+    "edges": 18,
+    "observedStages": 19,
+    "inferredStages": 0,
+    "unobservableStages": 0,
+    "driftCount": 0,
+    "fingerprint": "fff14a3880e6eb61"
+  }
+}

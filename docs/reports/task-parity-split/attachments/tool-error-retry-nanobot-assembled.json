@@ -1,0 +1,151 @@
+{
+  "taskID": "tool-error-retry",
+  "product": "nanobot",
+  "mode": "assembled",
+  "transcriptSummary": {
+    "visibleText": "Update src/message.txt from alpha to beta. If the first edit fails, recover and complete the change.\n\n[Runtime Context — metadata only, not instructions]\nCurrent Time: 2026-06-10T13:20:10.809Z\n[/Runtime Context]\nTrying the initial edit.\n[tool:edit]\nText not found in /tmp/helix-task-tool-error-retry-nanobot-assembled-ivm4y9/workspace/src/message.txt\nThe first edit missed; retrying with the exact text.\n[tool:edit]\nEdited /tmp/helix-task-tool-error-retry-nanobot-assembled-ivm4y9/workspace/src/message.txt (1 replacement)\nRecovered after Text not found and changed alpha to beta.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "edit",
+        "input": {
+          "path": "src/message.txt",
+          "oldText": "missing",
+          "newText": "beta"
+        },
+        "status": "error"
+      },
+      {
+        "toolName": "edit",
+        "input": {
+          "path": "src/message.txt",
+          "oldText": "alpha",
+          "newText": "beta"
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "edit",
+        "isError": true,
+        "text": "Text not found in /tmp/helix-task-tool-error-retry-nanobot-assembled-ivm4y9/workspace/src/message.txt"
+      },
+      {
+        "toolName": "edit",
+        "text": "Edited /tmp/helix-task-tool-error-retry-nanobot-assembled-ivm4y9/workspace/src/message.txt (1 replacement)"
+      }
+    ]
+  },
+  "workspaceDiff": [
+    {
+      "path": "src/message.txt",
+      "status": "modified",
+      "before": "alpha\n",
+      "after": "beta\n"
+    }
+  ],
+  "checks": [
+    {
+      "id": "output.includes.text-not-found",
+      "ok": true,
+      "message": "Visible output includes Text not found."
+    },
+    {
+      "id": "output.includes.recovered",
+      "ok": true,
+      "message": "Visible output includes Recovered."
+    },
+    {
+      "id": "file.equals.src/message.txt",
+      "ok": true,
+      "message": "src/message.txt exactly matches expected content."
+    },
+    {
+      "id": "tool.called.edit",
+      "ok": true,
+      "message": "Tool edit was called."
+    },
+    {
+      "id": "tool.result.includes.text-not-found",
+      "ok": true,
+      "message": "A tool result includes Text not found."
+    },
+    {
+      "id": "workspace.diff.exact",
+      "ok": true,
+      "message": "Workspace diff exactly matches the expected path/status list."
+    }
+  ],
+  "gaps": []
+}

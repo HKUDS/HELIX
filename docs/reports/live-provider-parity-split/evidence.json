@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "artifactKind": "live-provider-parity-evidence",
+  "generatedAt": "2026-06-10T05:53:07.810Z",
+  "products": [
+    {
+      "product": "opencode",
+      "status": "passed",
+      "ok": true,
+      "checks": [
+        {
+          "id": "opencode:live-provider-turn",
+          "ok": true,
+          "message": "opencode runs a live external provider turn through the assembled harness.",
+          "details": {
+            "sessionID": "ses_14fe8aeafffeHflR8cYm8OMQNg",
+            "steps": 1,
+            "finish": "end_turn",
+            "assistantText": "{\"sessionID\":\"ses_14fe8aeafffeHflR8cYm8OMQNg\",\"providerID\":\"anthropic\",\"modelID\":\"MiniMax-M2.7-highspeed\",\"step\":0,\"steps\":1}\nThe user is asking me to reply with a short sentence containing \"harnessle",
+            "blockedTools": []
+          }
+        },
+        {
+          "id": "opencode:live-provider-sdk-readback",
+          "ok": true,
+          "message": "opencode product SDK can read back the live provider session transcript.",
+          "details": {
+            "transcript": 2
+          }
+        }
+      ],
+      "sessionID": "ses_14fe8aeafffeHflR8cYm8OMQNg",
+      "steps": 1,
+      "finish": "end_turn"
+    },
+    {
+      "product": "pi-mono",
+      "status": "passed",
+      "ok": true,
+      "checks": [
+        {
+          "id": "pi-mono:live-provider-turn",
+          "ok": true,
+          "message": "pi-mono runs a live external provider turn through the assembled harness.",
+          "details": {
+            "sessionID": "ses_1aac8c3a-9127-442b-aa57-5be226f54dbd",
+            "steps": 1,
+            "finish": "end_turn",
+            "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" and specifically says \"Do not call tools.\" So I should just respond directly without using any tools.\nHelix-",
+            "blockedTools": []
+          }
+        },
+        {
+          "id": "pi-mono:live-provider-sdk-readback",
+          "ok": true,
+          "message": "pi-mono product SDK can read back the live provider session transcript.",
+          "details": {
+            "transcript": 2
+          }
+        }
+      ],
+      "sessionID": "ses_1aac8c3a-9127-442b-aa57-5be226f54dbd",
+      "steps": 1,
+      "finish": "end_turn"
+    },
+    {
+      "product": "nanobot",
+      "status": "passed",
+      "ok": true,
+      "checks": [
+        {
+          "id": "nanobot:live-provider-turn",
+          "ok": true,
+          "message": "nanobot runs a live external provider turn through the assembled harness.",
+          "details": {
+            "sessionID": "ses_ac18d4dd-cc9f-4a5c-b0c2-13f2c1cef466",
+            "steps": 1,
+            "finish": "end_turn",
+            "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" without calling any tools. This is a simple request that doesn't require any tool usage.\nThe helix-live-ok s",
+            "blockedTools": []
+          }
+        },
+        {
+          "id": "nanobot:live-provider-sdk-readback",
+          "ok": true,
+          "message": "nanobot product SDK can read back the live provider session transcript.",
+          "details": {
+            "transcript": 2
+          }
+        }
+      ],
+      "sessionID": "ses_ac18d4dd-cc9f-4a5c-b0c2-13f2c1cef466",
+      "steps": 1,
+      "finish": "end_turn"
+    },
+    {
+      "product": "hermes-agent",
+      "status": "passed",
+      "ok": true,
+      "checks": [
+        {
+          "id": "hermes-agent:live-provider-turn",
+          "ok": true,
+          "message": "hermes-agent runs a live external provider turn through the assembled harness.",
+          "details": {
+            "sessionID": "ses_14fe892fdffeEUVZnGXgdfwXyj",
+            "steps": 1,
+            "finish": "end_turn",
+            "assistantText": "The user wants me to reply with a short sentence containing \"helix-live-ok\". They explicitly said \"Do not call tools.\" So I should just provide a simple response without using any tools.\nThe har",
+            "blockedTools": []
+          }
+        },
+        {
+          "id": "hermes-agent:live-provider-sdk-readback",
+          "ok": true,
+          "message": "hermes-agent product SDK can read back the live provider session transcript.",
+          "details": {
+            "transcript": 2
+          }
+        }
+      ],
+      "sessionID": "ses_14fe892fdffeEUVZnGXgdfwXyj",
+      "steps": 1,
+      "finish": "end_turn"
+    }
+  ],
+  "checks": [
+    {
+      "id": "live-provider:configured",
+      "ok": true,
+      "message": "Live external provider parity has provider, model, and credential inputs.",
+      "details": {
+        "provider": "anthropic",
+        "modelID": "MiniMax-M2.7-highspeed"
+      }
+    },
+    {
+      "id": "opencode:live-provider-turn",
+      "ok": true,
+      "message": "opencode runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_14fe8aeafffeHflR8cYm8OMQNg",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "{\"sessionID\":\"ses_14fe8aeafffeHflR8cYm8OMQNg\",\"providerID\":\"anthropic\",\"modelID\":\"MiniMax-M2.7-highspeed\",\"step\":0,\"steps\":1}\nThe user is asking me to reply with a short sentence containing \"harnessle",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "opencode:live-provider-sdk-readback",
+      "ok": true,
+      "message": "opencode product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    },
+    {
+      "id": "pi-mono:live-provider-turn",
+      "ok": true,
+      "message": "pi-mono runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_1aac8c3a-9127-442b-aa57-5be226f54dbd",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" and specifically says \"Do not call tools.\" So I should just respond directly without using any tools.\nHelix-",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "pi-mono:live-provider-sdk-readback",
+      "ok": true,
+      "message": "pi-mono product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    },
+    {
+      "id": "nanobot:live-provider-turn",
+      "ok": true,
+      "message": "nanobot runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_ac18d4dd-cc9f-4a5c-b0c2-13f2c1cef466",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" without calling any tools. This is a simple request that doesn't require any tool usage.\nThe helix-live-ok s",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "nanobot:live-provider-sdk-readback",
+      "ok": true,
+      "message": "nanobot product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    },
+    {
+      "id": "hermes-agent:live-provider-turn",
+      "ok": true,
+      "message": "hermes-agent runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_14fe892fdffeEUVZnGXgdfwXyj",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "The user wants me to reply with a short sentence containing \"helix-live-ok\". They explicitly said \"Do not call tools.\" So I should just provide a simple response without using any tools.\nThe har",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "hermes-agent:live-provider-sdk-readback",
+      "ok": true,
+      "message": "hermes-agent product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    }
+  ]
+}

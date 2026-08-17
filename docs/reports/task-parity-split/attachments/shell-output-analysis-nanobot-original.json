@@ -1,0 +1,97 @@
+{
+  "taskID": "shell-output-analysis",
+  "product": "nanobot",
+  "mode": "original",
+  "transcriptSummary": {
+    "visibleText": "Run the report script and summarize its status.\n\n[Runtime Context — metadata only, not instructions]\nCurrent Time: 2026-06-10T13:20:01.438Z\n[/Runtime Context]\nRunning the report script.\n[tool:bash]\ntask-parity-ok\nstatus=ready\n\nThe report prints task-parity-ok with status ready.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "shell.env",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "bash",
+        "input": {
+          "command": "node scripts/report.mjs"
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "bash",
+        "text": "task-parity-ok\nstatus=ready\n"
+      }
+    ]
+  },
+  "workspaceDiff": [],
+  "checks": [
+    {
+      "id": "output.includes.task-parity-ok",
+      "ok": true,
+      "message": "Visible output includes task-parity-ok."
+    },
+    {
+      "id": "output.includes.status-ready",
+      "ok": true,
+      "message": "Visible output includes status ready."
+    },
+    {
+      "id": "tool.called.bash",
+      "ok": true,
+      "message": "Tool bash was called."
+    }
+  ],
+  "gaps": []
+}

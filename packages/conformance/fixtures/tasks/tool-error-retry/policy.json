@@ -1,0 +1,56 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 4,
+  "allowedTools": ["edit"],
+  "writePaths": ["src/message.txt"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Trying the initial edit.",
+        "toolCalls": [
+          {
+            "toolName": "edit",
+            "input": {
+              "path": "src/message.txt",
+              "oldText": "missing",
+              "newText": "beta"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "The first edit missed; retrying with the exact text.",
+        "toolCalls": [
+          {
+            "toolName": "edit",
+            "input": {
+              "path": "src/message.txt",
+              "oldText": "alpha",
+              "newText": "beta"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Recovered after Text not found and changed alpha to beta."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["Text not found", "Recovered"],
+    "files": {
+      "src/message.txt": {
+        "equals": "beta\n"
+      }
+    },
+    "toolNames": ["edit"],
+    "toolResultIncludes": ["Text not found"],
+    "workspaceDiffExact": [
+      {
+        "path": "src/message.txt",
+        "status": "modified"
+      }
+    ]
+  }
+}

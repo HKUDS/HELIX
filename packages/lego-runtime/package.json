@@ -1,0 +1,19 @@
+{
+  "name": "@helix/lego-runtime",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./acceptance-controller": "./src/acceptance-controller.ts",
+    "./product-schema/hermes": "./src/product-schema/hermes.ts",
+    "./product-schema/nanobot": "./src/product-schema/nanobot.ts",
+    "./product-schema/opencode": "./src/product-schema/opencode.ts",
+    "./product-schema/pi": "./src/product-schema/pi.ts",
+    "./port-fixtures": "./src/port-fixtures.ts",
+    "./runtime-atoms": "./src/runtime-atoms.ts"
+  }
+}

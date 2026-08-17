@@ -1,0 +1,13 @@
+{
+  "name": "@opencode-ai/plugin",
+  "version": "0.0.0-helix",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@helix/adapters-opencode": "file:../adapters-opencode"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

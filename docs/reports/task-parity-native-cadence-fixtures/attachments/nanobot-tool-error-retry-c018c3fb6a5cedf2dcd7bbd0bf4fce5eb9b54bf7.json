@@ -1,0 +1,640 @@
+{
+  "fixtureVersion": 1,
+  "product": "nanobot",
+  "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+  "taskID": "tool-error-retry",
+  "providerShape": {
+    "provider": "cassette",
+    "modelID": "fixture-model",
+    "deterministic": true,
+    "requests": 3
+  },
+  "cadenceSignature": {
+    "level": "exact-cadence",
+    "providerRequests": [
+      {
+        "index": 0,
+        "modelID": "fixture-model",
+        "toolCallCount": 0,
+        "eventCount": 66,
+        "source": "native-cli",
+        "visibility": "observed",
+        "boundaryEvidence": "cli-event"
+      },
+      {
+        "index": 1,
+        "modelID": "fixture-model",
+        "toolCallCount": 0,
+        "eventCount": 66,
+        "source": "native-cli",
+        "visibility": "observed",
+        "boundaryEvidence": "cli-event"
+      },
+      {
+        "index": 2,
+        "modelID": "fixture-model",
+        "toolCallCount": 2,
+        "eventCount": 66,
+        "source": "native-cli",
+        "visibility": "observed",
+        "boundaryEvidence": "cli-event"
+      }
+    ],
+    "assistantTurns": [
+      {
+        "index": 0,
+        "text": "has-text",
+        "partTypes": [
+          "text",
+          "tool-result-error:edit",
+          "tool-result:edit",
+          "tool:edit"
+        ],
+        "toolCallCount": 2
+      }
+    ],
+    "toolSequence": [
+      {
+        "index": 0,
+        "toolName": "edit",
+        "status": "error",
+        "inputShape": "newText,oldText,path",
+        "result": "error"
+      },
+      {
+        "index": 1,
+        "toolName": "edit",
+        "status": "completed",
+        "inputShape": "newText,oldText,path",
+        "result": "error"
+      }
+    ],
+    "toolBatches": [
+      [
+        "edit"
+      ],
+      [
+        "edit"
+      ]
+    ],
+    "sessionWrites": [
+      "session.start",
+      "message.start",
+      "message.end",
+      "message.start",
+      "message.end",
+      "session.idle"
+    ],
+    "traceEvents": [
+      "turn.pipeline.trace",
+      "input",
+      "turn.pipeline.trace",
+      "session.start",
+      "turn.start",
+      "message.start",
+      "message.end",
+      "before.agent.start",
+      "turn.pipeline.trace",
+      "context",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "agent.start",
+      "provider.request.before",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "tool.call",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "tool.start",
+      "tool.result",
+      "tool.end",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "provider.response.after",
+      "turn.pipeline.trace",
+      "provider.request.before",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "tool.call",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "tool.start",
+      "tool.result",
+      "tool.end",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "provider.response.after",
+      "turn.pipeline.trace",
+      "provider.request.before",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "acceptance.accepted-early",
+      "provider.response.after",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "message.start",
+      "turn.pipeline.trace",
+      "message.end",
+      "agent.end",
+      "turn.end",
+      "session.idle"
+    ],
+    "costShape": {
+      "providerRequests": 3,
+      "toolCalls": 2,
+      "retries": 0,
+      "syntheticContinues": 0,
+      "contextCompacted": false,
+      "messageCount": 2
+    }
+  },
+  "observationShape": {
+    "providerBoundary": {
+      "visibility": "per-request",
+      "lossiness": "semantic",
+      "evidence": "cli-event"
+    },
+    "streamDelta": {
+      "visibility": "semantic",
+      "lossiness": "semantic",
+      "evidence": "stream-event"
+    },
+    "toolLifecycle": {
+      "visibility": "call-result",
+      "lossiness": "semantic",
+      "evidence": "cli-event"
+    },
+    "messageWrite": {
+      "visibility": "storage-event",
+      "lossiness": "semantic",
+      "evidence": "message-store"
+    },
+    "acceptance": {
+      "visibility": "explicit-event",
+      "lossiness": "semantic",
+      "evidence": "runtime-policy"
+    },
+    "workspace": {
+      "visibility": "diff-only",
+      "lossiness": "semantic",
+      "evidence": "workspace-diff"
+    }
+  },
+  "nativeEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before.agent.start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.start",
+    "tool.result",
+    "tool.end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.start",
+    "tool.result",
+    "tool.end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "acceptance.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "nativeChunks": [
+    {
+      "index": 0,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 1,
+      "type": "input",
+      "semanticClass": "control"
+    },
+    {
+      "index": 2,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 3,
+      "type": "session.start",
+      "semanticClass": "session"
+    },
+    {
+      "index": 4,
+      "type": "turn.start",
+      "semanticClass": "control"
+    },
+    {
+      "index": 5,
+      "type": "message.start",
+      "semanticClass": "message"
+    },
+    {
+      "index": 6,
+      "type": "message.end",
+      "semanticClass": "message"
+    },
+    {
+      "index": 7,
+      "type": "before.agent.start",
+      "semanticClass": "control"
+    },
+    {
+      "index": 8,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 9,
+      "type": "context",
+      "semanticClass": "message"
+    },
+    {
+      "index": 10,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 11,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 12,
+      "type": "agent.start",
+      "semanticClass": "control"
+    },
+    {
+      "index": 13,
+      "type": "provider.request.before",
+      "semanticClass": "control"
+    },
+    {
+      "index": 14,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 15,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 16,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 17,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 18,
+      "type": "tool.call",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 19,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 20,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 21,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 22,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 23,
+      "type": "tool.start",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 24,
+      "type": "tool.result",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 25,
+      "type": "tool.end",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 26,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 27,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 28,
+      "type": "provider.response.after",
+      "semanticClass": "control"
+    },
+    {
+      "index": 29,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 30,
+      "type": "provider.request.before",
+      "semanticClass": "control"
+    },
+    {
+      "index": 31,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 32,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 33,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 34,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 35,
+      "type": "tool.call",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 36,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 37,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 38,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 39,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 40,
+      "type": "tool.start",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 41,
+      "type": "tool.result",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 42,
+      "type": "tool.end",
+      "semanticClass": "tool"
+    },
+    {
+      "index": 43,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 44,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 45,
+      "type": "provider.response.after",
+      "semanticClass": "control"
+    },
+    {
+      "index": 46,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 47,
+      "type": "provider.request.before",
+      "semanticClass": "control"
+    },
+    {
+      "index": 48,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 49,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 50,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 51,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 52,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 53,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 54,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 55,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 56,
+      "type": "acceptance.accepted-early",
+      "semanticClass": "acceptance"
+    },
+    {
+      "index": 57,
+      "type": "provider.response.after",
+      "semanticClass": "control"
+    },
+    {
+      "index": 58,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 59,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 60,
+      "type": "message.start",
+      "semanticClass": "message"
+    },
+    {
+      "index": 61,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 62,
+      "type": "message.end",
+      "semanticClass": "message"
+    },
+    {
+      "index": 63,
+      "type": "agent.end",
+      "semanticClass": "control"
+    },
+    {
+      "index": 64,
+      "type": "turn.end",
+      "semanticClass": "control"
+    },
+    {
+      "index": 65,
+      "type": "session.idle",
+      "semanticClass": "session"
+    }
+  ],
+  "messageParts": [
+    "text",
+    "tool-result-error:edit",
+    "tool-result:edit",
+    "tool:edit"
+  ],
+  "projectionLosses": [
+    {
+      "field": "providerBoundary",
+      "lossiness": "semantic",
+      "reason": "providerBoundary is recorded with per-request visibility from cli-event evidence."
+    },
+    {
+      "field": "streamDelta",
+      "lossiness": "semantic",
+      "reason": "streamDelta is recorded with semantic visibility from stream-event evidence."
+    },
+    {
+      "field": "toolLifecycle",
+      "lossiness": "semantic",
+      "reason": "toolLifecycle is recorded with call-result visibility from cli-event evidence."
+    },
+    {
+      "field": "messageWrite",
+      "lossiness": "semantic",
+      "reason": "messageWrite is recorded with storage-event visibility from message-store evidence."
+    },
+    {
+      "field": "acceptance",
+      "lossiness": "semantic",
+      "reason": "acceptance is recorded with explicit-event visibility from runtime-policy evidence."
+    },
+    {
+      "field": "workspace",
+      "lossiness": "semantic",
+      "reason": "workspace is recorded with diff-only visibility from workspace-diff evidence."
+    }
+  ],
+  "redactionSummary": {
+    "credentials": "redacted",
+    "hostPaths": "normalized",
+    "tokenUsage": "omitted"
+  }
+}

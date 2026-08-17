@@ -1,0 +1,30 @@
+{
+  "product": "nanobot",
+  "status": "passed",
+  "ok": true,
+  "checks": [
+    {
+      "id": "nanobot:live-provider-turn",
+      "ok": true,
+      "message": "nanobot runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_ac18d4dd-cc9f-4a5c-b0c2-13f2c1cef466",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" without calling any tools. This is a simple request that doesn't require any tool usage.\nThe helix-live-ok s",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "nanobot:live-provider-sdk-readback",
+      "ok": true,
+      "message": "nanobot product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    }
+  ],
+  "sessionID": "ses_ac18d4dd-cc9f-4a5c-b0c2-13f2c1cef466",
+  "steps": 1,
+  "finish": "end_turn"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@helix/lego-prompt",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts",
+    "@helix/lego-hooks": "file:../lego-hooks",
+    "@helix/lego-session": "file:../lego-session"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./opencode-system": "./src/opencode-system.ts",
+    "./product-schema/hermes": "./src/product-schema/hermes.ts",
+    "./product-schema/nanobot": "./src/product-schema/nanobot.ts",
+    "./product-schema/opencode": "./src/product-schema/opencode.ts",
+    "./product-schema/pi": "./src/product-schema/pi.ts",
+    "./prompt-atoms": "./src/prompt-atoms.ts",
+    "./port-fixtures": "./src/port-fixtures.ts"
+  }
+}

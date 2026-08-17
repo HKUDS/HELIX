@@ -1,0 +1,30 @@
+{
+  "product": "opencode",
+  "status": "passed",
+  "ok": true,
+  "checks": [
+    {
+      "id": "opencode:live-provider-turn",
+      "ok": true,
+      "message": "opencode runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_14fe8aeafffeHflR8cYm8OMQNg",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "{\"sessionID\":\"ses_14fe8aeafffeHflR8cYm8OMQNg\",\"providerID\":\"anthropic\",\"modelID\":\"MiniMax-M2.7-highspeed\",\"step\":0,\"steps\":1}\nThe user is asking me to reply with a short sentence containing \"harnessle",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "opencode:live-provider-sdk-readback",
+      "ok": true,
+      "message": "opencode product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    }
+  ],
+  "sessionID": "ses_14fe8aeafffeHflR8cYm8OMQNg",
+  "steps": 1,
+  "finish": "end_turn"
+}

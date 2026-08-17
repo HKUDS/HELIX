@@ -1,0 +1,34 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 3,
+  "allowedTools": ["write"],
+  "writePaths": ["src/allowed.txt"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Testing the write permission boundary.",
+        "toolCalls": [
+          {
+            "toolName": "write",
+            "input": {
+              "path": "secrets/outside.txt",
+              "content": "should not be written"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "The write was blocked by policy; secrets/outside.txt was not created."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["blocked by policy", "not created"],
+    "noFiles": ["secrets/outside.txt"],
+    "toolNames": ["write"],
+    "blockedToolNames": ["write"],
+    "toolResultIncludes": ["write path secrets/outside.txt is not allowed"],
+    "workspaceDiffCount": 0
+  }
+}

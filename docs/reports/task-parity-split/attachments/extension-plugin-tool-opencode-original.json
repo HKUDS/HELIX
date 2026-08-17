@@ -1,0 +1,100 @@
+{
+  "taskID": "extension-plugin-tool",
+  "product": "opencode",
+  "mode": "original",
+  "transcriptSummary": {
+    "visibleText": "Invoke the extension-style echo tool with the plugin payload and report the result.\nCalling the extension-style echo tool.\n[tool:echo]\nplugin-payload-ok\nExtension plugin tool returned plugin-payload-ok.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "echo",
+        "input": {
+          "text": "plugin-payload-ok"
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "echo",
+        "text": "plugin-payload-ok"
+      }
+    ]
+  },
+  "workspaceDiff": [],
+  "checks": [
+    {
+      "id": "output.includes.plugin-payload-ok",
+      "ok": true,
+      "message": "Visible output includes plugin-payload-ok."
+    },
+    {
+      "id": "tool.called.echo",
+      "ok": true,
+      "message": "Tool echo was called."
+    },
+    {
+      "id": "tool.result.includes.plugin-payload-ok",
+      "ok": true,
+      "message": "A tool result includes plugin-payload-ok."
+    },
+    {
+      "id": "workspace.diff.count",
+      "ok": true,
+      "message": "Workspace diff contains 0 entries."
+    }
+  ],
+  "gaps": []
+}

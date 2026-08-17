@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "claude-tap compact trace subset",
+  "type": "object",
+  "required": ["__claude_tap_compact_trace__", "records", "blobs"],
+  "properties": {
+    "__claude_tap_compact_trace__": {
+      "type": "object",
+      "required": ["version"],
+      "properties": {
+        "version": { "const": 1 },
+        "encoding": { "type": "string" },
+        "record_count": { "type": "integer" },
+        "blob_count": { "type": "integer" }
+      }
+    },
+    "records": { "type": "array" },
+    "blobs": { "type": "object" }
+  }
+}

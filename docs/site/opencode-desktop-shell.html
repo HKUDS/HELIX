@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenCode Desktop Shell</title>
+  <style>
+    body { margin: 0; background: #11140f; color: #f5f7ee; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    header { display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 0 14px; border-bottom: 2px solid #f5f7ee; background: #20251b; }
+    iframe { width: 100vw; height: calc(100vh - 46px); border: 0; background: white; }
+  </style>
+</head>
+<body data-opencode-desktop-shell="ready">
+  <header><strong>OpenCode</strong><span>dev.opencode.helix</span></header>
+  <iframe title="OpenCode Web" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;OpenCode Web Cockpit&lt;/title&gt;
+  &lt;style&gt;
+    :root {
+      color-scheme: light;
+      --paper: #f3f4ef;
+      --ink: #171915;
+      --muted: #666b60;
+      --line: #171915;
+      --panel: #fffdf7;
+      --mint: #8bd7c8;
+      --gold: #efc349;
+      --red: #d95f43;
+      --blue: #3867c8;
+      --soft: #dde3d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgb(23 25 21 / 0.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgb(23 25 21 / 0.06) 1px, transparent 1px),
+        var(--paper);
+      background-size: 22px 22px;
+      font-family: &quot;Avenir Next&quot;, &quot;Gill Sans&quot;, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 24px 0 38px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: end;
+      border-bottom: 4px solid var(--line);
+      padding-bottom: 16px;
+    }
+
+    h1, h2, p { margin: 0; }
+
+    h1 {
+      font-size: 2.35rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 0.92rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      border: 2px solid var(--line);
+      background: var(--gold);
+      padding: 9px 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .fact {
+      border: 2px solid var(--line);
+      background: var(--panel);
+      padding: 12px;
+      box-shadow: 5px 5px 0 var(--soft);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(310px, 0.8fr);
+      gap: 18px;
+      margin-top: 22px;
+      align-items: start;
+    }
+
+    section {
+      border-top: 3px solid var(--line);
+      padding-top: 12px;
+      min-width: 0;
+    }
+
+    section + section {
+      margin-top: 20px;
+    }
+
+    ul {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      border: 2px solid var(--line);
+      background: var(--panel);
+      padding: 8px 10px;
+    }
+
+    li:nth-child(3n + 1) { border-left: 10px solid var(--mint); }
+    li:nth-child(3n + 2) { border-left: 10px solid var(--red); }
+    li:nth-child(3n) { border-left: 10px solid var(--blue); }
+
+    li span {
+      overflow-wrap: anywhere;
+      font-weight: 850;
+    }
+
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    code {
+      border: 1px solid var(--line);
+      background: #eef7d4;
+      padding: 3px 6px;
+      font-size: 0.76rem;
+      white-space: nowrap;
+    }
+
+    pre {
+      overflow: auto;
+      border: 2px solid var(--line);
+      background: #151915;
+      color: #ecf4dc;
+      padding: 12px;
+      margin: 0;
+      min-height: 170px;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 840px) {
+      header,
+      .facts,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main data-opencode-web=&quot;ready&quot;&gt;
+    &lt;header&gt;
+      &lt;div&gt;
+        &lt;h1&gt;OpenCode Web Cockpit&lt;/h1&gt;
+        &lt;p&gt;Local workspace&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;badge&quot;&gt;READY&lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;div class=&quot;facts&quot;&gt;
+      &lt;div class=&quot;fact&quot;&gt;&lt;strong&gt;293&lt;/strong&gt;&lt;span&gt;recipe modules&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;fact&quot;&gt;&lt;strong&gt;12&lt;/strong&gt;&lt;span&gt;tools&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;fact&quot;&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;span&gt;providers&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;fact&quot;&gt;&lt;strong&gt;64&lt;/strong&gt;&lt;span&gt;services&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;grid&quot;&gt;
+      &lt;div&gt;
+        &lt;section aria-labelledby=&quot;modules-title&quot;&gt;
+          &lt;h2 id=&quot;modules-title&quot;&gt;Recipe Graph&lt;/h2&gt;
+          &lt;ul&gt;&lt;li&gt;&lt;span&gt;block.manifest.schema&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;block.manifest.normalizer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;capability.ref.normalizer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;resource.grant.validator&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;recipe.binding.lockfile&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;conformance.ref.fixture-registry&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;identity.id-generator.deterministic&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;identity.id-generator.random&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;identity.clock.system&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;identity.clock.deterministic&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;identity.workspace-resolver.cwd&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;identity.workspace-resolver.configured&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;event.envelope.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;event.log.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;event.log.jsonl&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;event.log.projection&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;trace.recorder.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;trace.recorder.jsonl&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;runtime.module-catalog.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;runtime.capability-resolver.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;runtime.binding-planner.lockfile&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;runtime.lifecycle-runner.scoped&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;runtime.assembly-graph.lockfile&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.runtime.acceptance-controller.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.runtime.acceptance-evidence.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.id-generator.deterministic&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.store.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.store.jsonl-tree&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.store.sqlite-projection&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.event-log.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.event-log.jsonl&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.event-log.projection&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.reader.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.reader.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.writer.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.writer.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.message-store.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.message-store.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.branching.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.branching.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.branch-graph.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.branch-graph.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.projector.common-transcript&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.session.message-part-projector&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.pagination.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.pagination.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.context-selector.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.context-selector.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.compaction-records.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;session.compaction-records.service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.bus.source-ordered&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.observer-chain.source-ordered&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.handler-chain.source-ordered&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.scheduler.serial&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.scheduler.parallel&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.scheduler.source-ordered&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.cleanup-scope.registry&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.error-policy.fail-fast&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;hook.error-policy.collect-and-continue&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;registry.tool.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;registry.command.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;registry.provider.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;registry.ui.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.input-normalizer.text&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.context-builder.transcript&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.prompt-assembler.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.provider-request-builder.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.provider-stream-runner.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.stream-reducer.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.tool-call-planner.parallel-batch&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.tool-call-planner.sequential&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.tool-executor.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.result-recorder.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.retry-policy.none&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.retry-policy.fixed&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.retry-policy.exponential&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.continuation-policy.none&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.continuation-policy.synthetic-continue&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.compaction-policy.none&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.compaction-policy.token-threshold&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.compaction-policy.manual&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.stop-condition.no-tool-calls&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;turn.stop-condition.max-steps&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.agent-loop.request-boundary.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.agent-loop.final-summary.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool-pack.echo&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool-pack.filesystem&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool-pack.shell&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool-pack.meta&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.definition.echo&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.definition.filesystem&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.definition.shell&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.definition.meta&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.schema.json-schema&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.schema.typebox&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.schema.zod-compatible&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.schema.effect-compatible&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.schema.typescript-validator&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.tools.schema.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.tools.batch-scheduler.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.permission.always-allow&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.permission.always-deny&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.permission.ask-hook&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.permission.workspace-scoped&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.permission.product-personality&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.executor.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.executor.echo-only&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.result.text&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.result.json&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.result.error&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.result.truncated&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.tools.result-projector.default&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.audit.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;tool.audit.jsonl&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;filesystem.local&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;filesystem.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;filesystem.readonly&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;filesystem.workspace-scoped&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;process-runner.disabled&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;process-runner.local&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;process-runner.dry-run&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;process-runner.sandbox&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.transport.fetch&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.transport.mock-sse&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.transport.cassette&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.auth.api-key&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.auth.bearer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.auth.query-key&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.model-registry.static&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.model-registry.env&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.model-registry.remote-cache&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.request-shape.openai-compatible&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.request-shape.anthropic&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.request-shape.google&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.stream-parser.sse&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.stream-parser.json&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.stream-parser.cassette&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.provider.streaming-delta-recorder&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.event-normalizer.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.event-normalizer.openai-compatible&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.event-normalizer.anthropic&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.event-normalizer.google&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.usage-normalizer.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.usage-normalizer.pricing-table&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.cassette.jsonl&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.cassette.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.stream.openai-compatible&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.stream.openrouter&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.stream.anthropic&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;provider.stream.google&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;common.provider.stream-projector&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.source.env&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.source.file&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.source.cli-override&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.merge.deep&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.merge.replace&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.merge.priority&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.validator.schema&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;config.validator.typescript&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;resource.discovery.filesystem&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;resource.discovery.memory&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;prompt.resource-loader.text&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;prompt.resource-loader.markdown&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;prompt.system-builder.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;prompt.tool-renderer.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;prompt.model-capability-adapter.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;prompt.compaction-adapter.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.event-loop.shared-tui&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.renderer.noop&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.renderer.text&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.renderer.html&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.command-router.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.theme-registry.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.input-normalizer.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;ui.snapshot.common&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.block.compatibility-metadata&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.capability.aliases&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.resource.grant-defaults&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.recipe.binding-aliases&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.conformance.product-gate&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.identity.id-generator&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.identity.clock-format&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.identity.workspace-resolver&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.event.envelope-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.event.syncevent-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.trace.debug-surface&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.module-catalog&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.module-aliases&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.capability-resolver&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.capability-aliases&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.binding-planner&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.binding-defaults&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.lifecycle-runner&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.lifecycle-defaults&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.assembly-graph&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.graph-labels&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.acceptance-controller.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.runtime.acceptance-evidence.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.id-generator&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.store.sqlite-projection&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.event-log.syncevent&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.reader.sqlite-service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.writer.sqlite-service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.message-store.sqlite-service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.branching.sqlite-service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.branch-graph.fork-before-message&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.projector.syncevent&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.projector.message-v2&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.message-part-projector.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.pagination.update-time-cursor&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.context-selector.message-v2&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.compaction-event&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.session.diff.sqlite-service&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.hook.plugin-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.plugin.loader&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.hook.observer-adapter&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.hook.handler-adapter&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.plugin.event-mapper&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.hook.scheduler-defaults&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.plugin.hot-reload-cleanup&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.hook.error-defaults&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.registry.tool-definition&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.plugin.registry-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.registry.command&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.registry.provider-plugin&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.plugin.provider-registry-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.registry.ui-provider&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.plugin.ui-registry-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.input-normalizer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.context-builder&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.prompt-assembler&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.provider-request-builder&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.provider-stream-runner&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.stream-reducer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.tool-call-planner&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.tool-executor&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.result-recorder&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.retry-policy&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.continuation-policy&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.compaction-policy&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.turn.stop-condition&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.agent-loop.request-boundary.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.agent-loop.final-summary.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tool-pack.native&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tool-pack.compatibility&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tool.definition-plugin-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tool.schema-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tools.schema.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tools.batch-scheduler.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.permission.ask-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.plugin.permission-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tool.permission-render-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tool.result-render-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tools.result-projector.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tool.status-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.workspace-filesystem-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.shell.env-bridge&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.transport-instrumentation&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.auth-descriptor&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.model-plugin&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.request-options&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.parser-observer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.streaming-delta-recorder.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.event-observer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.usage-renderer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.cassette-artifact&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.plugin-descriptor&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.provider.stream-projector.native-like&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.config.source&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.config.precedence&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.config.validator&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.resource.discovery.instruction&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.prompt.resource-loader.instruction&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.prompt.mode-builder&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.prompt.tool-renderer.provider-tools&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.prompt.model-capability-adapter.provider-prompt&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.prompt.compaction-adapter.build-prompt&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.ui.event-loop&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.tui.shell&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.ui.renderer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.ui.command-router&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.ui.theme-registry&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.ui.input-normalizer&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.ui.snapshot&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.sdk&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.harness&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.workspace&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.control-plane&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.server&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.tui&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.web&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.desktop&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode.product-shell.slack&lt;/span&gt;&lt;code&gt;base&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+        &lt;/section&gt;
+      &lt;/div&gt;
+      &lt;aside&gt;
+        &lt;section aria-labelledby=&quot;tui-title&quot;&gt;
+          &lt;h2 id=&quot;tui-title&quot;&gt;TUI Surface&lt;/h2&gt;
+          &lt;pre&gt;OpenCode :: ready
+run / sessions / graph / providers / tools&lt;/pre&gt;
+        &lt;/section&gt;
+        &lt;section aria-labelledby=&quot;tools-title&quot;&gt;
+          &lt;h2 id=&quot;tools-title&quot;&gt;Tools&lt;/h2&gt;
+          &lt;ul&gt;&lt;li&gt;&lt;span&gt;bash&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;edit&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;glob&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;grep&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;invalid&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;question&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;read&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;skill&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;task&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;todowrite&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;webfetch&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;write&lt;/span&gt;&lt;code&gt;tool&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;section aria-labelledby=&quot;providers-title&quot;&gt;
+          &lt;h2 id=&quot;providers-title&quot;&gt;Providers&lt;/h2&gt;
+          &lt;ul&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-azure&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-cloudflare&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-codex&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-digitalocean&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-github-copilot&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-gitlab&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-poe&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;opencode-builtin-xai&lt;/span&gt;&lt;code&gt;provider&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+        &lt;/section&gt;
+      &lt;/aside&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+</body>
+</html>

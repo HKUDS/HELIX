@@ -1,0 +1,57 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 4,
+  "allowedTools": ["edit"],
+  "writePaths": ["src/math.ts", "src/index.ts"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Renaming the exported helper and its import.",
+        "toolCalls": [
+          {
+            "toolName": "edit",
+            "input": {
+              "path": "src/math.ts",
+              "oldText": "export function sum(left: number, right: number): number {",
+              "newText": "export function add(left: number, right: number): number {"
+            }
+          },
+          {
+            "toolName": "edit",
+            "input": {
+              "path": "src/index.ts",
+              "oldText": "import { sum } from \"./math\";\n\nexport function calculateTotal(values: number[]): number {\n  return values.reduce((total, value) => sum(total, value), 0);\n}",
+              "newText": "import { add } from \"./math\";\n\nexport function calculateTotal(values: number[]): number {\n  return values.reduce((total, value) => add(total, value), 0);\n}"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Renamed sum to add across src/math.ts and src/index.ts without changing behavior."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["Renamed sum to add", "without changing behavior"],
+    "files": {
+      "src/math.ts": {
+        "includes": ["export function add"]
+      },
+      "src/index.ts": {
+        "includes": ["import { add }", "add(total, value)"]
+      }
+    },
+    "toolNames": ["edit"],
+    "workspaceDiffExact": [
+      {
+        "path": "src/index.ts",
+        "status": "modified"
+      },
+      {
+        "path": "src/math.ts",
+        "status": "modified"
+      }
+    ]
+  }
+}

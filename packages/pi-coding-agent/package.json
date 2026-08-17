@@ -1,0 +1,13 @@
+{
+  "name": "@earendil-works/pi-coding-agent",
+  "version": "0.0.0-helix",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@helix/adapters-pi": "file:../adapters-pi"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

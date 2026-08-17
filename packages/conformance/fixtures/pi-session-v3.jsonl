@@ -1,0 +1,3 @@
+{"type":"session","version":3,"id":"ses_pi_fixture","timestamp":"2026-05-26T14:00:00.000Z","cwd":"/tmp/pi-fixture","title":"Pi fixture"}
+{"type":"message","id":"msg_pi_user","parentId":null,"timestamp":"2026-05-26T14:00:01.000Z","message":{"id":"msg_pi_user","sessionID":"ses_pi_fixture","role":"user","time":{"created":1779804001000},"parts":[{"id":"prt_pi_user_text","type":"text","text":"hello from pi jsonl"}]}}
+{"type":"message","id":"msg_pi_assistant","parentId":"msg_pi_user","timestamp":"2026-05-26T14:00:02.000Z","message":{"id":"msg_pi_assistant","sessionID":"ses_pi_fixture","role":"assistant","time":{"created":1779804002000,"completed":1779804002000},"parts":[{"id":"prt_pi_assistant_text","type":"text","text":"hello back from pi"}]}}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 2,
+  "artifactKind": "task-parity-manifest",
+  "generatedAt": "2026-06-01T03:53:52.268Z",
+  "summaryPath": "summary.json",
+  "evidencePath": "evidence.json",
+  "attachments": [
+    {
+      "path": "attachments/livecodebench-1883-b-palindrome-removal-opencode-assembled.json",
+      "sha256": "c45229087f3c4b357e42c75c50484be29c8b261240368bf6e22b9cab1009083e",
+      "byteSize": 24219,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "artifact.attachments.present",
+        "artifact.attachments.no-secrets",
+        "artifact.manifest.hashes"
+      ]
+    },
+    {
+      "path": "attachments/livecodebench-1883-b-palindrome-removal-opencode-original.json",
+      "sha256": "aae2f98fa298607de5901ae89e14c4dc8df839642d53e39aa7ada35d331d4526",
+      "byteSize": 8454,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "artifact.attachments.present",
+        "artifact.attachments.no-secrets",
+        "artifact.manifest.hashes"
+      ]
+    },
+    {
+      "path": "attachments/livecodebench-1883-b-palindrome-removal-pi-mono-assembled.json",
+      "sha256": "a1522132751f56546b867d50f81f10fb1e400e0a7d29c3a7f2ba90b6d323e325",
+      "byteSize": 21181,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "artifact.attachments.present",
+        "artifact.attachments.no-secrets",
+        "artifact.manifest.hashes"
+      ]
+    },
+    {
+      "path": "attachments/livecodebench-1883-b-palindrome-removal-pi-mono-original.json",
+      "sha256": "b640d8befb941f5c58228ac02dd093a754cc44f22da49f86a3ed2b3e0bfbaffd",
+      "byteSize": 21022,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "artifact.attachments.present",
+        "artifact.attachments.no-secrets",
+        "artifact.manifest.hashes"
+      ]
+    },
+    {
+      "path": "attachments/livecodebench-1883-b-palindrome-removal-nanobot-assembled.json",
+      "sha256": "a93ab5e25f9956305c4da90f1ec8866c6d68f1933da580a0f54a4213d7d9d9c8",
+      "byteSize": 22753,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "artifact.attachments.present",
+        "artifact.attachments.no-secrets",
+        "artifact.manifest.hashes"
+      ]
+    },
+    {
+      "path": "attachments/livecodebench-1883-b-palindrome-removal-nanobot-original.json",
+      "sha256": "8ddf92f0a61de9bb21e6e0c2f0480c62442cd38b0bff95981bd9877f0efaf762",
+      "byteSize": 9440,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "artifact.attachments.present",
+        "artifact.attachments.no-secrets",
+        "artifact.manifest.hashes"
+      ]
+    }
+  ]
+}

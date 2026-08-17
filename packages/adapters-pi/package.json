@@ -1,0 +1,41 @@
+{
+  "name": "@helix/adapters-pi",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts",
+    "@helix/lego-hooks": "file:../lego-hooks",
+    "@helix/lego-prompt": "file:../lego-prompt",
+    "@helix/lego-session": "file:../lego-session",
+    "@helix/lego-ui": "file:../lego-ui",
+    "typescript": "5.9.3"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./product-surface": "./src/product-surface.ts",
+    "./pi-sdk": "./src/pi-sdk.ts",
+    "./pi-cli": "./src/pi-cli.ts",
+    "./pi-tui": "./src/pi-tui.ts",
+    "./pi-rpc": "./src/pi-rpc.ts",
+    "./pi-web-ui": "./src/pi-web-ui.ts",
+    "./pi-server": "./src/pi-server.ts",
+    "./pi-package-manager": "./src/pi-package-manager.ts",
+    "./pi-extension-examples": "./src/pi-extension-examples.ts",
+    "./pi-browser-smoke": "./src/pi-browser-smoke.ts",
+    "./pi-release-hardening": "./src/pi-release-hardening.ts",
+    "./extension-adapter": "./src/extension-adapter.ts",
+    "./extension-atoms": "./src/extension-atoms.ts",
+    "./extension-loader": "./src/extension-loader.ts",
+    "./session-personality": "./src/session-personality.ts",
+    "./product-schema/pi": "./src/product-schema/pi.ts",
+    "./product-schema/events": "./src/product-schema/events.ts",
+    "./product-schema/hooks": "./src/product-schema/hooks.ts",
+    "./product-schema/provider": "./src/product-schema/provider.ts",
+    "./product-schema/product-shell": "./src/product-schema/product-shell.ts",
+    "./product-schema/prompt": "./src/product-schema/prompt.ts",
+    "./product-schema/trace": "./src/product-schema/trace.ts",
+    "./product-schema/tools": "./src/product-schema/tools.ts",
+    "./product-schema/tool-runtime": "./src/product-schema/tool-runtime.ts"
+  }
+}

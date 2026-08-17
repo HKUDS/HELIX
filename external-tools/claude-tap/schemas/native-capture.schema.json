@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Helix normalized external native capture",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "artifactKind",
+    "generatedAt",
+    "sourceTool",
+    "sourceToolVersion",
+    "sourceArtifact",
+    "product",
+    "taskID",
+    "captureMode",
+    "lossiness",
+    "providerRequests",
+    "promptEvidence",
+    "toolEvidence",
+    "streamEvidence",
+    "usageEvidence",
+    "stageEvidence",
+    "redactionPolicy",
+    "summary"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artifactKind": { "const": "external-tool-native-capture" },
+    "generatedAt": { "type": "string" },
+    "sourceTool": { "const": "claude-tap" },
+    "sourceToolVersion": { "type": "string", "minLength": 1 },
+    "sourceArtifact": {
+      "type": "object",
+      "required": ["format", "hash", "bytes"],
+      "properties": {
+        "format": { "enum": ["jsonl", "json", "compact"] },
+        "hash": { "$ref": "#/$defs/sha256" },
+        "bytes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "product": { "enum": ["opencode", "pi-mono", "hermes-agent", "codex"] },
+    "taskID": { "type": "string", "minLength": 1 },
+    "captureMode": { "enum": ["real-capture", "capture-only", "import-only"] },
+    "lossiness": {
+      "type": "object",
+      "required": ["observability", "rawPrompt", "rawProviderPayload", "rawToolPayload", "nativeInternals"],
+      "properties": {
+        "observability": { "const": "external-proxy-capture" },
+        "rawPrompt": { "const": "fingerprint-only" },
+        "rawProviderPayload": { "const": "shape-summary-only" },
+        "rawToolPayload": { "const": "fingerprint-only" },
+        "nativeInternals": { "const": "unobservable" }
+      }
+    },
+    "providerRequests": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/providerRequest" }
+    },
+    "promptEvidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/promptEvidence" }
+    },
+    "toolEvidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/toolEvidence" }
+    },
+    "streamEvidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/streamEvidence" }
+    },
+    "usageEvidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/usageEvidence" }
+    },
+    "stageEvidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/stageEvidence" }
+    },
+    "redactionPolicy": {
+      "type": "object",
+      "required": ["version", "containsRawPrompt", "credentials", "hostPaths"],
+      "properties": {
+        "version": { "const": 1 },
+        "containsRawPrompt": { "const": false },
+        "credentials": { "const": "redacted" },
+        "hostPaths": { "const": "normalized" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["records", "providerRequests", "promptEvidence", "toolEvidence", "streamEvents", "models", "protocols", "statusCodes"],
+      "properties": {
+        "records": { "type": "integer", "minimum": 0 },
+        "providerRequests": { "type": "integer", "minimum": 0 },
+        "promptEvidence": { "type": "integer", "minimum": 0 },
+        "toolEvidence": { "type": "integer", "minimum": 0 },
+        "streamEvents": { "type": "integer", "minimum": 0 },
+        "models": { "type": "array", "items": { "type": "string" } },
+        "protocols": { "type": "array", "items": { "type": "string" } },
+        "statusCodes": { "type": "array", "items": { "type": "integer", "minimum": 0 } }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "shapeSummary": {
+      "type": "object",
+      "required": ["type", "fingerprint", "keys"],
+      "properties": {
+        "type": { "type": "string", "minLength": 1 },
+        "fingerprint": { "$ref": "#/$defs/sha256" },
+        "keys": { "type": "array", "items": { "type": "string" } },
+        "itemCount": { "type": "integer", "minimum": 0 },
+        "stringBytes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "headerSummary": {
+      "type": "object",
+      "required": ["count", "names", "redactedNames", "fingerprint"],
+      "properties": {
+        "count": { "type": "integer", "minimum": 0 },
+        "names": { "type": "array", "items": { "type": "string" } },
+        "redactedNames": { "type": "array", "items": { "type": "string" } },
+        "fingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "providerRequest": {
+      "type": "object",
+      "required": ["requestID", "turn", "method", "path", "protocol", "modelID", "status", "durationMs", "requestShape", "responseShape"],
+      "properties": {
+        "requestID": { "type": "string", "minLength": 1 },
+        "turn": { "type": "integer", "minimum": 0 },
+        "timestamp": { "type": "string" },
+        "method": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "upstreamBaseURL": { "type": "string" },
+        "protocol": { "type": "string", "minLength": 1 },
+        "modelID": { "type": "string", "minLength": 1 },
+        "status": { "type": "integer", "minimum": 0 },
+        "durationMs": { "type": "number", "minimum": 0 },
+        "requestHeaderSummary": { "$ref": "#/$defs/headerSummary" },
+        "responseHeaderSummary": { "$ref": "#/$defs/headerSummary" },
+        "requestShape": { "$ref": "#/$defs/shapeSummary" },
+        "responseShape": { "$ref": "#/$defs/shapeSummary" }
+      }
+    },
+    "promptEvidence": {
+      "type": "object",
+      "required": ["requestID", "turn", "protocol", "modelID", "toolNames", "toolSchemaFingerprints", "messageCount"],
+      "properties": {
+        "requestID": { "type": "string", "minLength": 1 },
+        "turn": { "type": "integer", "minimum": 0 },
+        "protocol": { "type": "string", "minLength": 1 },
+        "modelID": { "type": "string", "minLength": 1 },
+        "systemFingerprint": { "$ref": "#/$defs/sha256" },
+        "developerFingerprint": { "$ref": "#/$defs/sha256" },
+        "userFingerprint": { "$ref": "#/$defs/sha256" },
+        "toolNames": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "toolSchemaFingerprints": { "type": "array", "items": { "$ref": "#/$defs/sha256" } },
+        "messageCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "toolEvidence": {
+      "type": "object",
+      "required": ["requestID", "turn", "source", "toolName", "order"],
+      "properties": {
+        "requestID": { "type": "string", "minLength": 1 },
+        "turn": { "type": "integer", "minimum": 0 },
+        "source": { "enum": ["request-schema", "response-call"] },
+        "toolName": { "type": "string", "minLength": 1 },
+        "callID": { "type": "string", "minLength": 1 },
+        "argumentFingerprint": { "$ref": "#/$defs/sha256" },
+        "resultFingerprint": { "$ref": "#/$defs/sha256" },
+        "order": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "streamEvidence": {
+      "type": "object",
+      "required": ["requestID", "turn", "protocol", "eventCount", "responseFingerprint"],
+      "properties": {
+        "requestID": { "type": "string", "minLength": 1 },
+        "turn": { "type": "integer", "minimum": 0 },
+        "protocol": { "type": "string", "minLength": 1 },
+        "eventCount": { "type": "integer", "minimum": 0 },
+        "finishReason": { "type": "string", "minLength": 1 },
+        "reconstructedResponse": { "$ref": "#/$defs/streamReconstruction" },
+        "responseFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "streamReconstruction": {
+      "type": "object",
+      "required": ["eventTypes", "chunkTypes", "textBytes", "toolCallCount", "toolArgumentBytes", "semanticFingerprint"],
+      "properties": {
+        "eventTypes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "chunkTypes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "textBytes": { "type": "integer", "minimum": 0 },
+        "textFingerprint": { "$ref": "#/$defs/sha256" },
+        "toolCallCount": { "type": "integer", "minimum": 0 },
+        "toolArgumentBytes": { "type": "integer", "minimum": 0 },
+        "toolArgumentFingerprint": { "$ref": "#/$defs/sha256" },
+        "finishReason": { "type": "string", "minLength": 1 },
+        "semanticFingerprint": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "usageEvidence": {
+      "type": "object",
+      "required": ["requestID", "turn", "inputTokens", "outputTokens", "cacheReadTokens", "cacheCreateTokens"],
+      "properties": {
+        "requestID": { "type": "string", "minLength": 1 },
+        "turn": { "type": "integer", "minimum": 0 },
+        "inputTokens": { "type": "integer", "minimum": 0 },
+        "outputTokens": { "type": "integer", "minimum": 0 },
+        "cacheReadTokens": { "type": "integer", "minimum": 0 },
+        "cacheCreateTokens": { "type": "integer", "minimum": 0 },
+        "totalTokens": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "stageEvidence": {
+      "type": "object",
+      "required": ["stage", "observability", "evidenceCount", "summary", "fingerprints"],
+      "properties": {
+        "stage": { "enum": ["identity", "session", "prompt", "provider", "tool", "runtime", "final"] },
+        "observability": { "enum": ["external-proxy-capture", "aggregated", "inferred", "unobservable"] },
+        "evidenceCount": { "type": "integer", "minimum": 0 },
+        "summary": { "type": "string", "minLength": 1 },
+        "fingerprints": { "type": "array", "items": { "$ref": "#/$defs/sha256" } }
+      }
+    }
+  }
+}

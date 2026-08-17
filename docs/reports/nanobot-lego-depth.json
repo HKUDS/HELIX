@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-30T09:59:33.849Z",
+  "ok": true,
+  "product": "nanobot",
+  "upstream": {
+    "package": "nanobot-ai==0.2.0",
+    "parityMode": "native-captured-upstream-like",
+    "evidence": [
+      "nanobot.full assembly contract",
+      "task parity assembled/original Nanobot reports",
+      "native cadence fixture replay",
+      "live provider parity Nanobot turn + SDK readback"
+    ]
+  },
+  "mechanisms": [
+    {
+      "id": "session-store",
+      "plane": "session",
+      "requiredPortPatterns": [
+        "session.store",
+        "session.message-store"
+      ],
+      "owningAtoms": [
+        "nanobot.session.store.jsonl",
+        "session.message-store.memory",
+        "session.message-store.service",
+        "session.store.jsonl-tree",
+        "session.store.memory",
+        "session.store.sqlite-projection"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.session.store.jsonl",
+        "port:session.message-store",
+        "port:session.store"
+      ]
+    },
+    {
+      "id": "session-projector",
+      "plane": "session",
+      "requiredPortPatterns": [
+        "session.projector",
+        "session.message-part-projector"
+      ],
+      "owningAtoms": [
+        "nanobot.session.message-part-projector.native-like",
+        "nanobot.session.projector.jsonl",
+        "common.session.message-part-projector",
+        "session.projector.common-transcript"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.session.message-part-projector.native-like",
+        "product-atom:nanobot.session.projector.jsonl",
+        "port:session.message-part-projector",
+        "port:session.projector"
+      ]
+    },
+    {
+      "id": "hook-plugin",
+      "plane": "hook",
+      "requiredPortPatterns": [
+        "hook",
+        "plugin",
+        "registry"
+      ],
+      "owningAtoms": [
+        "nanobot.hook.error-defaults",
+        "nanobot.hook.handler-adapter",
+        "nanobot.hook.observer-adapter",
+        "nanobot.hook.plugin-bridge",
+        "nanobot.hook.scheduler-defaults",
+        "nanobot.plugin.cleanup",
+        "nanobot.plugin.event-mapper",
+        "nanobot.plugin.loader",
+        "nanobot.plugin.provider-registry-bridge",
+        "nanobot.plugin.ui-registry-bridge"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.hook.error-defaults",
+        "product-atom:nanobot.hook.handler-adapter",
+        "product-atom:nanobot.hook.observer-adapter",
+        "product-atom:nanobot.hook.plugin-bridge",
+        "port:hook.bus",
+        "port:hook.cleanup-scope",
+        "port:hook.error-policy",
+        "port:hook.handler-chain"
+      ]
+    },
+    {
+      "id": "prompt-resource",
+      "plane": "prompt",
+      "requiredPortPatterns": [
+        "prompt.system-builder",
+        "prompt",
+        "resource"
+      ],
+      "owningAtoms": [
+        "nanobot.prompt.agent-builder",
+        "nanobot.prompt.compaction-adapter",
+        "nanobot.prompt.model-adapter",
+        "nanobot.prompt.resource-loader",
+        "nanobot.prompt.tool-renderer",
+        "nanobot.resource.discovery",
+        "nanobot.resource.grant-defaults",
+        "prompt.compaction-adapter.common",
+        "prompt.model-capability-adapter.common",
+        "prompt.resource-loader.markdown"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.prompt.agent-builder",
+        "product-atom:nanobot.prompt.compaction-adapter",
+        "product-atom:nanobot.prompt.model-adapter",
+        "product-atom:nanobot.prompt.resource-loader",
+        "port:prompt.compaction-adapter",
+        "port:prompt.model-capability-adapter",
+        "port:prompt.resource-loader",
+        "port:prompt.system-builder"
+      ]
+    },
+    {
+      "id": "runtime-acceptance",
+      "plane": "runtime",
+      "requiredPortPatterns": [
+        "runtime.acceptance-controller",
+        "runtime.acceptance-evidence"
+      ],
+      "owningAtoms": [
+        "nanobot.runtime.acceptance-controller.native-like",
+        "nanobot.runtime.acceptance-evidence.native-like",
+        "common.runtime.acceptance-controller.default",
+        "common.runtime.acceptance-evidence.default"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.runtime.acceptance-controller.native-like",
+        "product-atom:nanobot.runtime.acceptance-evidence.native-like",
+        "port:runtime.acceptance-controller",
+        "port:runtime.acceptance-evidence"
+      ]
+    },
+    {
+      "id": "agent-loop-boundary",
+      "plane": "agent-loop",
+      "requiredPortPatterns": [
+        "agent-loop.request-boundary",
+        "agent-loop.final-summary",
+        "turn.context-builder"
+      ],
+      "owningAtoms": [
+        "nanobot.agent-loop.final-summary.native-like",
+        "nanobot.agent-loop.request-boundary.native-like",
+        "nanobot.turn.context-builder",
+        "common.agent-loop.final-summary.default",
+        "common.agent-loop.request-boundary.default",
+        "turn.context-builder.transcript"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.agent-loop.final-summary.native-like",
+        "product-atom:nanobot.agent-loop.request-boundary.native-like",
+        "product-atom:nanobot.turn.context-builder",
+        "port:agent-loop.final-summary",
+        "port:agent-loop.request-boundary",
+        "port:turn.context-builder"
+      ]
+    },
+    {
+      "id": "tool-schema-result",
+      "plane": "tool",
+      "requiredPortPatterns": [
+        "tools.schema",
+        "tools.result-projector",
+        "tool.registry"
+      ],
+      "owningAtoms": [
+        "nanobot.tool.registry-bridge",
+        "nanobot.tools.result-projector.native-like",
+        "nanobot.tools.schema.native-like",
+        "common.tools.result-projector.default",
+        "common.tools.schema.default"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.tool.registry-bridge",
+        "product-atom:nanobot.tools.result-projector.native-like",
+        "product-atom:nanobot.tools.schema.native-like",
+        "port:tool.registry",
+        "port:tools.result-projector",
+        "port:tools.schema"
+      ]
+    },
+    {
+      "id": "provider-request-stream",
+      "plane": "provider",
+      "requiredPortPatterns": [
+        "provider.request",
+        "provider.stream",
+        "provider.transport",
+        "provider.usage"
+      ],
+      "owningAtoms": [
+        "nanobot.provider.parser-observer",
+        "nanobot.provider.plugin-descriptor",
+        "nanobot.provider.request-options",
+        "nanobot.provider.stream-projector.native-like",
+        "nanobot.provider.streaming-delta-recorder.native-like",
+        "nanobot.provider.transport-instrumentation",
+        "nanobot.provider.usage-renderer",
+        "common.provider.stream-projector",
+        "common.provider.streaming-delta-recorder",
+        "provider.request-shape.anthropic"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.provider.parser-observer",
+        "product-atom:nanobot.provider.plugin-descriptor",
+        "product-atom:nanobot.provider.request-options",
+        "product-atom:nanobot.provider.stream-projector.native-like",
+        "port:provider.request-shape",
+        "port:provider.stream",
+        "port:provider.stream-parser",
+        "port:provider.stream-projector"
+      ]
+    },
+    {
+      "id": "config-loading",
+      "plane": "config",
+      "requiredPortPatterns": [
+        "config"
+      ],
+      "owningAtoms": [
+        "nanobot.config.precedence",
+        "nanobot.config.source",
+        "nanobot.config.validator",
+        "config.merge.deep",
+        "config.merge.priority",
+        "config.merge.replace",
+        "config.source.env",
+        "config.source.file",
+        "config.validator.schema",
+        "config.validator.typescript"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.config.precedence",
+        "product-atom:nanobot.config.source",
+        "product-atom:nanobot.config.validator",
+        "port:config.merge-strategy",
+        "port:config.source",
+        "port:config.validator"
+      ]
+    },
+    {
+      "id": "ui-surfaces",
+      "plane": "ui",
+      "requiredPortPatterns": [
+        "ui",
+        "tui",
+        "web-ui"
+      ],
+      "owningAtoms": [
+        "nanobot.ui.command-router",
+        "nanobot.ui.input-normalizer",
+        "nanobot.ui.renderer",
+        "nanobot.ui.snapshot",
+        "nanobot.ui.theme-registry",
+        "ui.command-router.common",
+        "ui.input-normalizer.common",
+        "ui.renderer.html",
+        "ui.renderer.noop",
+        "ui.renderer.text"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.ui.command-router",
+        "product-atom:nanobot.ui.input-normalizer",
+        "product-atom:nanobot.ui.renderer",
+        "product-atom:nanobot.ui.snapshot",
+        "port:prompt.system-builder",
+        "port:registry.ui",
+        "port:turn.context-builder",
+        "port:turn.provider-request-builder"
+      ]
+    },
+    {
+      "id": "product-shells",
+      "plane": "product",
+      "requiredPortPatterns": [
+        "product-shell",
+        "product.shell"
+      ],
+      "owningAtoms": [
+        "nanobot.product-shell.cli",
+        "nanobot.product-shell.harness",
+        "nanobot.product-shell.sdk",
+        "nanobot.product-shell.server",
+        "nanobot.product-shell.tui",
+        "nanobot.product-shell.web-ui"
+      ],
+      "status": "product-atom-covered",
+      "evidence": [
+        "product-atom:nanobot.product-shell.cli",
+        "product-atom:nanobot.product-shell.harness",
+        "product-atom:nanobot.product-shell.sdk",
+        "product-atom:nanobot.product-shell.server",
+        "port:product.shell"
+      ]
+    },
+    {
+      "id": "task-runner",
+      "plane": "task",
+      "requiredPortPatterns": [
+        "task.runner",
+        "cadence"
+      ],
+      "owningAtoms": [],
+      "status": "fixture-backed",
+      "evidence": [
+        "port:tools.schema",
+        "fixture:nanobot.task.runner.assembled",
+        "fixture:nanobot.task.runner.native-cli"
+      ]
+    }
+  ],
+  "matrix": [
+    {
+      "product": "opencode",
+      "atoms": 285,
+      "commonAtoms": 176,
+      "productSpecificAtoms": 104,
+      "productShells": 18,
+      "ports": 96,
+      "swapPoints": 96,
+      "publicExportCoverage": 100,
+      "conformanceCoverage": 100,
+      "nativeFixtureCoverage": 3
+    },
+    {
+      "product": "pi-mono",
+      "atoms": 291,
+      "commonAtoms": 176,
+      "productSpecificAtoms": 110,
+      "productShells": 21,
+      "ports": 96,
+      "swapPoints": 96,
+      "publicExportCoverage": 100,
+      "conformanceCoverage": 100,
+      "nativeFixtureCoverage": 3
+    },
+    {
+      "product": "nanobot",
+      "atoms": 281,
+      "commonAtoms": 176,
+      "productSpecificAtoms": 100,
+      "productShells": 11,
+      "ports": 96,
+      "swapPoints": 96,
+      "publicExportCoverage": 100,
+      "conformanceCoverage": 100,
+      "nativeFixtureCoverage": 3
+    }
+  ],
+  "gaps": [],
+  "antiOverfit": {
+    "commonImportsNanobot": false,
+    "commonProductBranches": [],
+    "boundaryIssues": []
+  }
+}

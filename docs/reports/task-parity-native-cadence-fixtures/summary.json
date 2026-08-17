@@ -1,0 +1,1153 @@
+{
+  "schemaVersion": 2,
+  "artifactKind": "native-cadence-fixture-summary",
+  "generatedAt": "2026-06-10T08:11:50.584Z",
+  "sourceArtifact": {
+    "generatedAt": "2026-06-10T08:11:09.625Z",
+    "suite": "smoke",
+    "provider": "cassette"
+  },
+  "fixtures": [
+    {
+      "product": "opencode",
+      "taskID": "branch-or-fork",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-branch-or-fork-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "cf2cafa8fb89be4f2c0305a71b777b09752a308cbc45914cfbcece4b2064c08b",
+        "byteSize": 7832,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "branch-or-fork",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-branch-or-fork-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "b69a798b25a3aeff4ebe5ad8695ab2e0afcd4298e534876c2d878d8147d000aa",
+        "byteSize": 8028,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "branch-or-fork",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-branch-or-fork-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "4d5109ad06aea9ea07eeb51eef348daa73640d1c115aa63270bff5d4acfd7d96",
+        "byteSize": 8028,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "branch-or-fork",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-branch-or-fork-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "4136da612a5f20a7147c58844eb225d941d76c72aa25bd677d9ff57ee63bba2a",
+        "byteSize": 8033,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "context-compaction",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-context-compaction-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "a1202b1a5d61c8c08c0b056a40a20267fd852c348d73ea1bc5eabcc7d3be7dc3",
+        "byteSize": 11038,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "context-compaction",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-context-compaction-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "399c99bd778814b24d41d96d2405fbbbaff8421d740a5be441b6399235fb9491",
+        "byteSize": 11234,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "context-compaction",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-context-compaction-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "3eec93209a9c8521a49e2d52f06a7b8072f8fe4dd27db446011115cbaea6cb3e",
+        "byteSize": 11234,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "context-compaction",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-context-compaction-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "6d2630255ebf29b38ac5563dc18345df5010b46ed47a249e3338cc551ffa4d7f",
+        "byteSize": 11239,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "extension-plugin-tool",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:echo",
+        "tool:echo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-extension-plugin-tool-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "486d7cf34d3050e53d27030d384ee14114616b03b04c7c947e94ccf0ed70b19f",
+        "byteSize": 10943,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "extension-plugin-tool",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text",
+        "tool-result:echo",
+        "tool:echo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-extension-plugin-tool-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "6a850b48c06dce91998ec555b6bead73e2faba673b2ca9572b4f407f193bf321",
+        "byteSize": 9144,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "extension-plugin-tool",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text",
+        "tool-result:echo",
+        "tool:echo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-extension-plugin-tool-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "dd15a28e5ec43bd56e13b935dc9622d09914887872aa5fcdc03a068654c3e450",
+        "byteSize": 9144,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "extension-plugin-tool",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text",
+        "tool-result:echo",
+        "tool:echo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-extension-plugin-tool-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "fcb031ad779286c381de2e258b1e1cd70c7b2b9f5d1a7a04e362a1e8ecc53d25",
+        "byteSize": 9149,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "multi-file-refactor",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-multi-file-refactor-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "a58ee066cbe09c430a5e3e0bcba2b5b066718c893fdbf2009d7b9708751c2a23",
+        "byteSize": 11978,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "multi-file-refactor",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-multi-file-refactor-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "026024cabcbaf57195a1cfb14bef76ac7d65079f51fbbe45b626d5d17833359b",
+        "byteSize": 12174,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "multi-file-refactor",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-multi-file-refactor-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "5260d119130e13395312341e8755191352951ca2b577c7bca6d6e2188cc1f19e",
+        "byteSize": 12174,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "multi-file-refactor",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-multi-file-refactor-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "7b71780119ffc284be3bf39307e1493fee4e807a48b69ec8c419d68b28aecb6e",
+        "byteSize": 12179,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "permission-denied",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:write",
+        "tool:write"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-permission-denied-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "cfad8ec6be3cc3a9a97b1f25b00903dcff2f40bd5cfbe988e3b11237a66e52fb",
+        "byteSize": 10545,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "permission-denied",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:write",
+        "tool:write"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-permission-denied-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "0b6b53cbf7abed5fbee48d0f9b8a5e1fd1cfcaf2072baf3cc05622424141e43d",
+        "byteSize": 10741,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "permission-denied",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:write",
+        "tool:write"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-permission-denied-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "2c0b594c4626c1c0f5114b4a9431f40da678d7c83d5c02bd796f20d61d0478ea",
+        "byteSize": 10741,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "permission-denied",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:write",
+        "tool:write"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-permission-denied-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "35936ef034321bcf28e5c65d4d6c62e039ef26871324aeb64afefcc26a3aaca3",
+        "byteSize": 10746,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "provider-retry",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-provider-retry-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "4ec8e53b5f6960e67fc7204bb000349ab2318d5facc7fa01759cbb2987805dad",
+        "byteSize": 8646,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "provider-retry",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-provider-retry-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "8a4ecbabe566e6bc1123c78d33019016cfc50fa35883be2ba282b9912d0ae6dc",
+        "byteSize": 8842,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "provider-retry",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-provider-retry-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "39cbdf53e8c35dd6adaa8856822ce8f9e90ec7a8216f990ed85c01c3b81e10aa",
+        "byteSize": 8842,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "provider-retry",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-provider-retry-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "8a89fe5551c631ce974383e9d6adbb48e6974ae2ff41d4e9d8c305995cea1a87",
+        "byteSize": 8847,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "read-only-answer",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:read",
+        "tool:read"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-read-only-answer-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "8c2c3d3fb7d48a466a8cb41ad32025f26d87e8ddf029cb65766827030735b311",
+        "byteSize": 10938,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "read-only-answer",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text",
+        "tool-result:read",
+        "tool:read"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-read-only-answer-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "e06922ccb70c0e1612866a95895bf38839eb43a31a5bfe46c1b094b55555c401",
+        "byteSize": 9139,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "read-only-answer",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text",
+        "tool-result:read",
+        "tool:read"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-read-only-answer-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "56969906cf85edeb4ce52b7ac5624b9b3ebb14982e4eb96274cf819b6bfb9140",
+        "byteSize": 9139,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "read-only-answer",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 1,
+      "messagePartTypes": [
+        "text",
+        "tool-result:read",
+        "tool:read"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-read-only-answer-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "73bb00e79c600714c15ba5e2ed77162fdba70d337ad7d4a6d38e42a893880ca7",
+        "byteSize": 9144,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "shell-output-analysis",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool:bash"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-shell-output-analysis-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "e20565421cd6d28e40b41d1062e48c4cfddd9da5b24eb6d80e275b89948ae32f",
+        "byteSize": 11074,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "shell-output-analysis",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool:bash"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-shell-output-analysis-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "4f2f637dc676b02506c5bc4d2e057cc4594bd5a2d446b41109b5122bb5787023",
+        "byteSize": 11270,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "shell-output-analysis",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool:bash"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-shell-output-analysis-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "d4c98754621a3260cb32c3aa4c1870bf62d44e0ca3290f0b8871ef0e46bf7e76",
+        "byteSize": 11270,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "shell-output-analysis",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool:bash"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-shell-output-analysis-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "12b56b84c30228c1dfe26fa75c4f68a9090c28d3cd32abdf0721d661da56c204",
+        "byteSize": 11275,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "single-file-edit",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-single-file-edit-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "cf1b9d5ff3cf1181f52b11e4e14989fd2c450a4817360f201c5c763e8bc8760c",
+        "byteSize": 10954,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "single-file-edit",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-single-file-edit-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "70951818d64aba02d902f7d8191d9ac6dec56b17f45abf02db9c94e4465ccec4",
+        "byteSize": 11150,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "single-file-edit",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-single-file-edit-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "d85d066c8a106f3c580206486a9caf85a061b4df5ed8a93a9cd5c5cbece5e6cc",
+        "byteSize": 11150,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "single-file-edit",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-single-file-edit-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "ce28df4eb2c5151c3abaad46ca7ea07edb69ef6e1760a09a70a85a6f630c8cb4",
+        "byteSize": 11155,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "test-fix",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 4,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool-result:edit",
+        "tool:bash",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-test-fix-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "ee91763361affcd45d4f213930809b6e2296a7823c7268f364f9ee0f35237211",
+        "byteSize": 17302,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "test-fix",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 3,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool-result:edit",
+        "tool:bash",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-test-fix-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "d266433eb605a1acb3fac66a20d942cb8667ae9e182d16d84bb324da141a5cac",
+        "byteSize": 15503,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "test-fix",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 3,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool-result:edit",
+        "tool:bash",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-test-fix-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "4129c2aed2d4cfab0888cb54234c2294b400a927d86d61c963daf148b8a8b549",
+        "byteSize": 15503,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "test-fix",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 3,
+      "messagePartTypes": [
+        "text",
+        "tool-result:bash",
+        "tool-result:edit",
+        "tool:bash",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-test-fix-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "e47c4e79dea828ccd6700ae447fe7b1d2c85f2d609e69595ab29c4f68ceddfb6",
+        "byteSize": 15508,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "tool-error-retry",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 3,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:edit",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-tool-error-retry-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "d09adc2a1d1762b67eedd6c22727faf6f762c4438329d0f0e978ba939a651a8d",
+        "byteSize": 14034,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "tool-error-retry",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 3,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:edit",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-tool-error-retry-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "34bdde21b0cdaf7e38ac1bac62965536f12ff7c40bf2d156e496784005467cfa",
+        "byteSize": 14230,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "tool-error-retry",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 3,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:edit",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-tool-error-retry-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "7573f74a94b57de33d8b260cb18ffc22a90f3688b9f6bff089c358da6f19f1e1",
+        "byteSize": 14230,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "tool-error-retry",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 3,
+      "messagePartTypes": [
+        "text",
+        "tool-result-error:edit",
+        "tool-result:edit",
+        "tool:edit"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-tool-error-retry-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "8b08ae6d12148e5b6d3336d308a7dd6256973e0248b1ff2fdf99e2ee7f4b3cb0",
+        "byteSize": 14235,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "opencode",
+      "taskID": "ui-or-cli-command",
+      "nativeVersion": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:todo",
+        "tool:todo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/opencode-ui-or-cli-command-1a8fd0e1dca58a473d85500530dd45def3f512ab.json",
+        "sha256": "374dd8bf2f18fe5e26db69188cfe461d4af0e2d42b5e39c9661e73785f26e56d",
+        "byteSize": 10947,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "pi-mono",
+      "taskID": "ui-or-cli-command",
+      "nativeVersion": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:todo",
+        "tool:todo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/pi-mono-ui-or-cli-command-7c2775f6f67c38ed491a1ff68240ee4f8ba688da.json",
+        "sha256": "a000f2de641700ff340857bdf72e6fd9942b5ee69b0236d9dd06f556c8223b99",
+        "byteSize": 11143,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "nanobot",
+      "taskID": "ui-or-cli-command",
+      "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:todo",
+        "tool:todo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/nanobot-ui-or-cli-command-c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7.json",
+        "sha256": "9358c20bb2142cee6656a3fc89afd564616dcee90c0ffa5a365fb17018a44bac",
+        "byteSize": 11143,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    },
+    {
+      "product": "hermes-agent",
+      "taskID": "ui-or-cli-command",
+      "nativeVersion": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+      "cadenceLevel": "exact-cadence",
+      "providerRequests": 2,
+      "messagePartTypes": [
+        "text",
+        "tool-result:todo",
+        "tool:todo"
+      ],
+      "projectionLosses": 6,
+      "attachment": {
+        "path": "attachments/hermes-agent-ui-or-cli-command-92a567db2d7a5031df8211efbfdad864c2f51faf.json",
+        "sha256": "c4aa59dc4a4265162afaf4db7d25e1e9775e2e4ba2232f7fe5d2bdcb107ec59d",
+        "byteSize": 11148,
+        "redactionStatus": "raw-sanitized",
+        "required": true,
+        "verifierCoverage": [
+          "native-cadence-fixture.attachment.hash",
+          "native-cadence-fixture.replay"
+        ]
+      }
+    }
+  ],
+  "manifestPath": "manifest.json"
+}

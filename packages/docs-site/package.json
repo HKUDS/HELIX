@@ -1,0 +1,15 @@
+{
+  "name": "@helix/docs-site",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@helix/external-tools": "file:../external-tools",
+    "@helix/recipes": "file:../recipes"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./server": "./src/server.ts"
+  }
+}

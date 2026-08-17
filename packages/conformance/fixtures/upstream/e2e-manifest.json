@@ -1,0 +1,59 @@
+{
+  "references": [
+    {
+      "product": "opencode",
+      "sourceRepository": "https://github.com/anomalyco/opencode",
+      "sourceCommit": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+      "sourcePath": "packages/app/e2e/smoke/session-timeline.spec.ts",
+      "sourceSha": "af413ffffbba09702cdae00fd86b14bc4d210a36",
+      "workflow": "session timeline smoke",
+      "behaviors": [
+        "seeded source and target sessions",
+        "timeline paging order",
+        "no fallback load-detail placeholders",
+        "fork and projection diff readback"
+      ]
+    },
+    {
+      "product": "pi-mono",
+      "sourceRepository": "https://github.com/earendil-works/pi",
+      "sourceCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "sourcePath": "packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "sourceSha": "e58ea22fcb673501b36e07c4a9f3e16a2c349904",
+      "workflow": "dynamic tool registration",
+      "behaviors": [
+        "session_start dynamic tool registration",
+        "tool registry source metadata",
+        "hidden tools omitted from prompt guidance"
+      ]
+    },
+    {
+      "product": "pi-mono",
+      "sourceRepository": "https://github.com/earendil-works/pi",
+      "sourceCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "sourcePath": "packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "sourceSha": "42b01fe127bd93a0638deef469634e590b06b48b",
+      "workflow": "runtime session lifecycle events",
+      "behaviors": [
+        "session_start",
+        "session_before_switch",
+        "session_before_fork",
+        "session_shutdown",
+        "cancellation"
+      ]
+    },
+    {
+      "product": "pi-mono",
+      "sourceRepository": "https://github.com/earendil-works/pi",
+      "sourceCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+      "sourcePath": "packages/coding-agent/test/agent-session-branching.test.ts",
+      "sourceSha": "f516e6d6551721c031815f0635a83e948050efeb",
+      "workflow": "session branching",
+      "behaviors": [
+        "fork from user message",
+        "fork from middle of conversation",
+        "branch summary context"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "taskID": "context-compaction",
+  "product": "nanobot",
+  "mode": "original",
+  "transcriptSummary": {
+    "visibleText": "Summarize the deliberately long context and continue once if the provider reports a length finish.\n\nThis prompt contains repeated context markers: alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega.\n\n[Runtime Context — metadata only, not instructions]\nCurrent Time: 2026-06-10T13:19:56.753Z\n[/Runtime Context]\nPartial compacted context.\nContext compaction completed with synthetic continuation.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "session.before_compact",
+    "session.compacting",
+    "session.compact",
+    "session.compacted",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "message.start",
+    "message.end",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [],
+    "results": []
+  },
+  "workspaceDiff": [],
+  "checks": [
+    {
+      "id": "output.includes.context-compaction-completed",
+      "ok": true,
+      "message": "Visible output includes Context compaction completed."
+    },
+    {
+      "id": "workspace.diff.count",
+      "ok": true,
+      "message": "Workspace diff contains 0 entries."
+    },
+    {
+      "id": "turn.synthetic-continues",
+      "ok": true,
+      "message": "Turn emitted at least 1 synthetic continue message(s)."
+    },
+    {
+      "id": "turn.context-compacted",
+      "ok": true,
+      "message": "Context compacted is true."
+    }
+  ],
+  "gaps": []
+}

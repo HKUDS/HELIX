@@ -1,0 +1,1377 @@
+{
+  "id": "hermes-agent",
+  "strategies": [
+    {
+      "id": "turn.context-builder",
+      "config": {
+        "variant": "hermes-stable-context-prompt-builder"
+      }
+    },
+    {
+      "id": "tool.permission",
+      "config": {
+        "source": "hermes-shell-hooks"
+      }
+    }
+  ],
+  "policies": [
+    {
+      "id": "shell.execution",
+      "config": {
+        "envHook": "pre_tool_call",
+        "helper": "python-subprocess"
+      }
+    },
+    {
+      "id": "extension.loading",
+      "config": {
+        "source": "hermes-plugin-manager"
+      }
+    }
+  ],
+  "personalities": [
+    "hermes-session-personality",
+    "hermes-plugin-personality",
+    "hermes-shell-personality"
+  ],
+  "entrypoints": {
+    "cli": "@helix/cli run hermes-agent",
+    "sdk": "hooks.services['hermes.sdk']",
+    "tui": "hooks.services['hermes.tui']",
+    "apiServer": "hooks.services['hermes.api-server.factory']",
+    "acp": "hooks.services['hermes.acp']",
+    "gateway": "hooks.services['hermes.gateway']",
+    "dashboard": "hooks.services['hermes.web-dashboard']"
+  },
+  "conformance": {
+    "suite": [
+      "session",
+      "hooks",
+      "agent-loop",
+      "tools",
+      "port-contract-fixtures",
+      "product-shell-surfaces",
+      "fixture-replay",
+      "product-workflow-parity",
+      "upstream-e2e-parity",
+      "live-provider-parity",
+      "task-parity",
+      "reverse-assembly",
+      "block-ledger"
+    ]
+  },
+  "metadata": {
+    "product": "hermes-agent",
+    "upstream": "https://github.com/NousResearch/hermes-agent",
+    "upstreamCommit": "92a567db2d7a5031df8211efbfdad864c2f51faf",
+    "upstreamTag": "v0.15.1",
+    "package": "hermes-agent==0.15.1",
+    "graphLevel": "atom"
+  },
+  "version": "0.1.0",
+  "modules": [],
+  "atoms": [
+    {
+      "id": "block.manifest.schema"
+    },
+    {
+      "id": "block.manifest.normalizer"
+    },
+    {
+      "id": "capability.ref.normalizer"
+    },
+    {
+      "id": "resource.grant.validator"
+    },
+    {
+      "id": "recipe.binding.lockfile"
+    },
+    {
+      "id": "conformance.ref.fixture-registry"
+    },
+    {
+      "id": "identity.id-generator.deterministic"
+    },
+    {
+      "id": "identity.id-generator.random"
+    },
+    {
+      "id": "identity.clock.system"
+    },
+    {
+      "id": "identity.clock.deterministic"
+    },
+    {
+      "id": "identity.workspace-resolver.cwd"
+    },
+    {
+      "id": "identity.workspace-resolver.configured"
+    },
+    {
+      "id": "event.envelope.common"
+    },
+    {
+      "id": "event.log.memory"
+    },
+    {
+      "id": "event.log.jsonl"
+    },
+    {
+      "id": "event.log.projection"
+    },
+    {
+      "id": "trace.recorder.memory"
+    },
+    {
+      "id": "trace.recorder.jsonl"
+    },
+    {
+      "id": "runtime.module-catalog.memory"
+    },
+    {
+      "id": "runtime.capability-resolver.default"
+    },
+    {
+      "id": "runtime.binding-planner.lockfile"
+    },
+    {
+      "id": "runtime.lifecycle-runner.scoped"
+    },
+    {
+      "id": "runtime.assembly-graph.lockfile"
+    },
+    {
+      "id": "common.runtime.acceptance-controller.default"
+    },
+    {
+      "id": "common.runtime.acceptance-evidence.default"
+    },
+    {
+      "id": "session.id-generator.deterministic"
+    },
+    {
+      "id": "session.store.memory"
+    },
+    {
+      "id": "session.store.jsonl-tree"
+    },
+    {
+      "id": "session.store.sqlite-projection"
+    },
+    {
+      "id": "session.event-log.memory"
+    },
+    {
+      "id": "session.event-log.jsonl"
+    },
+    {
+      "id": "session.event-log.projection"
+    },
+    {
+      "id": "session.reader.memory"
+    },
+    {
+      "id": "session.reader.service"
+    },
+    {
+      "id": "session.writer.memory"
+    },
+    {
+      "id": "session.writer.service"
+    },
+    {
+      "id": "session.message-store.memory"
+    },
+    {
+      "id": "session.message-store.service"
+    },
+    {
+      "id": "session.branching.memory"
+    },
+    {
+      "id": "session.branching.service"
+    },
+    {
+      "id": "session.branch-graph.memory"
+    },
+    {
+      "id": "session.branch-graph.service"
+    },
+    {
+      "id": "session.projector.common-transcript"
+    },
+    {
+      "id": "common.session.message-part-projector"
+    },
+    {
+      "id": "session.pagination.memory"
+    },
+    {
+      "id": "session.pagination.service"
+    },
+    {
+      "id": "session.context-selector.memory"
+    },
+    {
+      "id": "session.context-selector.service"
+    },
+    {
+      "id": "session.compaction-records.memory"
+    },
+    {
+      "id": "session.compaction-records.service"
+    },
+    {
+      "id": "hook.bus.source-ordered"
+    },
+    {
+      "id": "hook.observer-chain.source-ordered"
+    },
+    {
+      "id": "hook.handler-chain.source-ordered"
+    },
+    {
+      "id": "hook.scheduler.serial"
+    },
+    {
+      "id": "hook.scheduler.parallel"
+    },
+    {
+      "id": "hook.scheduler.source-ordered"
+    },
+    {
+      "id": "hook.cleanup-scope.registry"
+    },
+    {
+      "id": "hook.error-policy.fail-fast"
+    },
+    {
+      "id": "hook.error-policy.collect-and-continue"
+    },
+    {
+      "id": "registry.tool.common"
+    },
+    {
+      "id": "registry.command.common"
+    },
+    {
+      "id": "registry.provider.common"
+    },
+    {
+      "id": "registry.ui.common"
+    },
+    {
+      "id": "turn.input-normalizer.text"
+    },
+    {
+      "id": "turn.context-builder.transcript"
+    },
+    {
+      "id": "turn.prompt-assembler.common"
+    },
+    {
+      "id": "turn.provider-request-builder.common"
+    },
+    {
+      "id": "turn.provider-stream-runner.common"
+    },
+    {
+      "id": "turn.stream-reducer.common"
+    },
+    {
+      "id": "turn.tool-call-planner.parallel-batch"
+    },
+    {
+      "id": "turn.tool-call-planner.sequential"
+    },
+    {
+      "id": "turn.tool-executor.common"
+    },
+    {
+      "id": "turn.result-recorder.common"
+    },
+    {
+      "id": "turn.retry-policy.none"
+    },
+    {
+      "id": "turn.retry-policy.fixed"
+    },
+    {
+      "id": "turn.retry-policy.exponential"
+    },
+    {
+      "id": "turn.continuation-policy.none"
+    },
+    {
+      "id": "turn.continuation-policy.synthetic-continue"
+    },
+    {
+      "id": "turn.compaction-policy.none"
+    },
+    {
+      "id": "turn.compaction-policy.token-threshold"
+    },
+    {
+      "id": "turn.compaction-policy.manual"
+    },
+    {
+      "id": "turn.stop-condition.no-tool-calls"
+    },
+    {
+      "id": "turn.stop-condition.max-steps"
+    },
+    {
+      "id": "common.agent-loop.request-boundary.default"
+    },
+    {
+      "id": "common.agent-loop.final-summary.default"
+    },
+    {
+      "id": "tool-pack.echo"
+    },
+    {
+      "id": "tool-pack.filesystem"
+    },
+    {
+      "id": "tool-pack.shell"
+    },
+    {
+      "id": "tool-pack.meta"
+    },
+    {
+      "id": "tool.definition.echo"
+    },
+    {
+      "id": "tool.definition.filesystem"
+    },
+    {
+      "id": "tool.definition.shell"
+    },
+    {
+      "id": "tool.definition.meta"
+    },
+    {
+      "id": "tool.schema.json-schema"
+    },
+    {
+      "id": "tool.schema.typebox"
+    },
+    {
+      "id": "tool.schema.zod-compatible"
+    },
+    {
+      "id": "tool.schema.effect-compatible"
+    },
+    {
+      "id": "tool.schema.typescript-validator"
+    },
+    {
+      "id": "common.tools.schema.default"
+    },
+    {
+      "id": "common.tools.batch-scheduler.default"
+    },
+    {
+      "id": "tool.permission.always-allow"
+    },
+    {
+      "id": "tool.permission.always-deny"
+    },
+    {
+      "id": "tool.permission.ask-hook"
+    },
+    {
+      "id": "tool.permission.workspace-scoped"
+    },
+    {
+      "id": "tool.permission.product-personality"
+    },
+    {
+      "id": "tool.executor.default"
+    },
+    {
+      "id": "tool.executor.echo-only"
+    },
+    {
+      "id": "tool.result.text"
+    },
+    {
+      "id": "tool.result.json"
+    },
+    {
+      "id": "tool.result.error"
+    },
+    {
+      "id": "tool.result.truncated"
+    },
+    {
+      "id": "common.tools.result-projector.default"
+    },
+    {
+      "id": "tool.audit.memory"
+    },
+    {
+      "id": "tool.audit.jsonl"
+    },
+    {
+      "id": "filesystem.local"
+    },
+    {
+      "id": "filesystem.memory"
+    },
+    {
+      "id": "filesystem.readonly"
+    },
+    {
+      "id": "filesystem.workspace-scoped"
+    },
+    {
+      "id": "process-runner.disabled"
+    },
+    {
+      "id": "process-runner.local"
+    },
+    {
+      "id": "process-runner.dry-run"
+    },
+    {
+      "id": "process-runner.sandbox"
+    },
+    {
+      "id": "provider.transport.fetch"
+    },
+    {
+      "id": "provider.transport.mock-sse"
+    },
+    {
+      "id": "provider.transport.cassette"
+    },
+    {
+      "id": "provider.auth.api-key"
+    },
+    {
+      "id": "provider.auth.bearer"
+    },
+    {
+      "id": "provider.auth.query-key"
+    },
+    {
+      "id": "provider.model-registry.static"
+    },
+    {
+      "id": "provider.model-registry.env"
+    },
+    {
+      "id": "provider.model-registry.remote-cache"
+    },
+    {
+      "id": "provider.request-shape.openai-compatible"
+    },
+    {
+      "id": "provider.request-shape.anthropic"
+    },
+    {
+      "id": "provider.request-shape.google"
+    },
+    {
+      "id": "provider.stream-parser.sse"
+    },
+    {
+      "id": "provider.stream-parser.json"
+    },
+    {
+      "id": "provider.stream-parser.cassette"
+    },
+    {
+      "id": "common.provider.streaming-delta-recorder"
+    },
+    {
+      "id": "provider.event-normalizer.common"
+    },
+    {
+      "id": "provider.event-normalizer.openai-compatible"
+    },
+    {
+      "id": "provider.event-normalizer.anthropic"
+    },
+    {
+      "id": "provider.event-normalizer.google"
+    },
+    {
+      "id": "provider.usage-normalizer.common"
+    },
+    {
+      "id": "provider.usage-normalizer.pricing-table"
+    },
+    {
+      "id": "provider.cassette.jsonl"
+    },
+    {
+      "id": "provider.cassette.memory"
+    },
+    {
+      "id": "provider.stream.openai-compatible"
+    },
+    {
+      "id": "provider.stream.openrouter"
+    },
+    {
+      "id": "provider.stream.anthropic"
+    },
+    {
+      "id": "provider.stream.google"
+    },
+    {
+      "id": "common.provider.stream-projector"
+    },
+    {
+      "id": "config.source.env"
+    },
+    {
+      "id": "config.source.file"
+    },
+    {
+      "id": "config.source.cli-override"
+    },
+    {
+      "id": "config.merge.deep"
+    },
+    {
+      "id": "config.merge.replace"
+    },
+    {
+      "id": "config.merge.priority"
+    },
+    {
+      "id": "config.validator.schema"
+    },
+    {
+      "id": "config.validator.typescript"
+    },
+    {
+      "id": "resource.discovery.filesystem"
+    },
+    {
+      "id": "resource.discovery.memory"
+    },
+    {
+      "id": "prompt.resource-loader.text"
+    },
+    {
+      "id": "prompt.resource-loader.markdown"
+    },
+    {
+      "id": "prompt.system-builder.common"
+    },
+    {
+      "id": "prompt.tool-renderer.common"
+    },
+    {
+      "id": "prompt.model-capability-adapter.common"
+    },
+    {
+      "id": "prompt.compaction-adapter.common"
+    },
+    {
+      "id": "ui.event-loop.shared-tui"
+    },
+    {
+      "id": "ui.renderer.noop"
+    },
+    {
+      "id": "ui.renderer.text"
+    },
+    {
+      "id": "ui.renderer.html"
+    },
+    {
+      "id": "ui.command-router.common"
+    },
+    {
+      "id": "ui.theme-registry.common"
+    },
+    {
+      "id": "ui.input-normalizer.common"
+    },
+    {
+      "id": "ui.snapshot.common"
+    },
+    {
+      "id": "hermes.block.compatibility-metadata"
+    },
+    {
+      "id": "hermes.capability.aliases"
+    },
+    {
+      "id": "hermes.resource.grant-defaults"
+    },
+    {
+      "id": "hermes.recipe.binding-aliases"
+    },
+    {
+      "id": "hermes.conformance.product-gate"
+    },
+    {
+      "id": "hermes.identity.id-generator"
+    },
+    {
+      "id": "hermes.identity.clock-format"
+    },
+    {
+      "id": "hermes.identity.workspace-resolver"
+    },
+    {
+      "id": "hermes.event.envelope-bridge"
+    },
+    {
+      "id": "hermes.event.runtime-bridge"
+    },
+    {
+      "id": "hermes.trace.debug-surface"
+    },
+    {
+      "id": "hermes.runtime.module-aliases"
+    },
+    {
+      "id": "hermes.runtime.capability-aliases"
+    },
+    {
+      "id": "hermes.runtime.binding-defaults"
+    },
+    {
+      "id": "hermes.runtime.lifecycle-defaults"
+    },
+    {
+      "id": "hermes.runtime.graph-labels"
+    },
+    {
+      "id": "hermes.runtime.acceptance-controller.native-like"
+    },
+    {
+      "id": "hermes.runtime.acceptance-evidence.native-like"
+    },
+    {
+      "id": "hermes.session.id-generator"
+    },
+    {
+      "id": "hermes.session.store.sqlite-fts"
+    },
+    {
+      "id": "hermes.session.branch-graph.lineage"
+    },
+    {
+      "id": "hermes.session.projector.openai-messages"
+    },
+    {
+      "id": "hermes.session.message-part-projector.native-like"
+    },
+    {
+      "id": "hermes.session.pagination.updated-at"
+    },
+    {
+      "id": "hermes.session.context-selector.thread-history"
+    },
+    {
+      "id": "hermes.session.compaction-trajectory"
+    },
+    {
+      "id": "hermes.hook.plugin-bridge"
+    },
+    {
+      "id": "hermes.plugin.loader"
+    },
+    {
+      "id": "hermes.hook.observer-adapter"
+    },
+    {
+      "id": "hermes.hook.handler-adapter"
+    },
+    {
+      "id": "hermes.plugin.event-mapper"
+    },
+    {
+      "id": "hermes.hook.scheduler-defaults"
+    },
+    {
+      "id": "hermes.plugin.cleanup"
+    },
+    {
+      "id": "hermes.hook.error-defaults"
+    },
+    {
+      "id": "hermes.registry.tool-definition"
+    },
+    {
+      "id": "hermes.tool.registry-bridge"
+    },
+    {
+      "id": "hermes.registry.command"
+    },
+    {
+      "id": "hermes.registry.provider-plugin"
+    },
+    {
+      "id": "hermes.plugin.provider-registry-bridge"
+    },
+    {
+      "id": "hermes.registry.ui-provider"
+    },
+    {
+      "id": "hermes.plugin.ui-registry-bridge"
+    },
+    {
+      "id": "hermes.turn.input-normalizer"
+    },
+    {
+      "id": "hermes.turn.context-builder"
+    },
+    {
+      "id": "hermes.turn.prompt-assembler"
+    },
+    {
+      "id": "hermes.turn.provider-request-builder"
+    },
+    {
+      "id": "hermes.turn.provider-stream-runner"
+    },
+    {
+      "id": "hermes.turn.stream-reducer"
+    },
+    {
+      "id": "hermes.turn.tool-call-planner"
+    },
+    {
+      "id": "hermes.turn.tool-executor"
+    },
+    {
+      "id": "hermes.turn.result-recorder"
+    },
+    {
+      "id": "hermes.turn.retry-policy"
+    },
+    {
+      "id": "hermes.turn.continuation-policy"
+    },
+    {
+      "id": "hermes.turn.compaction-policy"
+    },
+    {
+      "id": "hermes.turn.stop-condition"
+    },
+    {
+      "id": "hermes.agent-loop.request-boundary.native-like"
+    },
+    {
+      "id": "hermes.agent-loop.final-summary.native-like"
+    },
+    {
+      "id": "hermes.tool-pack.compatibility"
+    },
+    {
+      "id": "hermes.tool.definition-registry-bridge"
+    },
+    {
+      "id": "hermes.tool.schema-bridge"
+    },
+    {
+      "id": "hermes.tools.schema.native-like"
+    },
+    {
+      "id": "hermes.tools.batch-scheduler.native-like"
+    },
+    {
+      "id": "hermes.permission.hook-bridge"
+    },
+    {
+      "id": "hermes.tool.permission-render-bridge"
+    },
+    {
+      "id": "hermes.tool.result-event-bridge"
+    },
+    {
+      "id": "hermes.tools.result-projector.native-like"
+    },
+    {
+      "id": "hermes.tool.progress-event-bridge"
+    },
+    {
+      "id": "hermes.workspace-filesystem-bridge"
+    },
+    {
+      "id": "hermes.process-runner-bridge"
+    },
+    {
+      "id": "hermes.provider.transport-instrumentation"
+    },
+    {
+      "id": "hermes.provider.auth-descriptor"
+    },
+    {
+      "id": "hermes.provider.model-registry"
+    },
+    {
+      "id": "hermes.provider.request-options"
+    },
+    {
+      "id": "hermes.provider.parser-observer"
+    },
+    {
+      "id": "hermes.provider.streaming-delta-recorder.native-like"
+    },
+    {
+      "id": "hermes.provider.event-observer"
+    },
+    {
+      "id": "hermes.provider.usage-renderer"
+    },
+    {
+      "id": "hermes.provider.cassette-artifact"
+    },
+    {
+      "id": "hermes.provider.plugin-descriptor"
+    },
+    {
+      "id": "hermes.provider.stream-projector.native-like"
+    },
+    {
+      "id": "hermes.config.source"
+    },
+    {
+      "id": "hermes.config.precedence"
+    },
+    {
+      "id": "hermes.config.validator"
+    },
+    {
+      "id": "hermes.prompt.agent-builder"
+    },
+    {
+      "id": "hermes.tui.shell"
+    },
+    {
+      "id": "hermes.ui.renderer"
+    },
+    {
+      "id": "hermes.ui.command-router"
+    },
+    {
+      "id": "hermes.ui.theme-registry"
+    },
+    {
+      "id": "hermes.ui.input-normalizer"
+    },
+    {
+      "id": "hermes.ui.snapshot"
+    }
+  ],
+  "productShells": [
+    {
+      "id": "hermes.product-shell.sdk"
+    },
+    {
+      "id": "hermes.product-shell.harness"
+    },
+    {
+      "id": "hermes.product-shell.cli"
+    },
+    {
+      "id": "hermes.product-shell.tui"
+    },
+    {
+      "id": "hermes.product-shell.api-server"
+    },
+    {
+      "id": "hermes.product-shell.acp"
+    },
+    {
+      "id": "hermes.product-shell.gateway"
+    },
+    {
+      "id": "hermes.product-shell.web-dashboard"
+    }
+  ],
+  "bindings": [
+    {
+      "port": "block.manifest",
+      "module": "hermes.block.compatibility-metadata"
+    },
+    {
+      "port": "capability.ref",
+      "module": "hermes.capability.aliases"
+    },
+    {
+      "port": "resource.grant",
+      "module": "hermes.resource.grant-defaults"
+    },
+    {
+      "port": "recipe.binding",
+      "module": "hermes.recipe.binding-aliases"
+    },
+    {
+      "port": "conformance.ref",
+      "module": "hermes.conformance.product-gate"
+    },
+    {
+      "port": "identity.id-generator",
+      "module": "hermes.identity.id-generator"
+    },
+    {
+      "port": "identity.clock",
+      "module": "hermes.identity.clock-format"
+    },
+    {
+      "port": "identity.workspace-resolver",
+      "module": "hermes.identity.workspace-resolver"
+    },
+    {
+      "port": "event.envelope",
+      "module": "hermes.event.envelope-bridge"
+    },
+    {
+      "port": "event.log",
+      "module": "hermes.event.runtime-bridge"
+    },
+    {
+      "port": "trace.recorder",
+      "module": "hermes.trace.debug-surface"
+    },
+    {
+      "port": "product.shell",
+      "module": "hermes.product-shell.sdk"
+    },
+    {
+      "port": "runtime.module-catalog",
+      "module": "runtime.module-catalog.memory"
+    },
+    {
+      "port": "runtime.capability-resolver",
+      "module": "runtime.capability-resolver.default"
+    },
+    {
+      "port": "runtime.binding-planner",
+      "module": "runtime.binding-planner.lockfile"
+    },
+    {
+      "port": "runtime.lifecycle-runner",
+      "module": "runtime.lifecycle-runner.scoped"
+    },
+    {
+      "port": "runtime.assembly-graph",
+      "module": "runtime.assembly-graph.lockfile"
+    },
+    {
+      "port": "runtime.acceptance-controller",
+      "module": "common.runtime.acceptance-controller.default"
+    },
+    {
+      "port": "runtime.acceptance-evidence",
+      "module": "common.runtime.acceptance-evidence.default"
+    },
+    {
+      "port": "session.id-generator",
+      "module": "hermes.session.id-generator"
+    },
+    {
+      "port": "session.store",
+      "module": "hermes.session.store.sqlite-fts"
+    },
+    {
+      "port": "session.event-log",
+      "module": "session.event-log.memory"
+    },
+    {
+      "port": "session.reader",
+      "module": "session.reader.memory"
+    },
+    {
+      "port": "session.writer",
+      "module": "session.writer.memory"
+    },
+    {
+      "port": "session.message-store",
+      "module": "session.message-store.memory"
+    },
+    {
+      "port": "session.branching",
+      "module": "session.branching.memory"
+    },
+    {
+      "port": "session.branch-graph",
+      "module": "hermes.session.branch-graph.lineage"
+    },
+    {
+      "port": "session.projector",
+      "module": "hermes.session.projector.openai-messages"
+    },
+    {
+      "port": "session.message-part-projector",
+      "module": "hermes.session.message-part-projector.native-like"
+    },
+    {
+      "port": "session.pagination",
+      "module": "hermes.session.pagination.updated-at"
+    },
+    {
+      "port": "session.context-selector",
+      "module": "hermes.session.context-selector.thread-history"
+    },
+    {
+      "port": "session.compaction-records",
+      "module": "hermes.session.compaction-trajectory"
+    },
+    {
+      "port": "session.diff",
+      "module": "session.branching.memory"
+    },
+    {
+      "port": "hook.bus",
+      "module": "hermes.plugin.loader"
+    },
+    {
+      "port": "hook.observer-chain",
+      "module": "hermes.hook.observer-adapter"
+    },
+    {
+      "port": "hook.handler-chain",
+      "module": "hermes.plugin.event-mapper"
+    },
+    {
+      "port": "hook.scheduler",
+      "module": "hermes.hook.scheduler-defaults"
+    },
+    {
+      "port": "hook.cleanup-scope",
+      "module": "hermes.plugin.cleanup"
+    },
+    {
+      "port": "hook.error-policy",
+      "module": "hermes.hook.error-defaults"
+    },
+    {
+      "port": "tool.registry",
+      "module": "hermes.tool.registry-bridge"
+    },
+    {
+      "port": "registry.command",
+      "module": "hermes.registry.command"
+    },
+    {
+      "port": "registry.provider",
+      "module": "hermes.plugin.provider-registry-bridge"
+    },
+    {
+      "port": "registry.ui",
+      "module": "hermes.plugin.ui-registry-bridge"
+    },
+    {
+      "port": "turn.input-normalizer",
+      "module": "hermes.turn.input-normalizer"
+    },
+    {
+      "port": "turn.context-builder",
+      "module": "hermes.turn.context-builder"
+    },
+    {
+      "port": "turn.prompt-assembler",
+      "module": "hermes.turn.prompt-assembler"
+    },
+    {
+      "port": "turn.provider-request-builder",
+      "module": "hermes.turn.provider-request-builder"
+    },
+    {
+      "port": "turn.provider-stream-runner",
+      "module": "hermes.turn.provider-stream-runner"
+    },
+    {
+      "port": "turn.stream-reducer",
+      "module": "hermes.turn.stream-reducer"
+    },
+    {
+      "port": "turn.tool-call-planner",
+      "module": "hermes.turn.tool-call-planner"
+    },
+    {
+      "port": "turn.tool-executor",
+      "module": "hermes.turn.tool-executor"
+    },
+    {
+      "port": "turn.result-recorder",
+      "module": "hermes.turn.result-recorder"
+    },
+    {
+      "port": "turn.retry-policy",
+      "module": "hermes.turn.retry-policy"
+    },
+    {
+      "port": "turn.continuation-policy",
+      "module": "hermes.turn.continuation-policy"
+    },
+    {
+      "port": "turn.compaction-policy",
+      "module": "hermes.turn.compaction-policy"
+    },
+    {
+      "port": "turn.stop-condition",
+      "module": "hermes.turn.stop-condition"
+    },
+    {
+      "port": "agent-loop.request-boundary",
+      "module": "common.agent-loop.request-boundary.default"
+    },
+    {
+      "port": "agent-loop.final-summary",
+      "module": "common.agent-loop.final-summary.default"
+    },
+    {
+      "port": "tools",
+      "module": "tool-pack.shell"
+    },
+    {
+      "port": "tool.definition",
+      "module": "hermes.tool.definition-registry-bridge"
+    },
+    {
+      "port": "tool.schema-adapter",
+      "module": "hermes.tool.schema-bridge"
+    },
+    {
+      "port": "tools.schema",
+      "module": "common.tools.schema.default"
+    },
+    {
+      "port": "tools.batch-scheduler",
+      "module": "common.tools.batch-scheduler.default"
+    },
+    {
+      "port": "tool.permission-policy",
+      "module": "hermes.permission.hook-bridge"
+    },
+    {
+      "port": "tool.executor",
+      "module": "tool.executor.default"
+    },
+    {
+      "port": "tool.result-normalizer",
+      "module": "hermes.tool.result-event-bridge"
+    },
+    {
+      "port": "tools.result-projector",
+      "module": "common.tools.result-projector.default"
+    },
+    {
+      "port": "tool.audit-log",
+      "module": "hermes.tool.progress-event-bridge"
+    },
+    {
+      "port": "filesystem.port",
+      "module": "filesystem.workspace-scoped"
+    },
+    {
+      "port": "process-runner.port",
+      "module": "process-runner.local"
+    },
+    {
+      "port": "provider.transport",
+      "module": "provider.transport.fetch"
+    },
+    {
+      "port": "provider.auth",
+      "module": "hermes.provider.auth-descriptor"
+    },
+    {
+      "port": "provider.model-registry",
+      "module": "provider.model-registry.static"
+    },
+    {
+      "port": "provider.request-shape",
+      "module": "provider.request-shape.openai-compatible"
+    },
+    {
+      "port": "provider.stream-parser",
+      "module": "hermes.provider.parser-observer"
+    },
+    {
+      "port": "provider.streaming-delta-recorder",
+      "module": "common.provider.streaming-delta-recorder"
+    },
+    {
+      "port": "provider.event-normalizer",
+      "module": "provider.event-normalizer.openai-compatible"
+    },
+    {
+      "port": "provider.usage-normalizer",
+      "module": "hermes.provider.usage-renderer"
+    },
+    {
+      "port": "provider.cassette",
+      "module": "hermes.provider.cassette-artifact"
+    },
+    {
+      "port": "provider.stream",
+      "module": "provider.stream.openai-compatible"
+    },
+    {
+      "port": "provider.stream-projector",
+      "module": "common.provider.stream-projector"
+    },
+    {
+      "port": "config.source",
+      "module": "hermes.config.source"
+    },
+    {
+      "port": "config.merge-strategy",
+      "module": "hermes.config.precedence"
+    },
+    {
+      "port": "config.validator",
+      "module": "hermes.config.validator"
+    },
+    {
+      "port": "resource.discovery",
+      "module": "resource.discovery.filesystem"
+    },
+    {
+      "port": "prompt.resource-loader",
+      "module": "prompt.resource-loader.text"
+    },
+    {
+      "port": "prompt.system-builder",
+      "module": "hermes.prompt.agent-builder"
+    },
+    {
+      "port": "prompt.tool-renderer",
+      "module": "prompt.tool-renderer.common"
+    },
+    {
+      "port": "prompt.model-capability-adapter",
+      "module": "prompt.model-capability-adapter.common"
+    },
+    {
+      "port": "prompt.compaction-adapter",
+      "module": "prompt.compaction-adapter.common"
+    },
+    {
+      "port": "ui.event-loop",
+      "module": "ui.event-loop.shared-tui"
+    },
+    {
+      "port": "ui.renderer",
+      "module": "hermes.ui.renderer"
+    },
+    {
+      "port": "ui.command-router",
+      "module": "hermes.ui.command-router"
+    },
+    {
+      "port": "ui.theme-registry",
+      "module": "hermes.ui.theme-registry"
+    },
+    {
+      "port": "ui.input-normalizer",
+      "module": "hermes.ui.input-normalizer"
+    },
+    {
+      "port": "ui.snapshot",
+      "module": "hermes.ui.snapshot"
+    }
+  ],
+  "requiredCapabilities": [
+    "block.manifest",
+    "capability.ref",
+    "resource.grant",
+    "recipe.binding",
+    "conformance.ref",
+    "identity.id-generator",
+    "identity.clock",
+    "identity.workspace-resolver",
+    "event.envelope",
+    "event.log",
+    "trace.recorder",
+    "product.shell",
+    "runtime.module-catalog",
+    "runtime.capability-resolver",
+    "runtime.binding-planner",
+    "runtime.lifecycle-runner",
+    "runtime.assembly-graph",
+    "runtime.acceptance-controller",
+    "runtime.acceptance-evidence",
+    "session.id-generator",
+    "session.store",
+    "session.event-log",
+    "session.reader",
+    "session.writer",
+    "session.message-store",
+    "session.branching",
+    "session.branch-graph",
+    "session.projector",
+    "session.message-part-projector",
+    "session.pagination",
+    "session.context-selector",
+    "session.compaction-records",
+    "session.diff",
+    "hook.bus",
+    "hook.observer-chain",
+    "hook.handler-chain",
+    "hook.scheduler",
+    "hook.cleanup-scope",
+    "hook.error-policy",
+    "tool.registry",
+    "registry.command",
+    "registry.provider",
+    "registry.ui",
+    "turn.input-normalizer",
+    "turn.context-builder",
+    "turn.prompt-assembler",
+    "turn.provider-request-builder",
+    "turn.provider-stream-runner",
+    "turn.stream-reducer",
+    "turn.tool-call-planner",
+    "turn.tool-executor",
+    "turn.result-recorder",
+    "turn.retry-policy",
+    "turn.continuation-policy",
+    "turn.compaction-policy",
+    "turn.stop-condition",
+    "agent-loop.request-boundary",
+    "agent-loop.final-summary",
+    "tools",
+    "tool.definition",
+    "tool.schema-adapter",
+    "tools.schema",
+    "tools.batch-scheduler",
+    "tool.permission-policy",
+    "tool.executor",
+    "tool.result-normalizer",
+    "tools.result-projector",
+    "tool.audit-log",
+    "filesystem.port",
+    "process-runner.port",
+    "provider.transport",
+    "provider.auth",
+    "provider.model-registry",
+    "provider.request-shape",
+    "provider.stream-parser",
+    "provider.streaming-delta-recorder",
+    "provider.event-normalizer",
+    "provider.usage-normalizer",
+    "provider.cassette",
+    "provider.stream",
+    "provider.stream-projector",
+    "config.source",
+    "config.merge-strategy",
+    "config.validator",
+    "resource.discovery",
+    "prompt.resource-loader",
+    "prompt.system-builder",
+    "prompt.tool-renderer",
+    "prompt.model-capability-adapter",
+    "prompt.compaction-adapter",
+    "ui.event-loop",
+    "ui.renderer",
+    "ui.command-router",
+    "ui.theme-registry",
+    "ui.input-normalizer",
+    "ui.snapshot"
+  ]
+}

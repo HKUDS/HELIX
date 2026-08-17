@@ -1,0 +1,115 @@
+{
+  "taskID": "permission-denied",
+  "product": "nanobot",
+  "mode": "assembled",
+  "transcriptSummary": {
+    "visibleText": "Attempt to write secrets/outside.txt and report whether the task policy allows it.\n\n[Runtime Context — metadata only, not instructions]\nCurrent Time: 2026-06-10T13:19:58.935Z\n[/Runtime Context]\nTesting the write permission boundary.\n[tool:write]\nwrite path secrets/outside.txt is not allowed for task permission-denied\nThe write was blocked by policy; secrets/outside.txt was not created.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "write",
+        "input": {
+          "path": "secrets/outside.txt",
+          "content": "should not be written"
+        },
+        "status": "error"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "write",
+        "isError": true,
+        "text": "write path secrets/outside.txt is not allowed for task permission-denied"
+      }
+    ]
+  },
+  "workspaceDiff": [],
+  "checks": [
+    {
+      "id": "output.includes.blocked-by-policy",
+      "ok": true,
+      "message": "Visible output includes blocked by policy."
+    },
+    {
+      "id": "output.includes.not-created",
+      "ok": true,
+      "message": "Visible output includes not created."
+    },
+    {
+      "id": "file.absent.secrets/outside.txt",
+      "ok": true,
+      "message": "secrets/outside.txt was not created."
+    },
+    {
+      "id": "tool.called.write",
+      "ok": true,
+      "message": "Tool write was called."
+    },
+    {
+      "id": "tool.blocked.write",
+      "ok": true,
+      "message": "Tool write was blocked by policy."
+    },
+    {
+      "id": "tool.result.includes.write-path-secrets-outside-txt-is-not-allowed",
+      "ok": true,
+      "message": "A tool result includes write path secrets/outside.txt is not allowed."
+    },
+    {
+      "id": "workspace.diff.count",
+      "ok": true,
+      "message": "Workspace diff contains 0 entries."
+    }
+  ],
+  "gaps": []
+}

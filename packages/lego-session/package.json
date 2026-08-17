@@ -1,0 +1,19 @@
+{
+  "name": "@helix/lego-session",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./atoms": "./src/atoms.ts",
+    "./jsonl-tree": "./src/jsonl-tree.ts",
+    "./message-part-projector": "./src/message-part-projector.ts",
+    "./product-schema/pi": "./src/product-schema/pi.ts",
+    "./projection": "./src/projection.ts",
+    "./types": "./src/types.ts",
+    "./utils": "./src/utils.ts"
+  }
+}

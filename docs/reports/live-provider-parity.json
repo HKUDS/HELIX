@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-30T06:35:04.711Z",
+  "report": {
+    "status": "passed",
+    "ok": true,
+    "provider": "anthropic",
+    "modelID": "MiniMax-M2.7-highspeed",
+    "products": [
+      {
+        "product": "opencode",
+        "status": "passed",
+        "ok": true,
+        "checks": [
+          {
+            "id": "opencode:live-provider-turn",
+            "ok": true,
+            "message": "opencode runs a live external provider turn through the assembled harness.",
+            "details": {
+              "sessionID": "ses_188682e3bffeJCJcIf1Wh3h7Hy",
+              "steps": 1,
+              "finish": "end_turn",
+              "assistantText": "{\"sessionID\":\"ses_188682e3bffeJCJcIf1Wh3h7Hy\",\"providerID\":\"anthropic\",\"modelID\":\"MiniMax-M2.7-highspeed\",\"step\":0,\"steps\":1}\nThe user wants me to reply with a short sentence containing \"helix-l",
+              "blockedTools": []
+            }
+          },
+          {
+            "id": "opencode:live-provider-sdk-readback",
+            "ok": true,
+            "message": "opencode product SDK can read back the live provider session transcript.",
+            "details": {
+              "transcript": 2
+            }
+          }
+        ],
+        "sessionID": "ses_188682e3bffeJCJcIf1Wh3h7Hy",
+        "steps": 1,
+        "finish": "end_turn"
+      },
+      {
+        "product": "pi-mono",
+        "status": "passed",
+        "ok": true,
+        "checks": [
+          {
+            "id": "pi-mono:live-provider-turn",
+            "ok": true,
+            "message": "pi-mono runs a live external provider turn through the assembled harness.",
+            "details": {
+              "sessionID": "ses_f1cf11e6-4c96-4f42-ad2d-dcf544832db6",
+              "steps": 1,
+              "finish": "end_turn",
+              "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" and explicitly says not to call tools. This is a simple text response task that doesn't require any tool usage.\nTh",
+              "blockedTools": []
+            }
+          },
+          {
+            "id": "pi-mono:live-provider-sdk-readback",
+            "ok": true,
+            "message": "pi-mono product SDK can read back the live provider session transcript.",
+            "details": {
+              "transcript": 2
+            }
+          }
+        ],
+        "sessionID": "ses_f1cf11e6-4c96-4f42-ad2d-dcf544832db6",
+        "steps": 1,
+        "finish": "end_turn"
+      },
+      {
+        "product": "nanobot",
+        "status": "passed",
+        "ok": true,
+        "checks": [
+          {
+            "id": "nanobot:live-provider-turn",
+            "ok": true,
+            "message": "nanobot runs a live external provider turn through the assembled harness.",
+            "details": {
+              "sessionID": "ses_278cdcbf-3dea-4010-ba41-1960ba4aec2e",
+              "steps": 1,
+              "finish": "end_turn",
+              "assistantText": "The user wants me to reply with a short sentence containing \"helix-live-ok\" and explicitly says not to call tools.\nThe Helix live provider is operating correctly with status helix-li",
+              "blockedTools": []
+            }
+          },
+          {
+            "id": "nanobot:live-provider-sdk-readback",
+            "ok": true,
+            "message": "nanobot product SDK can read back the live provider session transcript.",
+            "details": {
+              "transcript": 2
+            }
+          }
+        ],
+        "sessionID": "ses_278cdcbf-3dea-4010-ba41-1960ba4aec2e",
+        "steps": 1,
+        "finish": "end_turn"
+      }
+    ],
+    "checks": [
+      {
+        "id": "live-provider:configured",
+        "ok": true,
+        "message": "Live external provider parity has provider, model, and credential inputs.",
+        "details": {
+          "provider": "anthropic",
+          "modelID": "MiniMax-M2.7-highspeed"
+        }
+      },
+      {
+        "id": "opencode:live-provider-turn",
+        "ok": true,
+        "message": "opencode runs a live external provider turn through the assembled harness.",
+        "details": {
+          "sessionID": "ses_188682e3bffeJCJcIf1Wh3h7Hy",
+          "steps": 1,
+          "finish": "end_turn",
+          "assistantText": "{\"sessionID\":\"ses_188682e3bffeJCJcIf1Wh3h7Hy\",\"providerID\":\"anthropic\",\"modelID\":\"MiniMax-M2.7-highspeed\",\"step\":0,\"steps\":1}\nThe user wants me to reply with a short sentence containing \"helix-l",
+          "blockedTools": []
+        }
+      },
+      {
+        "id": "opencode:live-provider-sdk-readback",
+        "ok": true,
+        "message": "opencode product SDK can read back the live provider session transcript.",
+        "details": {
+          "transcript": 2
+        }
+      },
+      {
+        "id": "pi-mono:live-provider-turn",
+        "ok": true,
+        "message": "pi-mono runs a live external provider turn through the assembled harness.",
+        "details": {
+          "sessionID": "ses_f1cf11e6-4c96-4f42-ad2d-dcf544832db6",
+          "steps": 1,
+          "finish": "end_turn",
+          "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" and explicitly says not to call tools. This is a simple text response task that doesn't require any tool usage.\nTh",
+          "blockedTools": []
+        }
+      },
+      {
+        "id": "pi-mono:live-provider-sdk-readback",
+        "ok": true,
+        "message": "pi-mono product SDK can read back the live provider session transcript.",
+        "details": {
+          "transcript": 2
+        }
+      },
+      {
+        "id": "nanobot:live-provider-turn",
+        "ok": true,
+        "message": "nanobot runs a live external provider turn through the assembled harness.",
+        "details": {
+          "sessionID": "ses_278cdcbf-3dea-4010-ba41-1960ba4aec2e",
+          "steps": 1,
+          "finish": "end_turn",
+          "assistantText": "The user wants me to reply with a short sentence containing \"helix-live-ok\" and explicitly says not to call tools.\nThe Helix live provider is operating correctly with status helix-li",
+          "blockedTools": []
+        }
+      },
+      {
+        "id": "nanobot:live-provider-sdk-readback",
+        "ok": true,
+        "message": "nanobot product SDK can read back the live provider session transcript.",
+        "details": {
+          "transcript": 2
+        }
+      }
+    ],
+    "issues": [],
+    "missing": []
+  }
+}

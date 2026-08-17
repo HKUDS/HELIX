@@ -1,0 +1,4106 @@
+{
+  "schemaVersion": 2,
+  "artifactKind": "task-parity-evidence",
+  "generatedAt": "2026-06-01T03:53:52.268Z",
+  "sourceSummarySha256": "09619414801c473732bdc7b21145729150ffa85403307dbcdaf5c12935078a3f",
+  "reports": [
+    {
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "product": "opencode",
+      "mode": "assembled",
+      "status": "matched",
+      "cadenceEvidence": {
+        "level": "semantic-cadence",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 2,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 3,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 4,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 5,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 6,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 7,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 8,
+            "eventCount": 159,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result-error:edit",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:glob",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:glob",
+              "tool:read"
+            ],
+            "toolCallCount": 8
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "glob",
+            "status": "completed",
+            "inputShape": "pattern",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "edit",
+            "status": "error",
+            "inputShape": "new,path",
+            "result": "error"
+          },
+          {
+            "index": 4,
+            "toolName": "edit",
+            "status": "error",
+            "inputShape": "new,oldText,path",
+            "result": "error"
+          },
+          {
+            "index": 5,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "newText,oldText,path",
+            "result": "error"
+          },
+          {
+            "index": 6,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 7,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "glob"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "read"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [
+          "session.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "session.idle"
+        ],
+        "traceEvents": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before.agent.start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "shell.env",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ],
+        "costShape": {
+          "providerRequests": 8,
+          "toolCalls": 8,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "lossless",
+          "evidence": "provider-hook"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "lossless",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "lossless",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "inferred",
+          "lossiness": "inferred",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "tool-result-after",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "assembled-loop",
+        "verified": true,
+        "issues": []
+      },
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 8
+      },
+      "gaps": [],
+      "cadenceDrifts": []
+    },
+    {
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "product": "opencode",
+      "mode": "original",
+      "status": "acceptable-drift",
+      "cadenceEvidence": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 7,
+            "eventCount": 13,
+            "source": "native-cli",
+            "visibility": "aggregated",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:read"
+            ],
+            "toolCallCount": 7
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 5,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "newText,oldText,path",
+            "result": "text"
+          },
+          {
+            "index": 6,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command,description",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [],
+        "traceEvents": [
+          "step.start",
+          "tool.use",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "text",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "tool.use",
+          "step.finish",
+          "step.start",
+          "text"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 7,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "aggregate",
+          "lossiness": "aggregated",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "text-only",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "final-message",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "none",
+          "lossiness": "unobservable",
+          "evidence": "unavailable"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "tool-result-after",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "native-cadence-fixture",
+        "verified": true,
+        "issues": []
+      },
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "gaps": [],
+      "cadenceDrifts": [
+        {
+          "id": "cadence.provider-request-count",
+          "category": "cadence.provider-request-count",
+          "message": "Provider request boundaries differ.",
+          "assembled": "8",
+          "original": "1",
+          "owner": "native-projector",
+          "nextAction": "upstream-version-drift",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "opencode.native.projector",
+            "candidateFixes": [
+              "refresh opencode native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:glob",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "providerBoundary:aggregated:aggregate"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-call-count",
+          "category": "cadence.tool-call-count",
+          "message": "Tool call counts differ.",
+          "assembled": "8",
+          "original": "7",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:glob",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-sequence",
+          "category": "cadence.tool-sequence",
+          "message": "Tool call order differs.",
+          "assembled": "glob>read>read>edit>edit>edit>read>bash",
+          "original": "read>edit>bash>read>read>edit>bash",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:glob",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-batch",
+          "category": "cadence.tool-batch",
+          "message": "Tool batch grouping differs.",
+          "assembled": "[[\"glob\"],[\"read\"],[\"read\"],[\"edit\"],[\"edit\"],[\"edit\"],[\"read\"],[\"bash\"]]",
+          "original": "[[\"read\"],[\"edit\"],[\"bash\"],[\"read\"],[\"read\"],[\"edit\"],[\"bash\"]]",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:glob",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.message-part-type",
+          "category": "cadence.message-part-type",
+          "message": "Assistant/tool part type projection differs.",
+          "assembled": "text>tool-result-error:edit>tool-result:bash>tool-result:edit>tool-result:glob>tool-result:read>tool:bash>tool:edit>tool:glob>tool:read",
+          "original": "text>tool-result:bash>tool-result:edit>tool-result:read>tool:bash>tool:edit>tool:read",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "opencode.session.message-part-projector.native-like",
+            "candidateFixes": [
+              "refresh opencode native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:glob",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:final-message",
+                "streamDelta:semantic:text-only"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.final-summary",
+          "category": "cadence.final-summary",
+          "message": "Final visible transcript differs after normalization.",
+          "assembled": "This is a LiveCodeBench code-generation task adapted into a repository repair task. Source: LiveCodeBench `test_release_v5`, question `1883_B`. Problem: You ...",
+          "original": "I can see the issue. The `can_make_palindrome_after_removals` function always returns `\"NO\"` without implementing the actual logic. From the test file, the e...",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "opencode.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 3,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:glob",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:final-message"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.streaming-delta",
+          "category": "cadence.streaming-delta",
+          "message": "Trace or streaming event sequence differs.",
+          "assembled": "input>turn.pipeline.trace>session.start>turn.start>message.start>message.end>before.agent.start>turn.pipeline.trace>context>turn.pipeline.trace>agent.start>provider.request.before>turn.pipeline.trace>tool.call>turn.pipeline.trace>tool.st...",
+          "original": "step.start>tool.use>step.finish>step.start>text>tool.use>step.finish>step.start>tool.use>step.finish>step.start>text",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "opencode.provider.stream-projector.native-like",
+            "candidateFixes": [
+              "refresh opencode native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "glob",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "read",
+                "edit",
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:glob",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:glob",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "streamDelta:semantic:text-only"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "product": "pi-mono",
+      "mode": "assembled",
+      "status": "matched",
+      "cadenceEvidence": {
+        "level": "semantic-cadence",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 108,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 108,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 2,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 108,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 3,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 108,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 4,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 5,
+            "eventCount": 108,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:read"
+            ],
+            "toolCallCount": 5
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "newText,oldText,path",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "bash"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [
+          "session.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "session.idle"
+        ],
+        "traceEvents": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before.agent.start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "shell.env",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "shell.env",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ],
+        "costShape": {
+          "providerRequests": 5,
+          "toolCalls": 5,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "lossless",
+          "evidence": "provider-hook"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "lossless",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "lossless",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "inferred",
+          "lossiness": "inferred",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "tool-result-after",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "assembled-loop",
+        "verified": true,
+        "issues": []
+      },
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 5
+      },
+      "gaps": [],
+      "cadenceDrifts": []
+    },
+    {
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "product": "pi-mono",
+      "mode": "original",
+      "status": "acceptable-drift",
+      "cadenceEvidence": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 2,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 3,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 4,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 5,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 6,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 7,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          },
+          {
+            "index": 8,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 13,
+            "eventCount": 115,
+            "source": "native-cli",
+            "visibility": "observed",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:read"
+            ],
+            "toolCallCount": 13
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 5,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 6,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 7,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 8,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "",
+            "result": "text"
+          },
+          {
+            "index": 9,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 10,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "edits,path",
+            "result": "text"
+          },
+          {
+            "index": 11,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          },
+          {
+            "index": 12,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "message.start",
+          "message.end"
+        ],
+        "traceEvents": [
+          "session",
+          "agent.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.update",
+          "tool.update",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.start",
+          "tool.end",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "message.start",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.delta",
+          "message.end",
+          "tool.start",
+          "tool.update",
+          "tool.update",
+          "tool.end",
+          "message.start",
+          "message.end",
+          "turn.end",
+          "turn.start",
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 9,
+          "toolCalls": 13,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "tool-result-after",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "native-cadence-fixture",
+        "verified": true,
+        "issues": []
+      },
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 9
+      },
+      "gaps": [],
+      "cadenceDrifts": [
+        {
+          "id": "cadence.provider-request-count",
+          "category": "cadence.provider-request-count",
+          "message": "Provider request boundaries differ.",
+          "assembled": "5",
+          "original": "9",
+          "owner": "native-projector",
+          "nextAction": "upstream-version-drift",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "pi.native.projector",
+            "candidateFixes": [
+              "refresh pi native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 5,
+              "originalRequestCount": 9,
+              "assembledToolSequence": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "semantic",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "providerBoundary:semantic:per-request"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-call-count",
+          "category": "cadence.tool-call-count",
+          "message": "Tool call counts differ.",
+          "assembled": "5",
+          "original": "13",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 5,
+              "originalRequestCount": 9,
+              "assembledToolSequence": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-sequence",
+          "category": "cadence.tool-sequence",
+          "message": "Tool call order differs.",
+          "assembled": "bash>read>read>edit>bash",
+          "original": "bash>bash>bash>read>read>read>read>read>edit>edit>edit>bash>bash",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 5,
+              "originalRequestCount": 9,
+              "assembledToolSequence": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-batch",
+          "category": "cadence.tool-batch",
+          "message": "Tool batch grouping differs.",
+          "assembled": "[[\"bash\"],[\"read\"],[\"read\"],[\"edit\"],[\"bash\"]]",
+          "original": "[[\"bash\"],[\"bash\"],[\"bash\"],[\"read\"],[\"read\"],[\"read\"],[\"read\"],[\"read\"],[\"edit\"],[\"edit\"],[\"edit\"],[\"bash\"],[\"bash\"]]",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 5,
+              "originalRequestCount": 9,
+              "assembledToolSequence": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.final-summary",
+          "category": "cadence.final-summary",
+          "message": "Final visible transcript differs after normalization.",
+          "assembled": "This is a LiveCodeBench code-generation task adapted into a repository repair task. Source: LiveCodeBench `test_release_v5`, question `1883_B`. Problem: You ...",
+          "original": "This is a LiveCodeBench code-generation task adapted into a repository repair task. Source: LiveCodeBench `test_release_v5`, question `1883_B`. Problem: You ...",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "pi.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 3,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 5,
+              "originalRequestCount": 9,
+              "assembledToolSequence": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:storage-event"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.streaming-delta",
+          "category": "cadence.streaming-delta",
+          "message": "Trace or streaming event sequence differs.",
+          "assembled": "input>turn.pipeline.trace>session.start>turn.start>message.start>message.end>before.agent.start>turn.pipeline.trace>context>turn.pipeline.trace>agent.start>provider.request.before>turn.pipeline.trace>tool.call>turn.pipeline.trace>tool.st...",
+          "original": "session>agent.start>turn.start>message.start>message.end>message.start>message.delta>message.end>tool.start>tool.update>tool.end>message.start>message.end>turn.end>turn.start>message.start>message.delta>message.end>tool.start>tool.end>me...",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "pi.provider.stream-projector.native-like",
+            "candidateFixes": [
+              "refresh pi native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 5,
+              "originalRequestCount": 9,
+              "assembledToolSequence": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "semantic",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "streamDelta:semantic:semantic"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.early-accept",
+          "category": "cadence.early-accept",
+          "message": "Early accept behavior differs.",
+          "assembled": "false",
+          "original": "true",
+          "owner": "product-cadence-atom",
+          "nextAction": "add-existing-plane-common-submodule",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "agent-loop",
+            "owningAtomID": "pi.runtime.acceptance-controller.native-like",
+            "candidateFixes": [
+              "bind pi.runtime.acceptance-controller.native-like",
+              "compare task-policy acceptance decisions"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 5,
+              "originalRequestCount": 9,
+              "assembledToolSequence": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "bash",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "bash",
+                "bash",
+                "bash",
+                "read",
+                "read",
+                "read",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "bash",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "observed",
+              "comparisonConfidence": "semantic",
+              "scoringMode": "semantic-live",
+              "lossinessRefs": [
+                "acceptance:semantic:explicit-event"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "product": "nanobot",
+      "mode": "assembled",
+      "status": "matched",
+      "cadenceEvidence": {
+        "level": "semantic-cadence",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 1,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 2,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 3,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 4,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 5,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 6,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 0,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          },
+          {
+            "index": 7,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 8,
+            "eventCount": 161,
+            "source": "assembled-loop",
+            "visibility": "observed",
+            "boundaryEvidence": "provider-hook"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result-error:edit",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:ls",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:ls",
+              "tool:read"
+            ],
+            "toolCallCount": 8
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "ls",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "edit",
+            "status": "error",
+            "inputShape": "new,old,path",
+            "result": "error"
+          },
+          {
+            "index": 4,
+            "toolName": "edit",
+            "status": "error",
+            "inputShape": "new,old,path",
+            "result": "error"
+          },
+          {
+            "index": 5,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "newText,oldText,path",
+            "result": "error"
+          },
+          {
+            "index": 6,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 7,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "ls"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "read"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [
+          "session.start",
+          "message.start",
+          "message.end",
+          "message.start",
+          "message.end",
+          "session.idle"
+        ],
+        "traceEvents": [
+          "input",
+          "turn.pipeline.trace",
+          "session.start",
+          "turn.start",
+          "message.start",
+          "message.end",
+          "before.agent.start",
+          "turn.pipeline.trace",
+          "context",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "agent.start",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.call",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "tool.start",
+          "shell.env",
+          "tool.result",
+          "tool.end",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "provider.request.before",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "provider.response.after",
+          "turn.pipeline.trace",
+          "turn.pipeline.trace",
+          "message.start",
+          "turn.pipeline.trace",
+          "message.end",
+          "agent.end",
+          "turn.end",
+          "session.idle"
+        ],
+        "costShape": {
+          "providerRequests": 8,
+          "toolCalls": 8,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "per-request",
+          "lossiness": "lossless",
+          "evidence": "provider-hook"
+        },
+        "streamDelta": {
+          "visibility": "semantic",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "lossless",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "storage-event",
+          "lossiness": "lossless",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "inferred",
+          "lossiness": "inferred",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "tool-result-after",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "assembled-loop",
+        "verified": true,
+        "issues": []
+      },
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 8
+      },
+      "gaps": [],
+      "cadenceDrifts": []
+    },
+    {
+      "taskID": "livecodebench-1883-b-palindrome-removal",
+      "product": "nanobot",
+      "mode": "original",
+      "status": "acceptable-drift",
+      "cadenceEvidence": {
+        "level": "acceptable-cadence-drift",
+        "providerRequests": [
+          {
+            "index": 0,
+            "modelID": "MiniMax-M2.7-highspeed",
+            "toolCallCount": 5,
+            "eventCount": 0,
+            "source": "native-cli",
+            "visibility": "aggregated",
+            "boundaryEvidence": "cli-event"
+          }
+        ],
+        "assistantTurns": [
+          {
+            "index": 0,
+            "text": "has-text",
+            "partTypes": [
+              "text",
+              "tool-result:bash",
+              "tool-result:edit",
+              "tool-result:list_dir",
+              "tool-result:read",
+              "tool:bash",
+              "tool:edit",
+              "tool:list_dir",
+              "tool:read"
+            ],
+            "toolCallCount": 5
+          }
+        ],
+        "toolSequence": [
+          {
+            "index": 0,
+            "toolName": "list_dir",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 1,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 2,
+            "toolName": "read",
+            "status": "completed",
+            "inputShape": "path",
+            "result": "text"
+          },
+          {
+            "index": 3,
+            "toolName": "edit",
+            "status": "completed",
+            "inputShape": "newText,oldText,path",
+            "result": "text"
+          },
+          {
+            "index": 4,
+            "toolName": "bash",
+            "status": "completed",
+            "inputShape": "command,working_dir",
+            "result": "text"
+          }
+        ],
+        "toolBatches": [
+          [
+            "list_dir"
+          ],
+          [
+            "read"
+          ],
+          [
+            "read"
+          ],
+          [
+            "edit"
+          ],
+          [
+            "bash"
+          ]
+        ],
+        "sessionWrites": [],
+        "traceEvents": [
+          "acceptance.accepted-early"
+        ],
+        "costShape": {
+          "providerRequests": 1,
+          "toolCalls": 5,
+          "retries": 0,
+          "syntheticContinues": 0,
+          "contextCompacted": false,
+          "messageCount": 2
+        }
+      },
+      "observationShape": {
+        "providerBoundary": {
+          "visibility": "aggregate",
+          "lossiness": "aggregated",
+          "evidence": "cli-event"
+        },
+        "streamDelta": {
+          "visibility": "text-only",
+          "lossiness": "semantic",
+          "evidence": "stream-event"
+        },
+        "toolLifecycle": {
+          "visibility": "call-result",
+          "lossiness": "semantic",
+          "evidence": "cli-event"
+        },
+        "messageWrite": {
+          "visibility": "final-message",
+          "lossiness": "semantic",
+          "evidence": "message-store"
+        },
+        "acceptance": {
+          "visibility": "explicit-event",
+          "lossiness": "semantic",
+          "evidence": "runtime-policy"
+        },
+        "workspace": {
+          "visibility": "diff-only",
+          "lossiness": "semantic",
+          "evidence": "workspace-diff"
+        }
+      },
+      "acceptanceTimingEvidence": {
+        "timeline": {
+          "workspaceDiffAvailableAt": "tool-result-after",
+          "requiredToolResultAvailableAt": "tool-result-after",
+          "visibleSummaryAvailableAt": "message-end",
+          "forbiddenFileCheckAvailableAt": "not-required",
+          "policySatisfiedAt": "tool-result-after"
+        },
+        "blockingEvidence": [],
+        "satisfiedAt": "tool-result-after",
+        "unavailableUntil": []
+      },
+      "fixtureReplay": {
+        "source": "native-cadence-fixture",
+        "verified": true,
+        "issues": []
+      },
+      "providerShape": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "gaps": [],
+      "cadenceDrifts": [
+        {
+          "id": "cadence.provider-request-count",
+          "category": "cadence.provider-request-count",
+          "message": "Provider request boundaries differ.",
+          "assembled": "8",
+          "original": "1",
+          "owner": "native-projector",
+          "nextAction": "upstream-version-drift",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "nanobot.native.projector",
+            "candidateFixes": [
+              "refresh nanobot native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "providerBoundary:aggregated:aggregate"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-call-count",
+          "category": "cadence.tool-call-count",
+          "message": "Tool call counts differ.",
+          "assembled": "8",
+          "original": "5",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "nanobot.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-sequence",
+          "category": "cadence.tool-sequence",
+          "message": "Tool call order differs.",
+          "assembled": "ls>read>read>edit>edit>edit>read>bash",
+          "original": "list_dir>read>read>edit>bash",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "nanobot.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 8,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.tool-batch",
+          "category": "cadence.tool-batch",
+          "message": "Tool batch grouping differs.",
+          "assembled": "[[\"ls\"],[\"read\"],[\"read\"],[\"edit\"],[\"edit\"],[\"edit\"],[\"read\"],[\"bash\"]]",
+          "original": "[[\"list_dir\"],[\"read\"],[\"read\"],[\"edit\"],[\"bash\"]]",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "nanobot.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "toolLifecycle:semantic:call-result"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.message-part-type",
+          "category": "cadence.message-part-type",
+          "message": "Assistant/tool part type projection differs.",
+          "assembled": "text>tool-result-error:edit>tool-result:bash>tool-result:edit>tool-result:ls>tool-result:read>tool:bash>tool:edit>tool:ls>tool:read",
+          "original": "text>tool-result:bash>tool-result:edit>tool-result:list_dir>tool-result:read>tool:bash>tool:edit>tool:list_dir>tool:read",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "nanobot.session.message-part-projector.native-like",
+            "candidateFixes": [
+              "refresh nanobot native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:final-message",
+                "streamDelta:semantic:text-only"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.final-summary",
+          "category": "cadence.final-summary",
+          "message": "Final visible transcript differs after normalization.",
+          "assembled": "This is a LiveCodeBench code-generation task adapted into a repository repair task. Source: LiveCodeBench `test_release_v5`, question `1883_B`. Problem: You ...",
+          "original": "Using config: /tmp/helix-task-livecodebench-1883-b-palindrome-removal-nanobot-original-H RtE2l/session/native-nanobot-config/config.json Created SOUL.m...",
+          "owner": "provider-nondeterminism",
+          "nextAction": "provider-nondeterminism",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "nondeterminism",
+            "owningAtomID": "nanobot.provider.nondeterminism",
+            "candidateFixes": [
+              "record repeated live runs to estimate provider nondeterminism",
+              "keep deterministic cassette scoring strict"
+            ],
+            "expectedScoreDelta": 3,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "messageWrite:semantic:final-message"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.streaming-delta",
+          "category": "cadence.streaming-delta",
+          "message": "Trace or streaming event sequence differs.",
+          "assembled": "input>turn.pipeline.trace>session.start>turn.start>message.start>message.end>before.agent.start>turn.pipeline.trace>context>turn.pipeline.trace>agent.start>provider.request.before>turn.pipeline.trace>tool.call>turn.pipeline.trace>tool.st...",
+          "original": "acceptance.accepted-early",
+          "owner": "native-projector",
+          "nextAction": "adjust-personality-adapter",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "native-projector",
+            "owningAtomID": "nanobot.provider.stream-projector.native-like",
+            "candidateFixes": [
+              "refresh nanobot native cadence fixture",
+              "document native projector lossiness"
+            ],
+            "expectedScoreDelta": 4,
+            "requiresNativeFixture": true,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "informational",
+              "lossinessRefs": [
+                "streamDelta:semantic:text-only"
+              ]
+            }
+          }
+        },
+        {
+          "id": "cadence.early-accept",
+          "category": "cadence.early-accept",
+          "message": "Early accept behavior differs.",
+          "assembled": "false",
+          "original": "true",
+          "owner": "product-cadence-atom",
+          "nextAction": "add-existing-plane-common-submodule",
+          "metadata": {
+            "blockingLevel": "informational",
+            "owningPlane": "agent-loop",
+            "owningAtomID": "nanobot.runtime.acceptance-controller.native-like",
+            "candidateFixes": [
+              "bind nanobot.runtime.acceptance-controller.native-like",
+              "compare task-policy acceptance decisions"
+            ],
+            "expectedScoreDelta": 6,
+            "requiresNativeFixture": false,
+            "reproduction": {
+              "assembledRequestCount": 8,
+              "originalRequestCount": 1,
+              "assembledToolSequence": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalToolSequence": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledBatchSignature": [
+                "ls",
+                "read",
+                "read",
+                "edit",
+                "edit",
+                "edit",
+                "read",
+                "bash"
+              ],
+              "originalBatchSignature": [
+                "list_dir",
+                "read",
+                "read",
+                "edit",
+                "bash"
+              ],
+              "assembledPartTypes": [
+                "text",
+                "tool-result-error:edit",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:ls",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:ls",
+                "tool:read"
+              ],
+              "originalPartTypes": [
+                "text",
+                "tool-result:bash",
+                "tool-result:edit",
+                "tool-result:list_dir",
+                "tool-result:read",
+                "tool:bash",
+                "tool:edit",
+                "tool:list_dir",
+                "tool:read"
+              ],
+              "assembledStopReasons": [],
+              "originalStopReasons": []
+            },
+            "observability": {
+              "assembledVisibility": "observed",
+              "originalVisibility": "aggregated",
+              "comparisonConfidence": "inferred",
+              "scoringMode": "semantic-live",
+              "lossinessRefs": [
+                "acceptance:semantic:explicit-event"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+node_modules/
+dist/
+coverage/
+.vitest/
+*.tsbuildinfo
+npm-debug.log*
+.env
+.env.*
+!.env.example
+.env.local
+.helix/
+.tmp/
+TODO/
+
+# Generated local artifacts
+docs/reports/**/*.log
+docs/reports/**/*.pid
+docs/reports/**/*.db
+docs/reports/**/*.sqlite
+
+# Internal experiment analysis and training-data exports
+exp_analyze/
+AgentSpace_promo_images/
+AgentSpace_promo_images.zip
+poster_work/
+*.pptx
+*.zip

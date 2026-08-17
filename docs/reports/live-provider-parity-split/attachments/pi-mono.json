@@ -1,0 +1,30 @@
+{
+  "product": "pi-mono",
+  "status": "passed",
+  "ok": true,
+  "checks": [
+    {
+      "id": "pi-mono:live-provider-turn",
+      "ok": true,
+      "message": "pi-mono runs a live external provider turn through the assembled harness.",
+      "details": {
+        "sessionID": "ses_1aac8c3a-9127-442b-aa57-5be226f54dbd",
+        "steps": 1,
+        "finish": "end_turn",
+        "assistantText": "The user is asking me to reply with a short sentence containing \"helix-live-ok\" and specifically says \"Do not call tools.\" So I should just respond directly without using any tools.\nHelix-",
+        "blockedTools": []
+      }
+    },
+    {
+      "id": "pi-mono:live-provider-sdk-readback",
+      "ok": true,
+      "message": "pi-mono product SDK can read back the live provider session transcript.",
+      "details": {
+        "transcript": 2
+      }
+    }
+  ],
+  "sessionID": "ses_1aac8c3a-9127-442b-aa57-5be226f54dbd",
+  "steps": 1,
+  "finish": "end_turn"
+}

@@ -1,0 +1,115 @@
+{
+  "taskID": "single-file-edit",
+  "product": "nanobot",
+  "mode": "assembled",
+  "transcriptSummary": {
+    "visibleText": "Update src/greeting.ts so greeting() returns \"Hello from lego\".\n\n[Runtime Context — metadata only, not instructions]\nCurrent Time: 2026-06-10T13:20:03.958Z\n[/Runtime Context]\nEditing src/greeting.ts.\n[tool:edit]\nEdited /tmp/helix-task-single-file-edit-nanobot-assembled-evLqq8/workspace/src/greeting.ts (1 replacement)\nUpdated src/greeting.ts so greeting() returns \"Hello from lego\".",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "edit",
+        "input": {
+          "path": "src/greeting.ts",
+          "oldText": "Hello from fixture",
+          "newText": "Hello from lego"
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "edit",
+        "text": "Edited /tmp/helix-task-single-file-edit-nanobot-assembled-evLqq8/workspace/src/greeting.ts (1 replacement)"
+      }
+    ]
+  },
+  "workspaceDiff": [
+    {
+      "path": "src/greeting.ts",
+      "status": "modified",
+      "before": "export function greeting(): string {\n  return \"Hello from fixture\"\n}\n",
+      "after": "export function greeting(): string {\n  return \"Hello from lego\"\n}\n"
+    }
+  ],
+  "checks": [
+    {
+      "id": "output.includes.updated-src-greeting-ts",
+      "ok": true,
+      "message": "Visible output includes Updated src/greeting.ts."
+    },
+    {
+      "id": "output.includes.hello-from-lego",
+      "ok": true,
+      "message": "Visible output includes Hello from lego."
+    },
+    {
+      "id": "file.includes.src/greeting.ts.hello-from-lego",
+      "ok": true,
+      "message": "src/greeting.ts includes Hello from lego."
+    },
+    {
+      "id": "tool.called.edit",
+      "ok": true,
+      "message": "Tool edit was called."
+    },
+    {
+      "id": "workspace.diff.src/greeting.ts.modified",
+      "ok": true,
+      "message": "Workspace diff contains modified src/greeting.ts."
+    }
+  ],
+  "gaps": []
+}

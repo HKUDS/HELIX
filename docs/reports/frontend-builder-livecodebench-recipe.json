@@ -1,0 +1,1608 @@
+{
+  "id": "custom.opencode",
+  "version": "0.1.0",
+  "modules": [],
+  "atoms": [
+    {
+      "id": "common.agent-loop.final-summary.default"
+    },
+    {
+      "id": "common.agent-loop.request-boundary.default"
+    },
+    {
+      "id": "common.provider.stream-projector"
+    },
+    {
+      "id": "common.provider.streaming-delta-recorder"
+    },
+    {
+      "id": "common.runtime.acceptance-controller.default"
+    },
+    {
+      "id": "common.runtime.acceptance-evidence.default"
+    },
+    {
+      "id": "common.session.message-part-projector"
+    },
+    {
+      "id": "common.tools.batch-scheduler.default"
+    },
+    {
+      "id": "common.tools.result-projector.default"
+    },
+    {
+      "id": "common.tools.schema.default"
+    },
+    {
+      "id": "filesystem.workspace-scoped"
+    },
+    {
+      "id": "opencode.block.compatibility-metadata"
+    },
+    {
+      "id": "opencode.capability.aliases"
+    },
+    {
+      "id": "opencode.config.precedence"
+    },
+    {
+      "id": "opencode.config.source"
+    },
+    {
+      "id": "opencode.config.validator"
+    },
+    {
+      "id": "opencode.conformance.product-gate"
+    },
+    {
+      "id": "opencode.event.envelope-bridge"
+    },
+    {
+      "id": "opencode.event.syncevent-bridge"
+    },
+    {
+      "id": "opencode.hook.error-defaults"
+    },
+    {
+      "id": "opencode.hook.observer-adapter"
+    },
+    {
+      "id": "opencode.hook.scheduler-defaults"
+    },
+    {
+      "id": "opencode.identity.clock-format"
+    },
+    {
+      "id": "opencode.identity.id-generator"
+    },
+    {
+      "id": "opencode.identity.workspace-resolver"
+    },
+    {
+      "id": "opencode.plugin.event-mapper"
+    },
+    {
+      "id": "opencode.plugin.hot-reload-cleanup"
+    },
+    {
+      "id": "opencode.plugin.loader"
+    },
+    {
+      "id": "opencode.plugin.permission-bridge"
+    },
+    {
+      "id": "opencode.plugin.provider-registry-bridge"
+    },
+    {
+      "id": "opencode.plugin.registry-bridge"
+    },
+    {
+      "id": "opencode.plugin.ui-registry-bridge"
+    },
+    {
+      "id": "opencode.prompt.compaction-adapter"
+    },
+    {
+      "id": "opencode.prompt.mode-builder"
+    },
+    {
+      "id": "opencode.prompt.model-adapter"
+    },
+    {
+      "id": "opencode.prompt.resource-loader"
+    },
+    {
+      "id": "opencode.prompt.tool-renderer"
+    },
+    {
+      "id": "opencode.provider.auth-descriptor"
+    },
+    {
+      "id": "opencode.provider.cassette-artifact"
+    },
+    {
+      "id": "opencode.provider.parser-observer"
+    },
+    {
+      "id": "opencode.provider.usage-renderer"
+    },
+    {
+      "id": "opencode.recipe.binding-aliases"
+    },
+    {
+      "id": "opencode.registry.command"
+    },
+    {
+      "id": "opencode.resource.discovery"
+    },
+    {
+      "id": "opencode.resource.grant-defaults"
+    },
+    {
+      "id": "opencode.runtime.binding-defaults"
+    },
+    {
+      "id": "opencode.runtime.capability-aliases"
+    },
+    {
+      "id": "opencode.runtime.graph-labels"
+    },
+    {
+      "id": "opencode.runtime.lifecycle-defaults"
+    },
+    {
+      "id": "opencode.runtime.module-aliases"
+    },
+    {
+      "id": "opencode.session.branch-graph.fork-before-message"
+    },
+    {
+      "id": "opencode.session.compaction-event"
+    },
+    {
+      "id": "opencode.session.id-generator"
+    },
+    {
+      "id": "opencode.session.pagination.update-time-cursor"
+    },
+    {
+      "id": "opencode.session.projector.message-v2"
+    },
+    {
+      "id": "opencode.session.store.sqlite-projection"
+    },
+    {
+      "id": "opencode.tool.definition-plugin-bridge"
+    },
+    {
+      "id": "opencode.tool.result-render-bridge"
+    },
+    {
+      "id": "opencode.tool.schema-bridge"
+    },
+    {
+      "id": "opencode.tool.status-bridge"
+    },
+    {
+      "id": "opencode.trace.debug-surface"
+    },
+    {
+      "id": "opencode.tui.shell"
+    },
+    {
+      "id": "opencode.turn.compaction-policy"
+    },
+    {
+      "id": "opencode.turn.context-builder"
+    },
+    {
+      "id": "opencode.turn.continuation-policy"
+    },
+    {
+      "id": "opencode.turn.input-normalizer"
+    },
+    {
+      "id": "opencode.turn.prompt-assembler"
+    },
+    {
+      "id": "opencode.turn.provider-request-builder"
+    },
+    {
+      "id": "opencode.turn.provider-stream-runner"
+    },
+    {
+      "id": "opencode.turn.result-recorder"
+    },
+    {
+      "id": "opencode.turn.retry-policy"
+    },
+    {
+      "id": "opencode.turn.stop-condition"
+    },
+    {
+      "id": "opencode.turn.stream-reducer"
+    },
+    {
+      "id": "opencode.turn.tool-call-planner"
+    },
+    {
+      "id": "opencode.turn.tool-executor"
+    },
+    {
+      "id": "opencode.ui.command-router"
+    },
+    {
+      "id": "opencode.ui.input-normalizer"
+    },
+    {
+      "id": "opencode.ui.renderer"
+    },
+    {
+      "id": "opencode.ui.snapshot"
+    },
+    {
+      "id": "opencode.ui.theme-registry"
+    },
+    {
+      "id": "process-runner.local"
+    },
+    {
+      "id": "provider.event-normalizer.openai-compatible"
+    },
+    {
+      "id": "provider.model-registry.static"
+    },
+    {
+      "id": "provider.request-shape.openai-compatible"
+    },
+    {
+      "id": "provider.stream.fake"
+    },
+    {
+      "id": "provider.transport.fetch"
+    },
+    {
+      "id": "session.branching.memory"
+    },
+    {
+      "id": "session.context-selector.memory"
+    },
+    {
+      "id": "session.event-log.memory"
+    },
+    {
+      "id": "session.message-store.memory"
+    },
+    {
+      "id": "session.reader.memory"
+    },
+    {
+      "id": "session.store.memory"
+    },
+    {
+      "id": "session.writer.memory"
+    },
+    {
+      "id": "tool-pack.shell"
+    },
+    {
+      "id": "tool.executor.default"
+    }
+  ],
+  "productShells": [
+    {
+      "id": "opencode.product-shell.sdk"
+    },
+    {
+      "id": "opencode.product-shell.web"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle.agent-loop.turn-runner",
+      "removedAtoms": [
+        "turn.context-builder.transcript",
+        "turn.continuation-policy.synthetic-continue",
+        "turn.input-normalizer.text",
+        "turn.prompt-assembler.common",
+        "turn.provider-request-builder.common",
+        "turn.provider-stream-runner.common",
+        "turn.result-recorder.common",
+        "turn.retry-policy.exponential",
+        "turn.stop-condition.max-steps",
+        "turn.stream-reducer.common",
+        "turn.tool-call-planner.parallel-batch",
+        "turn.tool-executor.common"
+      ]
+    },
+    {
+      "id": "bundle.opencode.product-shells",
+      "removedAtoms": [
+        "opencode.product-shell.control-plane",
+        "opencode.product-shell.desktop",
+        "opencode.product-shell.harness",
+        "opencode.product-shell.server",
+        "opencode.product-shell.slack",
+        "opencode.product-shell.tui",
+        "opencode.product-shell.workspace"
+      ]
+    },
+    {
+      "id": "bundle.opencode.prompt-config-ui",
+      "removedAtoms": [
+        "opencode.registry.ui-provider"
+      ]
+    },
+    {
+      "id": "bundle.opencode.provider",
+      "removedAtoms": [
+        "opencode.provider.event-observer",
+        "opencode.provider.model-plugin",
+        "opencode.provider.plugin-descriptor",
+        "opencode.provider.request-options",
+        "opencode.provider.stream-projector.native-like",
+        "opencode.provider.streaming-delta-recorder.native-like",
+        "opencode.provider.transport-instrumentation",
+        "opencode.registry.provider-plugin"
+      ]
+    },
+    {
+      "id": "bundle.opencode.runtime-contract",
+      "removedAtoms": [
+        "opencode.runtime.acceptance-controller.native-like",
+        "opencode.runtime.acceptance-evidence.native-like"
+      ]
+    },
+    {
+      "id": "bundle.opencode.session",
+      "removedAtoms": [
+        "opencode.session.message-part-projector.native-like",
+        "opencode.session.projector.syncevent"
+      ]
+    },
+    {
+      "id": "bundle.opencode.tools-extensions",
+      "removedAtoms": [
+        "opencode.permission.ask-bridge",
+        "opencode.shell.env-bridge",
+        "opencode.tool-pack.compatibility",
+        "opencode.tool.permission-render-bridge",
+        "opencode.tools.batch-scheduler.native-like",
+        "opencode.tools.result-projector.native-like",
+        "opencode.tools.schema.native-like",
+        "opencode.workspace-filesystem-bridge"
+      ]
+    },
+    {
+      "id": "bundle.opencode.turn-loop",
+      "removedAtoms": [
+        "opencode.agent-loop.final-summary.native-like",
+        "opencode.agent-loop.request-boundary.native-like"
+      ]
+    },
+    {
+      "id": "bundle.provider.cassette",
+      "removedAtoms": [
+        "provider.cassette.jsonl",
+        "provider.cassette.memory",
+        "provider.stream-parser.cassette",
+        "provider.transport.cassette"
+      ]
+    },
+    {
+      "id": "bundle.provider.openai-compatible",
+      "removedAtoms": [
+        "provider.auth.api-key",
+        "provider.model-registry.env",
+        "provider.stream-parser.sse",
+        "provider.stream.openai-compatible",
+        "provider.usage-normalizer.common"
+      ]
+    },
+    {
+      "id": "bundle.runtime.assembly-core",
+      "removedAtoms": [
+        "runtime.assembly-graph.lockfile",
+        "runtime.binding-planner.lockfile",
+        "runtime.capability-resolver.default",
+        "runtime.lifecycle-runner.scoped",
+        "runtime.module-catalog.memory"
+      ]
+    },
+    {
+      "id": "bundle.session.memory",
+      "removedAtoms": [
+        "session.branch-graph.memory",
+        "session.id-generator.deterministic",
+        "session.projector.common-transcript"
+      ]
+    },
+    {
+      "id": "bundle.tool.filesystem-shell",
+      "removedAtoms": [
+        "filesystem.local",
+        "process-runner.sandbox",
+        "tool-pack.filesystem",
+        "tool.audit.memory",
+        "tool.definition.filesystem",
+        "tool.definition.shell",
+        "tool.permission.workspace-scoped",
+        "tool.result.error",
+        "tool.result.json",
+        "tool.result.text"
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "port": "agent-loop.final-summary",
+      "module": "common.agent-loop.final-summary.default"
+    },
+    {
+      "port": "agent-loop.request-boundary",
+      "module": "common.agent-loop.request-boundary.default"
+    },
+    {
+      "port": "block.manifest",
+      "module": "opencode.block.compatibility-metadata"
+    },
+    {
+      "port": "capability.ref",
+      "module": "opencode.capability.aliases"
+    },
+    {
+      "port": "config.merge-strategy",
+      "module": "opencode.config.precedence"
+    },
+    {
+      "port": "config.source",
+      "module": "opencode.config.source"
+    },
+    {
+      "port": "config.validator",
+      "module": "opencode.config.validator"
+    },
+    {
+      "port": "conformance.ref",
+      "module": "opencode.conformance.product-gate"
+    },
+    {
+      "port": "event.envelope",
+      "module": "opencode.event.envelope-bridge"
+    },
+    {
+      "port": "event.log",
+      "module": "opencode.event.syncevent-bridge"
+    },
+    {
+      "port": "filesystem.port",
+      "module": "filesystem.workspace-scoped"
+    },
+    {
+      "port": "hook.bus",
+      "module": "opencode.plugin.loader"
+    },
+    {
+      "port": "hook.cleanup-scope",
+      "module": "opencode.plugin.hot-reload-cleanup"
+    },
+    {
+      "port": "hook.error-policy",
+      "module": "opencode.hook.error-defaults"
+    },
+    {
+      "port": "hook.handler-chain",
+      "module": "opencode.plugin.event-mapper"
+    },
+    {
+      "port": "hook.observer-chain",
+      "module": "opencode.hook.observer-adapter"
+    },
+    {
+      "port": "hook.scheduler",
+      "module": "opencode.hook.scheduler-defaults"
+    },
+    {
+      "port": "identity.clock",
+      "module": "opencode.identity.clock-format"
+    },
+    {
+      "port": "identity.id-generator",
+      "module": "opencode.identity.id-generator"
+    },
+    {
+      "port": "identity.workspace-resolver",
+      "module": "opencode.identity.workspace-resolver"
+    },
+    {
+      "port": "process-runner.port",
+      "module": "process-runner.local"
+    },
+    {
+      "port": "product.shell",
+      "module": "opencode.product-shell.sdk"
+    },
+    {
+      "port": "prompt.compaction-adapter",
+      "module": "opencode.prompt.compaction-adapter"
+    },
+    {
+      "port": "prompt.model-capability-adapter",
+      "module": "opencode.prompt.model-adapter"
+    },
+    {
+      "port": "prompt.resource-loader",
+      "module": "opencode.prompt.resource-loader"
+    },
+    {
+      "port": "prompt.system-builder",
+      "module": "opencode.prompt.mode-builder"
+    },
+    {
+      "port": "prompt.tool-renderer",
+      "module": "opencode.prompt.tool-renderer"
+    },
+    {
+      "port": "provider.auth",
+      "module": "opencode.provider.auth-descriptor"
+    },
+    {
+      "port": "provider.cassette",
+      "module": "opencode.provider.cassette-artifact"
+    },
+    {
+      "port": "provider.event-normalizer",
+      "module": "provider.event-normalizer.openai-compatible"
+    },
+    {
+      "port": "provider.model-registry",
+      "module": "provider.model-registry.static"
+    },
+    {
+      "port": "provider.request-shape",
+      "module": "provider.request-shape.openai-compatible"
+    },
+    {
+      "port": "provider.stream",
+      "module": "provider.stream.fake"
+    },
+    {
+      "port": "provider.stream-parser",
+      "module": "opencode.provider.parser-observer"
+    },
+    {
+      "port": "provider.stream-projector",
+      "module": "common.provider.stream-projector"
+    },
+    {
+      "port": "provider.streaming-delta-recorder",
+      "module": "common.provider.streaming-delta-recorder"
+    },
+    {
+      "port": "provider.transport",
+      "module": "provider.transport.fetch"
+    },
+    {
+      "port": "provider.usage-normalizer",
+      "module": "opencode.provider.usage-renderer"
+    },
+    {
+      "port": "recipe.binding",
+      "module": "opencode.recipe.binding-aliases"
+    },
+    {
+      "port": "registry.command",
+      "module": "opencode.registry.command"
+    },
+    {
+      "port": "registry.provider",
+      "module": "opencode.plugin.provider-registry-bridge"
+    },
+    {
+      "port": "registry.ui",
+      "module": "opencode.plugin.ui-registry-bridge"
+    },
+    {
+      "port": "resource.discovery",
+      "module": "opencode.resource.discovery"
+    },
+    {
+      "port": "resource.grant",
+      "module": "opencode.resource.grant-defaults"
+    },
+    {
+      "port": "runtime.acceptance-controller",
+      "module": "common.runtime.acceptance-controller.default"
+    },
+    {
+      "port": "runtime.acceptance-evidence",
+      "module": "common.runtime.acceptance-evidence.default"
+    },
+    {
+      "port": "runtime.assembly-graph",
+      "module": "opencode.runtime.graph-labels"
+    },
+    {
+      "port": "runtime.binding-planner",
+      "module": "opencode.runtime.binding-defaults"
+    },
+    {
+      "port": "runtime.capability-resolver",
+      "module": "opencode.runtime.capability-aliases"
+    },
+    {
+      "port": "runtime.lifecycle-runner",
+      "module": "opencode.runtime.lifecycle-defaults"
+    },
+    {
+      "port": "runtime.module-catalog",
+      "module": "opencode.runtime.module-aliases"
+    },
+    {
+      "port": "session.branch-graph",
+      "module": "opencode.session.branch-graph.fork-before-message"
+    },
+    {
+      "port": "session.branching",
+      "module": "session.branching.memory"
+    },
+    {
+      "port": "session.compaction-records",
+      "module": "opencode.session.compaction-event"
+    },
+    {
+      "port": "session.context-selector",
+      "module": "session.context-selector.memory"
+    },
+    {
+      "port": "session.diff",
+      "module": "session.branching.memory"
+    },
+    {
+      "port": "session.event-log",
+      "module": "session.event-log.memory"
+    },
+    {
+      "port": "session.id-generator",
+      "module": "opencode.session.id-generator"
+    },
+    {
+      "port": "session.message-part-projector",
+      "module": "common.session.message-part-projector"
+    },
+    {
+      "port": "session.message-store",
+      "module": "session.message-store.memory"
+    },
+    {
+      "port": "session.pagination",
+      "module": "opencode.session.pagination.update-time-cursor"
+    },
+    {
+      "port": "session.projector",
+      "module": "opencode.session.projector.message-v2"
+    },
+    {
+      "port": "session.reader",
+      "module": "session.reader.memory"
+    },
+    {
+      "port": "session.store",
+      "module": "session.store.memory"
+    },
+    {
+      "port": "session.writer",
+      "module": "session.writer.memory"
+    },
+    {
+      "port": "tool.audit-log",
+      "module": "opencode.tool.status-bridge"
+    },
+    {
+      "port": "tool.definition",
+      "module": "opencode.tool.definition-plugin-bridge"
+    },
+    {
+      "port": "tool.executor",
+      "module": "tool.executor.default"
+    },
+    {
+      "port": "tool.permission-policy",
+      "module": "opencode.plugin.permission-bridge"
+    },
+    {
+      "port": "tool.registry",
+      "module": "opencode.plugin.registry-bridge"
+    },
+    {
+      "port": "tool.result-normalizer",
+      "module": "opencode.tool.result-render-bridge"
+    },
+    {
+      "port": "tool.schema-adapter",
+      "module": "opencode.tool.schema-bridge"
+    },
+    {
+      "port": "tools",
+      "module": "tool-pack.shell"
+    },
+    {
+      "port": "tools.batch-scheduler",
+      "module": "common.tools.batch-scheduler.default"
+    },
+    {
+      "port": "tools.result-projector",
+      "module": "common.tools.result-projector.default"
+    },
+    {
+      "port": "tools.schema",
+      "module": "common.tools.schema.default"
+    },
+    {
+      "port": "trace.recorder",
+      "module": "opencode.trace.debug-surface"
+    },
+    {
+      "port": "turn.compaction-policy",
+      "module": "opencode.turn.compaction-policy"
+    },
+    {
+      "port": "turn.context-builder",
+      "module": "opencode.turn.context-builder"
+    },
+    {
+      "port": "turn.continuation-policy",
+      "module": "opencode.turn.continuation-policy"
+    },
+    {
+      "port": "turn.input-normalizer",
+      "module": "opencode.turn.input-normalizer"
+    },
+    {
+      "port": "turn.prompt-assembler",
+      "module": "opencode.turn.prompt-assembler"
+    },
+    {
+      "port": "turn.provider-request-builder",
+      "module": "opencode.turn.provider-request-builder"
+    },
+    {
+      "port": "turn.provider-stream-runner",
+      "module": "opencode.turn.provider-stream-runner"
+    },
+    {
+      "port": "turn.result-recorder",
+      "module": "opencode.turn.result-recorder"
+    },
+    {
+      "port": "turn.retry-policy",
+      "module": "opencode.turn.retry-policy"
+    },
+    {
+      "port": "turn.stop-condition",
+      "module": "opencode.turn.stop-condition"
+    },
+    {
+      "port": "turn.stream-reducer",
+      "module": "opencode.turn.stream-reducer"
+    },
+    {
+      "port": "turn.tool-call-planner",
+      "module": "opencode.turn.tool-call-planner"
+    },
+    {
+      "port": "turn.tool-executor",
+      "module": "opencode.turn.tool-executor"
+    },
+    {
+      "port": "ui.command-router",
+      "module": "opencode.ui.command-router"
+    },
+    {
+      "port": "ui.event-loop",
+      "module": "opencode.tui.shell"
+    },
+    {
+      "port": "ui.input-normalizer",
+      "module": "opencode.ui.input-normalizer"
+    },
+    {
+      "port": "ui.renderer",
+      "module": "opencode.ui.renderer"
+    },
+    {
+      "port": "ui.snapshot",
+      "module": "opencode.ui.snapshot"
+    },
+    {
+      "port": "ui.theme-registry",
+      "module": "opencode.ui.theme-registry"
+    }
+  ],
+  "requiredCapabilities": [
+    "agent-loop.final-summary",
+    "agent-loop.request-boundary",
+    "block.manifest",
+    "capability.ref",
+    "config.merge-strategy",
+    "config.source",
+    "config.validator",
+    "conformance.ref",
+    "event.envelope",
+    "event.log",
+    "filesystem.port",
+    "hook.bus",
+    "hook.cleanup-scope",
+    "hook.error-policy",
+    "hook.handler-chain",
+    "hook.observer-chain",
+    "hook.scheduler",
+    "identity.clock",
+    "identity.id-generator",
+    "identity.workspace-resolver",
+    "process-runner.port",
+    "product.shell",
+    "prompt.compaction-adapter",
+    "prompt.model-capability-adapter",
+    "prompt.resource-loader",
+    "prompt.system-builder",
+    "prompt.tool-renderer",
+    "provider.auth",
+    "provider.cassette",
+    "provider.event-normalizer",
+    "provider.model-registry",
+    "provider.request-shape",
+    "provider.stream",
+    "provider.stream-parser",
+    "provider.stream-projector",
+    "provider.streaming-delta-recorder",
+    "provider.transport",
+    "provider.usage-normalizer",
+    "recipe.binding",
+    "registry.command",
+    "registry.provider",
+    "registry.ui",
+    "resource.discovery",
+    "resource.grant",
+    "runtime.acceptance-controller",
+    "runtime.acceptance-evidence",
+    "runtime.assembly-graph",
+    "runtime.binding-planner",
+    "runtime.capability-resolver",
+    "runtime.lifecycle-runner",
+    "runtime.module-catalog",
+    "session.branch-graph",
+    "session.branching",
+    "session.compaction-records",
+    "session.context-selector",
+    "session.diff",
+    "session.event-log",
+    "session.id-generator",
+    "session.message-part-projector",
+    "session.message-store",
+    "session.pagination",
+    "session.projector",
+    "session.reader",
+    "session.store",
+    "session.writer",
+    "tool.audit-log",
+    "tool.definition",
+    "tool.executor",
+    "tool.permission-policy",
+    "tool.registry",
+    "tool.result-normalizer",
+    "tool.schema-adapter",
+    "tools",
+    "tools.batch-scheduler",
+    "tools.result-projector",
+    "tools.schema",
+    "trace.recorder",
+    "turn.compaction-policy",
+    "turn.context-builder",
+    "turn.continuation-policy",
+    "turn.input-normalizer",
+    "turn.prompt-assembler",
+    "turn.provider-request-builder",
+    "turn.provider-stream-runner",
+    "turn.result-recorder",
+    "turn.retry-policy",
+    "turn.stop-condition",
+    "turn.stream-reducer",
+    "turn.tool-call-planner",
+    "turn.tool-executor",
+    "ui.command-router",
+    "ui.event-loop",
+    "ui.input-normalizer",
+    "ui.renderer",
+    "ui.snapshot",
+    "ui.theme-registry"
+  ],
+  "personalities": [
+    "common",
+    "opencode"
+  ],
+  "entrypoints": {
+    "sdk": "opencode.product-shell.sdk",
+    "opencode.product-shell.sdk": "opencode.product-shell.sdk",
+    "web": "opencode.product-shell.web",
+    "opencode.product-shell.web": "opencode.product-shell.web"
+  },
+  "metadata": {
+    "generatedBy": "helix-builder",
+    "basedOn": "custom.opencode",
+    "product": "opencode",
+    "sourceFingerprint": "custom",
+    "diagnostics": {
+      "missingRequiredPorts": [],
+      "duplicateProviderPorts": [],
+      "explicitBindings": 96,
+      "selectedAtoms": 97,
+      "selectedBundles": 13,
+      "exclusiveFamilyConflicts": [],
+      "unknownAtoms": [],
+      "unknownBindings": [],
+      "diagnosticIDs": [
+        "builder.exclusive-family.customized-member",
+        "builder.exclusive-family.customized-member",
+        "builder.exclusive-family.customized-member",
+        "builder.exclusive-family.customized-member"
+      ]
+    },
+    "unknownAtoms": [],
+    "unknownBindings": [],
+    "builderAssembly": {
+      "chassisID": "chassis.opencode",
+      "kitID": "kit.starter",
+      "mode": "starter",
+      "source": "wizard",
+      "product": "opencode",
+      "runtimeAbstraction": false,
+      "exportShape": "bundles-atoms-bindings",
+      "slotIDs": [
+        "slot.product.shell",
+        "slot.event.envelope",
+        "slot.event.log",
+        "slot.identity.clock",
+        "slot.identity.id-generator",
+        "slot.identity.workspace-resolver",
+        "slot.session.branch-graph",
+        "slot.session.branching",
+        "slot.session.compaction-records",
+        "slot.session.context-selector",
+        "slot.session.diff",
+        "slot.session.event-log",
+        "slot.session.id-generator",
+        "slot.session.message-part-projector",
+        "slot.session.message-store",
+        "slot.session.pagination",
+        "slot.session.projector",
+        "slot.session.reader",
+        "slot.session.store",
+        "slot.session.writer",
+        "slot.provider.auth",
+        "slot.provider.cassette",
+        "slot.provider.event-normalizer",
+        "slot.provider.model-registry",
+        "slot.provider.request-shape",
+        "slot.provider.stream",
+        "slot.provider.stream-parser",
+        "slot.provider.stream-projector",
+        "slot.provider.streaming-delta-recorder",
+        "slot.provider.transport",
+        "slot.provider.usage-normalizer",
+        "slot.capability.ref",
+        "slot.prompt.compaction-adapter",
+        "slot.prompt.model-capability-adapter",
+        "slot.prompt.resource-loader",
+        "slot.prompt.system-builder",
+        "slot.prompt.tool-renderer",
+        "slot.resource.discovery",
+        "slot.resource.grant",
+        "slot.filesystem.port",
+        "slot.process-runner.port",
+        "slot.tool.audit-log",
+        "slot.tool.definition",
+        "slot.tool.executor",
+        "slot.tool.permission-policy",
+        "slot.tool.registry",
+        "slot.tool.result-normalizer",
+        "slot.tool.schema-adapter",
+        "slot.tools.batch-scheduler",
+        "slot.tools.result-projector",
+        "slot.tools.schema",
+        "slot.registry.ui",
+        "slot.ui.command-router",
+        "slot.ui.event-loop",
+        "slot.ui.input-normalizer",
+        "slot.ui.renderer",
+        "slot.ui.snapshot",
+        "slot.ui.theme-registry",
+        "slot.agent-loop.final-summary",
+        "slot.agent-loop.request-boundary",
+        "slot.block.manifest",
+        "slot.config.merge-strategy",
+        "slot.config.source",
+        "slot.config.validator",
+        "slot.conformance.ref",
+        "slot.hook.bus",
+        "slot.hook.cleanup-scope",
+        "slot.hook.error-policy",
+        "slot.hook.handler-chain",
+        "slot.hook.observer-chain",
+        "slot.hook.scheduler",
+        "slot.recipe.binding",
+        "slot.registry.command",
+        "slot.registry.provider",
+        "slot.runtime.acceptance-controller",
+        "slot.runtime.acceptance-evidence",
+        "slot.runtime.assembly-graph",
+        "slot.runtime.binding-planner",
+        "slot.runtime.capability-resolver",
+        "slot.runtime.lifecycle-runner",
+        "slot.runtime.module-catalog",
+        "slot.tools",
+        "slot.trace.recorder",
+        "slot.turn.compaction-policy",
+        "slot.turn.context-builder",
+        "slot.turn.continuation-policy",
+        "slot.turn.input-normalizer",
+        "slot.turn.prompt-assembler",
+        "slot.turn.provider-request-builder",
+        "slot.turn.provider-stream-runner",
+        "slot.turn.result-recorder",
+        "slot.turn.retry-policy",
+        "slot.turn.stop-condition",
+        "slot.turn.stream-reducer",
+        "slot.turn.tool-call-planner",
+        "slot.turn.tool-executor"
+      ],
+      "installedBundleIDs": [
+        "bundle.agent-loop.turn-runner",
+        "bundle.opencode.product-shells",
+        "bundle.opencode.prompt-config-ui",
+        "bundle.opencode.provider",
+        "bundle.opencode.runtime-contract",
+        "bundle.opencode.session",
+        "bundle.opencode.tools-extensions",
+        "bundle.opencode.turn-loop",
+        "bundle.provider.cassette",
+        "bundle.provider.openai-compatible",
+        "bundle.runtime.assembly-core",
+        "bundle.session.memory",
+        "bundle.tool.filesystem-shell"
+      ],
+      "inferredBundleIDs": [],
+      "familyReplacements": []
+    },
+    "bundleExpansion": [
+      {
+        "bundleID": "bundle.agent-loop.turn-runner",
+        "atomIDs": [
+          "common.agent-loop.final-summary.default",
+          "common.agent-loop.request-boundary.default",
+          "turn.context-builder.transcript",
+          "turn.continuation-policy.synthetic-continue",
+          "turn.input-normalizer.text",
+          "turn.prompt-assembler.common",
+          "turn.provider-request-builder.common",
+          "turn.provider-stream-runner.common",
+          "turn.result-recorder.common",
+          "turn.retry-policy.exponential",
+          "turn.stop-condition.max-steps",
+          "turn.stream-reducer.common",
+          "turn.tool-call-planner.parallel-batch",
+          "turn.tool-executor.common"
+        ],
+        "portIDs": [
+          "agent-loop.final-summary",
+          "agent-loop.request-boundary",
+          "turn.context-builder",
+          "turn.continuation-policy",
+          "turn.input-normalizer",
+          "turn.prompt-assembler",
+          "turn.provider-request-builder",
+          "turn.provider-stream-runner",
+          "turn.result-recorder",
+          "turn.retry-policy",
+          "turn.stop-condition",
+          "turn.stream-reducer",
+          "turn.tool-call-planner",
+          "turn.tool-executor"
+        ],
+        "removedAtoms": [
+          "turn.context-builder.transcript",
+          "turn.continuation-policy.synthetic-continue",
+          "turn.input-normalizer.text",
+          "turn.prompt-assembler.common",
+          "turn.provider-request-builder.common",
+          "turn.provider-stream-runner.common",
+          "turn.result-recorder.common",
+          "turn.retry-policy.exponential",
+          "turn.stop-condition.max-steps",
+          "turn.stream-reducer.common",
+          "turn.tool-call-planner.parallel-batch",
+          "turn.tool-executor.common"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.opencode.product-shells",
+        "atomIDs": [
+          "opencode.product-shell.control-plane",
+          "opencode.product-shell.desktop",
+          "opencode.product-shell.harness",
+          "opencode.product-shell.sdk",
+          "opencode.product-shell.server",
+          "opencode.product-shell.slack",
+          "opencode.product-shell.tui",
+          "opencode.product-shell.web",
+          "opencode.product-shell.workspace"
+        ],
+        "portIDs": [
+          "product.shell"
+        ],
+        "removedAtoms": [
+          "opencode.product-shell.control-plane",
+          "opencode.product-shell.desktop",
+          "opencode.product-shell.harness",
+          "opencode.product-shell.server",
+          "opencode.product-shell.slack",
+          "opencode.product-shell.tui",
+          "opencode.product-shell.workspace"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.opencode.prompt-config-ui",
+        "atomIDs": [
+          "opencode.config.precedence",
+          "opencode.config.source",
+          "opencode.config.validator",
+          "opencode.prompt.compaction-adapter",
+          "opencode.prompt.mode-builder",
+          "opencode.prompt.model-adapter",
+          "opencode.prompt.resource-loader",
+          "opencode.prompt.tool-renderer",
+          "opencode.registry.command",
+          "opencode.registry.ui-provider",
+          "opencode.resource.discovery",
+          "opencode.resource.grant-defaults",
+          "opencode.tui.shell",
+          "opencode.ui.command-router",
+          "opencode.ui.input-normalizer",
+          "opencode.ui.renderer",
+          "opencode.ui.snapshot",
+          "opencode.ui.theme-registry"
+        ],
+        "portIDs": [
+          "config.merge-strategy",
+          "config.source",
+          "config.validator",
+          "prompt.compaction-adapter",
+          "prompt.model-capability-adapter",
+          "prompt.resource-loader",
+          "prompt.system-builder",
+          "prompt.tool-renderer",
+          "registry.command",
+          "registry.ui",
+          "resource.discovery",
+          "resource.grant",
+          "ui.command-router",
+          "ui.event-loop",
+          "ui.input-normalizer",
+          "ui.renderer",
+          "ui.snapshot",
+          "ui.theme-registry"
+        ],
+        "removedAtoms": [
+          "opencode.registry.ui-provider"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.opencode.provider",
+        "atomIDs": [
+          "opencode.plugin.provider-registry-bridge",
+          "opencode.provider.auth-descriptor",
+          "opencode.provider.cassette-artifact",
+          "opencode.provider.event-observer",
+          "opencode.provider.model-plugin",
+          "opencode.provider.parser-observer",
+          "opencode.provider.plugin-descriptor",
+          "opencode.provider.request-options",
+          "opencode.provider.stream-projector.native-like",
+          "opencode.provider.streaming-delta-recorder.native-like",
+          "opencode.provider.transport-instrumentation",
+          "opencode.provider.usage-renderer",
+          "opencode.registry.provider-plugin"
+        ],
+        "portIDs": [
+          "provider.auth",
+          "provider.cassette",
+          "provider.event-normalizer",
+          "provider.model-registry",
+          "provider.request-shape",
+          "provider.stream",
+          "provider.stream-parser",
+          "provider.stream-projector",
+          "provider.streaming-delta-recorder",
+          "provider.transport",
+          "provider.usage-normalizer",
+          "registry.provider"
+        ],
+        "removedAtoms": [
+          "opencode.provider.event-observer",
+          "opencode.provider.model-plugin",
+          "opencode.provider.plugin-descriptor",
+          "opencode.provider.request-options",
+          "opencode.provider.stream-projector.native-like",
+          "opencode.provider.streaming-delta-recorder.native-like",
+          "opencode.provider.transport-instrumentation",
+          "opencode.registry.provider-plugin"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.opencode.runtime-contract",
+        "atomIDs": [
+          "opencode.block.compatibility-metadata",
+          "opencode.capability.aliases",
+          "opencode.conformance.product-gate",
+          "opencode.event.envelope-bridge",
+          "opencode.event.syncevent-bridge",
+          "opencode.recipe.binding-aliases",
+          "opencode.runtime.acceptance-controller.native-like",
+          "opencode.runtime.acceptance-evidence.native-like",
+          "opencode.runtime.binding-defaults",
+          "opencode.runtime.capability-aliases",
+          "opencode.runtime.graph-labels",
+          "opencode.runtime.lifecycle-defaults",
+          "opencode.runtime.module-aliases",
+          "opencode.trace.debug-surface"
+        ],
+        "portIDs": [
+          "block.manifest",
+          "capability.ref",
+          "conformance.ref",
+          "event.envelope",
+          "event.log",
+          "recipe.binding",
+          "runtime.acceptance-controller",
+          "runtime.acceptance-evidence",
+          "runtime.assembly-graph",
+          "runtime.binding-planner",
+          "runtime.capability-resolver",
+          "runtime.lifecycle-runner",
+          "runtime.module-catalog",
+          "trace.recorder"
+        ],
+        "removedAtoms": [
+          "opencode.runtime.acceptance-controller.native-like",
+          "opencode.runtime.acceptance-evidence.native-like"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.opencode.session",
+        "atomIDs": [
+          "opencode.identity.clock-format",
+          "opencode.identity.id-generator",
+          "opencode.identity.workspace-resolver",
+          "opencode.session.branch-graph.fork-before-message",
+          "opencode.session.compaction-event",
+          "opencode.session.id-generator",
+          "opencode.session.message-part-projector.native-like",
+          "opencode.session.pagination.update-time-cursor",
+          "opencode.session.projector.message-v2",
+          "opencode.session.projector.syncevent",
+          "opencode.session.store.sqlite-projection"
+        ],
+        "portIDs": [
+          "identity.clock",
+          "identity.id-generator",
+          "identity.workspace-resolver",
+          "session.branch-graph",
+          "session.compaction-records",
+          "session.id-generator",
+          "session.message-part-projector",
+          "session.pagination",
+          "session.projector",
+          "session.store"
+        ],
+        "removedAtoms": [
+          "opencode.session.message-part-projector.native-like",
+          "opencode.session.projector.syncevent"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.opencode.tools-extensions",
+        "atomIDs": [
+          "opencode.permission.ask-bridge",
+          "opencode.plugin.event-mapper",
+          "opencode.plugin.hot-reload-cleanup",
+          "opencode.plugin.loader",
+          "opencode.plugin.permission-bridge",
+          "opencode.plugin.provider-registry-bridge",
+          "opencode.plugin.registry-bridge",
+          "opencode.plugin.ui-registry-bridge",
+          "opencode.shell.env-bridge",
+          "opencode.tool-pack.compatibility",
+          "opencode.tool.definition-plugin-bridge",
+          "opencode.tool.permission-render-bridge",
+          "opencode.tool.result-render-bridge",
+          "opencode.tool.schema-bridge",
+          "opencode.tool.status-bridge",
+          "opencode.tools.batch-scheduler.native-like",
+          "opencode.tools.result-projector.native-like",
+          "opencode.tools.schema.native-like",
+          "opencode.workspace-filesystem-bridge"
+        ],
+        "portIDs": [
+          "filesystem.port",
+          "hook.bus",
+          "hook.cleanup-scope",
+          "hook.handler-chain",
+          "process-runner.port",
+          "registry.provider",
+          "registry.ui",
+          "tool.audit-log",
+          "tool.definition",
+          "tool.executor",
+          "tool.permission-policy",
+          "tool.registry",
+          "tool.result-normalizer",
+          "tool.schema-adapter",
+          "tools",
+          "tools.batch-scheduler",
+          "tools.result-projector",
+          "tools.schema"
+        ],
+        "removedAtoms": [
+          "opencode.permission.ask-bridge",
+          "opencode.shell.env-bridge",
+          "opencode.tool-pack.compatibility",
+          "opencode.tool.permission-render-bridge",
+          "opencode.tools.batch-scheduler.native-like",
+          "opencode.tools.result-projector.native-like",
+          "opencode.tools.schema.native-like",
+          "opencode.workspace-filesystem-bridge"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.opencode.turn-loop",
+        "atomIDs": [
+          "opencode.agent-loop.final-summary.native-like",
+          "opencode.agent-loop.request-boundary.native-like",
+          "opencode.turn.compaction-policy",
+          "opencode.turn.context-builder",
+          "opencode.turn.continuation-policy",
+          "opencode.turn.input-normalizer",
+          "opencode.turn.prompt-assembler",
+          "opencode.turn.provider-request-builder",
+          "opencode.turn.provider-stream-runner",
+          "opencode.turn.result-recorder",
+          "opencode.turn.retry-policy",
+          "opencode.turn.stop-condition",
+          "opencode.turn.stream-reducer",
+          "opencode.turn.tool-call-planner",
+          "opencode.turn.tool-executor"
+        ],
+        "portIDs": [
+          "agent-loop.final-summary",
+          "agent-loop.request-boundary",
+          "turn.compaction-policy",
+          "turn.context-builder",
+          "turn.continuation-policy",
+          "turn.input-normalizer",
+          "turn.prompt-assembler",
+          "turn.provider-request-builder",
+          "turn.provider-stream-runner",
+          "turn.result-recorder",
+          "turn.retry-policy",
+          "turn.stop-condition",
+          "turn.stream-reducer",
+          "turn.tool-call-planner",
+          "turn.tool-executor"
+        ],
+        "removedAtoms": [
+          "opencode.agent-loop.final-summary.native-like",
+          "opencode.agent-loop.request-boundary.native-like"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.provider.cassette",
+        "atomIDs": [
+          "provider.cassette.jsonl",
+          "provider.cassette.memory",
+          "provider.stream-parser.cassette",
+          "provider.stream.fake",
+          "provider.transport.cassette"
+        ],
+        "portIDs": [
+          "provider.cassette",
+          "provider.stream",
+          "provider.stream-parser",
+          "provider.transport"
+        ],
+        "removedAtoms": [
+          "provider.cassette.jsonl",
+          "provider.cassette.memory",
+          "provider.stream-parser.cassette",
+          "provider.transport.cassette"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.provider.openai-compatible",
+        "atomIDs": [
+          "common.provider.stream-projector",
+          "common.provider.streaming-delta-recorder",
+          "provider.auth.api-key",
+          "provider.event-normalizer.openai-compatible",
+          "provider.model-registry.env",
+          "provider.request-shape.openai-compatible",
+          "provider.stream-parser.sse",
+          "provider.stream.openai-compatible",
+          "provider.transport.fetch",
+          "provider.usage-normalizer.common"
+        ],
+        "portIDs": [
+          "provider.auth",
+          "provider.event-normalizer",
+          "provider.model-registry",
+          "provider.request-shape",
+          "provider.stream",
+          "provider.stream-parser",
+          "provider.stream-projector",
+          "provider.streaming-delta-recorder",
+          "provider.transport",
+          "provider.usage-normalizer"
+        ],
+        "removedAtoms": [
+          "provider.auth.api-key",
+          "provider.model-registry.env",
+          "provider.stream-parser.sse",
+          "provider.stream.openai-compatible",
+          "provider.usage-normalizer.common"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.runtime.assembly-core",
+        "atomIDs": [
+          "common.runtime.acceptance-controller.default",
+          "common.runtime.acceptance-evidence.default",
+          "runtime.assembly-graph.lockfile",
+          "runtime.binding-planner.lockfile",
+          "runtime.capability-resolver.default",
+          "runtime.lifecycle-runner.scoped",
+          "runtime.module-catalog.memory"
+        ],
+        "portIDs": [
+          "runtime.acceptance-controller",
+          "runtime.acceptance-evidence",
+          "runtime.assembly-graph",
+          "runtime.binding-planner",
+          "runtime.capability-resolver",
+          "runtime.lifecycle-runner",
+          "runtime.module-catalog"
+        ],
+        "removedAtoms": [
+          "runtime.assembly-graph.lockfile",
+          "runtime.binding-planner.lockfile",
+          "runtime.capability-resolver.default",
+          "runtime.lifecycle-runner.scoped",
+          "runtime.module-catalog.memory"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.session.memory",
+        "atomIDs": [
+          "common.session.message-part-projector",
+          "session.branch-graph.memory",
+          "session.branching.memory",
+          "session.context-selector.memory",
+          "session.event-log.memory",
+          "session.id-generator.deterministic",
+          "session.message-store.memory",
+          "session.projector.common-transcript",
+          "session.reader.memory",
+          "session.store.memory",
+          "session.writer.memory"
+        ],
+        "portIDs": [
+          "session.branch-graph",
+          "session.context-selector",
+          "session.diff",
+          "session.event-log",
+          "session.id-generator",
+          "session.message-part-projector",
+          "session.message-store",
+          "session.projector",
+          "session.reader",
+          "session.store",
+          "session.writer"
+        ],
+        "removedAtoms": [
+          "session.branch-graph.memory",
+          "session.id-generator.deterministic",
+          "session.projector.common-transcript"
+        ],
+        "replacedAtoms": {}
+      },
+      {
+        "bundleID": "bundle.tool.filesystem-shell",
+        "atomIDs": [
+          "common.tools.batch-scheduler.default",
+          "common.tools.result-projector.default",
+          "common.tools.schema.default",
+          "filesystem.local",
+          "filesystem.workspace-scoped",
+          "process-runner.local",
+          "process-runner.sandbox",
+          "tool-pack.filesystem",
+          "tool-pack.shell",
+          "tool.audit.memory",
+          "tool.definition.filesystem",
+          "tool.definition.shell",
+          "tool.executor.default",
+          "tool.permission.workspace-scoped",
+          "tool.result.error",
+          "tool.result.json",
+          "tool.result.text"
+        ],
+        "portIDs": [
+          "filesystem.port",
+          "process-runner.port",
+          "tool.audit-log",
+          "tool.definition",
+          "tool.executor",
+          "tool.permission-policy",
+          "tool.result-normalizer",
+          "tools",
+          "tools.batch-scheduler",
+          "tools.result-projector",
+          "tools.schema"
+        ],
+        "removedAtoms": [
+          "filesystem.local",
+          "process-runner.sandbox",
+          "tool-pack.filesystem",
+          "tool.audit.memory",
+          "tool.definition.filesystem",
+          "tool.definition.shell",
+          "tool.permission.workspace-scoped",
+          "tool.result.error",
+          "tool.result.json",
+          "tool.result.text"
+        ],
+        "replacedAtoms": {}
+      }
+    ],
+    "commands": [
+      "npm run helix -- validate recipe-file './helix-opencode-recipe.json' --json",
+      "npm run helix -- assemble --recipe-file './helix-opencode-recipe.json' --explain --json",
+      "npm run helix -- graph recipe-file './helix-opencode-recipe.json' --json",
+      "npm run helix -- run 'opencode' --fake-provider --prompt 'hello from builder' --json",
+      "npm run helix -- task-parity --suite smoke --provider cassette --product 'opencode' --json"
+    ],
+    "swapImpact": {
+      "portID": "session.store",
+      "before": "opencode.session.store.sqlite-projection",
+      "after": "session.store.memory",
+      "safety": "requires-tests",
+      "affectedCapabilities": [
+        "session.store"
+      ],
+      "affectedSurfaces": [
+        "opencode"
+      ],
+      "classification": "needs validation",
+      "validationCommand": "npm run helix -- validate recipe-file './helix-opencode-recipe.json' --json"
+    }
+  }
+}

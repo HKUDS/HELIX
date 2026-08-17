@@ -1,0 +1,20 @@
+{
+  "name": "@helix/lego-agent-loop",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts",
+    "@helix/lego-hooks": "file:../lego-hooks",
+    "@helix/lego-provider": "file:../lego-provider",
+    "@helix/lego-session": "file:../lego-session"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./cadence-policies": "./src/cadence-policies.ts",
+    "./product-schema/hermes": "./src/product-schema/hermes.ts",
+    "./product-schema/nanobot": "./src/product-schema/nanobot.ts",
+    "./product-schema/opencode": "./src/product-schema/opencode.ts",
+    "./product-schema/pi": "./src/product-schema/pi.ts"
+  }
+}

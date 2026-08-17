@@ -1,0 +1,39 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 3,
+  "allowedTools": ["todo", "todowrite"],
+  "writePaths": [],
+  "extensionTools": ["todo"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Routing command state through the todo command atom.",
+        "toolCalls": [
+          {
+            "toolName": "todo",
+            "input": {
+              "action": "set",
+              "items": [
+                {
+                  "id": "cmd-1",
+                  "text": "command-routed",
+                  "status": "completed"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Command route completed; command-routed is completed."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["Command route completed", "command-routed"],
+    "toolNames": ["todo"],
+    "toolResultIncludes": ["command-routed"],
+    "workspaceDiffCount": 0
+  }
+}

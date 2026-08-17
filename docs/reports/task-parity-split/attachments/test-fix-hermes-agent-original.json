@@ -1,0 +1,172 @@
+{
+  "taskID": "test-fix",
+  "product": "hermes-agent",
+  "mode": "original",
+  "transcriptSummary": {
+    "visibleText": "Run the test, fix the failing add implementation, and re-run the test.\nRunning the failing test first.\n[tool:bash]\nexpected 5\n\nFixing the add implementation.\n[tool:edit]\nEdited /tmp/helix-task-test-fix-hermes-agent-original-Tv9Y76/workspace/src/add.js (1 replacement)\nRe-running the test after the fix.\n[tool:bash]\ntests passed: expected 5\n",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "shell.env",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "shell.env",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "bash",
+        "input": {
+          "command": "node test.mjs || true"
+        },
+        "status": "completed"
+      },
+      {
+        "toolName": "edit",
+        "input": {
+          "path": "src/add.js",
+          "oldText": "return a - b;",
+          "newText": "return a + b;"
+        },
+        "status": "completed"
+      },
+      {
+        "toolName": "bash",
+        "input": {
+          "command": "node test.mjs"
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "bash",
+        "text": "expected 5\n"
+      },
+      {
+        "toolName": "edit",
+        "text": "Edited /tmp/helix-task-test-fix-hermes-agent-original-Tv9Y76/workspace/src/add.js (1 replacement)"
+      },
+      {
+        "toolName": "bash",
+        "text": "tests passed: expected 5\n"
+      }
+    ]
+  },
+  "workspaceDiff": [
+    {
+      "path": "src/add.js",
+      "status": "modified",
+      "before": "export function add(a, b) {\n  return a - b;\n}\n",
+      "after": "export function add(a, b) {\n  return a + b;\n}\n"
+    }
+  ],
+  "checks": [
+    {
+      "id": "output.includes.expected-5",
+      "ok": true,
+      "message": "Visible output includes expected 5."
+    },
+    {
+      "id": "output.includes.tests-passed",
+      "ok": true,
+      "message": "Visible output includes tests passed."
+    },
+    {
+      "id": "file.includes.src/add.js.return-a-b",
+      "ok": true,
+      "message": "src/add.js includes return a + b;."
+    },
+    {
+      "id": "tool.called.bash",
+      "ok": true,
+      "message": "Tool bash was called."
+    },
+    {
+      "id": "tool.called.edit",
+      "ok": true,
+      "message": "Tool edit was called."
+    },
+    {
+      "id": "tool.result.includes.tests-passed-expected-5",
+      "ok": true,
+      "message": "A tool result includes tests passed: expected 5."
+    },
+    {
+      "id": "workspace.diff.exact",
+      "ok": true,
+      "message": "Workspace diff exactly matches the expected path/status list."
+    }
+  ],
+  "gaps": []
+}

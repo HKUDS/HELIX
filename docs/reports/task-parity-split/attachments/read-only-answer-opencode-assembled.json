@@ -1,0 +1,95 @@
+{
+  "taskID": "read-only-answer",
+  "product": "opencode",
+  "mode": "assembled",
+  "transcriptSummary": {
+    "visibleText": "Read README.md and answer with the exact architecture split used by this fixture.\nReading the workspace README.\n[tool:read]\n# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n\nThe fixture uses common lego atoms plus OpenCode, Pi, and Nanobot product personality atoms.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "read",
+        "input": {
+          "path": "README.md"
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "read",
+        "text": "# Fixture Project\n\nHelix decomposes coding-agent harnesses into common lego atoms and product-specific personality atoms.\n\nThe common atoms provide session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, and UI projection.\n\nProduct atoms preserve upstream behavior for OpenCode, Pi, and Nanobot.\n"
+      }
+    ]
+  },
+  "workspaceDiff": [],
+  "checks": [
+    {
+      "id": "output.matches.common-s-lego-s-atoms",
+      "ok": true,
+      "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+    },
+    {
+      "id": "output.matches.product-specific-s-personality-s-atoms",
+      "ok": true,
+      "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+    },
+    {
+      "id": "tool.called.read",
+      "ok": true,
+      "message": "Tool read was called."
+    }
+  ],
+  "gaps": []
+}

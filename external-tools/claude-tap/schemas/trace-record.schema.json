@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "claude-tap trace record subset",
+  "type": "object",
+  "required": ["request_id", "turn", "request", "response"],
+  "properties": {
+    "timestamp": { "type": "string" },
+    "request_id": { "type": "string" },
+    "turn": { "type": "integer" },
+    "duration_ms": { "type": "integer" },
+    "request": {
+      "type": "object",
+      "required": ["method", "path", "body"],
+      "properties": {
+        "method": { "type": "string" },
+        "path": { "type": "string" },
+        "headers": { "type": "object" },
+        "body": {}
+      }
+    },
+    "response": {
+      "type": "object",
+      "required": ["status", "body"],
+      "properties": {
+        "status": { "type": "integer" },
+        "headers": { "type": "object" },
+        "body": {},
+        "sse_events": { "type": "array" }
+      }
+    },
+    "upstream_base_url": { "type": "string" }
+  }
+}

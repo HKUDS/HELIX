@@ -1,0 +1,33 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 3,
+  "allowedTools": ["bash"],
+  "writePaths": [],
+  "envAllowlist": ["PATH", "LANG", "LC_ALL", "TZ", "SSL_CERT_FILE", "NODE_EXTRA_CA_CERTS", "HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY", "ANTHROPIC_API_KEY", "HELIX_LIVE_MODEL", "ANTHROPIC_MODEL", "HELIX_LIVE_BASE_URL"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Running the report script.",
+        "toolCalls": [
+          {
+            "toolName": "bash",
+            "input": {
+              "command": "node scripts/report.mjs"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "The report prints task-parity-ok with status ready."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": [
+      "task-parity-ok",
+      "status ready"
+    ],
+    "toolNames": ["bash"]
+  }
+}

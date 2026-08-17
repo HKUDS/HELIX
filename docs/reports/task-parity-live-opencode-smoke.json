@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-28T17:11:06.178Z",
+  "suite": "smoke",
+  "provider": "live",
+  "reports": [
+    {
+      "taskID": "read-only-answer",
+      "product": "opencode",
+      "mode": "original",
+      "runner": {
+        "id": "task.runner.native-cli",
+        "evidence": "native-cli",
+        "nativeAvailable": true,
+        "packageSpec": "opencode-ai@1.15.11",
+        "exitCode": 0,
+        "stderrTail": "Performing one time database migration, may take a few minutes...\nsqlite-migration:done\nDatabase migration complete."
+      },
+      "productEvidence": {
+        "recipeID": "opencode",
+        "upstream": "https://github.com/anomalyco/opencode",
+        "upstreamCommit": "1a8fd0e1dca58a473d85500530dd45def3f512ab",
+        "nativeAdapter": "native-cli"
+      },
+      "status": "acceptable-drift",
+      "workspaceDiff": [],
+      "transcriptSummary": {
+        "visibleText": "Common lego atoms (session storage, hook dispatch, provider event normalization, default tools, runtime lifecycle, prompt assembly, UI projection) and product-specific personality atoms (preserving upstream behavior for OpenCode, Pi, and Nanobot).",
+        "messageCount": 2
+      },
+      "sessionEvidence": {
+        "transcriptMessages": 2,
+        "persisted": true
+      },
+      "providerEvidence": {
+        "provider": "live",
+        "modelID": "MiniMax-M2.7-highspeed",
+        "deterministic": false,
+        "requests": 1
+      },
+      "traceEvidence": {
+        "events": 8,
+        "eventTypes": [
+          "step_finish",
+          "step_start",
+          "text",
+          "tool_use"
+        ]
+      },
+      "toolEvidence": {
+        "calls": [
+          {
+            "toolName": "glob",
+            "input": {}
+          },
+          {
+            "toolName": "read",
+            "input": {}
+          }
+        ],
+        "results": []
+      },
+      "policyEvidence": {
+        "allowedTools": [
+          "read"
+        ],
+        "writePaths": [],
+        "envAllowlist": [
+          "PATH",
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "SSL_CERT_FILE",
+          "NODE_EXTRA_CA_CERTS",
+          "HTTP_PROXY",
+          "HTTPS_PROXY",
+          "NO_PROXY",
+          "ANTHROPIC_API_KEY",
+          "HELIX_LIVE_MODEL",
+          "ANTHROPIC_MODEL",
+          "HELIX_LIVE_BASE_URL"
+        ],
+        "timeoutMs": 300000,
+        "maxSteps": 3
+      },
+      "costLatency": {
+        "steps": 1,
+        "durationMs": 346846,
+        "toolCalls": 2,
+        "providerRequests": 1
+      },
+      "checks": [
+        {
+          "id": "output.matches.common-s-lego-s-atoms",
+          "ok": true,
+          "message": "Visible output matches common\\s+(lego\\s+)?atoms."
+        },
+        {
+          "id": "output.matches.product-specific-s-personality-s-atoms",
+          "ok": true,
+          "message": "Visible output matches product(-specific)?\\s+(personality\\s+)?atoms."
+        },
+        {
+          "id": "tool.called.read",
+          "ok": true,
+          "message": "Tool read was called."
+        }
+      ],
+      "gaps": []
+    }
+  ],
+  "pairs": [],
+  "summary": {
+    "reports": 1,
+    "matched": 0,
+    "acceptableDrift": 1,
+    "gapsFound": 0,
+    "failed": 0
+  }
+}

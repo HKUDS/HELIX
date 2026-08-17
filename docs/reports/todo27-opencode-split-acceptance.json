@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "todo27-opencode-split-acceptance",
+  "generatedAt": "2026-06-15T09:42:49.269Z",
+  "product": "opencode",
+  "acceptanceScope": "opencode-split-review-only",
+  "todoCompletion": {
+    "status": "executable-native-parity-verified-metadata-retained",
+    "completionClaim": false,
+    "nativeParityVerified": false,
+    "executableNativeParityVerified": true,
+    "productNativeComplete": 108
+  },
+  "upstreamTarget": {
+    "ref": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+    "evidencePolicy": "native-proof-required",
+    "nativeParityVerified": false,
+    "executableNativeParityVerified": true
+  },
+  "sources": {
+    "assemblyContract": {
+      "product": "opencode",
+      "recipeID": "opencode",
+      "fingerprint": "8fc1974f111d3f7d",
+      "verificationOK": true,
+      "taskParity": "linked",
+      "nativeFixtures": "linked",
+      "atoms": 299,
+      "productSpecificAtoms": 119
+    },
+    "flowGraph": {
+      "product": "opencode",
+      "source": "assembled",
+      "mode": "blueprint",
+      "fingerprint": "a0f24a648cae6c69",
+      "verificationOK": true,
+      "stages": 19,
+      "parityTargetStages": 19,
+      "parityTargetSatisfiedStages": 19,
+      "parityTargetBlockedStages": 0
+    },
+    "executableAudit": {
+      "products": [
+        "opencode"
+      ],
+      "fingerprint": "44627efa9b6403d3",
+      "verificationOK": true,
+      "requiredBindings": 96,
+      "compileBlockers": 0,
+      "metadataOnlyExecutableBindings": 0,
+      "previewOnlyExecutableBindings": 0
+    },
+    "currentModuleAudit": {
+      "products": [
+        "opencode"
+      ],
+      "fingerprint": "f0315a5abda17d33",
+      "verificationOK": true,
+      "productNativeComplete": 108,
+      "productAtomItems": 124,
+      "requiredBindingItems": 128,
+      "workQueueItems": 20
+    },
+    "inventory": {
+      "products": [
+        "opencode"
+      ],
+      "fingerprint": "096d5a8372c51807",
+      "verificationOK": true,
+      "transitionAtoms": 124,
+      "selectedTransitionAtoms": 119,
+      "productNativeComplete": 108,
+      "fixtureLinked": 124,
+      "lossinessLinked": 16
+    }
+  },
+  "trackedStages": [
+    {
+      "stageID": "prompt.assemble",
+      "atomIDs": [
+        "opencode.prompt.compaction-adapter.build-prompt",
+        "opencode.prompt.mode-builder",
+        "opencode.prompt.model-capability-adapter.provider-prompt",
+        "opencode.prompt.resource-loader.instruction",
+        "opencode.prompt.tool-renderer.provider-tools",
+        "opencode.resource.discovery.instruction",
+        "opencode.turn.prompt-assembler"
+      ],
+      "parityTargetRefs": [
+        "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab"
+      ],
+      "parityTargetSatisfied": true,
+      "blockers": [],
+      "fixtureIDs": [
+        "opencode-prompt:anthropic",
+        "opencode-prompt:beast",
+        "opencode-prompt:codex",
+        "opencode-prompt:compaction-adapter-native-exact-fixture",
+        "opencode-prompt:copilot-gpt-5",
+        "opencode-prompt:default",
+        "opencode-prompt:gemini",
+        "opencode-prompt:gpt",
+        "opencode-prompt:instruction-resource-native-exact-fixture",
+        "opencode-prompt:kimi",
+        "opencode-prompt:live-runtime-fixture",
+        "opencode-prompt:live-upstream-exact-diff-fixture",
+        "opencode-prompt:llm-request-system-exact-fixture",
+        "opencode-prompt:plan",
+        "opencode-prompt:plan-mode",
+        "opencode-prompt:plan-reminder-anthropic",
+        "opencode-prompt:provider-message-projection",
+        "opencode-prompt:provider-support-native-exact-fixture",
+        "opencode-prompt:rendered-system-output",
+        "opencode-prompt:resource-policy",
+        "opencode-prompt:runtime-system-output-projection",
+        "opencode-prompt:system-invocation-boundary-projection",
+        "opencode-prompt:system-output-ordering",
+        "opencode-prompt:system-prompt-core-exact-fixture",
+        "opencode-prompt:trinity",
+        "opencode-prompt:upstream-system-matrix",
+        "opencode-prompt:upstream-system-output-matrix",
+        "opencode-turn-prompt-assembler:native-exact-fixture",
+        "opencode-turn:identity-readback-projection",
+        "opencode-turn:loop-control-projection",
+        "opencode-turn:native-loop-exact-diff-fixture",
+        "opencode-turn:pipeline-boundary-projection",
+        "opencode-turn:prompt-assembler",
+        "opencode-turn:provider-step-projection",
+        "opencode-turn:side-effect-timeline-projection"
+      ],
+      "knownLossiness": [],
+      "moduleClaims": [
+        {
+          "atomID": "opencode.prompt.compaction-adapter.build-prompt",
+          "portIDs": [
+            "prompt.compaction-adapter"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.prompt.mode-builder",
+          "portIDs": [
+            "prompt.system-builder"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.prompt.model-capability-adapter.provider-prompt",
+          "portIDs": [
+            "prompt.model-capability-adapter"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.prompt.resource-loader.instruction",
+          "portIDs": [
+            "prompt.resource-loader"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.prompt.tool-renderer.provider-tools",
+          "portIDs": [
+            "prompt.tool-renderer"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.resource.discovery.instruction",
+          "portIDs": [
+            "resource.discovery"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.turn.prompt-assembler",
+          "portIDs": [
+            "turn.prompt-assembler"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        }
+      ]
+    },
+    {
+      "stageID": "provider.request",
+      "atomIDs": [
+        "opencode.provider.auth-descriptor",
+        "opencode.provider.model-plugin",
+        "opencode.provider.request-options",
+        "opencode.turn.provider-request-builder"
+      ],
+      "parityTargetRefs": [
+        "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab"
+      ],
+      "parityTargetSatisfied": true,
+      "blockers": [],
+      "fixtureIDs": [
+        "opencode-provider-auth-descriptor:native-exact-fixture",
+        "opencode-provider-model-plugin:native-exact-fixture",
+        "opencode-provider-request-options:native-exact-fixture",
+        "opencode-provider:package-runtime-native-exact-diff-fixture",
+        "opencode-turn-provider-request-builder:native-exact-fixture",
+        "opencode-turn:identity-readback-projection",
+        "opencode-turn:loop-control-projection",
+        "opencode-turn:native-loop-exact-diff-fixture",
+        "opencode-turn:pipeline-boundary-projection",
+        "opencode-turn:provider-request-builder",
+        "opencode-turn:provider-step-projection",
+        "opencode-turn:side-effect-timeline-projection"
+      ],
+      "knownLossiness": [],
+      "moduleClaims": [
+        {
+          "atomID": "opencode.provider.auth-descriptor",
+          "portIDs": [
+            "provider.auth"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.provider.model-plugin",
+          "portIDs": [
+            "provider.model-registry"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.provider.request-options",
+          "portIDs": [
+            "provider.request-shape"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.turn.provider-request-builder",
+          "portIDs": [
+            "turn.provider-request-builder"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        }
+      ]
+    },
+    {
+      "stageID": "tool.execute",
+      "atomIDs": [
+        "opencode.shell.env-bridge",
+        "opencode.tool.permission-render-bridge",
+        "opencode.tool.status-bridge",
+        "opencode.turn.tool-executor",
+        "opencode.workspace-filesystem-bridge"
+      ],
+      "parityTargetRefs": [
+        "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab"
+      ],
+      "parityTargetSatisfied": true,
+      "blockers": [],
+      "fixtureIDs": [
+        "opencode-shell-env:native-exact-fixture",
+        "opencode-tool:native-exact-fixture",
+        "opencode-turn-tool-executor:native-exact-fixture",
+        "opencode-turn:identity-readback-projection",
+        "opencode-turn:loop-control-projection",
+        "opencode-turn:native-loop-exact-diff-fixture",
+        "opencode-turn:pipeline-boundary-projection",
+        "opencode-turn:provider-step-projection",
+        "opencode-turn:side-effect-timeline-projection",
+        "opencode-turn:tool-executor"
+      ],
+      "knownLossiness": [],
+      "moduleClaims": [
+        {
+          "atomID": "opencode.shell.env-bridge",
+          "portIDs": [
+            "process-runner.port"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.tool.permission-render-bridge",
+          "portIDs": [
+            "tool.executor"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.tool.status-bridge",
+          "portIDs": [
+            "tool.audit-log"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.turn.tool-executor",
+          "portIDs": [
+            "turn.tool-executor"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.workspace-filesystem-bridge",
+          "portIDs": [
+            "filesystem.port"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        }
+      ]
+    },
+    {
+      "stageID": "session.assistant-write",
+      "atomIDs": [
+        "opencode.session.message-store.sqlite-service",
+        "opencode.session.projector.message-v2",
+        "opencode.session.store.sqlite-projection",
+        "opencode.session.writer.sqlite-service",
+        "opencode.turn.result-recorder"
+      ],
+      "parityTargetRefs": [
+        "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab"
+      ],
+      "parityTargetSatisfied": true,
+      "blockers": [],
+      "fixtureIDs": [
+        "opencode-session:native-exact-fixture",
+        "opencode-turn-result-recorder:native-exact-fixture",
+        "opencode-turn:identity-readback-projection",
+        "opencode-turn:loop-control-projection",
+        "opencode-turn:native-loop-exact-diff-fixture",
+        "opencode-turn:pipeline-boundary-projection",
+        "opencode-turn:provider-step-projection",
+        "opencode-turn:result-recorder",
+        "opencode-turn:side-effect-timeline-projection"
+      ],
+      "knownLossiness": [],
+      "moduleClaims": [
+        {
+          "atomID": "opencode.session.message-store.sqlite-service",
+          "portIDs": [
+            "session.message-store"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.session.projector.message-v2",
+          "portIDs": [
+            "session.projector"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.session.store.sqlite-projection",
+          "portIDs": [
+            "session.store"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.session.writer.sqlite-service",
+          "portIDs": [
+            "session.writer"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        },
+        {
+          "atomID": "opencode.turn.result-recorder",
+          "portIDs": [
+            "turn.result-recorder"
+          ],
+          "sourceProduct": "opencode",
+          "implementationLevel": "native",
+          "parityCompatible": "satisfied",
+          "parityTargetRef": "anomalyco/opencode@1a8fd0e1dca58a473d85500530dd45def3f512ab",
+          "parityTargetSatisfied": true,
+          "blockers": []
+        }
+      ]
+    }
+  ],
+  "trackedAtoms": [
+    {
+      "atomID": "opencode.prompt.mode-builder",
+      "plane": "prompt",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-prompt:anthropic",
+        "opencode-prompt:beast",
+        "opencode-prompt:codex",
+        "opencode-prompt:copilot-gpt-5",
+        "opencode-prompt:default",
+        "opencode-prompt:gemini",
+        "opencode-prompt:gpt",
+        "opencode-prompt:kimi",
+        "opencode-prompt:live-runtime-fixture",
+        "opencode-prompt:live-upstream-exact-diff-fixture",
+        "opencode-prompt:llm-request-system-exact-fixture",
+        "opencode-prompt:plan",
+        "opencode-prompt:plan-mode",
+        "opencode-prompt:plan-reminder-anthropic",
+        "opencode-prompt:provider-message-projection",
+        "opencode-prompt:rendered-system-output",
+        "opencode-prompt:resource-policy",
+        "opencode-prompt:runtime-system-output-projection",
+        "opencode-prompt:system-invocation-boundary-projection",
+        "opencode-prompt:system-output-ordering",
+        "opencode-prompt:system-prompt-core-exact-fixture",
+        "opencode-prompt:trinity",
+        "opencode-prompt:upstream-system-matrix",
+        "opencode-prompt:upstream-system-output-matrix"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.turn.provider-request-builder",
+      "plane": "agent-loop",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-turn-provider-request-builder:native-exact-fixture",
+        "opencode-turn:identity-readback-projection",
+        "opencode-turn:loop-control-projection",
+        "opencode-turn:native-loop-exact-diff-fixture",
+        "opencode-turn:pipeline-boundary-projection",
+        "opencode-turn:provider-request-builder",
+        "opencode-turn:provider-step-projection",
+        "opencode-turn:side-effect-timeline-projection"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.provider.request-options",
+      "plane": "provider",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-provider-request-options:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.tool.schema-bridge",
+      "plane": "tool",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-tool:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.session.store.sqlite-projection",
+      "plane": "session",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-session:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.runtime.acceptance-controller.native-like",
+      "plane": "runtime",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-runtime-acceptance:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.product-shell.sdk",
+      "plane": "product",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-product-shell:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.ui.event-loop",
+      "plane": "ui",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-ui:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.ui.renderer",
+      "plane": "ui",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-ui:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.tool-pack.compatibility",
+      "plane": "foundation",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-tool:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    },
+    {
+      "atomID": "opencode.trace.debug-surface",
+      "plane": "trace",
+      "implementationLevel": "native",
+      "disposition": "product-native-complete",
+      "fixtureIDs": [
+        "opencode-trace-debug-surface:native-exact-fixture"
+      ],
+      "knownLossiness": [],
+      "blocker": "Native proof complete for this atom; no open module blocker remains."
+    }
+  ],
+  "summary": {
+    "status": "ready-for-review",
+    "transitionAtoms": 124,
+    "selectedTransitionAtoms": 119,
+    "rewriteOpenWithPartialEvidence": 0,
+    "previewRetained": 0,
+    "metadataRetained": 16,
+    "fixtureLinked": 124,
+    "lossinessLinked": 16,
+    "parityTargetBlockedStages": 0,
+    "parityTargetSatisfiedStages": 19,
+    "executableNativeParityVerified": true,
+    "trackedStages": 4,
+    "trackedAtoms": 11,
+    "verifierSourcesOK": 5,
+    "fingerprint": "9e131ed2f49d6188"
+  }
+}

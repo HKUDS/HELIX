@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "artifactKind": "live-provider-parity-manifest",
+  "generatedAt": "2026-06-10T05:53:07.810Z",
+  "summaryPath": "summary.json",
+  "evidencePath": "evidence.json",
+  "attachments": [
+    {
+      "path": "attachments/opencode.json",
+      "sha256": "8e80315a88f2d92b25c6cd790f7a882441d296d94a45fdf4e1f383df06b502fb",
+      "byteSize": 970,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "live-provider-artifact:products",
+        "live-provider-artifact:checks"
+      ]
+    },
+    {
+      "path": "attachments/pi-mono.json",
+      "sha256": "449a6680184a9b40afd6a2707ce026be514de34aa9c43859069defe15b148a6a",
+      "byteSize": 972,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "live-provider-artifact:products",
+        "live-provider-artifact:checks"
+      ]
+    },
+    {
+      "path": "attachments/nanobot.json",
+      "sha256": "d87ad4a219104a1a2495cb51fc25b5c8394cba62f415b140859c879287e2b365",
+      "byteSize": 970,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "live-provider-artifact:products",
+        "live-provider-artifact:checks"
+      ]
+    },
+    {
+      "path": "attachments/hermes-agent.json",
+      "sha256": "48068ab1db92eef231732afc75dad26c83e4df6e0a5a41040186d8465f136166",
+      "byteSize": 977,
+      "redactionStatus": "raw-sanitized",
+      "required": true,
+      "verifierCoverage": [
+        "live-provider-artifact:products",
+        "live-provider-artifact:checks"
+      ]
+    }
+  ]
+}

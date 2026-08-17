@@ -1,0 +1,1451 @@
+{
+  "id": "pi-mono",
+  "strategies": [
+    {
+      "id": "turn.context-builder",
+      "config": {
+        "variant": "pi-active-leaf-context"
+      }
+    },
+    {
+      "id": "tool.permission",
+      "config": {
+        "source": "pi-extension-events"
+      }
+    }
+  ],
+  "policies": [
+    {
+      "id": "shell.execution",
+      "config": {
+        "envHook": "runtime.events",
+        "helper": "node-process"
+      }
+    },
+    {
+      "id": "extension.loading",
+      "config": {
+        "source": "pi-extension-loader"
+      }
+    }
+  ],
+  "personalities": [
+    "pi-session-personality",
+    "pi-extension-personality"
+  ],
+  "entrypoints": {
+    "cli": "@helix/cli run pi-mono",
+    "sdk": "hooks.services['pi.sdk']",
+    "tui": "hooks.services['pi.tui']",
+    "rpc": "hooks.services['pi.rpc']",
+    "webUI": "hooks.services['pi.web-ui']",
+    "server": "hooks.services['pi.server.factory']",
+    "packageManager": "hooks.services['pi.package-manager']",
+    "examples": "hooks.services['pi.extension-examples']",
+    "browserSmoke": "hooks.services['pi.browser-smoke']",
+    "release": "hooks.services['pi.release-hardening']"
+  },
+  "conformance": {
+    "suite": [
+      "session",
+      "hooks",
+      "agent-loop",
+      "tools",
+      "port-contract-fixtures",
+      "product-shell-surfaces",
+      "fixture-replay",
+      "product-workflow-parity",
+      "upstream-e2e-parity",
+      "live-provider-parity",
+      "task-parity",
+      "reverse-assembly",
+      "block-ledger"
+    ]
+  },
+  "metadata": {
+    "upstream": "https://github.com/earendil-works/pi",
+    "upstreamCommit": "7c2775f6f67c38ed491a1ff68240ee4f8ba688da",
+    "graphLevel": "atom"
+  },
+  "version": "0.1.0",
+  "modules": [],
+  "atoms": [
+    {
+      "id": "block.manifest.schema"
+    },
+    {
+      "id": "block.manifest.normalizer"
+    },
+    {
+      "id": "capability.ref.normalizer"
+    },
+    {
+      "id": "resource.grant.validator"
+    },
+    {
+      "id": "recipe.binding.lockfile"
+    },
+    {
+      "id": "conformance.ref.fixture-registry"
+    },
+    {
+      "id": "identity.id-generator.deterministic"
+    },
+    {
+      "id": "identity.id-generator.random"
+    },
+    {
+      "id": "identity.clock.system"
+    },
+    {
+      "id": "identity.clock.deterministic"
+    },
+    {
+      "id": "identity.workspace-resolver.cwd"
+    },
+    {
+      "id": "identity.workspace-resolver.configured"
+    },
+    {
+      "id": "event.envelope.common"
+    },
+    {
+      "id": "event.log.memory"
+    },
+    {
+      "id": "event.log.jsonl"
+    },
+    {
+      "id": "event.log.projection"
+    },
+    {
+      "id": "trace.recorder.memory"
+    },
+    {
+      "id": "trace.recorder.jsonl"
+    },
+    {
+      "id": "runtime.module-catalog.memory"
+    },
+    {
+      "id": "runtime.capability-resolver.default"
+    },
+    {
+      "id": "runtime.binding-planner.lockfile"
+    },
+    {
+      "id": "runtime.lifecycle-runner.scoped"
+    },
+    {
+      "id": "runtime.assembly-graph.lockfile"
+    },
+    {
+      "id": "common.runtime.acceptance-controller.default"
+    },
+    {
+      "id": "common.runtime.acceptance-evidence.default"
+    },
+    {
+      "id": "session.id-generator.deterministic"
+    },
+    {
+      "id": "session.store.memory"
+    },
+    {
+      "id": "session.store.jsonl-tree"
+    },
+    {
+      "id": "session.store.sqlite-projection"
+    },
+    {
+      "id": "session.event-log.memory"
+    },
+    {
+      "id": "session.event-log.jsonl"
+    },
+    {
+      "id": "session.event-log.projection"
+    },
+    {
+      "id": "session.reader.memory"
+    },
+    {
+      "id": "session.reader.service"
+    },
+    {
+      "id": "session.writer.memory"
+    },
+    {
+      "id": "session.writer.service"
+    },
+    {
+      "id": "session.message-store.memory"
+    },
+    {
+      "id": "session.message-store.service"
+    },
+    {
+      "id": "session.branching.memory"
+    },
+    {
+      "id": "session.branching.service"
+    },
+    {
+      "id": "session.branch-graph.memory"
+    },
+    {
+      "id": "session.branch-graph.service"
+    },
+    {
+      "id": "session.projector.common-transcript"
+    },
+    {
+      "id": "common.session.message-part-projector"
+    },
+    {
+      "id": "session.pagination.memory"
+    },
+    {
+      "id": "session.pagination.service"
+    },
+    {
+      "id": "session.context-selector.memory"
+    },
+    {
+      "id": "session.context-selector.service"
+    },
+    {
+      "id": "session.compaction-records.memory"
+    },
+    {
+      "id": "session.compaction-records.service"
+    },
+    {
+      "id": "hook.bus.source-ordered"
+    },
+    {
+      "id": "hook.observer-chain.source-ordered"
+    },
+    {
+      "id": "hook.handler-chain.source-ordered"
+    },
+    {
+      "id": "hook.scheduler.serial"
+    },
+    {
+      "id": "hook.scheduler.parallel"
+    },
+    {
+      "id": "hook.scheduler.source-ordered"
+    },
+    {
+      "id": "hook.cleanup-scope.registry"
+    },
+    {
+      "id": "hook.error-policy.fail-fast"
+    },
+    {
+      "id": "hook.error-policy.collect-and-continue"
+    },
+    {
+      "id": "registry.tool.common"
+    },
+    {
+      "id": "registry.command.common"
+    },
+    {
+      "id": "registry.provider.common"
+    },
+    {
+      "id": "registry.ui.common"
+    },
+    {
+      "id": "turn.input-normalizer.text"
+    },
+    {
+      "id": "turn.context-builder.transcript"
+    },
+    {
+      "id": "turn.prompt-assembler.common"
+    },
+    {
+      "id": "turn.provider-request-builder.common"
+    },
+    {
+      "id": "turn.provider-stream-runner.common"
+    },
+    {
+      "id": "turn.stream-reducer.common"
+    },
+    {
+      "id": "turn.tool-call-planner.parallel-batch"
+    },
+    {
+      "id": "turn.tool-call-planner.sequential"
+    },
+    {
+      "id": "turn.tool-executor.common"
+    },
+    {
+      "id": "turn.result-recorder.common"
+    },
+    {
+      "id": "turn.retry-policy.none"
+    },
+    {
+      "id": "turn.retry-policy.fixed"
+    },
+    {
+      "id": "turn.retry-policy.exponential"
+    },
+    {
+      "id": "turn.continuation-policy.none"
+    },
+    {
+      "id": "turn.continuation-policy.synthetic-continue"
+    },
+    {
+      "id": "turn.compaction-policy.none"
+    },
+    {
+      "id": "turn.compaction-policy.token-threshold"
+    },
+    {
+      "id": "turn.compaction-policy.manual"
+    },
+    {
+      "id": "turn.stop-condition.no-tool-calls"
+    },
+    {
+      "id": "turn.stop-condition.max-steps"
+    },
+    {
+      "id": "common.agent-loop.request-boundary.default"
+    },
+    {
+      "id": "common.agent-loop.final-summary.default"
+    },
+    {
+      "id": "tool-pack.echo"
+    },
+    {
+      "id": "tool-pack.filesystem"
+    },
+    {
+      "id": "tool-pack.shell"
+    },
+    {
+      "id": "tool-pack.meta"
+    },
+    {
+      "id": "tool.definition.echo"
+    },
+    {
+      "id": "tool.definition.filesystem"
+    },
+    {
+      "id": "tool.definition.shell"
+    },
+    {
+      "id": "tool.definition.meta"
+    },
+    {
+      "id": "tool.schema.json-schema"
+    },
+    {
+      "id": "tool.schema.typebox"
+    },
+    {
+      "id": "tool.schema.zod-compatible"
+    },
+    {
+      "id": "tool.schema.effect-compatible"
+    },
+    {
+      "id": "tool.schema.typescript-validator"
+    },
+    {
+      "id": "common.tools.schema.default"
+    },
+    {
+      "id": "common.tools.batch-scheduler.default"
+    },
+    {
+      "id": "tool.permission.always-allow"
+    },
+    {
+      "id": "tool.permission.always-deny"
+    },
+    {
+      "id": "tool.permission.ask-hook"
+    },
+    {
+      "id": "tool.permission.workspace-scoped"
+    },
+    {
+      "id": "tool.permission.product-personality"
+    },
+    {
+      "id": "tool.executor.default"
+    },
+    {
+      "id": "tool.executor.echo-only"
+    },
+    {
+      "id": "tool.result.text"
+    },
+    {
+      "id": "tool.result.json"
+    },
+    {
+      "id": "tool.result.error"
+    },
+    {
+      "id": "tool.result.truncated"
+    },
+    {
+      "id": "common.tools.result-projector.default"
+    },
+    {
+      "id": "tool.audit.memory"
+    },
+    {
+      "id": "tool.audit.jsonl"
+    },
+    {
+      "id": "filesystem.local"
+    },
+    {
+      "id": "filesystem.memory"
+    },
+    {
+      "id": "filesystem.readonly"
+    },
+    {
+      "id": "filesystem.workspace-scoped"
+    },
+    {
+      "id": "process-runner.disabled"
+    },
+    {
+      "id": "process-runner.local"
+    },
+    {
+      "id": "process-runner.dry-run"
+    },
+    {
+      "id": "process-runner.sandbox"
+    },
+    {
+      "id": "provider.transport.fetch"
+    },
+    {
+      "id": "provider.transport.mock-sse"
+    },
+    {
+      "id": "provider.transport.cassette"
+    },
+    {
+      "id": "provider.auth.api-key"
+    },
+    {
+      "id": "provider.auth.bearer"
+    },
+    {
+      "id": "provider.auth.query-key"
+    },
+    {
+      "id": "provider.model-registry.static"
+    },
+    {
+      "id": "provider.model-registry.env"
+    },
+    {
+      "id": "provider.model-registry.remote-cache"
+    },
+    {
+      "id": "provider.request-shape.openai-compatible"
+    },
+    {
+      "id": "provider.request-shape.anthropic"
+    },
+    {
+      "id": "provider.request-shape.google"
+    },
+    {
+      "id": "provider.stream-parser.sse"
+    },
+    {
+      "id": "provider.stream-parser.json"
+    },
+    {
+      "id": "provider.stream-parser.cassette"
+    },
+    {
+      "id": "common.provider.streaming-delta-recorder"
+    },
+    {
+      "id": "provider.event-normalizer.common"
+    },
+    {
+      "id": "provider.event-normalizer.openai-compatible"
+    },
+    {
+      "id": "provider.event-normalizer.anthropic"
+    },
+    {
+      "id": "provider.event-normalizer.google"
+    },
+    {
+      "id": "provider.usage-normalizer.common"
+    },
+    {
+      "id": "provider.usage-normalizer.pricing-table"
+    },
+    {
+      "id": "provider.cassette.jsonl"
+    },
+    {
+      "id": "provider.cassette.memory"
+    },
+    {
+      "id": "provider.stream.openai-compatible"
+    },
+    {
+      "id": "provider.stream.openrouter"
+    },
+    {
+      "id": "provider.stream.anthropic"
+    },
+    {
+      "id": "provider.stream.google"
+    },
+    {
+      "id": "common.provider.stream-projector"
+    },
+    {
+      "id": "config.source.env"
+    },
+    {
+      "id": "config.source.file"
+    },
+    {
+      "id": "config.source.cli-override"
+    },
+    {
+      "id": "config.merge.deep"
+    },
+    {
+      "id": "config.merge.replace"
+    },
+    {
+      "id": "config.merge.priority"
+    },
+    {
+      "id": "config.validator.schema"
+    },
+    {
+      "id": "config.validator.typescript"
+    },
+    {
+      "id": "resource.discovery.filesystem"
+    },
+    {
+      "id": "resource.discovery.memory"
+    },
+    {
+      "id": "prompt.resource-loader.text"
+    },
+    {
+      "id": "prompt.resource-loader.markdown"
+    },
+    {
+      "id": "prompt.system-builder.common"
+    },
+    {
+      "id": "prompt.tool-renderer.common"
+    },
+    {
+      "id": "prompt.model-capability-adapter.common"
+    },
+    {
+      "id": "prompt.compaction-adapter.common"
+    },
+    {
+      "id": "ui.event-loop.shared-tui"
+    },
+    {
+      "id": "ui.renderer.noop"
+    },
+    {
+      "id": "ui.renderer.text"
+    },
+    {
+      "id": "ui.renderer.html"
+    },
+    {
+      "id": "ui.command-router.common"
+    },
+    {
+      "id": "ui.theme-registry.common"
+    },
+    {
+      "id": "ui.input-normalizer.common"
+    },
+    {
+      "id": "ui.snapshot.common"
+    },
+    {
+      "id": "pi.block.compatibility-metadata"
+    },
+    {
+      "id": "pi.capability.aliases"
+    },
+    {
+      "id": "pi.resource.grant-defaults"
+    },
+    {
+      "id": "pi.recipe.binding-aliases"
+    },
+    {
+      "id": "pi.conformance.product-gate"
+    },
+    {
+      "id": "pi.identity.id-generator"
+    },
+    {
+      "id": "pi.identity.clock-format"
+    },
+    {
+      "id": "pi.identity.workspace-resolver"
+    },
+    {
+      "id": "pi.event.envelope-bridge"
+    },
+    {
+      "id": "pi.event.runtime-bridge"
+    },
+    {
+      "id": "pi.extension.runtime-event-bridge"
+    },
+    {
+      "id": "pi.trace.debug-surface"
+    },
+    {
+      "id": "pi.runtime.module-catalog"
+    },
+    {
+      "id": "pi.runtime.module-aliases"
+    },
+    {
+      "id": "pi.runtime.capability-resolver"
+    },
+    {
+      "id": "pi.runtime.capability-aliases"
+    },
+    {
+      "id": "pi.runtime.binding-planner"
+    },
+    {
+      "id": "pi.runtime.binding-defaults"
+    },
+    {
+      "id": "pi.runtime.lifecycle-runner"
+    },
+    {
+      "id": "pi.runtime.lifecycle-defaults"
+    },
+    {
+      "id": "pi.runtime.assembly-graph"
+    },
+    {
+      "id": "pi.runtime.graph-labels"
+    },
+    {
+      "id": "pi.runtime.acceptance-controller.native-like"
+    },
+    {
+      "id": "pi.runtime.acceptance-evidence.native-like"
+    },
+    {
+      "id": "pi.session.id-generator"
+    },
+    {
+      "id": "pi.session.store.jsonl-v3"
+    },
+    {
+      "id": "pi.session.store.jsonl-v3-migrator"
+    },
+    {
+      "id": "pi.session.event-log.session-manager"
+    },
+    {
+      "id": "pi.session.reader.session-manager"
+    },
+    {
+      "id": "pi.session.writer.session-manager"
+    },
+    {
+      "id": "pi.session.message-store.session-manager"
+    },
+    {
+      "id": "pi.session.branching.session-manager"
+    },
+    {
+      "id": "pi.session.branch-graph.leaf-tree"
+    },
+    {
+      "id": "pi.session.branch-graph.active-leaf"
+    },
+    {
+      "id": "pi.session.projector.jsonl"
+    },
+    {
+      "id": "pi.session.projector.jsonl-v3"
+    },
+    {
+      "id": "pi.session.message-part-projector.native-like"
+    },
+    {
+      "id": "pi.session.pagination.active-path"
+    },
+    {
+      "id": "pi.session.context-selector.active-leaf"
+    },
+    {
+      "id": "pi.session.branch-summary"
+    },
+    {
+      "id": "pi.session.diff.session-manager"
+    },
+    {
+      "id": "pi.hook.extension-bridge"
+    },
+    {
+      "id": "pi.extension.loader"
+    },
+    {
+      "id": "pi.hook.observer-adapter"
+    },
+    {
+      "id": "pi.hook.handler-adapter"
+    },
+    {
+      "id": "pi.extension.event-mapper"
+    },
+    {
+      "id": "pi.hook.scheduler-defaults"
+    },
+    {
+      "id": "pi.extension.cleanup"
+    },
+    {
+      "id": "pi.hook.error-defaults"
+    },
+    {
+      "id": "pi.registry.register-tool"
+    },
+    {
+      "id": "pi.extension.dynamic-tool-bridge"
+    },
+    {
+      "id": "pi.registry.command"
+    },
+    {
+      "id": "pi.registry.provider-extension"
+    },
+    {
+      "id": "pi.extension.provider-registry-bridge"
+    },
+    {
+      "id": "pi.registry.message-renderer"
+    },
+    {
+      "id": "pi.extension.ui-registry-bridge"
+    },
+    {
+      "id": "pi.turn.input-normalizer"
+    },
+    {
+      "id": "pi.turn.context-builder"
+    },
+    {
+      "id": "pi.turn.prompt-assembler"
+    },
+    {
+      "id": "pi.turn.provider-request-builder"
+    },
+    {
+      "id": "pi.turn.provider-stream-runner"
+    },
+    {
+      "id": "pi.turn.stream-reducer"
+    },
+    {
+      "id": "pi.turn.tool-call-planner"
+    },
+    {
+      "id": "pi.turn.tool-executor"
+    },
+    {
+      "id": "pi.turn.result-recorder"
+    },
+    {
+      "id": "pi.turn.retry-policy"
+    },
+    {
+      "id": "pi.turn.continuation-policy"
+    },
+    {
+      "id": "pi.turn.compaction-policy"
+    },
+    {
+      "id": "pi.turn.stop-condition"
+    },
+    {
+      "id": "pi.agent-loop.request-boundary.native-like"
+    },
+    {
+      "id": "pi.agent-loop.final-summary.native-like"
+    },
+    {
+      "id": "pi.tool-pack.compatibility"
+    },
+    {
+      "id": "pi.tool.register-tool-bridge"
+    },
+    {
+      "id": "pi.tool.typebox-bridge"
+    },
+    {
+      "id": "pi.extension.typebox-bridge"
+    },
+    {
+      "id": "pi.tools.schema.native-like"
+    },
+    {
+      "id": "pi.tools.batch-scheduler.native-like"
+    },
+    {
+      "id": "pi.permission.event-bridge"
+    },
+    {
+      "id": "pi.tool.event-render-bridge"
+    },
+    {
+      "id": "pi.tool.result-event-bridge"
+    },
+    {
+      "id": "pi.tools.result-projector.native-like"
+    },
+    {
+      "id": "pi.tool.runtime-event-bridge"
+    },
+    {
+      "id": "pi.workspace-filesystem-bridge"
+    },
+    {
+      "id": "pi.process-runner-bridge"
+    },
+    {
+      "id": "pi.provider.transport-instrumentation"
+    },
+    {
+      "id": "pi.provider.auth-descriptor"
+    },
+    {
+      "id": "pi.provider.model-extension"
+    },
+    {
+      "id": "pi.provider.request-options"
+    },
+    {
+      "id": "pi.provider.parser-observer"
+    },
+    {
+      "id": "pi.provider.streaming-delta-recorder.native-like"
+    },
+    {
+      "id": "pi.provider.event-observer"
+    },
+    {
+      "id": "pi.provider.usage-renderer"
+    },
+    {
+      "id": "pi.provider.cassette-artifact"
+    },
+    {
+      "id": "pi.provider.extension-descriptor"
+    },
+    {
+      "id": "pi.provider.stream-projector.native-like"
+    },
+    {
+      "id": "pi.config.source"
+    },
+    {
+      "id": "pi.config.precedence"
+    },
+    {
+      "id": "pi.config.validator"
+    },
+    {
+      "id": "pi.resource.discovery.project-context"
+    },
+    {
+      "id": "pi.prompt.resource-loader.project-context"
+    },
+    {
+      "id": "pi.prompt.coding-agent-builder"
+    },
+    {
+      "id": "pi.prompt.tool-renderer.runtime-tools"
+    },
+    {
+      "id": "pi.prompt.model-capability-adapter.runtime-model"
+    },
+    {
+      "id": "pi.prompt.compaction-adapter.summary-mode"
+    },
+    {
+      "id": "pi.ui.event-loop"
+    },
+    {
+      "id": "pi.tui.shell"
+    },
+    {
+      "id": "pi.ui.renderer"
+    },
+    {
+      "id": "pi.ui.command-router"
+    },
+    {
+      "id": "pi.ui.theme-registry"
+    },
+    {
+      "id": "pi.ui.input-normalizer"
+    },
+    {
+      "id": "pi.ui.snapshot"
+    }
+  ],
+  "productShells": [
+    {
+      "id": "pi.product-shell.sdk"
+    },
+    {
+      "id": "pi.product-shell.harness"
+    },
+    {
+      "id": "pi.product-shell.cli"
+    },
+    {
+      "id": "pi.product-shell.tui"
+    },
+    {
+      "id": "pi.product-shell.rpc"
+    },
+    {
+      "id": "pi.product-shell.web-ui"
+    },
+    {
+      "id": "pi.product-shell.server"
+    },
+    {
+      "id": "pi.product-shell.package-manager"
+    },
+    {
+      "id": "pi.product-shell.extension-examples"
+    },
+    {
+      "id": "pi.product-shell.browser-smoke"
+    },
+    {
+      "id": "pi.product-shell.release-hardening"
+    }
+  ],
+  "bindings": [
+    {
+      "port": "block.manifest",
+      "module": "pi.block.compatibility-metadata"
+    },
+    {
+      "port": "capability.ref",
+      "module": "pi.capability.aliases"
+    },
+    {
+      "port": "resource.grant",
+      "module": "pi.resource.grant-defaults"
+    },
+    {
+      "port": "recipe.binding",
+      "module": "pi.recipe.binding-aliases"
+    },
+    {
+      "port": "conformance.ref",
+      "module": "pi.conformance.product-gate"
+    },
+    {
+      "port": "identity.id-generator",
+      "module": "pi.identity.id-generator"
+    },
+    {
+      "port": "identity.clock",
+      "module": "pi.identity.clock-format"
+    },
+    {
+      "port": "identity.workspace-resolver",
+      "module": "pi.identity.workspace-resolver"
+    },
+    {
+      "port": "event.envelope",
+      "module": "pi.event.envelope-bridge"
+    },
+    {
+      "port": "event.log",
+      "module": "pi.event.runtime-bridge"
+    },
+    {
+      "port": "trace.recorder",
+      "module": "pi.trace.debug-surface"
+    },
+    {
+      "port": "product.shell",
+      "module": "pi.product-shell.sdk"
+    },
+    {
+      "port": "runtime.module-catalog",
+      "module": "pi.runtime.module-catalog"
+    },
+    {
+      "port": "runtime.capability-resolver",
+      "module": "pi.runtime.capability-resolver"
+    },
+    {
+      "port": "runtime.binding-planner",
+      "module": "pi.runtime.binding-planner"
+    },
+    {
+      "port": "runtime.lifecycle-runner",
+      "module": "pi.runtime.lifecycle-runner"
+    },
+    {
+      "port": "runtime.assembly-graph",
+      "module": "pi.runtime.assembly-graph"
+    },
+    {
+      "port": "runtime.acceptance-controller",
+      "module": "pi.runtime.acceptance-controller.native-like"
+    },
+    {
+      "port": "runtime.acceptance-evidence",
+      "module": "pi.runtime.acceptance-evidence.native-like"
+    },
+    {
+      "port": "session.id-generator",
+      "module": "pi.session.id-generator"
+    },
+    {
+      "port": "session.store",
+      "module": "pi.session.store.jsonl-v3"
+    },
+    {
+      "port": "session.event-log",
+      "module": "pi.session.event-log.session-manager"
+    },
+    {
+      "port": "session.reader",
+      "module": "pi.session.reader.session-manager"
+    },
+    {
+      "port": "session.writer",
+      "module": "pi.session.writer.session-manager"
+    },
+    {
+      "port": "session.message-store",
+      "module": "pi.session.message-store.session-manager"
+    },
+    {
+      "port": "session.branching",
+      "module": "pi.session.branching.session-manager"
+    },
+    {
+      "port": "session.branch-graph",
+      "module": "pi.session.branch-graph.active-leaf"
+    },
+    {
+      "port": "session.projector",
+      "module": "pi.session.projector.jsonl-v3"
+    },
+    {
+      "port": "session.message-part-projector",
+      "module": "pi.session.message-part-projector.native-like"
+    },
+    {
+      "port": "session.pagination",
+      "module": "pi.session.pagination.active-path"
+    },
+    {
+      "port": "session.context-selector",
+      "module": "pi.session.context-selector.active-leaf"
+    },
+    {
+      "port": "session.compaction-records",
+      "module": "pi.session.branch-summary"
+    },
+    {
+      "port": "session.diff",
+      "module": "pi.session.diff.session-manager"
+    },
+    {
+      "port": "hook.bus",
+      "module": "pi.extension.loader"
+    },
+    {
+      "port": "hook.observer-chain",
+      "module": "pi.hook.observer-adapter"
+    },
+    {
+      "port": "hook.handler-chain",
+      "module": "pi.extension.event-mapper"
+    },
+    {
+      "port": "hook.scheduler",
+      "module": "pi.hook.scheduler-defaults"
+    },
+    {
+      "port": "hook.cleanup-scope",
+      "module": "pi.extension.cleanup"
+    },
+    {
+      "port": "hook.error-policy",
+      "module": "pi.hook.error-defaults"
+    },
+    {
+      "port": "tool.registry",
+      "module": "pi.extension.dynamic-tool-bridge"
+    },
+    {
+      "port": "registry.command",
+      "module": "pi.registry.command"
+    },
+    {
+      "port": "registry.provider",
+      "module": "pi.extension.provider-registry-bridge"
+    },
+    {
+      "port": "registry.ui",
+      "module": "pi.extension.ui-registry-bridge"
+    },
+    {
+      "port": "turn.input-normalizer",
+      "module": "pi.turn.input-normalizer"
+    },
+    {
+      "port": "turn.context-builder",
+      "module": "pi.turn.context-builder"
+    },
+    {
+      "port": "turn.prompt-assembler",
+      "module": "pi.turn.prompt-assembler"
+    },
+    {
+      "port": "turn.provider-request-builder",
+      "module": "pi.turn.provider-request-builder"
+    },
+    {
+      "port": "turn.provider-stream-runner",
+      "module": "pi.turn.provider-stream-runner"
+    },
+    {
+      "port": "turn.stream-reducer",
+      "module": "pi.turn.stream-reducer"
+    },
+    {
+      "port": "turn.tool-call-planner",
+      "module": "pi.turn.tool-call-planner"
+    },
+    {
+      "port": "turn.tool-executor",
+      "module": "pi.turn.tool-executor"
+    },
+    {
+      "port": "turn.result-recorder",
+      "module": "pi.turn.result-recorder"
+    },
+    {
+      "port": "turn.retry-policy",
+      "module": "pi.turn.retry-policy"
+    },
+    {
+      "port": "turn.continuation-policy",
+      "module": "pi.turn.continuation-policy"
+    },
+    {
+      "port": "turn.compaction-policy",
+      "module": "pi.turn.compaction-policy"
+    },
+    {
+      "port": "turn.stop-condition",
+      "module": "pi.turn.stop-condition"
+    },
+    {
+      "port": "agent-loop.request-boundary",
+      "module": "pi.agent-loop.request-boundary.native-like"
+    },
+    {
+      "port": "agent-loop.final-summary",
+      "module": "pi.agent-loop.final-summary.native-like"
+    },
+    {
+      "port": "tools",
+      "module": "pi.tool-pack.compatibility"
+    },
+    {
+      "port": "tool.definition",
+      "module": "pi.tool.register-tool-bridge"
+    },
+    {
+      "port": "tool.schema-adapter",
+      "module": "pi.tool.typebox-bridge"
+    },
+    {
+      "port": "tools.schema",
+      "module": "pi.tools.schema.native-like"
+    },
+    {
+      "port": "tools.batch-scheduler",
+      "module": "pi.tools.batch-scheduler.native-like"
+    },
+    {
+      "port": "tool.permission-policy",
+      "module": "pi.permission.event-bridge"
+    },
+    {
+      "port": "tool.executor",
+      "module": "pi.tool.event-render-bridge"
+    },
+    {
+      "port": "tool.result-normalizer",
+      "module": "pi.tool.result-event-bridge"
+    },
+    {
+      "port": "tools.result-projector",
+      "module": "pi.tools.result-projector.native-like"
+    },
+    {
+      "port": "tool.audit-log",
+      "module": "pi.tool.runtime-event-bridge"
+    },
+    {
+      "port": "filesystem.port",
+      "module": "pi.workspace-filesystem-bridge"
+    },
+    {
+      "port": "process-runner.port",
+      "module": "pi.process-runner-bridge"
+    },
+    {
+      "port": "provider.transport",
+      "module": "pi.provider.transport-instrumentation"
+    },
+    {
+      "port": "provider.auth",
+      "module": "pi.provider.auth-descriptor"
+    },
+    {
+      "port": "provider.model-registry",
+      "module": "pi.provider.model-extension"
+    },
+    {
+      "port": "provider.request-shape",
+      "module": "pi.provider.request-options"
+    },
+    {
+      "port": "provider.stream-parser",
+      "module": "pi.provider.parser-observer"
+    },
+    {
+      "port": "provider.streaming-delta-recorder",
+      "module": "pi.provider.streaming-delta-recorder.native-like"
+    },
+    {
+      "port": "provider.event-normalizer",
+      "module": "pi.provider.event-observer"
+    },
+    {
+      "port": "provider.usage-normalizer",
+      "module": "pi.provider.usage-renderer"
+    },
+    {
+      "port": "provider.cassette",
+      "module": "pi.provider.cassette-artifact"
+    },
+    {
+      "port": "provider.stream",
+      "module": "pi.provider.extension-descriptor"
+    },
+    {
+      "port": "provider.stream-projector",
+      "module": "pi.provider.stream-projector.native-like"
+    },
+    {
+      "port": "config.source",
+      "module": "pi.config.source"
+    },
+    {
+      "port": "config.merge-strategy",
+      "module": "pi.config.precedence"
+    },
+    {
+      "port": "config.validator",
+      "module": "pi.config.validator"
+    },
+    {
+      "port": "resource.discovery",
+      "module": "pi.resource.discovery.project-context"
+    },
+    {
+      "port": "prompt.resource-loader",
+      "module": "pi.prompt.resource-loader.project-context"
+    },
+    {
+      "port": "prompt.system-builder",
+      "module": "pi.prompt.coding-agent-builder"
+    },
+    {
+      "port": "prompt.tool-renderer",
+      "module": "pi.prompt.tool-renderer.runtime-tools"
+    },
+    {
+      "port": "prompt.model-capability-adapter",
+      "module": "pi.prompt.model-capability-adapter.runtime-model"
+    },
+    {
+      "port": "prompt.compaction-adapter",
+      "module": "pi.prompt.compaction-adapter.summary-mode"
+    },
+    {
+      "port": "ui.event-loop",
+      "module": "pi.ui.event-loop"
+    },
+    {
+      "port": "ui.renderer",
+      "module": "pi.ui.renderer"
+    },
+    {
+      "port": "ui.command-router",
+      "module": "pi.ui.command-router"
+    },
+    {
+      "port": "ui.theme-registry",
+      "module": "pi.ui.theme-registry"
+    },
+    {
+      "port": "ui.input-normalizer",
+      "module": "pi.ui.input-normalizer"
+    },
+    {
+      "port": "ui.snapshot",
+      "module": "pi.ui.snapshot"
+    }
+  ],
+  "requiredCapabilities": [
+    "block.manifest",
+    "capability.ref",
+    "resource.grant",
+    "recipe.binding",
+    "conformance.ref",
+    "identity.id-generator",
+    "identity.clock",
+    "identity.workspace-resolver",
+    "event.envelope",
+    "event.log",
+    "trace.recorder",
+    "product.shell",
+    "runtime.module-catalog",
+    "runtime.capability-resolver",
+    "runtime.binding-planner",
+    "runtime.lifecycle-runner",
+    "runtime.assembly-graph",
+    "runtime.acceptance-controller",
+    "runtime.acceptance-evidence",
+    "session.id-generator",
+    "session.store",
+    "session.event-log",
+    "session.reader",
+    "session.writer",
+    "session.message-store",
+    "session.branching",
+    "session.branch-graph",
+    "session.projector",
+    "session.message-part-projector",
+    "session.pagination",
+    "session.context-selector",
+    "session.compaction-records",
+    "session.diff",
+    "hook.bus",
+    "hook.observer-chain",
+    "hook.handler-chain",
+    "hook.scheduler",
+    "hook.cleanup-scope",
+    "hook.error-policy",
+    "tool.registry",
+    "registry.command",
+    "registry.provider",
+    "registry.ui",
+    "turn.input-normalizer",
+    "turn.context-builder",
+    "turn.prompt-assembler",
+    "turn.provider-request-builder",
+    "turn.provider-stream-runner",
+    "turn.stream-reducer",
+    "turn.tool-call-planner",
+    "turn.tool-executor",
+    "turn.result-recorder",
+    "turn.retry-policy",
+    "turn.continuation-policy",
+    "turn.compaction-policy",
+    "turn.stop-condition",
+    "agent-loop.request-boundary",
+    "agent-loop.final-summary",
+    "tools",
+    "tool.definition",
+    "tool.schema-adapter",
+    "tools.schema",
+    "tools.batch-scheduler",
+    "tool.permission-policy",
+    "tool.executor",
+    "tool.result-normalizer",
+    "tools.result-projector",
+    "tool.audit-log",
+    "filesystem.port",
+    "process-runner.port",
+    "provider.transport",
+    "provider.auth",
+    "provider.model-registry",
+    "provider.request-shape",
+    "provider.stream-parser",
+    "provider.streaming-delta-recorder",
+    "provider.event-normalizer",
+    "provider.usage-normalizer",
+    "provider.cassette",
+    "provider.stream",
+    "provider.stream-projector",
+    "config.source",
+    "config.merge-strategy",
+    "config.validator",
+    "resource.discovery",
+    "prompt.resource-loader",
+    "prompt.system-builder",
+    "prompt.tool-renderer",
+    "prompt.model-capability-adapter",
+    "prompt.compaction-adapter",
+    "ui.event-loop",
+    "ui.renderer",
+    "ui.command-router",
+    "ui.theme-registry",
+    "ui.input-normalizer",
+    "ui.snapshot"
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "fixtureVersion": 1,
+  "product": "nanobot",
+  "nativeVersion": "c018c3fb6a5cedf2dcd7bbd0bf4fce5eb9b54bf7",
+  "taskID": "branch-or-fork",
+  "providerShape": {
+    "provider": "cassette",
+    "modelID": "fake-model",
+    "deterministic": true,
+    "requests": 1
+  },
+  "cadenceSignature": {
+    "level": "exact-cadence",
+    "providerRequests": [
+      {
+        "index": 0,
+        "modelID": "fake-model",
+        "toolCallCount": 0,
+        "eventCount": 31,
+        "source": "native-cli",
+        "visibility": "observed",
+        "boundaryEvidence": "cli-event"
+      }
+    ],
+    "assistantTurns": [
+      {
+        "index": 0,
+        "text": "has-text",
+        "partTypes": [
+          "text"
+        ],
+        "toolCallCount": 0
+      }
+    ],
+    "toolSequence": [],
+    "toolBatches": [],
+    "sessionWrites": [
+      "session.start",
+      "message.start",
+      "message.end",
+      "message.start",
+      "message.end",
+      "session.idle"
+    ],
+    "traceEvents": [
+      "input",
+      "turn.pipeline.trace",
+      "session.start",
+      "turn.start",
+      "message.start",
+      "message.end",
+      "before.agent.start",
+      "turn.pipeline.trace",
+      "context",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "agent.start",
+      "provider.request.before",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "acceptance.accepted-early",
+      "provider.response.after",
+      "turn.pipeline.trace",
+      "turn.pipeline.trace",
+      "message.start",
+      "turn.pipeline.trace",
+      "message.end",
+      "agent.end",
+      "turn.end",
+      "session.idle"
+    ],
+    "costShape": {
+      "providerRequests": 1,
+      "toolCalls": 0,
+      "retries": 0,
+      "syntheticContinues": 0,
+      "contextCompacted": false,
+      "messageCount": 2
+    }
+  },
+  "observationShape": {
+    "providerBoundary": {
+      "visibility": "per-request",
+      "lossiness": "semantic",
+      "evidence": "cli-event"
+    },
+    "streamDelta": {
+      "visibility": "semantic",
+      "lossiness": "semantic",
+      "evidence": "stream-event"
+    },
+    "toolLifecycle": {
+      "visibility": "none",
+      "lossiness": "unobservable",
+      "evidence": "unavailable"
+    },
+    "messageWrite": {
+      "visibility": "storage-event",
+      "lossiness": "semantic",
+      "evidence": "message-store"
+    },
+    "acceptance": {
+      "visibility": "explicit-event",
+      "lossiness": "semantic",
+      "evidence": "runtime-policy"
+    },
+    "workspace": {
+      "visibility": "diff-only",
+      "lossiness": "inferred",
+      "evidence": "workspace-diff"
+    }
+  },
+  "nativeEvents": [
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before.agent.start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "acceptance.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "nativeChunks": [
+    {
+      "index": 0,
+      "type": "input",
+      "semanticClass": "control"
+    },
+    {
+      "index": 1,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 2,
+      "type": "session.start",
+      "semanticClass": "session"
+    },
+    {
+      "index": 3,
+      "type": "turn.start",
+      "semanticClass": "control"
+    },
+    {
+      "index": 4,
+      "type": "message.start",
+      "semanticClass": "message"
+    },
+    {
+      "index": 5,
+      "type": "message.end",
+      "semanticClass": "message"
+    },
+    {
+      "index": 6,
+      "type": "before.agent.start",
+      "semanticClass": "control"
+    },
+    {
+      "index": 7,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 8,
+      "type": "context",
+      "semanticClass": "message"
+    },
+    {
+      "index": 9,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 10,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 11,
+      "type": "agent.start",
+      "semanticClass": "control"
+    },
+    {
+      "index": 12,
+      "type": "provider.request.before",
+      "semanticClass": "control"
+    },
+    {
+      "index": 13,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 14,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 15,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 16,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 17,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 18,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 19,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 20,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 21,
+      "type": "acceptance.accepted-early",
+      "semanticClass": "acceptance"
+    },
+    {
+      "index": 22,
+      "type": "provider.response.after",
+      "semanticClass": "control"
+    },
+    {
+      "index": 23,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 24,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 25,
+      "type": "message.start",
+      "semanticClass": "message"
+    },
+    {
+      "index": 26,
+      "type": "turn.pipeline.trace",
+      "semanticClass": "control"
+    },
+    {
+      "index": 27,
+      "type": "message.end",
+      "semanticClass": "message"
+    },
+    {
+      "index": 28,
+      "type": "agent.end",
+      "semanticClass": "control"
+    },
+    {
+      "index": 29,
+      "type": "turn.end",
+      "semanticClass": "control"
+    },
+    {
+      "index": 30,
+      "type": "session.idle",
+      "semanticClass": "session"
+    }
+  ],
+  "messageParts": [
+    "text"
+  ],
+  "projectionLosses": [
+    {
+      "field": "providerBoundary",
+      "lossiness": "semantic",
+      "reason": "providerBoundary is recorded with per-request visibility from cli-event evidence."
+    },
+    {
+      "field": "streamDelta",
+      "lossiness": "semantic",
+      "reason": "streamDelta is recorded with semantic visibility from stream-event evidence."
+    },
+    {
+      "field": "toolLifecycle",
+      "lossiness": "unobservable",
+      "reason": "toolLifecycle is recorded with none visibility from unavailable evidence."
+    },
+    {
+      "field": "messageWrite",
+      "lossiness": "semantic",
+      "reason": "messageWrite is recorded with storage-event visibility from message-store evidence."
+    },
+    {
+      "field": "acceptance",
+      "lossiness": "semantic",
+      "reason": "acceptance is recorded with explicit-event visibility from runtime-policy evidence."
+    },
+    {
+      "field": "workspace",
+      "lossiness": "inferred",
+      "reason": "workspace is recorded with diff-only visibility from workspace-diff evidence."
+    }
+  ],
+  "redactionSummary": {
+    "credentials": "redacted",
+    "hostPaths": "normalized",
+    "tokenUsage": "omitted"
+  }
+}

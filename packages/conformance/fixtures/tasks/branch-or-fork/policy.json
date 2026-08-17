@@ -1,0 +1,20 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 2,
+  "allowedTools": [],
+  "writePaths": [],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Session fork smoke completed."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["Session fork smoke completed"],
+    "sessionForked": true,
+    "sessionForkMessageCountAtLeast": 2,
+    "workspaceDiffCount": 0
+  }
+}

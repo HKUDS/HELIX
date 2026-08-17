@@ -1,0 +1,150 @@
+{
+  "taskID": "multi-file-refactor",
+  "product": "pi-mono",
+  "mode": "original",
+  "transcriptSummary": {
+    "visibleText": "Rename the math helper from sum to add across src/math.ts and src/index.ts without changing behavior.\nRenaming the exported helper and its import.\n[tool:edit]\n[tool:edit]\nEdited /tmp/helix-task-multi-file-refactor-pi-mono-original-qqXmq8/workspace/src/math.ts (1 replacement)\nEdited /tmp/helix-task-multi-file-refactor-pi-mono-original-qqXmq8/workspace/src/index.ts (1 replacement)\nRenamed sum to add across src/math.ts and src/index.ts without changing behavior.",
+    "messageCount": 2
+  },
+  "traceEvents": [
+    "turn.pipeline.trace",
+    "input",
+    "turn.pipeline.trace",
+    "session.start",
+    "turn.start",
+    "message.start",
+    "message.end",
+    "before_agent_start",
+    "turn.pipeline.trace",
+    "context",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "agent.start",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "tool.call",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "tool.execution_start",
+    "tool.result",
+    "tool.execution_end",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "provider.request.before",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "runtime.accepted-early",
+    "provider.response.after",
+    "turn.pipeline.trace",
+    "turn.pipeline.trace",
+    "message.start",
+    "turn.pipeline.trace",
+    "message.end",
+    "agent.end",
+    "turn.end",
+    "session.idle"
+  ],
+  "toolEvidence": {
+    "calls": [
+      {
+        "toolName": "edit",
+        "input": {
+          "path": "src/math.ts",
+          "oldText": "export function sum(left: number, right: number): number {",
+          "newText": "export function add(left: number, right: number): number {"
+        },
+        "status": "completed"
+      },
+      {
+        "toolName": "edit",
+        "input": {
+          "path": "src/index.ts",
+          "oldText": "import { sum } from \"./math\";\n\nexport function calculateTotal(values: number[]): number {\n  return values.reduce((total, value) => sum(total, value), 0);\n}",
+          "newText": "import { add } from \"./math\";\n\nexport function calculateTotal(values: number[]): number {\n  return values.reduce((total, value) => add(total, value), 0);\n}"
+        },
+        "status": "completed"
+      }
+    ],
+    "results": [
+      {
+        "toolName": "edit",
+        "text": "Edited /tmp/helix-task-multi-file-refactor-pi-mono-original-qqXmq8/workspace/src/math.ts (1 replacement)"
+      },
+      {
+        "toolName": "edit",
+        "text": "Edited /tmp/helix-task-multi-file-refactor-pi-mono-original-qqXmq8/workspace/src/index.ts (1 replacement)"
+      }
+    ]
+  },
+  "workspaceDiff": [
+    {
+      "path": "src/index.ts",
+      "status": "modified",
+      "before": "import { sum } from \"./math\";\n\nexport function calculateTotal(values: number[]): number {\n  return values.reduce((total, value) => sum(total, value), 0);\n}\n",
+      "after": "import { add } from \"./math\";\n\nexport function calculateTotal(values: number[]): number {\n  return values.reduce((total, value) => add(total, value), 0);\n}\n"
+    },
+    {
+      "path": "src/math.ts",
+      "status": "modified",
+      "before": "export function sum(left: number, right: number): number {\n  return left + right;\n}\n",
+      "after": "export function add(left: number, right: number): number {\n  return left + right;\n}\n"
+    }
+  ],
+  "checks": [
+    {
+      "id": "output.includes.renamed-sum-to-add",
+      "ok": true,
+      "message": "Visible output includes Renamed sum to add."
+    },
+    {
+      "id": "output.includes.without-changing-behavior",
+      "ok": true,
+      "message": "Visible output includes without changing behavior."
+    },
+    {
+      "id": "file.includes.src/math.ts.export-function-add",
+      "ok": true,
+      "message": "src/math.ts includes export function add."
+    },
+    {
+      "id": "file.includes.src/index.ts.import-add",
+      "ok": true,
+      "message": "src/index.ts includes import { add }."
+    },
+    {
+      "id": "file.includes.src/index.ts.add-total-value",
+      "ok": true,
+      "message": "src/index.ts includes add(total, value)."
+    },
+    {
+      "id": "tool.called.edit",
+      "ok": true,
+      "message": "Tool edit was called."
+    },
+    {
+      "id": "workspace.diff.exact",
+      "ok": true,
+      "message": "Workspace diff exactly matches the expected path/status list."
+    }
+  ],
+  "gaps": []
+}

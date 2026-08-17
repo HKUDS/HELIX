@@ -1,0 +1,65 @@
+{
+  "suite": "smoke",
+  "timeoutMs": 30000,
+  "maxSteps": 5,
+  "allowedTools": ["bash", "edit"],
+  "writePaths": ["src/add.js"],
+  "provider": {
+    "steps": [
+      {
+        "assistantText": "Running the failing test first.",
+        "toolCalls": [
+          {
+            "toolName": "bash",
+            "input": {
+              "command": "node test.mjs || true"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Fixing the add implementation.",
+        "toolCalls": [
+          {
+            "toolName": "edit",
+            "input": {
+              "path": "src/add.js",
+              "oldText": "return a - b;",
+              "newText": "return a + b;"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Re-running the test after the fix.",
+        "toolCalls": [
+          {
+            "toolName": "bash",
+            "input": {
+              "command": "node test.mjs"
+            }
+          }
+        ]
+      },
+      {
+        "assistantText": "Fixed src/add.js; tests passed with expected 5."
+      }
+    ]
+  },
+  "expected": {
+    "visibleAnswerIncludes": ["expected 5", "tests passed"],
+    "files": {
+      "src/add.js": {
+        "includes": ["return a + b;"]
+      }
+    },
+    "toolNames": ["bash", "edit"],
+    "toolResultIncludes": ["tests passed: expected 5"],
+    "workspaceDiffExact": [
+      {
+        "path": "src/add.js",
+        "status": "modified"
+      }
+    ]
+  }
+}

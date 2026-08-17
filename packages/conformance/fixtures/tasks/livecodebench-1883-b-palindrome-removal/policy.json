@@ -1,0 +1,28 @@
+{
+  "suite": "livecodebench",
+  "timeoutMs": 300000,
+  "maxSteps": 12,
+  "allowedTools": ["read", "bash", "edit", "write", "glob", "find", "grep", "ls"],
+  "writePaths": ["solution.py"],
+  "envAllowlist": ["PATH", "LANG", "LC_ALL", "TZ", "SSL_CERT_FILE", "NODE_EXTRA_CA_CERTS", "HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY", "ANTHROPIC_API_KEY", "HELIX_LIVE_PROVIDER", "HELIX_LIVE_MODEL", "ANTHROPIC_MODEL", "HELIX_LIVE_BASE_URL"],
+  "expected": {
+    "files": {
+      "solution.py": {
+        "includes": ["Counter", "odd", "k + 1"]
+      }
+    },
+    "toolNames": ["bash"],
+    "toolResultIncludesByTool": [
+      {
+        "toolName": "bash",
+        "includes": ["livecodebench-1883-b tests passed"]
+      }
+    ],
+    "workspaceDiffExact": [
+      {
+        "path": "solution.py",
+        "status": "modified"
+      }
+    ]
+  }
+}

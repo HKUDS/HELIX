@@ -1,0 +1,14 @@
+{
+  "name": "@helix/lego-hooks",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@helix/contracts": "file:../contracts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./hook-atoms": "./src/hook-atoms.ts",
+    "./port-fixtures": "./src/port-fixtures.ts"
+  }
+}

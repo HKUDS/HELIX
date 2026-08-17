@@ -1,0 +1,13 @@
+{
+  "name": "@helix/external-tools",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@helix/recipes": "file:../recipes"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "phase": "rebuild",
+  "task_id": "lcb_001_two_sum",
+  "task_title": "Two Sum with Indices",
+  "prompt": "Write python solution for Two Sum with Indices.",
+  "harness_id": "pi-mono",
+  "steps": 2,
+  "latency_sec": 2.5,
+  "assistant_solution": "```python\ndef two_sum(nums, target):\n    lookup = {}\n    for i, num in enumerate(nums):\n        if target - num in lookup:\n            return [lookup[target - num], i]\n        lookup[num] = i\n    return []\n```",
+  "passed": true
+}

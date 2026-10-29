@@ -1,0 +1,22 @@
+# Core Cloud & Inference Server
+modal>=0.63.0
+vllm>=0.6.3
+openai>=1.50.0
+
+# LLM Fine-Tuning & Alignment (Unsloth + HuggingFace TRL)
+# Note: In Modal environments, Unsloth is installed via pip with wheel matching CUDA version
+transformers>=4.45.0
+trl>=0.11.0
+datasets>=3.0.0
+accelerate>=0.34.0
+peft>=0.13.0
+bitsandbytes>=0.44.0
+
+# Data Processing & Utilities
+pyyaml>=6.0.2
+pandas>=2.2.0
+matplotlib>=3.9.0
+tqdm>=4.66.0
+python-dotenv>=1.0.1
+pydantic>=2.8.0
+

@@ -1,0 +1,25 @@
+{
+  "phase": "build",
+  "task_id": "lcb_001_two_sum",
+  "task_title": "Two Sum with Indices",
+  "difficulty": "easy",
+  "prompt": "Write a Python function `two_sum(nums: list[int], target: int) -> list[int]` that returns the indices of the two numbers in `nums` that add up to `target`. You may assume each input has exactly one solution and you may not use the same element twice. Return indices in ascending order.",
+  "harness_id": "pi-mono",
+  "harness_category": "standard",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 1,
+  "latency_sec": 19.531,
+  "assistant_solution": "```python\ndef two_sum(nums: list[int], target: int) -> list[int]:\n    # Dictionary to store the value and its index\n    num_to_index = {}\n    \n    # Iterate through the list with index and value\n    for i, num in enumerate(nums):\n        # Calculate the complement\n        complement = target - num\n        \n        # Check if the complement exists in the dictionary\n        if complement in num_to_index:\n            # Return the indices in ascending order\n            return sorted([num_to_index[complement], i])\n        \n        # Add the current value and its index to the dictionary\n        num_to_index[num] = i\n\n# Example usage:\nnums = [2, 7, 11, 15]\ntarget = 9\nprint(two_sum(nums, target))  # Output: [0, 1]\n```",
+  "passed": true,
+  "raw_helix_transcript": [
+    {
+      "step": 1,
+      "role": "assistant",
+      "content": "Certainly! To solve this problem efficiently, we can use a hash map (dictionary) to store the values and their corresponding indices as we iterate through the list. This allows us to check in constant time if the complement of the current number (i.e., `target - nums[i]`) exists in the dictionary.\n\nHere's the step-by-step approach:\n\n1. Initialize an empty dictionary to store the values and their indices.\n2. Iterate through the list with both the index and the value.\n3. For each value, calculate its complement by subtracting it from the target.\n4. Check if the complement exists in the dictionary:\n   - If it does, return the indices of the complement and the current value in ascending order.\n   - If it doesn't, add the current value and its index to the dictionary.\n5. Since the problem guarantees exactly one solution, the loop will always find and return the result.\n\nHere is the complete Python implementation:\n\n```python\ndef two_sum(nums: list[int], target: int) -> list[int]:\n    # Dictionary to store the value and its index\n    num_to_index = {}\n    \n    # Iterate through the list with index and value\n    for i, num in enumerate(nums):\n        # Calculate the complement\n        complement = target - num\n        \n        # Check if the complement exists in the dictionary\n        if complement in num_to_index:\n            # Return the indices in ascending order\n            return sorted([num_to_index[complement], i])\n        \n        # Add the current value and its index to the dictionary\n        num_to_index[num] = i\n\n# Example usage:\nnums = [2, 7, 11, 15]\ntarget = 9\nprint(two_sum(nums, target))  # Output: [0, 1]\n```\n\n### Explanation:\n- **Dictionary (`num_to_index`)**: This stores each number and its index as we iterate through the list. This allows us to quickly look up whether the complement of the current number exists in the list.\n- **Iteration**: We use `enumerate` to get both the index `i` and the value `num` at each iteration.\n- **Complement Calculation**: For each number, we calculate its complement by subtracting the number from the target.\n- **Check Complement**: If the complement is found in the dictionary, we return the indices of the complement and the current number in ascending order.\n- **Add to Dictionary**: If the complement is not found, we add the current number and its index to the dictionary.\n\nThis approach ensures that we only pass through the list once, making the time complexity O(n), where n is the length of the list. The space complexity is also O(n) due to the additional storage used by the dictionary.",
+      "finish_reason": "stop"
+    }
+  ],
+  "error": "",
+  "timestamp": "2026-10-28T18:32:41.056289+00:00"
+}

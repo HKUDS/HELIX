@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_004_reverse_linked_list",
+  "task_title": "Reverse a Linked List",
+  "difficulty": "easy",
+  "prompt": "Define a `ListNode` class with `val` and `next` attributes. Write a Python function `reverse_list(head: ListNode | None) -> ListNode | None` that reverses a singly linked list in-place and returns the new head.",
+  "harness_id": "minimal",
+  "harness_category": "minimal",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 5,
+  "latency_sec": 5.8,
+  "assistant_solution": "```python\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val; self.next = next\ndef reverse_list(head):\n    return head  # not implemented\n```",
+  "passed": false,
+  "raw_helix_transcript": [],
+  "error": "Traceback (most recent call last):\n  File \"<string>\", line 20, in <module>\nAssertionError",
+  "timestamp": "2026-10-28T18:30:49.282473+00:00"
+}

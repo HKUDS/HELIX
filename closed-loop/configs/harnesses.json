@@ -1,0 +1,61 @@
+{
+  "description": "HELIX Closed-Loop 4 Representative Harness Configurations for Differential Evaluation & Sibling Trajectory Distillation",
+  "harnesses": [
+    {
+      "id": "minimal",
+      "recipe_id": "coding-agent.minimal",
+      "recipe_path": "recipes/minimal/recipe.json",
+      "cli_product": null,
+      "role": "Minimal Harness (Zero scaffolding / Baseline minimum)",
+      "category": "minimal",
+      "context_strategy": "minimal-transcript",
+      "permission_strategy": "allow-echo-only",
+      "shell_policy": "disabled",
+      "system_prompt_style": "bare",
+      "max_steps": 3,
+      "notes": "Absolute minimal harness. No session management, no shell, no retry. Reflects raw LLM capability without scaffolding. cli_product is null because 'coding-agent.minimal' is a recipe ID only — eval script uses direct OpenAI-compatible API calls with a bare system prompt to emulate this harness."
+    },
+    {
+      "id": "pi-mono",
+      "recipe_id": "pi-mono",
+      "recipe_path": "recipes/pi-mono/recipe.json",
+      "cli_product": "pi-mono",
+      "role": "Pi Mono Harness (Standard Mono Baseline)",
+      "category": "standard",
+      "context_strategy": "pi-active-leaf-context",
+      "permission_strategy": "pi-extension-events",
+      "shell_policy": "node-process",
+      "system_prompt_style": "structured",
+      "max_steps": 8,
+      "notes": "Single-agent harness with active-leaf context management and event-driven permissions. Represents the standard HELIX baseline with moderate scaffolding."
+    },
+    {
+      "id": "hermes-agent",
+      "recipe_id": "hermes-agent",
+      "recipe_path": "recipes/hermes-agent/recipe.json",
+      "cli_product": "hermes-agent",
+      "role": "Hermes Agent Harness (Session-Oriented Structured)",
+      "category": "advanced",
+      "context_strategy": "hermes-stable-context-prompt-builder",
+      "permission_strategy": "hermes-shell-hooks",
+      "shell_policy": "python-subprocess",
+      "system_prompt_style": "hermes-chatml",
+      "max_steps": 12,
+      "notes": "Hermes session variant with stable multi-turn context builder and Python subprocess shell hooks. Strong session memory enables iterative debugging across steps."
+    },
+    {
+      "id": "opencode",
+      "recipe_id": "opencode",
+      "recipe_path": "recipes/opencode/recipe.json",
+      "cli_product": "opencode",
+      "role": "OpenCode Harness (Feature-Rich Plugin System)",
+      "category": "complex",
+      "context_strategy": "opencode-prompt-context",
+      "permission_strategy": "opencode-plugin-hooks",
+      "shell_policy": "bun-dollar",
+      "system_prompt_style": "opencode-detailed",
+      "max_steps": 15,
+      "notes": "Most feature-rich harness: optimised prompt context, multi-plugin hooks, Bun/Node runtime. Expected to produce the cleanest solutions — its traces form the primary SFT source."
+    }
+  ]
+}

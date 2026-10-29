@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_007_climbing_stairs",
+  "task_title": "Climbing Stairs (DP)",
+  "difficulty": "easy",
+  "prompt": "Write a Python function `climb_stairs(n: int) -> int` that returns the number of distinct ways to climb `n` stairs if you can take 1 or 2 steps at a time.",
+  "harness_id": "pi-mono",
+  "harness_category": "standard",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 3,
+  "latency_sec": 3.4,
+  "assistant_solution": "```python\ndef climb_stairs(n):\n    dp = [0]*(n+1)\n    dp[0] = dp[1] = 1\n    for i in range(2, n+1): dp[i] = dp[i-1]+dp[i-2]\n    return dp[n]\n```",
+  "passed": true,
+  "raw_helix_transcript": [],
+  "error": "",
+  "timestamp": "2026-10-28T18:30:49.829755+00:00"
+}

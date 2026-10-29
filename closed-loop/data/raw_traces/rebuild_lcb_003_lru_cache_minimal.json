@@ -1,0 +1,11 @@
+{
+  "phase": "rebuild",
+  "task_id": "lcb_003_lru_cache",
+  "task_title": "LRU Cache Implementation",
+  "prompt": "Write python solution for LRU Cache Implementation.",
+  "harness_id": "minimal",
+  "steps": 2,
+  "latency_sec": 2.2,
+  "assistant_solution": "```python\nclass LRUCache:\n    def __init__(self, capacity: int):\n        from collections import OrderedDict\n        self.cap = capacity\n        self.cache = OrderedDict()\n    def get(self, key: int) -> int:\n        if key not in self.cache: return -1\n        self.cache.move_to_end(key)\n        return self.cache[key]\n    def put(self, key: int, value: int) -> None:\n        if key in self.cache: self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.cap: self.cache.popitem(last=False)\n```",
+  "passed": true
+}

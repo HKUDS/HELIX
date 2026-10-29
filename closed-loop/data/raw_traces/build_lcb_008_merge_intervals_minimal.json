@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_008_merge_intervals",
+  "task_title": "Merge Overlapping Intervals with Count",
+  "difficulty": "medium",
+  "prompt": "Write a Python function `merge(intervals: list[list[int]]) -> list[dict]` that merges all overlapping or touching intervals (e.g. `[1, 4]` and `[4, 5]` merge into `[1, 5]`). Return each merged interval as a dictionary `{'start': int, 'end': int, 'count': int}` where `'count'` is the count of original intervals that were merged into it. The result list must be sorted by `'start'`.",
+  "harness_id": "minimal",
+  "harness_category": "minimal",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 5,
+  "latency_sec": 5.8,
+  "assistant_solution": "```python\ndef merge(intervals):\n    return sorted(intervals)\n```",
+  "passed": false,
+  "raw_helix_transcript": [],
+  "error": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\nAssertionError",
+  "timestamp": "2026-10-28T18:30:49.953004+00:00"
+}

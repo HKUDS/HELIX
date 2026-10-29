@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_010_number_of_islands",
+  "task_title": "Number of Islands (BFS/DFS)",
+  "difficulty": "medium",
+  "prompt": "Write a Python function `num_islands(grid: list[list[str]]) -> int` that counts the number of islands in a 2D binary grid. An island is a group of adjacent '1's (land) surrounded by '0's (water). Connections are 4-directional.",
+  "harness_id": "pi-mono",
+  "harness_category": "standard",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 3,
+  "latency_sec": 3.4,
+  "assistant_solution": "```python\ndef num_islands(grid):\n    from collections import deque\n    if not grid: return 0\n    R, C, count = len(grid), len(grid[0]), 0\n    for r in range(R):\n        for c in range(C):\n            if grid[r][c]=='1':\n                count+=1; q=deque([(r,c)]); grid[r][c]='0'\n                while q:\n                    row,col=q.popleft()\n                    for dr,dc in [(1,0),(-1,0),(0,1),(0,-1)]:\n                        nr,nc=row+dr,col+dc\n                        if 0<=nr<R and 0<=nc<C and grid[nr][nc]=='1':\n                            grid[nr][nc]='0'; q.append((nr,nc))\n    return count\n```",
+  "passed": true,
+  "raw_helix_transcript": [],
+  "error": "",
+  "timestamp": "2026-10-28T18:30:50.373790+00:00"
+}

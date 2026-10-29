@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_009_word_break",
+  "task_title": "Word Break Sentences (DP/Backtracking)",
+  "difficulty": "medium",
+  "prompt": "Write a Python function `word_break(s: str, word_dict: list[str]) -> list[str]` that segments `s` into all possible valid space-separated sentences using words from `word_dict`. Return the list of sentences sorted in lexicographical order. If no valid sentence can be formed, return `[]`.",
+  "harness_id": "minimal",
+  "harness_category": "minimal",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 5,
+  "latency_sec": 5.8,
+  "assistant_solution": "```python\ndef word_break(s, word_dict):\n    return any(w in s for w in word_dict)\n```",
+  "passed": false,
+  "raw_helix_transcript": [],
+  "error": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\nAssertionError",
+  "timestamp": "2026-10-28T18:30:50.122023+00:00"
+}

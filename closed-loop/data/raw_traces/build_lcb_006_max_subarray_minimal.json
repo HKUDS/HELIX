@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_006_max_subarray",
+  "task_title": "Maximum Subarray Sum and Slice",
+  "difficulty": "medium",
+  "prompt": "Write a Python function `max_sub_array(nums: list[int]) -> tuple[int, list[int]]` that finds the contiguous subarray with the largest sum and returns a tuple `(max_sum, subarray)`. If `nums` is empty, return `(0, [])`.",
+  "harness_id": "minimal",
+  "harness_category": "minimal",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 5,
+  "latency_sec": 5.8,
+  "assistant_solution": "```python\ndef max_sub_array(nums):\n    return max(nums) if nums else 0\n```",
+  "passed": false,
+  "raw_helix_transcript": [],
+  "error": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\nAssertionError",
+  "timestamp": "2026-10-28T18:30:49.624022+00:00"
+}

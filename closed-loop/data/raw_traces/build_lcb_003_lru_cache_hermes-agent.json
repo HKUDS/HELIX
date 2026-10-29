@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_003_lru_cache",
+  "task_title": "LRU Cache Implementation with Eviction Return",
+  "difficulty": "medium",
+  "prompt": "Implement an LRU (Least Recently Used) cache class `LRUCache(capacity: int)` in Python with O(1) average-time `get(key)` and `put(key, value)` operations. `get` returns -1 if key does not exist. `put` inserts or updates the key; if inserting a new key causes capacity to be exceeded, evict the least recently used item AND return the evicted key. If no eviction occurred, `put` must return None.",
+  "harness_id": "hermes-agent",
+  "harness_category": "advanced",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 2,
+  "latency_sec": 2.1,
+  "assistant_solution": "```python\nclass LRUCache:\n    def __init__(self, capacity):\n        from collections import OrderedDict\n        self.cap = capacity\n        self.cache = OrderedDict()\n    def get(self, key):\n        if key not in self.cache: return -1\n        self.cache.move_to_end(key)\n        return self.cache[key]\n    def put(self, key, value):\n        if key in self.cache:\n            self.cache.move_to_end(key); self.cache[key] = value\n            return None\n        evicted = None\n        if len(self.cache) >= self.cap:\n            evicted, _ = self.cache.popitem(last=False)\n        self.cache[key] = value\n        return evicted\n```",
+  "passed": true,
+  "raw_helix_transcript": [],
+  "error": "",
+  "timestamp": "2026-10-28T18:30:49.189456+00:00"
+}

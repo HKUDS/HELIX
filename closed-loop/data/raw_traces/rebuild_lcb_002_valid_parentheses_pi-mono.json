@@ -1,0 +1,11 @@
+{
+  "phase": "rebuild",
+  "task_id": "lcb_002_valid_parentheses",
+  "task_title": "Valid Parentheses String",
+  "prompt": "Write python solution for Valid Parentheses String.",
+  "harness_id": "pi-mono",
+  "steps": 2,
+  "latency_sec": 2.5,
+  "assistant_solution": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[char] != top: return False\n        else:\n            stack.append(char)\n    return not stack\n```",
+  "passed": true
+}

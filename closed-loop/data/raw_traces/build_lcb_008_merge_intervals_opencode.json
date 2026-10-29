@@ -1,0 +1,18 @@
+{
+  "phase": "build",
+  "task_id": "lcb_008_merge_intervals",
+  "task_title": "Merge Overlapping Intervals with Count",
+  "difficulty": "medium",
+  "prompt": "Write a Python function `merge(intervals: list[list[int]]) -> list[dict]` that merges all overlapping or touching intervals (e.g. `[1, 4]` and `[4, 5]` merge into `[1, 5]`). Return each merged interval as a dictionary `{'start': int, 'end': int, 'count': int}` where `'count'` is the count of original intervals that were merged into it. The result list must be sorted by `'start'`.",
+  "harness_id": "opencode",
+  "harness_category": "complex",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 1,
+  "latency_sec": 1.2,
+  "assistant_solution": "```python\ndef merge(intervals: list[list[int]]) -> list[dict]:\n    if not intervals: return []\n    intervals = sorted(intervals, key=lambda x: x[0])\n    res = [{'start': intervals[0][0], 'end': intervals[0][1], 'count': 1}]\n    for s, e in intervals[1:]:\n        if s <= res[-1]['end']:\n            res[-1]['end'] = max(res[-1]['end'], e)\n            res[-1]['count'] += 1\n        else:\n            res.append({'start': s, 'end': e, 'count': 1})\n    return res\n```",
+  "passed": true,
+  "raw_helix_transcript": [],
+  "error": "",
+  "timestamp": "2026-10-28T18:30:50.082959+00:00"
+}

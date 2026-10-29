@@ -1,0 +1,25 @@
+{
+  "phase": "build",
+  "task_id": "lcb_001_two_sum",
+  "task_title": "Two Sum with Indices",
+  "difficulty": "easy",
+  "prompt": "Write a Python function `two_sum(nums: list[int], target: int) -> list[int]` that returns the indices of the two numbers in `nums` that add up to `target`. You may assume each input has exactly one solution and you may not use the same element twice. Return indices in ascending order.",
+  "harness_id": "minimal",
+  "harness_category": "minimal",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "provider": "openai-compatible",
+  "steps": 1,
+  "latency_sec": 17.562,
+  "assistant_solution": "```python\ndef two_sum(nums: list[int], target: int) -> list[int]:\n    # Create a dictionary to store the value and its index\n    num_to_index = {}\n    \n    # Iterate through the list of numbers\n    for i, num in enumerate(nums):\n        # Calculate the complement needed to reach the target\n        complement = target - num\n        \n        # Check if the complement exists in the dictionary\n        if complement in num_to_index:\n            # If it does, return the indices in ascending order\n            return sorted([num_to_index[complement], i])\n        \n        # Store the current number and its index in the dictionary\n        num_to_index[num] = i\n    \n    # If no solution is found (though the problem guarantees one), raise an error\n    raise ValueError(\"No two sum solution\")\n\n# Example usage:\nnums = [2, 7, 11, 15]\ntarget = 9\nprint(two_sum(nums, target))  # Output: [0, 1]\n```",
+  "passed": true,
+  "raw_helix_transcript": [
+    {
+      "step": 1,
+      "role": "assistant",
+      "content": "Certainly! Below is a complete Python function `two_sum` that solves the problem as described:\n\n```python\ndef two_sum(nums: list[int], target: int) -> list[int]:\n    # Create a dictionary to store the value and its index\n    num_to_index = {}\n    \n    # Iterate through the list of numbers\n    for i, num in enumerate(nums):\n        # Calculate the complement needed to reach the target\n        complement = target - num\n        \n        # Check if the complement exists in the dictionary\n        if complement in num_to_index:\n            # If it does, return the indices in ascending order\n            return sorted([num_to_index[complement], i])\n        \n        # Store the current number and its index in the dictionary\n        num_to_index[num] = i\n    \n    # If no solution is found (though the problem guarantees one), raise an error\n    raise ValueError(\"No two sum solution\")\n\n# Example usage:\nnums = [2, 7, 11, 15]\ntarget = 9\nprint(two_sum(nums, target))  # Output: [0, 1]\n```\n\n### Explanation:\n1. **Dictionary Initialization**: We initialize an empty dictionary `num_to_index` to store the numbers we have seen so far along with their indices.\n2. **Iteration**: We iterate through the list `nums` using `enumerate` to get both the index `i` and the value `num`.\n3. **Complement Calculation**: For each number, we calculate its complement by subtracting the number from the target (`complement = target - num`).\n4. **Check Complement**: We check if this complement exists in our dictionary. If it does, it means we have found the two numbers that add up to the target.\n5. **Return Indices**: We return the indices of the two numbers in ascending order.\n6. **Store Number and Index**: If the complement is not found, we store the current number and its index in the dictionary.\n7. **Error Handling**: If no solution is found (which should not happen according to the problem statement), we raise a `ValueError`.\n\nThis approach ensures that we find the solution in linear time, O(n), where n is the length of the list `nums`.",
+      "finish_reason": "stop"
+    }
+  ],
+  "error": "",
+  "timestamp": "2026-10-28T18:32:21.217814+00:00"
+}

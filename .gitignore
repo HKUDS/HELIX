@@ -25,3 +25,6 @@ AgentSpace_promo_images.zip
 poster_work/
 *.pptx
 *.zip
+__pycache__/
+*.pyc
+closed-loop/data/training_runs/

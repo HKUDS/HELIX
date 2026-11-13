@@ -1447,14 +1447,31 @@ function parseDotEnvLine(line: string): { key: string; value: string } | undefin
   return { key: match[1], value }
 }
 
+function acceptsGzip(request: IncomingMessage): boolean {
+  let gzip: number | undefined
+  let wildcard: number | undefined
+  for (const item of (request.headers["accept-encoding"] ?? "").split(",")) {
+    const [rawCoding, ...parameters] = item.split(";")
+    const coding = rawCoding?.trim().toLowerCase()
+    if (coding !== "gzip" && coding !== "*") continue
+    const weight = parameters.find((parameter) => /^\s*q\s*=/i.test(parameter))
+    const quality = weight === undefined ? 1 : Number(weight.split("=")[1]?.trim())
+    if (coding === "gzip") gzip = quality
+    else wildcard = quality
+  }
+  const quality = gzip ?? wildcard ?? 0
+  return quality > 0 && quality <= 1
+}
+
 function sendHTML(request: IncomingMessage, response: ServerResponse, html: string): void {
-  const acceptsGzip = String(request.headers["accept-encoding"] ?? "").includes("gzip")
-  const body = acceptsGzip ? gzipSync(html) : Buffer.from(html)
+  const gzip = acceptsGzip(request)
+  const body = gzip ? gzipSync(html) : Buffer.from(html)
   response.writeHead(200, {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-store",
     "content-length": body.length,
-    ...(acceptsGzip ? { "content-encoding": "gzip", vary: "Accept-Encoding" } : {}),
+    vary: "Accept-Encoding",
+    ...(gzip ? { "content-encoding": "gzip" } : {}),
   })
   response.end(body)
 }
@@ -1464,13 +1481,14 @@ function sendBuilderData(
   response: ServerResponse,
   payload: { json: string; gzip: Buffer },
 ): void {
-  const acceptsGzip = String(request.headers["accept-encoding"] ?? "").includes("gzip")
-  const body = acceptsGzip ? payload.gzip : Buffer.from(payload.json)
+  const gzip = acceptsGzip(request)
+  const body = gzip ? payload.gzip : Buffer.from(payload.json)
   response.writeHead(200, {
     "content-type": "application/json; charset=utf-8",
     "cache-control": "private, max-age=60",
     "content-length": body.length,
-    ...(acceptsGzip ? { "content-encoding": "gzip", vary: "Accept-Encoding" } : {}),
+    vary: "Accept-Encoding",
+    ...(gzip ? { "content-encoding": "gzip" } : {}),
   })
   response.end(body)
 }

@@ -2040,6 +2040,35 @@ describe("docs site", () => {
     }
   }, 15_000)
 
+  it("negotiates gzip for the builder JSON and HTML", async () => {
+    const running = await startDocsServer({ cwd: process.cwd(), host: "127.0.0.1", port: 0 })
+    try {
+      for (const path of ["/api/builder-data", "/harness-builder.html"]) {
+        const compressed = await fetch(`${running.url}${path}`, {
+          headers: { "accept-encoding": "GZIP" },
+        })
+        expect(compressed.status).toBe(200)
+        expect(compressed.headers.get("content-encoding")).toBe("gzip")
+        expect(compressed.headers.get("vary")).toBe("Accept-Encoding")
+        const expected = await compressed.text()
+
+        for (const encoding of ["gzip;q=0, *;q=1", "not-gzip", "identity"]) {
+          const plain = await fetch(`${running.url}${path}`, {
+            headers: { "accept-encoding": encoding },
+          })
+          expect(plain.status).toBe(200)
+          expect(plain.headers.get("content-encoding")).toBeNull()
+          expect(plain.headers.get("vary")).toBe("Accept-Encoding")
+          expect(await plain.text()).toBe(expected)
+        }
+      }
+    } finally {
+      await new Promise<void>((resolve, reject) => {
+        running.server.close((error) => error ? reject(error) : resolve())
+      })
+    }
+  }, 15_000)
+
   it("serves the online builder API and in-memory recipe drafts", async () => {
     const profileRoot = mkdtempSync(join(tmpdir(), "helix-docs-profile-"))
     const docsEnv = {
